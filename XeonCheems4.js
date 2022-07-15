@@ -9008,7 +9008,7 @@ await XeonBotInc.send5ButImg(from, ` ┏━「 *${botname}* 」━━⭓
  ┃╠ ${prefix}rentlist 
  ┃╠ ${prefix}ban [add/del] 
  ┃╠ ${prefix}banchat [on/off] 
- ┃╠ ${prefix}join [link] 
+ ┃╠ ${prefix}joinxxx [link] 
  ┃╠ ${prefix}leavegc 
  ┃╠ ${prefix}setbio 
  ┃╠ ${prefix}bcgroup [text] 
@@ -9735,7 +9735,7 @@ break
  ┃╠ ${prefix}antitag 
  ┃╠ ${prefix}ban [add/del] 
  ┃╠ ${prefix}banchat [on/off] 
- ┃╠ ${prefix}join [link] 
+ ┃╠ ${prefix}joinxxx [link] 
  ┃╠ ${prefix}leavegc 
  ┃╠ ${prefix}setbio 
  ┃╠ ${prefix}block [user] 
