@@ -643,8 +643,7 @@ XeonBotInc.sendMessage(from, {text:`\`\`\`「 Wa.me Link Detected 」\`\`\`\n\n@
 //antivirtex by xeon
   if (antiVirtex) {
   if (budy.length > 1500) {
-  reply(`\`\`\`「 Virus Detected 」\`\`\`\n\nSorry You Will Be Kicked !`)
-  if (!isBotAdmins) return reply(mess.botAdmin)
+  reply(`\`\`\`「 Virus Detected 」\`\`\`\n\nHaha You Will Be Kicked ! 🐒`)
   XeonBotInc.groupParticipantsUpdate(m.chat, [m.sender], 'remove')
   }
   }
@@ -1708,7 +1707,7 @@ if (isBanChat) return reply(mess.banChat)
                 }
             }
             break
-	    case 'family100': {
+	    case 'family100xxx': {
 		if (isBan) return reply(mess.ban)	 			
 if (isBanChat) return reply(mess.banChat)
                 if ('family100'+m.chat in _family100) {
@@ -2694,7 +2693,7 @@ fs.writeFileSync('./database/autostickpc.json', JSON.stringify(autosticker))
 reply('autosticker pc deactivated')
 }
 break
-case 'antilinkgc': {
+case 'antilinkgc': case 'antilink': case 'algc': {
    if (isBan) return reply(mess.ban)	 			
 if (isBanChat) return reply(mess.banChat)
 if (!m.isGroup) return replay(mess.group)
@@ -6580,8 +6579,8 @@ if (isBanChat) return reply(mess.banChat)
                 reply(mess.wait)
 		let { pinterest } = require('./lib/scraper')
                 anu = await pinterest(text)
-                result = anu[Math.floor(Math.random() * anu.length)]
-                XeonBotInc.sendMessage(m.chat, { image: { url: result }, caption: '${themeemoji} Media Url : '+result }, { quoted: m })
+        let result = anu[Math.floor(Math.random() * anu.length)]
+                XeonBotInc.sendMessage(m.chat, { image: { url: result }, caption: `${themeemoji} Media Url : `+result }, { quoted: m })
             }
             break
 case 'webtonsearch': case 'webtoon':
@@ -7000,7 +6999,7 @@ break
 case 'playstore': case 'apk':
 if (isBan) return reply(mess.ban)	 			
 if (isBanChat) return reply(mess.banChat)
-if(!q) return reply('what are you looking for?')
+if(!q) return reply('What are you looking for?\n\n*Example: .playstore jasjus')
 let play = await hx.playstore(q)
 let storee = '❉─────────────────────❉\n'
 for (let i of play){
@@ -7033,8 +7032,8 @@ case 'image': {
                 reply(mess.wait)
 		let { pinterest } = require('./lib/scraperW')
                 anu = await pinterest(text)
-                result = anu[Math.floor(Math.random() * anu.length)]
-                XeonBotInc.sendMessage(m.chat, { image: { url: result }, caption: ` ${themeemoji} Media Url : `+result }, { quoted: m })
+        let result = anu[Math.floor(Math.random() * anu.length)]
+                XeonBotInc.sendMessage(m.chat, { image: { url: result }, caption: ` ${themeemoji} *Media Url* : `+result }, { quoted: m })
             }
             break
 case 'mcserver': case 'mcquery': {
@@ -8173,7 +8172,7 @@ if (isBanChat) return reply(mess.banChat)
 	  case 'pinterest': case 'pin': {
    if (isBan) return reply(mess.ban)	 			
 if (isBanChat) return reply(mess.banChat)
-if (!args.join(" ")) return reply("What picture are you looking for?")
+if (!args.join(" ")) return reply("What picture are you looking for?\n\n*Example*: .pinterest jasjus")
 try {
 hx.pinterest(args.join(" ")).then(async(res) => {
 imgnyee = res[Math.floor(Math.random() * res.length)]
@@ -8182,7 +8181,7 @@ let buttons = [
 ]
 let buttonMessage = {
 image: { url: imgnyee },
-caption:  `${global.dogeemoji} Title : ` + args.join(" ") + `\n${global.dogeemoji} Media Url : `+imgnyee,
+caption:  `${global.themeemoji} *Title* : ` + args.join(" ") + `\n${global.themeemoji} *Media Url* : `+imgnyee,
 footer: `${global.botname}`,
 buttons: buttons,
 headerType: 4,
