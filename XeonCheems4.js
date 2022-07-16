@@ -8545,7 +8545,7 @@ replay('Choose on or off')
 }
 }
 break
-            case 'ping': case 'p': case 'botstatus': case 'statusbot': {
+            case 'ping': case 'botstatus': case 'statusbot': {
             	if (isBan) return reply(mess.ban)
 	if (isBanChat) return reply(mess.banChat)
                 const used = process.memoryUsage()
