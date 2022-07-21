@@ -777,9 +777,9 @@ XeonBotInc.sendMessage(from, {text:`\`\`\`「 Link Detected 」\`\`\`\n\n@${kice
 					}
 			}
 			  //if (Autoreply) //remove forwad slashes to make it autoreply on off
-			for (let anjy of xeonyaudio){
-				if (budy === anjy){
-					result = fs.readFileSync(`./XeonMedia/audio/${anjy}.mp3`)
+			for (let anje of xeonyaudio){
+				if (budy === anje){
+					result = fs.readFileSync(`./XeonMedia/audio/${anje}.mp3`)
 					XeonBotInc.sendMessage(m.chat, { audio: result, mimetype: 'audio/mp4', ptt: true }, { quoted: m })     
 					}
 			}
@@ -8790,6 +8790,16 @@ let template = await generateWAMessageFromContent(m.chat, proto.Message.fromObje
 								]
 							},
 							{
+								"title": "Surga Features 🛐",
+								"rows": [
+									{
+										"title": "Adzan Menu 🎧",
+										"description": "Displays The List Of *Surga Features*",
+										"rowId": `${prefix}adzanmenu`
+									}
+								]
+							},
+							{
 								"title": "Bot Features ❤️",
 								"rows": [
 									{
@@ -10414,13 +10424,38 @@ break
  ┃╚═════════════✪
  ┗━「 *Created By Kenneth Morris* 」━⭓` + '' + ' ', `${pushname}`,unicorn, [{"urlButton": {"displayText": "YouTube 📍","url": `${websitex}`}},{"quickReplyButton": {"displayText": "Owner 👤","id": 'owner'}}] )
  break 
+ case 'adzanmenu': 
+            if (isBan) return reply(mess.ban) 
+         if (isBanChat) return reply(mess.banChat) 
+ var unicorn = await getBuffer(`https://telegra.ph/file/4e72707e3de85cca2e925.jpg`) 
+ await XeonBotInc.send5ButImg(from, `┏━「 _ADZAN REMIX KENCING ONTA_ 🎧」━━⭓ 
+┃╔══✪
+┃╠> ezan remix 
+┃╠> ezan remix 1
+┃╠> ezan remix 2
+┃╠> ezan remix 3
+┃╠> ezan remix 4
+┃╠> ezan remix 5
+┃╠> ezan remix 6
+┃╠> ezan remix 7
+┃╠> ezan remix 8
+┃╠> ezan remix 9
+┃╠> ezan remix 10
+┃╠> ezan remix 11
+┃╠> ezan remix 12
+┃╠> ezan remix 13
+┃╠> ezan remix 14
+┃╠> ezan remix 15
+┃╚═════════════✪
+┗━━「 *Created by Kenneth Morris* 」━⭓` + '' + ' ', `${pushname}`,unicorn, [{"urlButton": {"displayText": "YouTube 📍","url": `${websitex}`}},{"quickReplyButton": {"displayText": "Owner 👤","id": 'owner'}}] )
+ break 
  case 'gamemenu': 
             if (isBan) return reply(mess.ban) 
          if (isBanChat) return reply(mess.banChat) 
  var unicorn = await getBuffer(picak+'Game Menu') 
  await XeonBotInc.send5ButImg(from, ` ┏━「 _GAME_ 」━━⭓ 
  ┃╔═══════✪
- ┃╠ ${prefix}truth 
+ ┃╠ ${prefix}truth
  ┃╠ ${prefix}dare 
  ┃╠ ${prefix}tictactoe 
  ┃╠ ${prefix}delttt 
