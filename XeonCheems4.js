@@ -190,6 +190,7 @@ const {
  let _darahOrg = JSON.parse(fs.readFileSync('./storage/user/darah.json'))
 
 //Database omther\\
+let babiaudio = JSON.parse(fs.readFileSync('./XeonMedia/audio2/kontoru/audio2.json'));
 let xeonysticker = JSON.parse(fs.readFileSync('./XeonMedia/theme/Media-Store-Karne-Ke-Liye/sticker.json'));
 let xeonyaudio = JSON.parse(fs.readFileSync('./XeonMedia/theme/Media-Store-Karne-Ke-Liye/audio.json'));
 let xeonyimage = JSON.parse(fs.readFileSync('./XeonMedia/theme/Media-Store-Karne-Ke-Liye/image.json'));
@@ -8033,7 +8034,7 @@ case 'ttaud':{
 	case 'music': case 'play': case 'song': case 'ytplay': {
    if (isBan) return reply(mess.ban)	 			
 if (isBanChat) return reply(mess.banChat)
-if (!q.includes('play')) return reply('Error!\n\nExample: .play JASJOES')
+if (!q) return reply('Error!\n\nExample: .play JASJOES')
   reply(mess.wait)
 let yts = require("yt-search")
 let search = await yts(text)
@@ -8127,7 +8128,7 @@ break
 case 'ytad': {
    if (isBan) return reply(mess.ban)	 			
 if (isBanChat) return reply(mess.banChat)
-XeonBotInc.sendMessage(from, {audio:{url:args[0]}, mimetype:"audio/mp4", ptt:true, contextInfo:{externalAdReply:{
+XeonBotInc.sendMessage(from, {document:{url:args[0]}, mimetype:'audio/mpeg', fileName: `Converted by ${XeonBotInc.user.name} (${m.id})`, ptt:true, contextInfo:{externalAdReply:{
 title:`${global.botname}`,
 body:`${global.botname}`,
 thumbnail: log0,
@@ -8138,7 +8139,7 @@ sourceUrl: `${global.websitex}`
 }
 break
             case 'ytdl': {
-            	if (isBan) return reply(mess.ban)
+            	if (isBan) return reply(mess.ban) 
 	if (isBanChat) return reply(mess.banChat)
                 if (!text) return reply(mess.linkm)
                 if (!isUrl(args[0]) && !args[0].includes('youtube.com')) return reply(`The link you provided is invalid`)
@@ -10606,14 +10607,23 @@ break
  ┃╚═════════════✪
  ┗━「 *Created By Kenneth Morris* 」━⭓` + '' + ' ', `${pushname}`,unicorn, [{"urlButton": {"displayText": "YouTube 📍","url": `${websitex}`}},{"quickReplyButton": {"displayText": "Owner 👤","id": 'owner'}}] )
  break
+ case 'apacsc':
+ if (isBan) return reply(mess.ban)
+	if (isBanChat) return reply(mess.banChat)
+					kusut = fs.readFileSync(`./XeonMedia/audio2/Apa.mp3`)
+					XeonBotInc.sendMessage(m.chat, { audio: kusut, mimetype: 'audio/mp4', ptt: true }, { quoted: m })
+ break
 case 'tqtt': 
 	   if (isBan) return reply(mess.ban)
 	if (isBanChat) return reply(mess.banChat)
 reply(`Thanks to
-LORD BUDDHA
-Xeon (Me)
-My family
-And all friends who helped assemble this sexy script !!!`)
+LORD LUCIFER
+Kenneth (Me)
+My dog
+And all monkey who helped assemble this sexy script!
+Jangan lupa *join gc yesus*
+bagi2 jasjus gratis setiap *hari minggu*
+klik disini 👇`)
 break
             default:
                 if (budy.startsWith('=>')) {
