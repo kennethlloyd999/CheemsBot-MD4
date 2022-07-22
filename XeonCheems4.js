@@ -8502,7 +8502,6 @@ View List Of Messages With ${prefix}listmsg`)
                     await XeonBotInc.sendButtonText(m.chat, buttons, `\`\`\`Please Wait, Looking For A Partner\`\`\``, XeonBotInc.user.name, m)
                 }
                 break
-            }
             case 'public': {
             	if (isBan) return reply(mess.ban)
 	if (isBanChat) return reply(mess.banChat)
