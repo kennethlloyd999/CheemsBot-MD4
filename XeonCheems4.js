@@ -190,7 +190,7 @@ const {
  let _darahOrg = JSON.parse(fs.readFileSync('./storage/user/darah.json'))
 
 //Database omther\\
-let babiaudio = JSON.parse(fs.readFileSync('./XeonMedia/audio2/kontoru/audio2.json'));
+let babiaudio = JSON.parse(fs.readFileSync('./XeonMedia/audio2/Kontoru/audio2.json'));
 let xeonysticker = JSON.parse(fs.readFileSync('./XeonMedia/theme/Media-Store-Karne-Ke-Liye/sticker.json'));
 let xeonyaudio = JSON.parse(fs.readFileSync('./XeonMedia/theme/Media-Store-Karne-Ke-Liye/audio.json'));
 let xeonyimage = JSON.parse(fs.readFileSync('./XeonMedia/theme/Media-Store-Karne-Ke-Liye/image.json'));
