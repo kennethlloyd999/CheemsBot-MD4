@@ -6076,9 +6076,9 @@ if (!/video/.test(mime) && !/audio/.test(mime)) return reply(`Reply Video/Audio 
 if (!m.quoted) return reply(`Reply Video/Audio That You Want To Be VN With Caption ${prefix + command}`)
 reply(mess.wait)
 let media = await quoted.download()
-let { toPTT } = require('./lib/converter')
-let audio = await toPTT(media, 'mp4')
-XeonBotInc.sendMessage(m.chat, {audio: audio, mimetype:'audio/mpeg', ptt:true }, {quoted:m})
+let { toAudio } = require('./lib/converter')
+let audio = await toAudio(media, 'mp4')
+XeonBotInc.sendMessage(m.chat, {audio: audio, mimetype:'audio/mpeg', ptt: true }, {quoted:m})
 }
 break
 case 'togif': {
@@ -8041,7 +8041,7 @@ let anu = search.videos[Math.floor(Math.random() * search.videos.length)]
 let ytvc = await hx.youtube(anu.url)
 let buttons = [
 {buttonId: `ytvd ${ytvc.link}`, buttonText: {displayText: '► Video'}, type: 1},
-{buttonId: `ytad ${ytvc.mp3}`, buttonText: {displayText: '♫ Audio'}, type: 1}
+{buttonId: `ytvn ${ytvc.mp3}`, buttonText: {displayText: '♫ Audio'}, type: 1}
 ]
 let buttonMessage = {
 image: { url: anu.thumbnail },
@@ -8084,7 +8084,12 @@ ${global.themeemoji} Title : ${res.title}
 ${global.themeemoji} Size : ${res.size}
 ${global.themeemoji} Quality : ${res.quality}
 
-_Select video or audio and wait a while_`
+_Select video or audio and wait a while_
+
+NB: If the 'video' button doesn't work, make sure the URL you entered is correct.
+*Example*: 
+✅ \`\`\`https://youtube.com/xxx\`\`\` 
+❎ \`\`\`https://youtu.be/xxx\`\`\` `
 let buttons = [
 {buttonId: `ytvd ${res.link}`, buttonText: {displayText: '► Video'}, type: 1},
 {buttonId: `ytad ${res.mp3}`, buttonText: {displayText: '♫ Audio'}, type: 1}
@@ -8110,6 +8115,19 @@ XeonBotInc.sendMessage(from, buttonMessage, {quoted:m})
 reply("Link error!")
 }
 }
+break
+ case 'ytvn': { 
+    if (isBan) return reply(mess.ban)                                  
+ if (isBanChat) return reply(mess.banChat) 
+ XeonBotInc.sendMessage(from, {audio:{url:args[0]}, mimetype:"audio/mp4", ptt:true, contextInfo:{externalAdReply:{ 
+ title:`Reply this Audio to convert \ninto mp3 with caption tomp3`, 
+ body:`${global.botname}`, 
+ thumbnail: log0, 
+ mediaType:2, 
+ mediaUrl: `${global.websitex}`, 
+ sourceUrl: `${global.websitex}` 
+ }}}, {quoted:m}) 
+ } 
 break
 case 'ytvd': {
    if (isBan) return reply(mess.ban)	 			
