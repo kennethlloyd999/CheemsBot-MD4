@@ -243,7 +243,7 @@ module.exports = XeonBotInc = async (XeonBotInc, m, chatUpdate, store) => {
     	const isBotAdmins = m.isGroup ? groupAdmins.includes(botNumber) : false
     	const isAdmins = m.isGroup ? groupAdmins.includes(m.sender) : false
     	const isPremium = isCreator || global.premium.map(v => v.replace(/[^0-9]/g, '') + '@s.whatsapp.net').includes(m.sender) || false
-        const AntiLink = m.isGroup ? ntilink.includes(from) : false
+        
 const AntiLinkYoutubeVid = m.isGroup ? ntilinkytvid.includes(from) : false
 const AntiLinkYoutubeChannel = m.isGroup ? ntilinkytch.includes(from) : false
 const AntiLinkInstagram = m.isGroup ? ntilinkig.includes(from) : false
@@ -254,7 +254,7 @@ const AntiLinkTwitter = m.isGroup ? ntilinktwt.includes(from) : false
 const AntiLinkAll = m.isGroup ? ntilinkall.includes(from) : false
 const antiWame = m.isGroup ? ntwame.includes(from) : false
 const antiToxic = m.isGroup ? nttoxic.includes(from) : false
-const antiVirtex = m.isGroup ? ntvirtex.includes(from) : false
+
 const AntiNsfw = m.isGroup ? ntnsfw.includes(from) : false
 const isAutoStick = _autostick.includes(from)
 const isAutoSticker = m.isGroup ? autosticker.includes(from) : false
@@ -600,21 +600,18 @@ teks = `Type *.joinxxx [whatsapp group link]* \nthen your Whatsapp Group link wi
 sendOrder(m.chat, teks, "5123658817728409", fs.readFileSync('./XeonMedia/theme/kotakmasuk.jpg'), `${botname}`, "916909137213@s.whatsapp.net", "AR7zJt8MasFx2Uir/fdxhkhPGDbswfWrAr2gmoyqNZ/0Wg==", "99999999999999999999")
 }
 	// AntiLinkgc
-if (AntiLink) {
-linkgce = await XeonBotInc.groupInviteCode(from)
-if (budy.includes(`https://chat.whatsapp.com/${linkgce}`)) {
-reply(`\`\`\`「 Group Link Detected 」\`\`\`\n\nYou won't be kicked by a bot because what you send is a link to this group`)
-} else if (isUrl(m.text)) {
-bvl = `\`\`\`「 Group Link Detected 」\`\`\`\n\nAdmin has sent a link, admin is free to post any link`
-if (isAdmins) return reply(bvl)
-if (m.key.fromMe) return reply(bvl)
-if (isCreator) return reply(bvl)
-kice = m.sender
+        if (budy.includes(`chat.whatsapp.com`)) {
+        if (!isBotAdmins) return reply(`\`\`\`「 Group Link Detected 」\`\`\``)
+        let gclink = (`https://chat.whatsapp.com/`+await XeonBotInc.groupInviteCode(m.chat))
+        let isLinkThisGc = new RegExp(gclink, 'i')
+        let isgclink = isLinkThisGc.test(m.text)
+        if (isgclink) return reply(`Group Is Installed With Anti-Link But I Won't Kick You 😉, Because You Sent This Group Link❤️`)
+        if (isAdmins) return reply(`\`\`\`「 Group Link Detected 」\`\`\`\n\nAdmin has sent a link, admin is free to post any link`)
+        if (isCreator) return reply(`Group Is Installed With Anti-Link But I Won't Kick You 😉, Because You Are My Owner Hahahahah🤣😘, You Think I Will Betray You Huh🐶`)
+        kice = m.sender
 await XeonBotInc.groupParticipantsUpdate(m.chat, [kice], 'remove').then((res) => reply(jsonformat(res))).catch((err) => reply(jsonformat(err)))
 XeonBotInc.sendMessage(from, {text:`\`\`\`「 Group Link Detected 」\`\`\`\n\n@${kice.split("@")[0]} Has been kicked because of sending link in this group`, contextInfo:{mentionedJid:[kice]}}, {quoted:m})
-} else {
-}
-}
+} 
   // Antiwame by xeon
   if (antiWame)
   if (budy.includes(`wa.me`)) {
@@ -628,25 +625,13 @@ await XeonBotInc.groupParticipantsUpdate(m.chat, [kice], 'remove')
 XeonBotInc.sendMessage(from, {text:`\`\`\`「 Wa.me Link Detected 」\`\`\`\n\n@${kice.split("@")[0]} Has been kicked because of sending youtube video link in this group`, contextInfo:{mentionedJid:[kice]}}, {quoted:m})
 } else {
 }
-  if (antiWame)
-  if (budy.includes(`http://wa.me`)) {
-if (!isBotAdmins) return
-bvl = `\`\`\`「 Wa.me Link Detected 」\`\`\`\n\nAdmin has sent a wa.me link, admin is free to send any link😇`
-if (isAdmins) return reply(bvl)
-if (m.key.fromMe) return reply(bvl)
-if (isCreator) return reply(bvl)
-kice = m.sender
-await XeonBotInc.groupParticipantsUpdate(m.chat, [kice], 'remove')
-XeonBotInc.sendMessage(from, {text:`\`\`\`「 Wa.me Link Detected 」\`\`\`\n\n@${kice.split("@")[0]} Has been kicked because of sending youtube video link in this group`, contextInfo:{mentionedJid:[kice]}}, {quoted:m})
-} else {
-}
 //antivirtex by xeon
-  if (antiVirtex) {
   if (budy.length > 1500) {
+  	if (!isBotAdmins) return reply(`\`\`\`「 Group Link Detected 」\`\`\``)
   reply(`\`\`\`「 Virus Detected 」\`\`\`\n\nHaha You Will Be Kicked ! 🐒`)
   XeonBotInc.groupParticipantsUpdate(m.chat, [m.sender], 'remove')
   }
-  }
+  
 //anti bad words by xeon
 if (antiToxic)
 if (bad.includes(messagesD)) {
@@ -2693,37 +2678,6 @@ fs.writeFileSync('./database/autostickpc.json', JSON.stringify(autosticker))
 reply('autosticker pc deactivated')
 }
 break
-case 'antilinkgc': case 'antilink': case 'algc': {
-   if (isBan) return reply(mess.ban)	 			
-if (isBanChat) return reply(mess.banChat)
-if (!m.isGroup) return replay(mess.group)
-if (!isBotAdmins) return replay(mess.botAdmin)
-if (!isAdmins && !isCreator) return replay(mess.admin)
-if (args[0] === "on") {
-if (AntiLink) return replay('Already activated')
-ntilink.push(from)
-replay('Success in turning on group chat antilink in this group')
-var groupe = await XeonBotInc.groupMetadata(from)
-var members = groupe['participants']
-var mems = []
-members.map(async adm => {
-mems.push(adm.id.replace('c.us', 's.whatsapp.net'))
-})
-XeonBotInc.sendMessage(from, {text: `\`\`\`「 ⚠️Warning⚠️ 」\`\`\`\n\nIf you're not an admin, don't send the group link in this group or u will be kicked immediately`, contextInfo: { mentionedJid : mems }}, {quoted:m})
-} else if (args[0] === "off") {
-if (!AntiLink) return replay('Already deactivated')
-let off = ntilink.indexOf(from)
-ntilink.splice(off, 1)
-replay('Success in turning off group chat antilink in this group')
-} else {
-  let buttonsntilink = [
-  { buttonId: `${command} on`, buttonText: { displayText: 'On' }, type: 1 },
-  { buttonId: `${command} off`, buttonText: { displayText: 'Off' }, type: 1 }
-  ]
-  await XeonBotInc.sendButtonText(m.chat, buttonsntilink, `Please click the button below\n\nOn to enable\nOff to disable`, `${global.botname}`, m)
-  }
-  }
-  break
   case 'antilinkyoutubevideo': case 'antilinkyoutubevid': case 'antilinkytvid': {
    if (isBan) return reply(mess.ban)	 			
 if (isBanChat) return reply(mess.banChat)
@@ -2971,36 +2925,7 @@ replay('Success in turning off all antilink in this group')
   await XeonBotInc.sendButtonText(m.chat, buttonsntilink, `Please click the button below\n\nOn to enable\nOff to disable`, `${global.botname}`, m)
   }
   }
-  break
-case 'antivirus': case 'antivirtex': case 'av': {
-   if (isBan) return reply(mess.ban)	 			
-if (isBanChat) return reply(mess.banChat)
-if (!m.isGroup) return replay(mess.group)
-if (!isBotAdmins) return replay(mess.botAdmin)
-if (!isAdmins && !isCreator) return replay(mess.admin)
-if (args[0] === "on") {
-if (antiVirtex) return replay('Already activated')
-ntvirtex.push(from)
-replay('on')
-var groupe = await XeonBotInc.groupMetadata(from)
-var members = groupe['participants']
-var mems = []
-members.map(async adm => {
-mems.push(adm.id.replace('c.us', 's.whatsapp.net'))
-})
-} else if (args[0] === "off") {
-if (!antiVirtex) return replay('Already deactivated')
-let off = ntvirtex.indexOf(from)
-ntvirtex.splice(off, 1)
-replay('off')
-} else {
-  let buttonsntvirtex = [
-  { buttonId: `${command} on`, buttonText: { displayText: 'On' }, type: 1 },
-  { buttonId: `${command} off`, buttonText: { displayText: 'Off' }, type: 1 }
-  ]
-  await XeonBotInc.sendButtonText(m.chat, buttonsntvirtex, `Please click the button below\n\nOn to enable\nOff to disable`, `${global.botname}`, m)
-  }
-  }
+  
   break
     case 'autoreply': {
    if (isBan) return reply(mess.ban)	 			
@@ -5443,7 +5368,7 @@ if (args.length < 2) return reply(`Example :\n${prefix + command + ' ' + args[0]
 let teds = await thiccysapi.textpro("https://textpro.me/create-light-glow-sliced-text-effect-online-1068.html", [args[1]])
 XeonBotInc.sendMessage(from, {image:{url:teds}, caption:"Done!"}, {quoted:m})
 } else {
-reply(`*Text Maker List :*\n•> glitch\n•> glow`)
+reply(`*Text Maker List :*\n•> glitch\n•> glow\n\nExample: textmaker glow kontol`)
 }
 }
 break
@@ -8751,11 +8676,6 @@ XeonBotInc.sendMessage(from, { react: { text: `${global.reactmoji}`, key: m.key 
                                 }
                             }, {
                                 quickReplyButton: {
-                                    displayText: 'All Menu 🍱',
-                                    id: 'allmenu'
-                                }
-                            }, {
-                                quickReplyButton: {
                                     displayText: 'List Menu 🍢',
                                     id: 'command'
                                 }  
@@ -8779,7 +8699,6 @@ XeonBotInc.sendMessage(from, { react: { text: `${global.reactmoji}`, key: m.key 
                         } else if (setbot.templateDocument) {
                         let buttonmenu = [
         	{ urlButton: { displayText: `YouTube 🍒`, url : `${websitex}` } },
-            { quickReplyButton: { displayText: `All Menu 🍱`, id: 'allmenu'} },
             { quickReplyButton: { displayText: `List Menu 🍢`, id: 'command'} },
             { quickReplyButton: { displayText: `Owner 🤣`, id: 'owner'} }
         	]
@@ -10629,6 +10548,31 @@ break
 	if (isBanChat) return reply(mess.banChat)
 					kusut = fs.readFileSync(`./XeonMedia/audio2/Apa.mp3`)
 					XeonBotInc.sendMessage(m.chat, { audio: kusut, mimetype: 'audio/mp4', ptt: true }, { quoted: m })
+ break
+ case 'antivirtex': case 'antivirtex': {
+ if (isBan) return reply(mess.ban)
+	if (isBanChat) return reply(mess.banChat)
+reply(`*Pembaruan Fitur antivirtex* \n• _Sekarang telah dibuat aktif 24 jam!_ \n\n*Hub owner*: 「 _wa.me/6285773496010_ 」`)
+}
+if (isBan) return reply(mess.ban)	 			
+if (isBanChat) return reply(mess.banChat)
+		if (!m.isGroup) return replay(`${mess.group}`)
+        if (!isAdmins) return replay(`${mess.admin}`)
+        if (!isBotAdmins) return replay(`I Am Not An Admin, How Could I Kick Somebody Who Send Virtex 😒`)
+        reply(`Already activated`)
+ break
+ case 'antilink': case 'antilink': {
+ if (isBan) return reply(mess.ban)
+	if (isBanChat) return reply(mess.banChat)
+reply(`*Pembaruan Fitur antilinkgc* \n• _Sekarang telah dibuat aktif 24 jam!_ \n\n*Hub owner*: 「 _wa.me/6285773496010_ 」`)
+}
+
+if (isBan) return reply(mess.ban)	 			
+if (isBanChat) return reply(mess.banChat)
+		if (!m.isGroup) return replay(`${mess.group}`)
+        if (!isAdmins) return replay(`${mess.admin}`)
+        if (!isBotAdmins) return replay(`I Am Not An Admin, How Could I Kick Somebody Who Send Link 😒`)
+        reply(`\`\`\`「 ⚠️Warning⚠️ 」\`\`\`\n\nIf you're not an admin, don't send the group link in this group or u will be kicked immediately`)
  break
 case 'tqtt': 
 	   if (isBan) return reply(mess.ban)
