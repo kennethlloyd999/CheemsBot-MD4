@@ -3456,7 +3456,7 @@ encmedia = await XeonBotInc.sendImageAsSticker(from, wifegerakx, m, { packname: 
 await fs.unlinkSync(encmedia)
 }
 break
-            case 'sticker': case 's': case 'stickergif': case 'sgif': {
+            case 'sticker': case 'stiker': case 's': case 'stickergif': case 'sgif': {
    if (isBan) return reply(mess.ban)	 			
 if (isBanChat) return reply(mess.banChat)
 if (/image/.test(mime)) {
@@ -7488,7 +7488,7 @@ if (isBanChat) return reply(mess.banChat)
 if (isBanChat) return reply(mess.banChat)
 		let { quotesAnime } = require('./lib/scraperW')
                 let anu = await quotesAnime()
-                result = anu[Math.floor(Math.random() * anu.length)]
+                let result = anu[Math.floor(Math.random() * anu.length)]
                 let buttons = [
                     {buttonId: `quotesanime`, buttonText: {displayText: 'Next'}, type: 1}
                 ]
@@ -8727,7 +8727,7 @@ let template = await generateWAMessageFromContent(m.chat, proto.Message.fromObje
 								]
 							},
 							{
-								"title": "Surga Features 🛐",
+								"title": "War Features 🛐",
 								"rows": [
 									{
 										"title": "Adzan Menu 🎧",
@@ -8757,7 +8757,7 @@ let template = await generateWAMessageFromContent(m.chat, proto.Message.fromObje
 										{
 										"title": "Maker Menu 🌈",
 										"description": "Displays The List Of Logo Making Features",
-										"rowId": `${prefix}indomenu`
+										"rowId": `${prefix}makermenu`
 									},
 									{
 										"title": "Sound Menu 🎵",
@@ -8772,7 +8772,7 @@ let template = await generateWAMessageFromContent(m.chat, proto.Message.fromObje
 									{
 										"title": "Sticker Menu 🃏",
 										"description": "Displays The List Of Sticker Features",
-										"rowId": `${prefix}indomenu`
+										"rowId": `${prefix}stickermenu`
 									},
 									{
 										"title": "Search Menu 🔎",
@@ -8822,7 +8822,7 @@ let template = await generateWAMessageFromContent(m.chat, proto.Message.fromObje
 										{
 										"title": "Game Menu 🎮",
 										"description": "Displays The List Of Game Features",
-										"rowId": `${prefix}indomenu`
+										"rowId": `${prefix}gamemenu`
 									},
 										{
 											"title": "Convert Menu ⚒️",
@@ -10194,9 +10194,6 @@ break
  var unicorn = await getBuffer(picak+'Sound Menu') 
  await XeonBotInc.send5ButImg(from, ` ┏━「 _SOUND_ 」━━⭓ 
  ┃╔═══════✪
- ┃╠ ${prefix}ezan remix 1
- ┃╠ ${prefix}ezan remix 2
- ┃╠ ${prefix}ezan remix 3
  ┃╠ ${prefix}sound1 
  ┃╠ ${prefix}sound2 
  ┃╠ ${prefix}sound3 
@@ -10365,7 +10362,7 @@ break
             if (isBan) return reply(mess.ban) 
          if (isBanChat) return reply(mess.banChat) 
  var unicorn = await getBuffer(`https://telegra.ph/file/4e72707e3de85cca2e925.jpg`) 
- await XeonBotInc.send5ButImg(from, `┏━「 _ADZAN REMIX KENCING ONTA_ 🎧」━━⭓ 
+ await XeonBotInc.send5ButImg(from, `┏━「 _ADZAN REMIX_ 🎧」━━⭓ 
 ┃╔══✪
 ┃╠> ezan remix 
 ┃╠> ezan remix 1
@@ -10552,7 +10549,7 @@ break
  case 'antivirtex': case 'antivirtex': {
  if (isBan) return reply(mess.ban)
 	if (isBanChat) return reply(mess.banChat)
-reply(`*Pembaruan Fitur antivirtex* \n• _Sekarang telah dibuat aktif 24 jam!_ \n\n*Hub owner*: 「 _wa.me/6285773496010_ 」`)
+reply(`*Pembaruan Fitur antivirtex* \n• _Sekarang telah dibuat aktif 24 jam!_ \n\n*Hub owner*: 「 _wa.me/6287785750311_ 」`)
 }
 if (isBan) return reply(mess.ban)	 			
 if (isBanChat) return reply(mess.banChat)
@@ -10564,7 +10561,7 @@ if (isBanChat) return reply(mess.banChat)
  case 'antilink': case 'antilink': {
  if (isBan) return reply(mess.ban)
 	if (isBanChat) return reply(mess.banChat)
-reply(`*Pembaruan Fitur antilinkgc* \n• _Sekarang telah dibuat aktif 24 jam!_ \n\n*Hub owner*: 「 _wa.me/6285773496010_ 」`)
+reply(`*Pembaruan Fitur antilinkgc* \n• _Sekarang telah dibuat aktif 24 jam!_ \n\n*Hub owner*: 「 _wa.me/6287785750311_ 」`)
 }
 
 if (isBan) return reply(mess.ban)	 			
