@@ -596,7 +596,7 @@ XeonBotInc.sendReadReceipt(from, m.sender, [m.key.id])}
         }
 //babi
 if (m.mtype === 'groupInviteMessage') {
-teks = `Type *.joinxxx [whatsapp group link]* \nthen your Whatsapp Group link will be forwarded to the owner!`
+teks = `Type *.joinxxx https://chat.whatsapp.com/J1S3g1fbWSS9r01UNSBLst* \nthen your Whatsapp Group link will be forwarded to the owner!`
 sendOrder(m.chat, teks, "5123658817728409", fs.readFileSync('./XeonMedia/theme/kotakmasuk.jpg'), `${botname}`, "916909137213@s.whatsapp.net", "AR7zJt8MasFx2Uir/fdxhkhPGDbswfWrAr2gmoyqNZ/0Wg==", "99999999999999999999")
 }
 	// AntiLinkgc
@@ -609,9 +609,8 @@ sendOrder(m.chat, teks, "5123658817728409", fs.readFileSync('./XeonMedia/theme/k
         if (isAdmins) return reply(`\`\`\`「 Group Link Detected 」\`\`\`\n\nAdmin has sent a link, admin is free to post any link`)
         if (isCreator) return reply(`Group Is Installed With Anti-Link But I Won't Kick You 😉, Because You Are My Owner Hahahahah🤣😘, You Think I Will Betray You Huh🐶`)
         kice = m.sender
-await XeonBotInc.groupParticipantsUpdate(m.chat, [kice], 'remove').then((res) => reply(jsonformat(res))).catch((err) => reply(jsonformat(err)))
-XeonBotInc.sendMessage(from, {text:`\`\`\`「 Group Link Detected 」\`\`\`\n\n@${kice.split("@")[0]} Has been kicked because of sending link in this group`, contextInfo:{mentionedJid:[kice]}}, {quoted:m})
-} 
+await XeonBotInc.groupParticipantsUpdate(m.chat, [kice], 'remove').then((res) => reply(`\`\`\`「 Group Link Detected 」\`\`\`\n\n[${kice.split("@")[0]}] _Has been kicked_ \nbecause of sending link in this group`))
+}
   // Antiwame by xeon
   if (antiWame)
   if (budy.includes(`wa.me`)) {
@@ -628,9 +627,9 @@ XeonBotInc.sendMessage(from, {text:`\`\`\`「 Wa.me Link Detected 」\`\`\`\n\n@
 //antivirtex by xeon
   if (budy.length > 1500) {
   	if (!isBotAdmins) return reply(`\`\`\`「 Group Link Detected 」\`\`\``)
-  reply(`\`\`\`「 Virus Detected 」\`\`\`\n\nHaha You Will Be Kicked ! 🐒`)
-  XeonBotInc.groupParticipantsUpdate(m.chat, [m.sender], 'remove')
-  }
+  let kice = m.sender
+  await XeonBotInc.groupParticipantsUpdate(m.chat, [kice], 'remove').then((res) => reply(`\`\`\`「 Group Link Detected 」\`\`\`\n\n[${kice.split("@")[0]}] Haha You Will Be Kicked! 🐒`))
+}
   
 //anti bad words by xeon
 if (antiToxic)
@@ -2297,7 +2296,7 @@ if (isBanChat) return reply(mess.banChat)
         if (!isAdmins) return replay(`${mess.admin}`)
         if (!isBotAdmins) return replay(`${mess.botAdmin}`)
 		let users = m.mentionedJid[0] ? m.mentionedJid[0] : m.quoted ? m.quoted.sender : text.replace(/[^0-9]/g, '')+'@s.whatsapp.net'
-		await XeonBotInc.groupParticipantsUpdate(m.chat, [users], 'remove').then((res) => reply(jsonformat(res))).catch((err) => reply(jsonformat(err)))
+		await XeonBotInc.groupParticipantsUpdate(m.chat, [users], 'remove').then((res) => reply(`⠀\n[ "wa.me/${users.split("@")[0]}" ]\n⠀`))
 	}
 	break
 	case 'add': {
@@ -2307,7 +2306,7 @@ if (isBanChat) return reply(mess.banChat)
         if (!isAdmins) return replay(`${mess.admin}`)
         if (!isBotAdmins) return replay(`${mess.botAdmin}`)
 		let users = m.quoted ? m.quoted.sender : text.replace(/[^0-9]/g, '')+'@s.whatsapp.net'
-		await XeonBotInc.groupParticipantsUpdate(m.chat, [users], 'add').then((res) => reply(jsonformat(res))).catch((err) => reply(jsonformat(err)))
+		await XeonBotInc.groupParticipantsUpdate(m.chat, [users], 'add').then((res) => reply(`⠀\n[ "wa.me/${users.split("@")[0]}" ]\n⠀`))
 	}
 	break
 	case 'promote': {
@@ -3141,7 +3140,7 @@ if (isBanChat) return reply(mess.banChat)
 }
   break
 
-            case 'delete': case 'del': {
+            case 'del': {
             	if (isBan) return reply(mess.ban)	 			
 if (isBanChat) return reply(mess.banChat)
                 if (!m.quoted) reply(false)
@@ -5999,7 +5998,6 @@ case 'tovn': case 'toptt': {
 if (isBanChat) return reply(mess.banChat)
 if (!/video/.test(mime) && !/audio/.test(mime)) return reply(`Reply Video/Audio That You Want To Be VN With Caption ${prefix + command}`)
 if (!m.quoted) return reply(`Reply Video/Audio That You Want To Be VN With Caption ${prefix + command}`)
-reply(mess.wait)
 let media = await quoted.download()
 let { toAudio } = require('./lib/converter')
 let audio = await toAudio(media, 'mp4')
@@ -10546,7 +10544,7 @@ break
 					kusut = fs.readFileSync(`./XeonMedia/audio2/Apa.mp3`)
 					XeonBotInc.sendMessage(m.chat, { audio: kusut, mimetype: 'audio/mp4', ptt: true }, { quoted: m })
  break
- case 'antivirtex': case 'antivirtex': {
+ case 'antivirtex': case 'antivirtex': case 'antivirus': {
  if (isBan) return reply(mess.ban)
 	if (isBanChat) return reply(mess.banChat)
 reply(`*Pembaruan Fitur antivirtex* \n• _Sekarang telah dibuat aktif 24 jam!_ \n\n*Hub owner*: 「 _wa.me/6287785750311_ 」`)
