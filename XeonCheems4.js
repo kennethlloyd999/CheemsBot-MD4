@@ -537,7 +537,6 @@ jumlahharian = `${dataa.value}`
 		setting.status = new Date() * 1
 	    }
 	}
-	
 	//antispam or auto react
 //if (m.message && msgFilter.isFiltered(from)) {
 //console.log(`${global.themeemoji}[SPAM]`, color(moment(m.messageTimestamp * 1000).format('DD/MM/YYYY HH:mm:ss'), 'yellow'), color(`${command} [${args.length}]`), 'from', color(m.pushName))
@@ -594,6 +593,10 @@ XeonBotInc.sendReadReceipt(from, m.sender, [m.key.id])}
                 await XeonBotInc.sendVideoAsSticker(from, mediac, m, { packname: global.packname, author: global.author })
             }
         }
+        //bangsat
+        //if (m.mtype === 'documentMessage') {
+        	//teks = 
+        
 //babi
 if (m.mtype === 'groupInviteMessage') {
 teks = `\`\`\`「 Group Invite Message Detected 」\`\`\`\n\nJika owner belum merespon\n *Type*: _.joinxxx https://chat.whatsapp.com/xxx_`
@@ -10578,7 +10581,7 @@ if (isBanChat) return reply(mess.banChat)
                     	if(!text) return reply(`Where's the text?`)
                     	XeonBotInc.sendMessage(`${owner}@s.whatsapp.net`, {text: `*Pesan dari*: wa.me/${m.sender.split("@")[0]}
 *Masukan*:\n ${text}` })
-reply(`\`\`\`「 Successfully Reported To The Owner 」\`\`\`\n\nPlease Make Sure The Feedback Is Valid, If You Play With This, Use This Feature Again And Again For No Reason, You Will Be Blocked For Sure !`) 
+reply(`「 Successfully Reported To The Owner 」\n\nPlease Make Sure The Feedback Is Valid, If You Play With This, Use This Feature Again And Again For No Reason, You Will Be Blocked For Sure !`) 
 }
  break
 case 'tqtt': 
