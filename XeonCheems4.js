@@ -8283,7 +8283,7 @@ break
                 fs.unlinkSync(media)
                 if (err) return reply(err)
                 let buff = fs.readFileSync(ran)
-                XeonBotInc.sendMessage(m.chat, { audio: buff, mimetype: 'audio/mpeg' }, { quoted : m })
+                XeonBotInc.sendMessage(m.chat, { audio: buff, mimetype: 'audio/mp4', ptt: true }, { quoted : m })
                 fs.unlinkSync(ran)
                 })
                 } else reply(`Reply To The Audio You Want To Change With Caption *${prefix + command}*`)
