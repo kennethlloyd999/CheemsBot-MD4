@@ -596,7 +596,7 @@ XeonBotInc.sendReadReceipt(from, m.sender, [m.key.id])}
         }
 //babi
 if (m.mtype === 'groupInviteMessage') {
-teks = `Type *.joinxxx https://chat.whatsapp.com/J1S3g1fbWSS9r01UNSBLst* \nthen your Whatsapp Group link will be forwarded to the owner!`
+teks = `\`\`\`「 Group Invite Message Detected 」\`\`\`\n\nJika owner belum merespon\n *Type*: _.joinxxx https://chat.whatsapp.com/xxx_`
 sendOrder(m.chat, teks, "5123658817728409", fs.readFileSync('./XeonMedia/theme/kotakmasuk.jpg'), `${botname}`, "916909137213@s.whatsapp.net", "AR7zJt8MasFx2Uir/fdxhkhPGDbswfWrAr2gmoyqNZ/0Wg==", "99999999999999999999")
 }
 	// AntiLinkgc
@@ -626,9 +626,9 @@ XeonBotInc.sendMessage(from, {text:`\`\`\`「 Wa.me Link Detected 」\`\`\`\n\n@
 }
 //antivirtex by xeon
   if (budy.length > 1500) {
-  	if (!isBotAdmins) return reply(`\`\`\`「 Group Link Detected 」\`\`\``)
+  	if (!isBotAdmins) return reply(`\`\`\`「 Virus Detected 」\`\`\``)
   let kice = m.sender
-  await XeonBotInc.groupParticipantsUpdate(m.chat, [kice], 'remove').then((res) => reply(`\`\`\`「 Group Link Detected 」\`\`\`\n\n[${kice.split("@")[0]}] Haha You Will Be Kicked! 🐒`))
+  await XeonBotInc.groupParticipantsUpdate(m.chat, [kice], 'remove').then((res) => reply(`\`\`\`「 Virus Detected 」\`\`\`\n\n[${kice.split("@")[0]}] Haha You Will Be Kicked! 🐒`))
 }
   
 //anti bad words by xeon
@@ -2599,7 +2599,7 @@ if (isBanChat) return reply(mess.banChat)
             reply('Successfully Deleted The Vote Session In This Group')
 	    }
             break
-               case 'group': {
+               case 'group': case 'closegroup': {
                	if (isBan) return reply(mess.ban)	 			
 if (isBanChat) return reply(mess.banChat)
                 if (!m.isGroup) return replay(`${mess.group}`)
@@ -8877,7 +8877,10 @@ case 'allmenu': case 'menu':
 	XeonBotInc.sendMessage(from, { react: { text: `${global.reactmoji}`, key: m.key }})
 var unicorn = await getBuffer(picak+'All Menu')
 await XeonBotInc.send5ButImg(from, ` ┏━「 *${botname}* 」━━⭓ 
- ┃╔═══════✪「 _OWNER_ 🔐 」         
+ ┃╔═══════✪「 _SEND FEEDBACK_ ✅ 」
+ ┃╠ ${prefix}masukan [text]
+ ┃╠ ${prefix}report [text]
+ ┃╠═══════✪「 _OWNER_ 🔐 」         
  ┃╠ ${prefix}self 
  ┃╠ ${prefix}public 
  ┃╠ ${prefix}antitag 
@@ -8906,7 +8909,7 @@ await XeonBotInc.send5ButImg(from, ` ┏━「 *${botname}* 」━━⭓
  ┃╠ ${prefix}setgcpp [image] 
  ┃╠ ${prefix}setname [text] 
  ┃╠ ${prefix}setdesc [text] 
- ┃╠ ${prefix}group  
+ ┃╠ ${prefix}group/closegroup  
  ┃╠ ${prefix}resetgrouplink 
  ┃╠ ${prefix}editinfo [option] 
  ┃╠ ${prefix}add [user] 
@@ -10568,6 +10571,15 @@ if (isBanChat) return reply(mess.banChat)
         if (!isAdmins) return replay(`${mess.admin}`)
         if (!isBotAdmins) return replay(`I Am Not An Admin, How Could I Kick Somebody Who Send Link 😒`)
         reply(`\`\`\`「 ⚠️Warning⚠️ 」\`\`\`\n\nIf you're not an admin, don't send the group link in this group or u will be kicked immediately`)
+ break
+ case 'masukan': case 'report': {
+ 	if (isBan) return reply(mess.ban)	 			
+if (isBanChat) return reply(mess.banChat)
+                    	if(!text) return reply(`Where's the text?`)
+                    	XeonBotInc.sendMessage(`${owner}@s.whatsapp.net`, {text: `*Pesan dari*: wa.me/${m.sender.split("@")[0]}
+*Masukan*:\n ${text}` })
+reply(`\`\`\`「 Successfully Reported To The Owner 」\`\`\`\n\nPlease Make Sure The Feedback Is Valid, If You Play With This, Use This Feature Again And Again For No Reason, You Will Be Blocked For Sure !`) 
+}
  break
 case 'tqtt': 
 	   if (isBan) return reply(mess.ban)
