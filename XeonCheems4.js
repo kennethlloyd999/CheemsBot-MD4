@@ -8558,8 +8558,9 @@ ${cpus.map((cpu, i) => `${i + 1}. ${cpu.model.trim()} (${cpu.speed} MHZ)\n${Obje
             }
             break
             case 'owner': case 'creator': {
-                XeonBotInc.sendContact(m.chat, global.vcardowner, m)
+                XeonBotInc.sendContact(m.chat, global.vcardowner, global.vcardowner2, m)
             }
+            
             break
   case 'setmenu': {
             	if (isBan) return reply(mess.ban)
