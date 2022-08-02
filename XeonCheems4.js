@@ -2302,7 +2302,7 @@ if (isBanChat) return reply(mess.banChat)
 		await XeonBotInc.groupParticipantsUpdate(m.chat, [users], 'remove').then((res) => reply(`⠀\n[ "wa.me/${users.split("@")[0]}" ]\n⠀`))
 	}
 	break
-	case 'add': {
+	case 'addxxx': {
 		if (isBan) return reply(mess.ban)	 			
 if (isBanChat) return reply(mess.banChat)
 		if (!m.isGroup) return replay(`${mess.group}`)
@@ -8916,7 +8916,7 @@ await XeonBotInc.send5ButImg(from, ` ┏━「 *${botname}* 」━━⭓
  ┃╠ ${prefix}group/closegroup  
  ┃╠ ${prefix}resetgrouplink 
  ┃╠ ${prefix}editinfo [option] 
- ┃╠ ${prefix}add [user] 
+ ┃╠ ~${prefix}add [user]~ ❌
  ┃╠ ${prefix}kick [reply/tag] 
  ┃╠ ${prefix}hidetag [text] 
  ┃╠ ${prefix}tagall [text] 
@@ -9647,10 +9647,10 @@ break
  ┃╠ ${prefix}setgcpp [image] 
  ┃╠ ${prefix}setname [text] 
  ┃╠ ${prefix}setdesc [text] 
- ┃╠ ${prefix}group  
+ ┃╠ ${prefix}group/closegroup
  ┃╠ ${prefix}resetgrouplink 
  ┃╠ ${prefix}editinfo [option] 
- ┃╠ ${prefix}add [user] 
+ ┃╠ ~${prefix}add [user]~ ❌
  ┃╠ ${prefix}kick [reply/tag] 
  ┃╠ ${prefix}hidetag [text] 
  ┃╠ ${prefix}tagall [text] 
