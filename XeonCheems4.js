@@ -8073,7 +8073,7 @@ case 'ytad': {
 if (isBanChat) return reply(mess.banChat)
 XeonBotInc.sendMessage(from, {document:{url:args[0]}, mimetype:'audio/mpeg', fileName: `Converted by ${XeonBotInc.user.name} (${m.id})`, ptt:true, contextInfo:{externalAdReply:{
 title:`${global.botname}`,
-body:`${global.botname}`,
+body:`MP3 128K`,
 thumbnail: log0,
 mediaType:2,
 mediaUrl: `${global.websitex}`,
