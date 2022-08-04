@@ -3500,16 +3500,34 @@ reply(`Send Image/Video With Caption ${prefix + command}\nVideo Duration 1-9 Sec
 }
 break
 case 'smeme': case 'stickermeme': case 'stickmeme': {
-	   if (isBan) return reply(mess.ban)	 			
+	if (isBan) return reply(mess.ban)	 			
 if (isBanChat) return reply(mess.banChat)
 let { TelegraPh } = require('./lib/uploader')
-if (!text) return reply(`Send/Reply Photo With Caption ${prefix + command} *text*`)
+if (!text) return reply(`Send/Reply Photo With Caption ${prefix + command} *text*\n\nSimilar Features: 「 smeme2 」 New🔥\n*smeme2 [reply text | text]*`)
 if (text.includes('|')) return reply(`Send/Reply Photo With Caption ${prefix + command} *text*`)
 if (!/image/.test(mime)) return reply(`Send/Reply Photo With Caption ${prefix + command} *text*`)
 reply(mess.wait)
 mee = await XeonBotInc.downloadAndSaveMediaMessage(quoted)
 mem = await TelegraPh(mee)
 meme = `https://api.memegen.link/images/custom/-/${text}.png?background=${mem}`
+memek = await XeonBotInc.sendImageAsSticker(m.chat, meme, m, { packname: global.packname, author: global.author })
+await fs.unlinkSync(memek)
+}
+break
+case 'smeme2': case 'stickermeme2': case 'stickmeme2': {
+	   if (isBan) return reply(mess.ban)	 			
+if (isBanChat) return reply(mess.banChat)
+let { TelegraPh } = require('./lib/uploader')
+if (!text) return reply(`Send/Reply Photo With Caption ${prefix + command} *text* | *text*`)
+if (!/image/.test(mime)) return reply(`Send/Reply Photo With Caption \n${prefix + command} *text* | *text*`)
+reply(mess.wait)
+inilogo4 = args.join(" ")
+inilogo9 = args.join(" ")
+   var logo4 = inilogo4.split('|')[0]
+var logo9 = inilogo9.split('|')[1]
+mee = await XeonBotInc.downloadAndSaveMediaMessage(quoted)
+mem = await TelegraPh(mee)
+meme = `https://api.memegen.link/images/custom/${logo4}/${logo9}.png?background=${mem}`
 memek = await XeonBotInc.sendImageAsSticker(m.chat, meme, m, { packname: global.packname, author: global.author })
 await fs.unlinkSync(memek)
 }
@@ -8732,8 +8750,8 @@ let template = await generateWAMessageFromContent(m.chat, proto.Message.fromObje
 								"title": "War Features 🛐",
 								"rows": [
 									{
-										"title": "Adzan Menu 🎧",
-										"description": "Displays The List Of *Surga Features*",
+										"title": "Adzan Remix 🎧",
+										"description": "Displays The List Of *War Features*",
 										"rowId": `${prefix}adzanmenu`
 									}
 								]
@@ -8881,10 +8899,7 @@ case 'allmenu': case 'menu':
 	XeonBotInc.sendMessage(from, { react: { text: `${global.reactmoji}`, key: m.key }})
 var unicorn = await getBuffer(picak+'All Menu')
 await XeonBotInc.send5ButImg(from, ` ┏━「 *${botname}* 」━━⭓ 
- ┃╔═══════✪「 _SEND FEEDBACK_ ✅ 」
- ┃╠ ${prefix}masukan [text]
- ┃╠ ${prefix}report [text]
- ┃╠═══════✪「 _OWNER_ 🔐 」         
+ ┃╔═══════✪「 _OWNER_ 🔐 」         
  ┃╠ ${prefix}self 
  ┃╠ ${prefix}public 
  ┃╠ ${prefix}antitag 
@@ -9097,6 +9112,7 @@ await XeonBotInc.send5ButImg(from, ` ┏━「 *${botname}* 」━━⭓
  ┃╠ ${prefix}sticker [reply img|gif] 
  ┃╠ ${prefix}take [reply img|gif|stik] 
  ┃╠ ${prefix}smeme [reply img] 
+ ┃╠ ${prefix}smeme2 [reply text | text] _New_🔥
  ┃╠ ${prefix}emoji [emoji] 
  ┃╠ ${prefix}tovideo [reply img] 
  ┃╠ ${prefix}togif [reply stick] 
@@ -9340,9 +9356,6 @@ await XeonBotInc.send5ButImg(from, ` ┏━「 *${botname}* 」━━⭓
  ┃╠ ${prefix}fuckgirl 
  ┃╠ ${prefix}playgirl 
  ┃╠══════✪「 _SOUND_ 🎶 」 
- ┃╠ ${prefix}ezan remix 1
- ┃╠ ${prefix}ezan remix 2
- ┃╠ ${prefix}ezan remix 3
  ┃╠ ${prefix}sound1 
  ┃╠ ${prefix}sound2 
  ┃╠ ${prefix}sound3 
@@ -9883,6 +9896,7 @@ break
  ┃╠ ${prefix}sticker [reply img|gif] 
  ┃╠ ${prefix}take [reply img|gif|stik] 
  ┃╠ ${prefix}smeme [reply img] 
+ ┃╠ ${prefix}smeme2 [reply text | text] New 🔥
  ┃╠ ${prefix}emoji [emoji] 
  ┃╠ ${prefix}tovideo [reply img] 
  ┃╠ ${prefix}togif [reply stick] 
@@ -10576,7 +10590,7 @@ if (isBanChat) return reply(mess.banChat)
         if (!isBotAdmins) return replay(`I Am Not An Admin, How Could I Kick Somebody Who Send Link 😒`)
         reply(`\`\`\`「 ⚠️Warning⚠️ 」\`\`\`\n\nIf you're not an admin, don't send the group link in this group or u will be kicked immediately`)
  break
- case 'masukan': case 'report': {
+ case 'masukanxxx': case 'reportxxx': {
  	if (isBan) return reply(mess.ban)	 			
 if (isBanChat) return reply(mess.banChat)
                     	if(!text) return reply(`Where's the text?`)
