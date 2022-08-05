@@ -1955,90 +1955,90 @@ if (isBanChat) return reply(mess.banChat)
 					const sange = sangeh[Math.floor(Math.random() * sangeh.length)]
 XeonBotInc.sendMessage(from, { text: `*${command}*\n\nName : ${q}\nAnswer : *${sange}%*` }, { quoted: m })
 					break
-                    case 'stupid':
-      case 'foolish':
-      case 'smart':
-      case 'idiot':
-      case 'gay':
-      case 'lesbi':
-      case 'bastard':
-      case 'stubble':
-      case 'dog':
-      case 'fuck':
-      case 'ape':
-      case 'noob':
-      case 'great':
-      case 'horny':
-      case 'wibu':
-      case 'asshole':
-      case 'handsome':
-      case 'beautiful':
-      case 'cute':
-      case 'kind':
-      case 'ugly':
-      case 'pretty':
-      case 'lesbian':
-      case 'randi':
-      case 'gandu':
-      case 'madarchod':
-      case 'kala':
-      case 'gora':
-      case 'chutiya':
-      case 'nibba':
-      case 'nibbi':
-      case 'bhosdiwala':
-      case 'chutmarika':
-      case 'bokachoda':
-      case 'suarerbaccha':
-      case 'bolochoda':
-      case 'muthal':
-      case 'muthbaaz':
-      case 'randibaaz':
-      case 'topibaaz':
-      case 'cunt':
-      case 'nerd':
-      case 'behenchod':
-      case 'behnchoda':
-      case 'bhosdika':
-      case 'nerd':
-      case 'mc':
-      case 'bsdk':
-      case 'bhosdk':
-      case 'nigger':
-      case 'loda':
-      case 'laund':
-      case 'nigga':
-      case 'noobra':
-      case 'tharki':
-      case 'nibba':
-      case 'nibbi':
-      case 'mumu':
-      case 'rascal':
-      case 'scumbag':
-      case 'nuts':
-      case 'comrade':
-      case 'fagot':
-      case 'scoundrel':
-      case 'ditch':
-      case 'dope':
-      case 'gucci':
-      case 'lit':
-      case 'dumbass':
-      case 'sexy':
-      case 'crackhead':
-      case 'mf':
-      case 'motherfucker':
-      case 'dogla':
-      case 'bewda':
-      case 'boka':
-      case 'khanki':
-      case 'bal':
-      case 'sucker':
-      case 'fuckboy':
-      case 'playboy':
-      case 'fuckgirl':
-      case 'playgirl':
-      case 'hot': {
+                    case 'stupidxxx':
+      case 'foolishxxx':
+      case 'smartxxz':
+      case 'idiotxxx':
+      case 'gayxxx':
+      case 'lesbixxx':
+      case 'bastardxxx':
+      case 'stubblexxx':
+      case 'dogxxx':
+      case 'fuckxxx':
+      case 'apexxx':
+      case 'noobxxx':
+      case 'greatxxx':
+      case 'hornyxxx':
+      case 'wibuxxx':
+      case 'assholexxx':
+      case 'handsomexxx':
+      case 'beautifulxzz':
+      case 'cutexxx':
+      case 'kindxxx':
+      case 'uglyxxx':
+      case 'prettyxxx':
+      case 'lesbianxxx':
+      case 'randixxx':
+      case 'ganduxxx':
+      case 'madarchodxxx':
+      case 'kalaxxx':
+      case 'goraxxx':
+      case 'chutiyaxxx':
+      case 'nibbaxxx':
+      case 'nibbixxx':
+      case 'bhosdiwalaxxx':
+      case 'chutmarikaxxx':
+      case 'bokachodaxxx':
+      case 'suarerbacchaxxx':
+      case 'bolochodaxxx':
+      case 'muthalxxx':
+      case 'muthbaazxxx':
+      case 'randibaazxxx':
+      case 'topibaazxxx':
+      case 'cuntxxx':
+      case 'nerdxxx':
+      case 'behenchodxxx':
+      case 'behnchodaxxx':
+      case 'bhosdikaxxx':
+      case 'nerdxxx':
+      case 'mcxxx':
+      case 'bsdkxxx':
+      case 'bhosdkxxx':
+      case 'niggerxxx':
+      case 'lodaxxx':
+      case 'laundxxx':
+      case 'niggaxxx':
+      case 'noobraxxx':
+      case 'tharkixxx':
+      case 'nibbaxxx':
+      case 'nibbixxx':
+      case 'mumuxxx':
+      case 'rascalxxx':
+      case 'scumbagxxx':
+      case 'nutsxxx':
+      case 'comradexxx':
+      case 'fagotxxx':
+      case 'scoundrelxxx':
+      case 'ditchxxx':
+      case 'dopexxx':
+      case 'guccixxx':
+      case 'litxxx':
+      case 'dumbassxxx':
+      case 'sexyxxx':
+      case 'crackheadxxx':
+      case 'mfxxx':
+      case 'motherfuckerxxx':
+      case 'doglaxxx':
+      case 'bewdaxxx':
+      case 'bokaxxx':
+      case 'khankixxx':
+      case 'balxxx':
+      case 'suckerxxx':
+      case 'fuckboyxxx':
+      case 'playboyxxx':
+      case 'fuckgirlxxx':
+      case 'playgirlxxx':
+      case 'hotxxx': {
       	            	if (isBan) return reply(mess.ban)
 	if (isBanChat) return reply(mess.banChat)
             if (!m.isGroup) return replay(`${mess.group}`)
@@ -2302,7 +2302,7 @@ if (isBanChat) return reply(mess.banChat)
 		await XeonBotInc.groupParticipantsUpdate(m.chat, [users], 'remove').then((res) => reply(jsonformat(res))).catch((err) => reply(jsonformat(err)))
 	}
 	break
-	case 'add': {
+	case 'addxxx': {
 	if (isBan) return reply(mess.ban)	 			
 if (isBanChat) return reply(mess.banChat)
 if (!m.isGroup) return replay(`${mess.group}`)
@@ -9075,7 +9075,7 @@ await XeonBotInc.send5ButImg(from, ` ┏━「 *${botname}* 」━━⭓
  ┃╠ ${prefix}instagram [url] 
  ┃╠ ${prefix}igtv [url] 
  ┃╠ ${prefix}igstory [username] 
- ┃╠ ${prefix}facebook [url] 
+ ┃╠ ${prefix}~facebook [url]~ ❌
  ┃╠ ${prefix}fbmp3 [url] 
  ┃╠ ${prefix}twitter [url] 
  ┃╠ ${prefix}twittermp3 [url] 
@@ -9319,214 +9319,8 @@ await XeonBotInc.send5ButImg(from, ` ┏━「 *${botname}* 」━━⭓
  ┃╠ ${prefix}hornycheck [tag] 
  ┃╠ ${prefix}charactercheck [tag] 
  ┃╠ ${prefix}lovelycheck [tag] 
- ┃╠ ${prefix}couple 
- ┃╠ ${prefix}mysoulmate 
- ┃╠ ${prefix}hot 
- ┃╠ ${prefix}sexy 
- ┃╠ ${prefix}kind 
- ┃╠ ${prefix}idiot 
- ┃╠ ${prefix}handsome 
- ┃╠ ${prefix}beautiful 
- ┃╠ ${prefix}cute 
- ┃╠ ${prefix}pretty 
- ┃╠ ${prefix}lesbian 
- ┃╠ ${prefix}noob 
- ┃╠ ${prefix}bastard 
- ┃╠ ${prefix}foolish 
- ┃╠ ${prefix}nerd 
- ┃╠ ${prefix}asshole 
- ┃╠ ${prefix}gay 
- ┃╠ ${prefix}smart 
- ┃╠ ${prefix}stubble 
- ┃╠ ${prefix}dog 
- ┃╠ ${prefix}horny 
- ┃╠ ${prefix}cunt 
- ┃╠ ${prefix}wibu 
- ┃╠ ${prefix}noobra 
- ┃╠ ${prefix}nibba 
- ┃╠ ${prefix}nibbi 
- ┃╠ ${prefix}comrade 
- ┃╠ ${prefix}mumu 
- ┃╠ ${prefix}rascal 
- ┃╠ ${prefix}scumbag 
- ┃╠ ${prefix}nuts 
- ┃╠ ${prefix}fagot 
- ┃╠ ${prefix}scoundrel 
- ┃╠ ${prefix}ditch 
- ┃╠ ${prefix}dope 
- ┃╠ ${prefix}gucci 
- ┃╠ ${prefix}lit 
- ┃╠ ${prefix}dumbass 
- ┃╠ ${prefix}crackhead 
- ┃╠ ${prefix}mf 
- ┃╠ ${prefix}motherfucker 
- ┃╠ ${prefix}sucker 
- ┃╠ ${prefix}fuckboy 
- ┃╠ ${prefix}playboy 
- ┃╠ ${prefix}fuckgirl 
- ┃╠ ${prefix}playgirl 
  ┃╠══════✪「 _SOUND_ 🎶 」 
- ┃╠ ${prefix}sound1 
- ┃╠ ${prefix}sound2 
- ┃╠ ${prefix}sound3 
- ┃╠ ${prefix}sound4 
- ┃╠ ${prefix}sound5 
- ┃╠ ${prefix}sound6 
- ┃╠ ${prefix}sound7 
- ┃╠ ${prefix}sound8 
- ┃╠ ${prefix}sound9 
- ┃╠ ${prefix}sound10 
- ┃╠ ${prefix}sound11 
- ┃╠ ${prefix}sound12 
- ┃╠ ${prefix}sound13 
- ┃╠ ${prefix}sound14 
- ┃╠ ${prefix}sound15 
- ┃╠ ${prefix}sound16 
- ┃╠ ${prefix}sound17 
- ┃╠ ${prefix}sound18 
- ┃╠ ${prefix}sound19 
- ┃╠ ${prefix}sound20 
- ┃╠ ${prefix}sound21 
- ┃╠ ${prefix}sound22 
- ┃╠ ${prefix}sound23 
- ┃╠ ${prefix}sound24 
- ┃╠ ${prefix}sound25 
- ┃╠ ${prefix}sound26 
- ┃╠ ${prefix}sound27 
- ┃╠ ${prefix}sound28 
- ┃╠ ${prefix}sound29 
- ┃╠ ${prefix}sound30 
- ┃╠ ${prefix}sound31 
- ┃╠ ${prefix}sound32 
- ┃╠ ${prefix}sound33 
- ┃╠ ${prefix}sound34 
- ┃╠ ${prefix}sound35 
- ┃╠ ${prefix}sound36 
- ┃╠ ${prefix}sound37 
- ┃╠ ${prefix}sound38 
- ┃╠ ${prefix}sound39 
- ┃╠ ${prefix}sound40 
- ┃╠ ${prefix}sound41 
- ┃╠ ${prefix}sound42 
- ┃╠ ${prefix}sound43 
- ┃╠ ${prefix}sound44 
- ┃╠ ${prefix}sound45 
- ┃╠ ${prefix}sound46 
- ┃╠ ${prefix}sound47 
- ┃╠ ${prefix}sound48 
- ┃╠ ${prefix}sound49 
- ┃╠ ${prefix}sound50 
- ┃╠ ${prefix}sound51 
- ┃╠ ${prefix}sound52 
- ┃╠ ${prefix}sound53 
- ┃╠ ${prefix}sound54 
- ┃╠ ${prefix}sound55 
- ┃╠ ${prefix}sound56 
- ┃╠ ${prefix}sound57 
- ┃╠ ${prefix}sound58 
- ┃╠ ${prefix}sound59 
- ┃╠ ${prefix}sound60 
- ┃╠ ${prefix}sound61 
- ┃╠ ${prefix}sound62 
- ┃╠ ${prefix}sound63 
- ┃╠ ${prefix}sound64 
- ┃╠ ${prefix}sound65 
- ┃╠ ${prefix}sound66 
- ┃╠ ${prefix}sound67 
- ┃╠ ${prefix}sound68 
- ┃╠ ${prefix}sound69 
- ┃╠ ${prefix}sound70 
- ┃╠ ${prefix}sound71 
- ┃╠ ${prefix}sound72 
- ┃╠ ${prefix}sound73 
- ┃╠ ${prefix}sound74 
- ┃╠ ${prefix}sound75 
- ┃╠ ${prefix}sound76 
- ┃╠ ${prefix}sound77 
- ┃╠ ${prefix}sound78 
- ┃╠ ${prefix}sound79 
- ┃╠ ${prefix}sound80 
- ┃╠ ${prefix}sound81 
- ┃╠ ${prefix}sound82 
- ┃╠ ${prefix}sound83 
- ┃╠ ${prefix}sound84 
- ┃╠ ${prefix}sound85 
- ┃╠ ${prefix}sound86 
- ┃╠ ${prefix}sound87 
- ┃╠ ${prefix}sound88 
- ┃╠ ${prefix}sound89 
- ┃╠ ${prefix}sound90 
- ┃╠ ${prefix}sound91 
- ┃╠ ${prefix}sound92 
- ┃╠ ${prefix}sound93 
- ┃╠ ${prefix}sound94 
- ┃╠ ${prefix}sound95 
- ┃╠ ${prefix}sound96 
- ┃╠ ${prefix}sound97 
- ┃╠ ${prefix}sound98 
- ┃╠ ${prefix}sound99 
- ┃╠ ${prefix}sound100 
- ┃╠ ${prefix}sound101 
- ┃╠ ${prefix}sound102 
- ┃╠ ${prefix}sound103 
- ┃╠ ${prefix}sound104 
- ┃╠ ${prefix}sound105 
- ┃╠ ${prefix}sound106 
- ┃╠ ${prefix}sound107 
- ┃╠ ${prefix}sound108 
- ┃╠ ${prefix}sound109 
- ┃╠ ${prefix}sound110 
- ┃╠ ${prefix}sound111 
- ┃╠ ${prefix}sound112 
- ┃╠ ${prefix}sound113 
- ┃╠ ${prefix}sound114 
- ┃╠ ${prefix}sound115 
- ┃╠ ${prefix}sound116 
- ┃╠ ${prefix}sound117 
- ┃╠ ${prefix}sound118 
- ┃╠ ${prefix}sound119 
- ┃╠ ${prefix}sound120 
- ┃╠ ${prefix}sound121 
- ┃╠ ${prefix}sound122 
- ┃╠ ${prefix}sound123 
- ┃╠ ${prefix}sound124 
- ┃╠ ${prefix}sound125 
- ┃╠ ${prefix}sound126 
- ┃╠ ${prefix}sound127 
- ┃╠ ${prefix}sound128 
- ┃╠ ${prefix}sound129 
- ┃╠ ${prefix}sound130 
- ┃╠ ${prefix}sound131 
- ┃╠ ${prefix}sound132 
- ┃╠ ${prefix}sound133 
- ┃╠ ${prefix}sound134 
- ┃╠ ${prefix}sound135 
- ┃╠ ${prefix}sound136 
- ┃╠ ${prefix}sound137 
- ┃╠ ${prefix}sound138 
- ┃╠ ${prefix}sound139 
- ┃╠ ${prefix}sound140 
- ┃╠ ${prefix}sound141 
- ┃╠ ${prefix}sound142 
- ┃╠ ${prefix}sound143 
- ┃╠ ${prefix}sound144 
- ┃╠ ${prefix}sound145 
- ┃╠ ${prefix}sound146 
- ┃╠ ${prefix}sound147 
- ┃╠ ${prefix}sound148 
- ┃╠ ${prefix}sound149 
- ┃╠ ${prefix}sound150 
- ┃╠ ${prefix}sound151 
- ┃╠ ${prefix}sound152 
- ┃╠ ${prefix}sound153 
- ┃╠ ${prefix}sound154 
- ┃╠ ${prefix}sound155 
- ┃╠ ${prefix}sound156 
- ┃╠ ${prefix}sound157 
- ┃╠ ${prefix}sound158 
- ┃╠ ${prefix}sound159 
- ┃╠ ${prefix}sound160 
- ┃╠ ${prefix}sound161 
+ ┃╠ ${prefix}sound1 - sound161 
  ┃╠══════✪「 _GAME_ 🕹 」 
  ┃╠ ${prefix}truth 
  ┃╠ ${prefix}dare 
@@ -9535,11 +9329,6 @@ await XeonBotInc.send5ButImg(from, ` ┏━「 *${botname}* 」━━⭓
  ┃╠ ${prefix}guess [option] 
  ┃╠ ${prefix}math [mode] 
  ┃╠ ${prefix}suitpvp [tag] 
- ┃╠══✪「 _ANONYMOUS CHAT_ 💑 」 
- ┃╠ ${prefix}anonymous 
- ┃╠ ${prefix}start 
- ┃╠ ${prefix}next 
- ┃╠ ${prefix}leave 
  ┃╠══════✪「 _TOOL_ 📝 」 
  ┃╠ ${prefix}translate [text] 
  ┃╠ ${prefix}fliptext [text] 
