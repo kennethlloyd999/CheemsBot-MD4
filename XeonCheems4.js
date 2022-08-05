@@ -2302,6 +2302,16 @@ if (isBanChat) return reply(mess.banChat)
 		await XeonBotInc.groupParticipantsUpdate(m.chat, [users], 'remove').then((res) => reply(jsonformat(res))).catch((err) => reply(jsonformat(err)))
 	}
 	break
+	case 'add': {
+	if (isBan) return reply(mess.ban)	 			
+if (isBanChat) return reply(mess.banChat)
+if (!m.isGroup) return replay(`${mess.group}`)
+        if (!isAdmins) return replay(`${mess.admin}`)
+        if (!isBotAdmins) return replay(`${mess.botAdmin}`)
+	let result = fs.readFileSync(`./XeonMedia/sticker2/Botinpo.webp`)
+					XeonBotInc.sendMessage(m.chat, { sticker: result }, { quoted: m })
+					}
+	break
 	case 'addxxx': {
 		if (isBan) return reply(mess.ban)	 			
 if (isBanChat) return reply(mess.banChat)
