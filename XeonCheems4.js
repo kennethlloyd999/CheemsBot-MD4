@@ -2299,7 +2299,7 @@ if (isBanChat) return reply(mess.banChat)
         if (!isAdmins) return replay(`${mess.admin}`)
         if (!isBotAdmins) return replay(`${mess.botAdmin}`)
 		let users = m.mentionedJid[0] ? m.mentionedJid[0] : m.quoted ? m.quoted.sender : text.replace(/[^0-9]/g, '')+'@s.whatsapp.net'
-		await XeonBotInc.groupParticipantsUpdate(m.chat, [users], 'remove').then((res) => reply(jsonformat(res))).catch((err) => reply(jsonformat(err)))
+		await XeonBotInc.groupParticipantsUpdate(m.chat, [users], 'remove').then((res) => reply(`Done ✓`)
 	}
 	break
 	case 'addxxx': {
@@ -6890,7 +6890,7 @@ let srh = await manga.searchManga(q)
     mang += `📈 *Status: ${srh.data[0].status}*\n`;
     mang += `🌸 *Total Volumes: ${srh.data[0].volumes}*\n`;
     mang += `🎗 *Total Chapters: ${srh.data[0].chapters}*\n`;
-    mang += `🧧 *Genres:*\n`;
+    mang += `?? *Genres:*\n`;
     for (let i = 0; i < srh.data[0].genres.length; i++) {
       mang += `\t\t\t\t\t\t\t\t*${srh.data[0].genres[i].name}*\n`;
     }
