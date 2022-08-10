@@ -2299,7 +2299,7 @@ if (isBanChat) return reply(mess.banChat)
         if (!isAdmins) return replay(`${mess.admin}`)
         if (!isBotAdmins) return replay(`${mess.botAdmin}`)
 		let users = m.mentionedJid[0] ? m.mentionedJid[0] : m.quoted ? m.quoted.sender : text.replace(/[^0-9]/g, '')+'@s.whatsapp.net'
-		await XeonBotInc.groupParticipantsUpdate(m.chat, [users], 'remove').then((res) => reply(`Done ✓`)
+		await XeonBotInc.groupParticipantsUpdate(m.chat, [users], 'remove').then((res) => reply(`Done ✓`))
 	}
 	break
 	case 'addxxx': {
