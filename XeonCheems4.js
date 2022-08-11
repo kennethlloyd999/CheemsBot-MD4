@@ -10377,17 +10377,14 @@ if (isBanChat) return reply(mess.banChat)
         reply(`Already activated`)
  break
  case 'antilink': case 'antilink': {
- if (isBan) return reply(mess.ban)
-	if (isBanChat) return reply(mess.banChat)
-reply(`*Pembaruan Fitur antilinkgc* \n• _Sekarang telah dibuat aktif 24 jam!_ \n\n*Hub owner*: 「 _wa.me/6287785750311_ 」`)
-}
-
 if (isBan) return reply(mess.ban)	 			
 if (isBanChat) return reply(mess.banChat)
 		if (!m.isGroup) return replay(`${mess.group}`)
         if (!isAdmins) return replay(`${mess.admin}`)
         if (!isBotAdmins) return replay(`I Am Not An Admin, How Could I Kick Somebody Who Send Link 😒`)
         reply(`\`\`\`「 ⚠️Warning⚠️ 」\`\`\`\n\nIf you're not an admin, don't send the group link in this group or u will be kicked immediately`)
+        reply(`• Fitur *ON/OFF* Khusus _Antilink_ Dan _Antivirus_ Telah Dihapus \n\nJan Khawatir, \nFitur Ini Sudah *Aktif Otomatis 24 Jam*`)
+}
  break
  case 'masukanxxx': case 'reportxxx': {
  	if (isBan) return reply(mess.ban)	 			
