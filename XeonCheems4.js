@@ -628,12 +628,49 @@ await XeonBotInc.groupParticipantsUpdate(m.chat, [kice], 'remove')
 XeonBotInc.sendMessage(from, {text:`\`\`\`「 Wa.me Link Detected 」\`\`\`\n\n@${kice.split("@")[0]} Has been kicked because of sending youtube video link in this group`, contextInfo:{mentionedJid:[kice]}}, {quoted:m})
 } else {
 }
+//antivirtex philip
+if (budy.includes("⃢")) {
+if (!isBotAdmins) return reply(`\`\`\`「 Virus Detected 」\`\`\``)
+bvl = `\`\`\`「 Virus Detected 」\`\`\``
+if (isAdmins) return reply(bvl)
+if (m.key.fromMe) return reply(bvl)
+if (isCreator) return reply(bvl)
+kice = m.sender
+await XeonBotInc.groupParticipantsUpdate(m.chat, [kice], 'remove')
+XeonBotInc.sendMessage(from, {text:`\`\`\`「 Virus Detected 」\`\`\``, contextInfo:{mentionedJid:[kice]}}, {quoted:m})
+} else {
+}
+
+if (budy.includes("📄")) {
+if (!isBotAdmins) return reply(`\`\`\`「 Virus Detected 」\`\`\``)
+bvl = `\`\`\`「 Virus Detected 」\`\`\``
+if (isAdmins) return reply(bvl)
+if (m.key.fromMe) return reply(bvl)
+if (isCreator) return reply(bvl)
+kice = m.sender
+await XeonBotInc.groupParticipantsUpdate(m.chat, [kice], 'remove')
+XeonBotInc.sendMessage(from, {text:`\`\`\`「 Virus Detected 」\`\`\``, contextInfo:{mentionedJid:[kice]}}, {quoted:m})
+} else {
+}
+
+if (budy.includes("⛩️")) {
+if (!isBotAdmins) return reply(`\`\`\`「 Virus Detected 」\`\`\``)
+bvl = `\`\`\`「 Virus Detected 」\`\`\``
+if (isAdmins) return reply(bvl)
+if (m.key.fromMe) return reply(bvl)
+if (isCreator) return reply(bvl)
+kice = m.sender
+await XeonBotInc.groupParticipantsUpdate(m.chat, [kice], 'remove')
+XeonBotInc.sendMessage(from, {text:`\`\`\`「 Virus Detected 」\`\`\``, contextInfo:{mentionedJid:[kice]}}, {quoted:m})
+} else {
+}
 //antivirtex by xeon
   if (budy.length > 1500) {
   	if (!isBotAdmins) return reply(`\`\`\`「 Virus Detected 」\`\`\``)
   let kice = m.sender
-  await XeonBotInc.groupParticipantsUpdate(m.chat, [kice], 'remove').then((res) => reply(`\`\`\`「 Virus Detected 」\`\`\`\n\n Haha You Will Be Kicked! 🐒`))
-}
+  await XeonBotInc.groupParticipantsUpdate(m.chat, [kice], 'remove')
+  XeonBotInc.sendMessage(from, {text:`\`\`\`「 Virus Detected 」\`\`\`\n\n Haha You Will Be Kicked! 🐒`, contextInfo:{mentionedJid:[kice]}}, {quoted:m})
+} 
   
 //anti bad words by xeon
 if (antiToxic)
@@ -2987,7 +3024,7 @@ let off = nttoxic.indexOf(from)
 nttoxic.splice(off, 1)
 replay('Success in turning off antitoxic in this group')
 } else {
-  let buttonsnttoxci = [
+  let buttonsnttoxic = [
   { buttonId: `${command} on`, buttonText: { displayText: 'On' }, type: 1 },
   { buttonId: `${command} off`, buttonText: { displayText: 'Off' }, type: 1 }
   ]
