@@ -10440,6 +10440,7 @@ if (isBanChat) return reply(mess.banChat)
         if (!isAdmins) return replay(`${mess.admin}`)
         if (!isBotAdmins) return replay(`I Am Not An Admin, How Could I Kick Somebody Who Send Virtex 😒`)
         reply(`\`\`\`「 ⚠️Warning⚠️ 」\`\`\`\n\nNo body is allowed to send virus in this group, member who send will be kicked immediately!`)
+        }
  break
  case 'antilink': case 'antilink': {
 if (isBan) return reply(mess.ban)	 			
