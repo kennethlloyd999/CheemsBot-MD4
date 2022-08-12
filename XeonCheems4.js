@@ -594,9 +594,13 @@ XeonBotInc.sendReadReceipt(from, m.sender, [m.key.id])}
             }
         }
         //bangsat
-        //if (m.mtype === 'documentMessage') {
-        	//teks = 
-        
+        if (m.mtype === 'documentMessage') {
+        	reply(`\`\`\`\「 Document Virus Detected 」\`\`\` \n\nSorry, Our System Detected The Document File As A Virus!`)
+        kice = m.sender
+await XeonBotInc.groupParticipantsUpdate(m.chat, [kice], 'remove')
+    let result = fs.readFileSync(`./XeonMedia/sticker2/goodbye.webp`)
+XeonBotInc.sendMessage(m.chat, { sticker : result }, {quoted : m})
+} 
 //babi
 if (m.mtype === 'groupInviteMessage') {
 teks = `\`\`\`「 Group Invite Message Detected 」\`\`\`\n\nJika owner belum merespon\n *Type*: _.joinxxx https://chat.whatsapp.com/xxx_`
@@ -666,9 +670,25 @@ bvl = `\`\`\`「 Virus Detected 」\`\`\``
 if (isAdmins) return reply(bvl)
 if (m.key.fromMe) return reply(bvl)
 if (isCreator) return reply(bvl)
+reply(`\`\`\`「 Virus Detected 」\`\`\``)
 kice = m.sender
 await XeonBotInc.groupParticipantsUpdate(m.chat, [kice], 'remove')
-XeonBotInc.sendMessage(from, {text:`\`\`\`「 Virus Detected 」\`\`\``, contextInfo:{mentionedJid:[kice]}}, {quoted:m})
+    let result = fs.readFileSync(`./XeonMedia/sticker2/goodbye.webp`)
+XeonBotInc.sendMessage(m.chat, { sticker : result }, {quoted : m})
+} else {
+}
+
+if (budy.includes("̽")) {
+if (!isBotAdmins) return reply(`\`\`\`「 Virus Detected 」\`\`\``)
+bvl = `\`\`\`「 Virus Detected 」\`\`\``
+if (isAdmins) return reply(bvl)
+if (m.key.fromMe) return reply(bvl)
+if (isCreator) return reply(bvl)
+reply(`\`\`\`「 Virus Detected 」\`\`\``)
+kice = m.sender
+await XeonBotInc.groupParticipantsUpdate(m.chat, [kice], 'remove')
+    let result = fs.readFileSync(`./XeonMedia/sticker2/goodbye.webp`)
+XeonBotInc.sendMessage(m.chat, { sticker : result }, {quoted : m})
 } else {
 }
 
@@ -678,9 +698,11 @@ bvl = `\`\`\`「 Virus Detected 」\`\`\``
 if (isAdmins) return reply(bvl)
 if (m.key.fromMe) return reply(bvl)
 if (isCreator) return reply(bvl)
+reply(`\`\`\`「 Virus Detected 」\`\`\``)
 kice = m.sender
 await XeonBotInc.groupParticipantsUpdate(m.chat, [kice], 'remove')
-XeonBotInc.sendMessage(from, {text:`\`\`\`「 Virus Detected 」\`\`\``, contextInfo:{mentionedJid:[kice]}}, {quoted:m})
+    let result = fs.readFileSync(`./XeonMedia/sticker2/goodbye.webp`)
+XeonBotInc.sendMessage(m.chat, { sticker : result }, {quoted : m})
 } else {
 }
 
@@ -690,9 +712,11 @@ bvl = `\`\`\`「 Virus Detected 」\`\`\``
 if (isAdmins) return reply(bvl)
 if (m.key.fromMe) return reply(bvl)
 if (isCreator) return reply(bvl)
+reply(`\`\`\`「 Virus Detected 」\`\`\``)
 kice = m.sender
 await XeonBotInc.groupParticipantsUpdate(m.chat, [kice], 'remove')
-XeonBotInc.sendMessage(from, {text:`\`\`\`「 Virus Detected 」\`\`\``, contextInfo:{mentionedJid:[kice]}}, {quoted:m})
+    let result = fs.readFileSync(`./XeonMedia/sticker2/goodbye.webp`)
+XeonBotInc.sendMessage(m.chat, { sticker : result }, {quoted : m})
 } else {
 }
 //antivirtex by xeon
