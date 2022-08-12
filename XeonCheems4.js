@@ -2681,7 +2681,7 @@ if (isBanChat) return reply(mess.banChat)
             reply('Successfully Deleted The Vote Session In This Group')
 	    }
             break
-               case 'group': case 'closegroup': {
+               case 'closegroup': {
                	if (isBan) return reply(mess.ban)	 			
 if (isBanChat) return reply(mess.banChat)
                 if (!m.isGroup) return replay(`${mess.group}`)
@@ -10433,17 +10433,13 @@ break
 					kusut = fs.readFileSync(`./XeonMedia/audio2/Apa.mp3`)
 					XeonBotInc.sendMessage(m.chat, { audio: kusut, mimetype: 'audio/mp4', ptt: true }, { quoted: m })
  break
- case 'antivirtex': case 'antivirtex': case 'antivirus': {
- if (isBan) return reply(mess.ban)
-	if (isBanChat) return reply(mess.banChat)
-reply(`*Pembaruan Fitur antivirtex* \n• _Sekarang telah dibuat aktif 24 jam!_ \n\n*Hub owner*: 「 _wa.me/6287785750311_ 」`)
-}
+ case 'antivirtex': case 'antivirus': {
 if (isBan) return reply(mess.ban)	 			
 if (isBanChat) return reply(mess.banChat)
 		if (!m.isGroup) return replay(`${mess.group}`)
         if (!isAdmins) return replay(`${mess.admin}`)
         if (!isBotAdmins) return replay(`I Am Not An Admin, How Could I Kick Somebody Who Send Virtex 😒`)
-        reply(`Already activated`)
+        reply(`\`\`\`「 ⚠️Warning⚠️ 」\`\`\`\n\nNo body is allowed to send virus in this group, member who send will be kicked immediately!`)
  break
  case 'antilink': case 'antilink': {
 if (isBan) return reply(mess.ban)	 			
@@ -10452,7 +10448,6 @@ if (isBanChat) return reply(mess.banChat)
         if (!isAdmins) return replay(`${mess.admin}`)
         if (!isBotAdmins) return replay(`I Am Not An Admin, How Could I Kick Somebody Who Send Link 😒`)
         reply(`\`\`\`「 ⚠️Warning⚠️ 」\`\`\`\n\nIf you're not an admin, don't send the group link in this group or u will be kicked immediately`)
-        reply(`• Fitur *ON/OFF* Khusus _Antilink_ Dan _Antivirus_ Telah Dihapus \n\nJan Khawatir, \nFitur Ini Sudah *Aktif Otomatis 24 Jam*`)
 }
  break
  case 'masukanxxx': case 'reportxxx': {
