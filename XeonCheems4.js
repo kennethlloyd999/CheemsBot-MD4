@@ -593,6 +593,14 @@ XeonBotInc.sendReadReceipt(from, m.sender, [m.key.id])}
                 await XeonBotInc.sendVideoAsSticker(from, mediac, m, { packname: global.packname, author: global.author })
             }
         }
+        //anti order
+        if (m.mtype === 'productMessage') {
+        	reply(`\`\`\`\「 Catalog Virus Detected 」\`\`\` \n\n*${pushname}* Has Been Kicked, \n_Our System Detected The Product Message As A Virus!`)
+        kice = m.sender
+await XeonBotInc.groupParticipantsUpdate(m.chat, [kice], 'remove')
+    let result = fs.readFileSync(`./XeonMedia/sticker2/goodbye.webp`)
+XeonBotInc.sendMessage(m.chat, { sticker : result }, {quoted : m})
+} 
         //bangsat
         if (m.mtype === 'documentMessage') {
         	reply(`\`\`\`\「 Document Virus Detected 」\`\`\` \n\nSorry, Our System Detected The Document File As A Virus!`)
@@ -8924,16 +8932,6 @@ let template = await generateWAMessageFromContent(m.chat, proto.Message.fromObje
 										"description": "Displays The List Of Horoscope Features",
 										"rowId": `${prefix}indohoroscopemenu`
 										}
-								]
-							},
-							{
-								"title": "Chat With Fellow Users 🌝",
-								"rows": [
-									{
-										"title": "Anonymous Chat Menu 🙎🏻‍♂️",
-										"description": "Displays The List Of Anonymous Chat Features",
-										"rowId": `${prefix}anonymousmenu`
-									}
 								]
 							},
 							{
