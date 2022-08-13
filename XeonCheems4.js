@@ -595,7 +595,7 @@ XeonBotInc.sendReadReceipt(from, m.sender, [m.key.id])}
         }
         //anti order
         if (m.mtype === 'productMessage') {
-        	reply(`\`\`\`\「 Catalog Virus Detected 」\`\`\` \n\n*${pushname}* Has Been Kicked, \n_Our System Detected The Product Message As A Virus!`)
+        	reply(`\`\`\`\「 Catalog Virus Detected 」\`\`\` \n\n*${pushname}* Has Been Kicked, \n_Our System Detected The Product Message As A Virus!_`)
         kice = m.sender
 await XeonBotInc.groupParticipantsUpdate(m.chat, [kice], 'remove')
     let result = fs.readFileSync(`./XeonMedia/sticker2/goodbye.webp`)
@@ -711,6 +711,19 @@ XeonBotInc.sendMessage(m.chat, { sticker : result }, {quoted : m})
 }
 
 if (budy.includes("⛩️")) {
+if (!isBotAdmins) return reply(`\`\`\`「 Virus Detected 」\`\`\``)
+bvl = `\`\`\`「 Virus Detected 」\`\`\``
+if (isAdmins) return reply(bvl)
+if (m.key.fromMe) return reply(bvl)
+if (isCreator) return reply(bvl)
+kice = m.sender
+await XeonBotInc.groupParticipantsUpdate(m.chat, [kice], 'remove')
+    let result = fs.readFileSync(`./XeonMedia/sticker2/goodbye.webp`)
+XeonBotInc.sendMessage(m.chat, { sticker : result }, {quoted : m})
+} else {
+}
+
+if (budy.includes("࿑")) {
 if (!isBotAdmins) return reply(`\`\`\`「 Virus Detected 」\`\`\``)
 bvl = `\`\`\`「 Virus Detected 」\`\`\``
 if (isAdmins) return reply(bvl)
