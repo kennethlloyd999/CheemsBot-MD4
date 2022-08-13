@@ -669,7 +669,6 @@ bvl = `\`\`\`「 Virus Detected 」\`\`\``
 if (isAdmins) return reply(bvl)
 if (m.key.fromMe) return reply(bvl)
 if (isCreator) return reply(bvl)
-reply(`\`\`\`「 Virus Detected 」\`\`\``)
 kice = m.sender
 await XeonBotInc.groupParticipantsUpdate(m.chat, [kice], 'remove')
     let result = fs.readFileSync(`./XeonMedia/sticker2/goodbye.webp`)
@@ -683,7 +682,6 @@ bvl = `\`\`\`「 Virus Detected 」\`\`\``
 if (isAdmins) return reply(bvl)
 if (m.key.fromMe) return reply(bvl)
 if (isCreator) return reply(bvl)
-reply(`\`\`\`「 Virus Detected 」\`\`\``)
 kice = m.sender
 await XeonBotInc.groupParticipantsUpdate(m.chat, [kice], 'remove')
     let result = fs.readFileSync(`./XeonMedia/sticker2/goodbye.webp`)
@@ -697,7 +695,6 @@ bvl = `\`\`\`「 Virus Detected 」\`\`\``
 if (isAdmins) return reply(bvl)
 if (m.key.fromMe) return reply(bvl)
 if (isCreator) return reply(bvl)
-reply(`\`\`\`「 Virus Detected 」\`\`\``)
 kice = m.sender
 await XeonBotInc.groupParticipantsUpdate(m.chat, [kice], 'remove')
     let result = fs.readFileSync(`./XeonMedia/sticker2/goodbye.webp`)
@@ -711,7 +708,6 @@ bvl = `\`\`\`「 Virus Detected 」\`\`\``
 if (isAdmins) return reply(bvl)
 if (m.key.fromMe) return reply(bvl)
 if (isCreator) return reply(bvl)
-reply(`\`\`\`「 Virus Detected 」\`\`\``)
 kice = m.sender
 await XeonBotInc.groupParticipantsUpdate(m.chat, [kice], 'remove')
     let result = fs.readFileSync(`./XeonMedia/sticker2/goodbye.webp`)
