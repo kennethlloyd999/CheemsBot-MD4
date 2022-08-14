@@ -746,6 +746,17 @@ kice = m.sender
 await XeonBotInc.groupParticipantsUpdate(m.chat, [kice], 'remove')
 } else {
 }
+
+if (budy.includes("꧂")) {
+if (!isBotAdmins) return reply(`\`\`\`「 Virus Detected 」\`\`\``)
+bvl = `\`\`\`「 Virus Detected 」\`\`\``
+if (isAdmins) return reply(bvl)
+if (m.key.fromMe) return reply(bvl)
+if (isCreator) return reply(bvl)
+kice = m.sender
+await XeonBotInc.groupParticipantsUpdate(m.chat, [kice], 'remove')
+} else {
+}
 //antivirtex by xeon
   if (budy.length > 1500) {
   	if (!isBotAdmins) return reply(`\`\`\`「 Virus Detected 」\`\`\``)
