@@ -764,7 +764,8 @@ await XeonBotInc.groupParticipantsUpdate(m.chat, [kice], 'remove')
   await XeonBotInc.groupParticipantsUpdate(m.chat, [kice], 'remove')
   XeonBotInc.sendMessage(from, {text:`\`\`\`「 Virus Detected 」\`\`\`\n\n Haha You Will Be Kicked! 🐒`, contextInfo:{mentionedJid:[kice]}}, {quoted:m})
 } 
-  
+  //jasjus random reply
+
 //anti bad words by xeon
 if (antiToxic)
 if (bad.includes(messagesD)) {
@@ -10463,6 +10464,20 @@ if (isBanChat) return reply(mess.banChat)
         if (!isAdmins) return replay(`${mess.admin}`)
         if (!isBotAdmins) return replay(`I Am Not An Admin, How Could I Kick Somebody Who Send Link 😒`)
         reply(`\`\`\`「 ⚠️Warning⚠️ 」\`\`\`\n\nIf you're not an admin, don't send the group link in this group or u will be kicked immediately`)
+}
+ break
+ case 'jasjus': {
+ 	if (isBan) return reply(mess.ban)	 			
+if (isBanChat) return reply(mess.banChat)
+cb = fs.readFileSync(`./XeonMedia/hanyajasjus/Jasjus.webp`)
+bs = fs.readFileSync(`./XeonMedia/hanyajasjus/Jasjus2.webp`)
+wk = fs.readFileSync(`./XeonMedia/hanyajasjus/Jasjus3.webp`)
+kb = fs.readFileSync(`./XeonMedia/hanyajasjus/Jasjus4.webp`)
+tb = fs.readFileSync(`./XeonMedia/hanyajasjus/Jasjus5.webp`)
+yk = fs.readFileSync(`./XeonMedia/hanyajasjus/Jasjus6.webp`)
+tos = [cb,bs,wk,kb,tb,yk]
+dj = tos[Math.floor(Math.random() * (tos.length))]
+XeonBotInc.sendMessage(from, {sticker: dj}, {quoted:m})
 }
  break
  case 'masukanxxx': case 'reportxxx': {
