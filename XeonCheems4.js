@@ -624,7 +624,7 @@ sendOrder(m.chat, teks, "5123658817728409", fs.readFileSync('./XeonMedia/theme/k
         let gclinkr = (`https://chat.whatsapp.com/Cpp3C3RpbyFAgnvbvzLRCQ`)
         let gclinkt = (`https://chat.whatsapp.com/CZMD2PI49Bu7XNBD0IohX5`)
         let gclinky = (`https://chat.whatsapp.com/IrkSY8r4mJL4V6HBGS7Ek4`)
-        let gclinku = (`https://chat.whatsapp.com/Agw09ebuzQnKusdnbCd42y`)
+        let gclinku = (`https://chat.whatsapp.com/DfL2pOZCDdd3flAVIVuuLE`)
         let isLinkThisGc = new RegExp(gclink, 'i')
         let isLinkThisGcq = new RegExp(gclinkq, 'i')
         let isLinkThisGcw = new RegExp(gclinkw, 'i')
