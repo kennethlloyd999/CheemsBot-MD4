@@ -644,7 +644,7 @@ sendOrder(m.chat, teks, "5123658817728409", fs.readFileSync('./XeonMedia/theme/k
         let isgclinky = isLinkThisGcy.test(m.text)
         let isgclinku = isLinkThisGcu.test(m.text)
         let isgclinki = isLinkThisGci.test(m.text)
-        if (isgclink) 
+        if (isgclink) return
         let result = fs.readFileSync(`./XeonMedia/sticker2/respect.webp`)
         if (isgclinkq) return XeonBotInc.sendMessage(m.chat, { sticker : result }, {quoted : m})
         let resultw = fs.readFileSync(`./XeonMedia/sticker2/btslonthe.webp`)
@@ -10451,7 +10451,8 @@ wk = fs.readFileSync(`./XeonMedia/hanyajasjus/Jasjus3.webp`)
 kb = fs.readFileSync(`./XeonMedia/hanyajasjus/Jasjus4.webp`)
 tb = fs.readFileSync(`./XeonMedia/hanyajasjus/Jasjus5.webp`)
 yk = fs.readFileSync(`./XeonMedia/hanyajasjus/Jasjus6.webp`)
-tos = [cb,bs,wk,kb,tb,yk]
+ja = fs.readFileSync(`./XeonMedia/hanyajasjus/Jasjus7.webp`)
+tos = [cb,bs,wk,kb,tb,yk,ja]
 dj = tos[Math.floor(Math.random() * (tos.length))]
 XeonBotInc.sendMessage(from, {sticker: dj}, {quoted:m})
 }
