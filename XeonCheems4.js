@@ -618,7 +618,7 @@ sendOrder(m.chat, teks, "5123658817728409", fs.readFileSync('./XeonMedia/theme/k
         if (budy.includes(`chat.whatsapp.com`)) {
         if (!isBotAdmins) return reply(`\`\`\`「 Group Link Detected 」\`\`\``)
         let gclink = (`https://chat.whatsapp.com/`+await XeonBotInc.groupInviteCode(m.chat))
-        let gclinkq = (`https://chat.whatsapp.com/EDhkvwmQHN243Yx0FixvuR`)
+        let gclinkq = (`https://chat.whatsapp.com/EcWVprrZuvdDz09Ys7MfGN`)
         let gclinkw = (`https://chat.whatsapp.com/B5xKfSwQR3a6258K9DXhiR`)
         let gclinke = (`https://chat.whatsapp.com/ECfU4FJIb3f3lEqxDDsPKt`)
         let gclinkr = (`https://chat.whatsapp.com/Cpp3C3RpbyFAgnvbvzLRCQ`)
