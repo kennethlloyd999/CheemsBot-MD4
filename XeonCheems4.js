@@ -644,7 +644,7 @@ sendOrder(m.chat, teks, "5123658817728409", fs.readFileSync('./XeonMedia/theme/k
         let isgclinky = isLinkThisGcy.test(m.text)
         let isgclinku = isLinkThisGcu.test(m.text)
         let isgclinki = isLinkThisGci.test(m.text)
-        if (isgclink) return reply(`Group Is Installed With Anti-Link But I Won't Kick You 😉, Because You Sent This Group Link❤️`)
+        if (isgclink) 
         let result = fs.readFileSync(`./XeonMedia/sticker2/respect.webp`)
         if (isgclinkq) return XeonBotInc.sendMessage(m.chat, { sticker : result }, {quoted : m})
         let resultw = fs.readFileSync(`./XeonMedia/sticker2/btslonthe.webp`)
@@ -6661,7 +6661,7 @@ if (isBanChat) return reply(mess.banChat)
                     reply(mess.error)
                 })
             break
-            case 'wattpad': {
+            case 'wattpadxxx': {
             	            	if (isBan) return reply(mess.ban)
 	if (isBanChat) return reply(mess.banChat)
             if (!text) return reply(`Example : ${prefix + command} love`)
@@ -8803,41 +8803,7 @@ case 'alive': case 'panel': case 'list': case 'bot': case 'help': case '?': {
 		if (isBan) return reply(mess.ban)	 			
 if (isBanChat) return reply(mess.banChat)
 XeonBotInc.sendMessage(from, { react: { text: `${global.reactmoji}`, key: m.key }})
-	                let btn = [{
-                                urlButton: {
-                                    displayText: 'YouTube 🍒',
-                                    url: `${websitex}`
-                                }
-                            }, {
-                                quickReplyButton: {
-                                    displayText: 'List Menu 🍢',
-                                    id: 'command'
-                                }  
-                            }, {
-                                quickReplyButton: {
-                                    displayText: 'Owner 🤣',
-                                    id: 'owner'
-                                }
-                            }]
-                         let setbot = db.data.settings[botNumber]
-                        if (setbot.templateImage) {
-                        XeonBotInc.send5ButImg(m.chat, menulist, global.botname, global.thumb, btn, global.thumb)
-                        } else if (setbot.templateGif) {
-                        XeonBotInc.send5ButGif(m.chat, menulist, global.botname, global.vidmenu, btn, global.thumb)
-                        } else if (setbot.templateVid) {
-                        XeonBotInc.send5ButVid(m.chat, anu, global.botname, global.vidmenu, btn, global.thumb)
-                        } else if (setbot.templateVideo) {
-                        XeonBotInc.send5ButVid(m.chat, menulist, global.botname, global.vidmenu, btn, global.thumb)
-                        /////////} else if (setbot.templateMsg) {
-                        /////////XeonBotInc.send5ButMsg(m.chat, menulist, global.botname, btn)
-                        } else if (setbot.templateDocument) {
-                        let buttonmenu = [
-        	{ urlButton: { displayText: `YouTube 🍒`, url : `${websitex}` } },
-            { quickReplyButton: { displayText: `List Menu 🍢`, id: 'command'} },
-            { quickReplyButton: { displayText: `Owner 🤣`, id: 'owner'} }
-        	]
-        	XeonBotInc.sendMessage(m.chat, { caption: menulist, document: fs.readFileSync('./XeonMedia/theme/cheems.xlsx'), mimetype: `${docs}`, fileName: `${ownername}`, templateButtons: buttonmenu, footer: `${botname}`, mentionedJid: [m.sender] })
-                        }
+	                
                      }
             break
                 case 'command': {
