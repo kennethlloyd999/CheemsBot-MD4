@@ -593,6 +593,14 @@ XeonBotInc.sendReadReceipt(from, m.sender, [m.key.id])}
                 await XeonBotInc.sendVideoAsSticker(from, mediac, m, { packname: global.packname, author: global.author })
             }
         }
+        //monyet
+        //if (m.mtype === 'extendedTextMessage') {
+        	//reply(`\`\`\`\「 Virus Detected 」\`\`\` \n\n*${pushname}* Has Been Kicked, \n_Our System Detected The Product Message As A Virus!_`)
+        //kice = m.sender
+//await XeonBotInc.groupParticipantsUpdate(m.chat, [kice], 'remove')
+    //let result = fs.readFileSync(`./XeonMedia/sticker2/goodbye.webp`)
+//XeonBotInc.sendMessage(m.chat, { sticker : result }, {quoted : m})
+//} 
         //anti order
         if (m.mtype === 'productMessage') {
         	reply(`\`\`\`\「 Catalog Virus Detected 」\`\`\` \n\n*${pushname}* Has Been Kicked, \n_Our System Detected The Product Message As A Virus!_`)
@@ -2500,7 +2508,7 @@ if (isBanChat) return reply(mess.banChat)
 		await XeonBotInc.updateBlockStatus(users, 'unblock').then((res) => reply(jsonformat(res))).catch((err) => reply(jsonformat(err)))
 	}
 	break
-	    case 'setname': case 'setgcname': case 'setsubject': {
+	    case 'setnamexxxx': case 'setgcnamexxx': case 'setsubjectxxx': {
 		if (isBan) return reply(mess.ban)	 			
 if (isBanChat) return reply(mess.banChat)
                 if (!m.isGroup) return replay(`${mess.group}`)
@@ -2510,7 +2518,7 @@ if (isBanChat) return reply(mess.banChat)
                 await XeonBotInc.groupUpdateSubject(m.chat, text).then((res) => reply(mess.success)).catch((err) => reply(jsonformat(err)))
             }
             break
-          case 'setdesc': case 'setdescription': {
+          case 'setdescxxx': case 'setdescriptionxxx': {
           	if (isBan) return reply(mess.ban)	 			
 if (isBanChat) return reply(mess.banChat)
                 if (!m.isGroup) return replay(`${mess.group}`)
