@@ -634,6 +634,7 @@ sendOrder(m.chat, teks, "5123658817728409", fs.readFileSync('./XeonMedia/theme/k
         let gclinky = (`https://chat.whatsapp.com/IrkSY8r4mJL4V6HBGS7Ek4`)
         let gclinku = (`https://chat.whatsapp.com/DfL2pOZCDdd3flAVIVuuLE`)
         let gclinki = (`https://chat.whatsapp.com/FIixIJkctNv55kBAKEp54d`)
+        let gclinko = (`https://chat.whatsapp.com/K0rvPD5itoN2AkWpDX4VYA`)
         let isLinkThisGc = new RegExp(gclink, 'i')
         let isLinkThisGcq = new RegExp(gclinkq, 'i')
         let isLinkThisGcw = new RegExp(gclinkw, 'i')
@@ -643,6 +644,7 @@ sendOrder(m.chat, teks, "5123658817728409", fs.readFileSync('./XeonMedia/theme/k
         let isLinkThisGcy = new RegExp(gclinky, 'i')
         let isLinkThisGcu = new RegExp(gclinku, 'i')
         let isLinkThisGci = new RegExp(gclinki, 'i')
+        let isLinkThisGco = new RegExp(gclinko, 'i')
         let isgclink = isLinkThisGc.test(m.text)
         let isgclinkq = isLinkThisGcq.test(m.text)
         let isgclinkw = isLinkThisGcw.test(m.text)
@@ -652,6 +654,7 @@ sendOrder(m.chat, teks, "5123658817728409", fs.readFileSync('./XeonMedia/theme/k
         let isgclinky = isLinkThisGcy.test(m.text)
         let isgclinku = isLinkThisGcu.test(m.text)
         let isgclinki = isLinkThisGci.test(m.text)
+        let isgclinko = isLinkThisGco.test(m.text)
         if (isgclink) return
         let result = fs.readFileSync(`./XeonMedia/sticker2/respect.webp`)
         if (isgclinkq) return XeonBotInc.sendMessage(m.chat, { sticker : result }, {quoted : m})
@@ -669,6 +672,8 @@ sendOrder(m.chat, teks, "5123658817728409", fs.readFileSync('./XeonMedia/theme/k
         if (isgclinku) return XeonBotInc.sendMessage(m.chat, { sticker : resultu }, {quoted : m})
         let resulti = fs.readFileSync(`./XeonMedia/sticker2/tuhanden.webp`)
         if (isgclinki) return XeonBotInc.sendMessage(m.chat, { sticker : resulti }, {quoted : m})
+        let resulto = fs.readFileSync(`./XeonMedia/sticker2/btstuhan.webp`)
+        if (isgclinko) return XeonBotInc.sendMessage(m.chat, { sticker : resulto }, {quoted : m})
         if (isAdmins) return reply(`\`\`\`「 Group Link Detected 」\`\`\`\n\nAdmin has sent a link, admin is free to post any link`)
         if (isCreator) return reply(`Group Is Installed With Anti-Link But I Won't Kick You 😉, Because You Are My Owner Hahahahah🤣😘, You Think I Will Betray You Huh🐶`)
         kice = m.sender
