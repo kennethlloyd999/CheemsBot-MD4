@@ -2772,7 +2772,7 @@ if (isBanChat) return reply(mess.banChat)
 if (isBanChat) return reply(mess.banChat)
                 if (!m.isGroup) return replay(`${mess.group}`)
                 if (!isBotAdmins) return replay(`${mess.botAdmin}`)
-                if (!isAdmins) return replay(`${mess.admin}`)
+                if (!isAdmins && !isCreator) return replay(`${mess.admin}`)
                 if (args[0] === 'close'){
                     await XeonBotInc.groupSettingUpdate(m.chat, 'announcement').then((res) => reply(`Successful Closing The Group`)).catch((err) => reply(jsonformat(err)))
                 } else if (args[0] === 'open'){
@@ -3279,13 +3279,13 @@ if (isBanChat) return reply(mess.banChat)
   break
 
             case 'del': {
-            	if (isBan) return reply(mess.ban)	 			
-if (isBanChat) return reply(mess.banChat)
-                if (!m.quoted) reply(false)
-                let { chat, fromMe, id, isBaileys } = m.quoted
-                if (!isBaileys) return replay(`The Message Was Not Sent By A Bot!`)
-                XeonBotInc.sendMessage(m.chat, { delete: { remoteJid: m.chat, fromMe: true, id: m.quoted.id, participant: m.quoted.sender } })
-            }
+                                if (isBan) return reply(mess.ban)                                  
+ if (isBanChat) return reply(mess.banChat) 
+                 if (!m.quoted) reply(false) 
+                 let { chat, fromMe, id, isBaileys } = m.quoted 
+                 if (!isBaileys) return replay(`The Message Was Not Sent By A Bot!`) 
+                 XeonBotInc.sendMessage(m.chat, { delete: { remoteJid: m.chat, fromMe: true, id: m.quoted.id, participant: m.quoted.sender } }) 
+             }
             break
       case 'bcgc': case 'bcgroup': {
    if (isBan) return reply(mess.ban)	 			
@@ -9011,7 +9011,7 @@ await XeonBotInc.send5ButImg(from, ` ┏━「 *${botname}* 」━━⭓
  ┃╠ ${prefix}setgcpp [image] 
  ┃╠ ${prefix}setname [text] 
  ┃╠ ${prefix}setdesc [text] 
- ┃╠ ${prefix}group/closegroup  
+ ┃╠ ${prefix}group/closegroup (group open/group close)
  ┃╠ ${prefix}resetgrouplink 
  ┃╠ ${prefix}editinfo [option] 
  ┃╠ ~${prefix}add [user]~ ❌
