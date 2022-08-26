@@ -794,7 +794,10 @@ await XeonBotInc.groupParticipantsUpdate(m.chat, [kice], 'remove')
 //antivirtex by xeon
   if (budy.length > 1500) {
   	if (!isBotAdmins) return reply(`\`\`\`「 Virus Detected 」\`\`\``)
-  if (!isAdmins) return reply(`❤`)
+  bvl = `❤`
+if (isAdmins) return reply(bvl)
+if (m.key.fromMe) return reply(bvl)
+if (isCreator) return reply(bvl)
   let kice = m.sender
   await XeonBotInc.groupParticipantsUpdate(m.chat, [kice], 'remove')
   XeonBotInc.sendMessage(from, {text:`\`\`\`「 Virus Detected 」\`\`\`\n\n Haha You Will Be Kicked! 🐒`, contextInfo:{mentionedJid:[kice]}}, {quoted:m})
