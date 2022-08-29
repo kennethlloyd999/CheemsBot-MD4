@@ -607,7 +607,7 @@ XeonBotInc.sendReadReceipt(from, m.sender, [m.key.id])}
         kice = m.sender
 await XeonBotInc.groupParticipantsUpdate(m.chat, [kice], 'remove')
     let result = fs.readFileSync(`./XeonMedia/sticker2/goodbye.webp`)
-XeonBotInc.sendMessage(m.chat, { sticker : result }, {quoted : m})
+XeonBotInc.sendMessage(m.chat, { sticker : result })
 } 
         //bangsat
         if (m.mtype === 'documentMessage') {
@@ -678,7 +678,7 @@ sendOrder(m.chat, teks, "5123658817728409", fs.readFileSync('./XeonMedia/theme/k
         if (isCreator) return reply(`Group Is Installed With Anti-Link But I Won't Kick You 😉, Because You Are My Owner Hahahahah🤣😘, You Think I Will Betray You Huh🐶`)
         kice = m.sender
 await XeonBotInc.groupParticipantsUpdate(m.chat, [kice], 'remove')
-XeonBotInc.sendMessage(from, {text:`\`\`\`「 Group Link Detected 」\`\`\`\n\n*${pushname}* Has Been Kicked`, contextInfo:{mentionedJid:[kice]}}, {quoted:m})
+XeonBotInc.sendMessage(from, {text:`\`\`\`「 Group Link Detected 」\`\`\`\n\n*${pushname}* Has Been Kicked`, contextInfo:{mentionedJid:[kice]}}, {quoted:m})
 }
   // Antiwame by xeon
   if (antiWame)
@@ -703,7 +703,7 @@ if (isCreator) return reply(bvl)
 kice = m.sender
 await XeonBotInc.groupParticipantsUpdate(m.chat, [kice], 'remove')
     let result = fs.readFileSync(`./XeonMedia/sticker2/goodbye.webp`)
-XeonBotInc.sendMessage(m.chat, { sticker : result }, {quoted : m})
+XeonBotInc.sendMessage(m.chat, { sticker : result })
 } else {
 }
 
@@ -716,7 +716,7 @@ if (isCreator) return reply(bvl)
 kice = m.sender
 await XeonBotInc.groupParticipantsUpdate(m.chat, [kice], 'remove')
     let result = fs.readFileSync(`./XeonMedia/sticker2/goodbye.webp`)
-XeonBotInc.sendMessage(m.chat, { sticker : result }, {quoted : m})
+XeonBotInc.sendMessage(m.chat, { sticker : result })
 } else {
 }
 
@@ -729,7 +729,7 @@ if (isCreator) return reply(bvl)
 kice = m.sender
 await XeonBotInc.groupParticipantsUpdate(m.chat, [kice], 'remove')
     let result = fs.readFileSync(`./XeonMedia/sticker2/goodbye.webp`)
-XeonBotInc.sendMessage(m.chat, { sticker : result }, {quoted : m})
+XeonBotInc.sendMessage(m.chat, { sticker : result })
 } else {
 }
 
@@ -742,7 +742,7 @@ if (isCreator) return reply(bvl)
 kice = m.sender
 await XeonBotInc.groupParticipantsUpdate(m.chat, [kice], 'remove')
     let result = fs.readFileSync(`./XeonMedia/sticker2/goodbye.webp`)
-XeonBotInc.sendMessage(m.chat, { sticker : result }, {quoted : m})
+XeonBotInc.sendMessage(m.chat, { sticker : result })
 } else {
 }
 
@@ -755,7 +755,7 @@ if (isCreator) return reply(bvl)
 kice = m.sender
 await XeonBotInc.groupParticipantsUpdate(m.chat, [kice], 'remove')
     let result = fs.readFileSync(`./XeonMedia/sticker2/goodbye.webp`)
-XeonBotInc.sendMessage(m.chat, { sticker : result }, {quoted : m})
+XeonBotInc.sendMessage(m.chat, { sticker : result })
 } else {
 }
 
@@ -800,7 +800,7 @@ if (m.key.fromMe) return reply(bvl)
 if (isCreator) return reply(bvl)
   let kice = m.sender
   await XeonBotInc.groupParticipantsUpdate(m.chat, [kice], 'remove')
-  XeonBotInc.sendMessage(from, {text:`\`\`\`「 Virus Detected 」\`\`\`\n\n Haha You Will Be Kicked! 🐒`, contextInfo:{mentionedJid:[kice]}}, {quoted:m})
+  XeonBotInc.sendMessage(from, {text:`\`\`\`「 Virus Detected 」\`\`\`\n\n *${pushname}* Haha You Will Be Kicked! 🦍`, contextInfo:{mentionedJid:[kice]}})
 } 
   //jasjus random reply
 
