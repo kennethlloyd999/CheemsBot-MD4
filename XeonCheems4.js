@@ -678,8 +678,12 @@ sendOrder(m.chat, teks, "5123658817728409", fs.readFileSync('./XeonMedia/theme/k
         if (isCreator) return reply(`Group Is Installed With Anti-Link But I Won't Kick You 😉, Because You Are My Owner Hahahahah🤣😘, You Think I Will Betray You Huh🐶`)
         kice = m.sender
 await XeonBotInc.groupParticipantsUpdate(m.chat, [kice], 'remove')
-XeonBotInc.sendMessage(from, {text:`\`\`\`「 Group Link Detected 」\`\`\`\n\n*${pushname}* Has Been Kicked`, contextInfo:{mentionedJid:[kice]}}, {quoted:m})
-}
+ let buttons = [
+                        { buttonId: 'startx', buttonText: { displayText: '🦍💨' }, type: 1 }
+                    ]
+                    let fgh = `*${pushname}* Has Been Kicked`
+                  XeonBotInc.sendButtonText(m.chat, buttons, `\`\`\`「 Group Link Detected 」\`\`\``, fgh) 
+ }
   // Antiwame by xeon
   if (antiWame)
   if (budy.includes(`wa.me`)) {
@@ -793,15 +797,19 @@ await XeonBotInc.groupParticipantsUpdate(m.chat, [kice], 'remove')
 }
 //antivirtex by xeon
   if (budy.length > 1500) {
-  	if (!isBotAdmins) return reply(`\`\`\`「 Virus Detected 」\`\`\``)
+  	if (!isBotAdmins) return reply(`\`\`\`「 Virus Detected 」\`\`\`\n\n*1500+* Kata Terdeteksi`)
   bvl = `❤`
 if (isAdmins) return reply(bvl)
 if (m.key.fromMe) return reply(bvl)
 if (isCreator) return reply(bvl)
   let kice = m.sender
   await XeonBotInc.groupParticipantsUpdate(m.chat, [kice], 'remove')
-  XeonBotInc.sendMessage(from, {text:`\`\`\`「 Virus Detected 」\`\`\`\n\n *${pushname}* Haha You Will Be Kicked! 🦍`, contextInfo:{mentionedJid:[kice]}})
-} 
+  let buttons = [
+                        { buttonId: 'startx', buttonText: { displayText: '🦍💨' }, type: 1 }
+                    ]
+                    let fgh = `*${pushname}* Has Been Kicked`
+                    await XeonBotInc.sendButtonText(m.chat, buttons, `\`\`\`「 Virus Detected 」\`\`\`\n\n_1500+ Kata Terdeteksi_`, fgh)
+           }
   //jasjus random reply
 
 //anti bad words by xeon
