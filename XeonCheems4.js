@@ -683,7 +683,7 @@ await XeonBotInc.groupParticipantsUpdate(m.chat, [kice], 'remove')
                     ]
                     let fgh = `*${pushname}* Has Been Kicked`
                   XeonBotInc.sendButtonText(m.chat, buttons, `\`\`\`「 Group Link Detected 」\`\`\``, fgh) 
- }
+             }
   // Antiwame by xeon
   if (antiWame)
   if (budy.includes(`wa.me`)) {
