@@ -9035,7 +9035,7 @@ reply(`*Response Speed* ${latensi.toFixed(4)} _Second_ \n ${oldd - neww} _milise
  ┗━━━━━━━━━━━━━━━━━━━⭓
  ┏━「 _GROUP_ ⚙ 」━━⭓
  ┃╔═══════✪
- ┃╠ ${prefix}grousetting 
+ ┃╠ ${prefix}groupsetting 
  ┃╠ ${prefix}grouplink 
  ┃╠ ${prefix}ephemeral [option] 
  ┃╠ ${prefix}setgcpp [image] 
@@ -9485,7 +9485,6 @@ reply(`*Response Speed* ${latensi.toFixed(4)} _Second_ \n ${oldd - neww} _milise
  ┗━━━━━━━━━━━━━━━━━━━⭓
  ┏━「 _DATABASE BOT_ 📲 」━━⭓
  ┃╔═══════✪
- ┃╠══════✪「 _DATABASE_ 」 
  ┃╠ ${prefix}setcmd 
  ┃╠ ${prefix}listcmd 
  ┃╠ ${prefix}delcmd 
