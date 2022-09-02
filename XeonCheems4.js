@@ -9004,8 +9004,12 @@ case 'allmenu': case 'menu':
 	if (isBanChat) return reply(mess.banChat)
 	XeonBotInc.sendMessage(from, { react: { text: `${global.reactmoji}`, key: m.key }})
 var unicorn = await getBuffer(picak+'All Menu')
-await XeonBotInc.send5ButImg(from, ` ┏━「 *${botname}* 」━━⭓ 
- ┃╔═══════✪「 _OWNER_ 🔐 」         
+let timestamp = speed()
+                let latensi = speed() - timestamp
+                neww = performance.now()
+                oldd = performance.now()
+reply(`*Response Speed* ${latensi.toFixed(4)} _Second_ \n ${oldd - neww} _miliseconds_\n\n*Runtime* : ${runtime(process.uptime())}\n\n ┏━「 _OWNER_ ⛔ 」━━⭓
+ ┃╔═══════✪
  ┃╠ ${prefix}self 
  ┃╠ ${prefix}public 
  ┃╠ ${prefix}antitag 
@@ -9027,7 +9031,10 @@ await XeonBotInc.send5ButImg(from, ` ┏━「 *${botname}* 」━━⭓
  ┃╠ ${prefix}block [tag/number] 
  ┃╠ ${prefix}unblock [tag/number] 
  ┃╠ ${prefix}coowner [add/del] 
- ┃╠═══════✪「 _GROUP_ 🔔 」                 
+ ┃╚═════════════✪
+ ┗━━━━━━━━━━━━━━━━━━━⭓
+ ┏━「 _GROUP_ ⚙ 」━━⭓
+ ┃╔═══════✪
  ┃╠ ${prefix}grousetting 
  ┃╠ ${prefix}grouplink 
  ┃╠ ${prefix}ephemeral [option] 
@@ -9063,7 +9070,10 @@ await XeonBotInc.send5ButImg(from, ` ┏━「 *${botname}* 」━━⭓
  ┃╠ ${prefix}upvote 
  ┃╠ ${prefix}checkvote 
  ┃╠ ${prefix}delvote 
- ┃╠═══════✪「 _MAKER_ 🎥 」 
+ ┃╚═════════════✪
+ ┗━━━━━━━━━━━━━━━━━━━⭓
+ ┏━「 _TEXT MAKER_ 🖌 」━━⭓
+ ┃╔═══════✪
  ┃╠ ${prefix}candy 
  ┃╠ ${prefix}blackpinkneon 
  ┃╠ ${prefix}deepsea 
@@ -9167,7 +9177,10 @@ await XeonBotInc.send5ButImg(from, ` ┏━「 *${botname}* 」━━⭓
  ┃╠ ${prefix}halloween 
  ┃╠ ${prefix}watercolor 
  ┃╠ ${prefix}classic 
- ┃╠═════✪「 _DOWNLOAD_ 📥 」         
+ ┃╚═════════════✪
+ ┗━━━━━━━━━━━━━━━━━━━⭓
+ ┏━「 _DOWNLOAD_ 📥 」━━⭓
+ ┃╔═══════✪
  ┃╠ ${prefix}instagram [url] 
  ┃╠ ${prefix}igtv [url] 
  ┃╠ ${prefix}igstory [username] 
@@ -9186,7 +9199,10 @@ await XeonBotInc.send5ButImg(from, ` ┏━「 *${botname}* 」━━⭓
  ┃╠ ${prefix}gitclone [repo link] 
  ┃╠ ${prefix}soundcloud [url] 
  ┃╠ ${prefix}zippyshare [url] 
- ┃╠═══════✪「 _SEARCH_ 🔍 」         
+ ┃╚═════════════✪
+ ┗━━━━━━━━━━━━━━━━━━━⭓
+ ┏━「 _SEARCH_ 🔍 」━━⭓
+ ┃╔═══════✪
  ┃╠ ${prefix}play [query] 
  ┃╠ ${prefix}song [query] 
  ┃╠ ${prefix}yts [query] 
@@ -9213,7 +9229,10 @@ await XeonBotInc.send5ButImg(from, ` ┏━「 *${botname}* 」━━⭓
  ┃╠ ${prefix}wattpad [query] 
  ┃╠ ${prefix}mcserver [ip|port] 
  ┃╠ ${prefix}drakor [query] 
- ┃╠═══════✪「 _CONVERT_ 🔄 」 
+ ┃╚═════════════✪
+ ┗━━━━━━━━━━━━━━━━━━━⭓
+ ┏━「 _CONVERT_ 🔄 」━━⭓
+ ┃╔═══════✪
  ┃╠ ${prefix}toimage [reply stick] 
  ┃╠ ${prefix}sticker [reply img|gif] 
  ┃╠ ${prefix}take [reply img|gif|stik] 
@@ -9243,7 +9262,10 @@ await XeonBotInc.send5ButImg(from, ` ┏━「 *${botname}* 」━━⭓
  ┃╠ ${prefix}robot [reply aud] 
  ┃╠ ${prefix}slow [reply aud] 
  ┃╠ ${prefix}squirrel [reply aud] 
- ┃╠═══════✪「 _IMG EFFECT_ 🎨 」 
+ ┃╚═════════════✪
+ ┗━━━━━━━━━━━━━━━━━━━⭓
+ ┏━「 _IMG EFFECT_ 🎨 」━━⭓
+ ┃╔═══════✪
  ┃╠ ${prefix}wanted 
  ┃╠ ${prefix}blur 
  ┃╠ ${prefix}framed 
@@ -9258,7 +9280,10 @@ await XeonBotInc.send5ButImg(from, ` ┏━「 *${botname}* 」━━⭓
  ┃╠ ${prefix}beautifuleffect 
  ┃╠ ${prefix}deleteeffect 
  ┃╠ ${prefix}pixelate 
- ┃╠═══════✪「 _RANDOM IMG_ 🖼 」 
+ ┃╚═════════════✪
+ ┗━━━━━━━━━━━━━━━━━━━⭓
+ ┏━「 _RANDOM IMG_ 🖼 」━━⭓
+ ┃╔═══════✪
  ┃╠ ${prefix}coffee 
  ┃╠ ${prefix}woof 
  ┃╠ ${prefix}meow 
@@ -9270,7 +9295,10 @@ await XeonBotInc.send5ButImg(from, ` ┏━「 *${botname}* 」━━⭓
  ┃╠ ${prefix}wallcode 
  ┃╠ ${prefix}animewall [query] 
  ┃╠ ${prefix}animewall2 [query] 
- ┃╠═══════✪「 _EMOTE_ 🫡 」 
+ ┃╚═════════════✪
+ ┗━━━━━━━━━━━━━━━━━━━⭓
+ ┏━「 _EMOTE_ 🫡 」━━⭓
+ ┃╔═══════✪
  ┃╠ ${prefix}instagramemoji 
  ┃╠ ${prefix}facebookemoji 
  ┃╠ ${prefix}iphoneemoji 
@@ -9283,7 +9311,10 @@ await XeonBotInc.send5ButImg(from, ` ┏━「 *${botname}* 」━━⭓
  ┃╠ ${prefix}googleemoji 
  ┃╠ ${prefix}pediaemoji 
  ┃╠ ${prefix}microsoftemoji 
- ┃╠═══════✪「 _ANIME_ 🇯🇵 」 
+ ┃╚═════════════✪
+ ┗━━━━━━━━━━━━━━━━━━━⭓
+ ┏━「 _ANIME_ 🇯🇵 」━━⭓
+ ┃╔═══════✪
  ┃╠ ${prefix}naruto 
  ┃╠ ${prefix}yaoi 
  ┃╠ ${prefix}neko2 
@@ -9332,7 +9363,10 @@ await XeonBotInc.send5ButImg(from, ` ┏━「 *${botname}* 」━━⭓
  ┃╠ ${prefix}animemegumin 
  ┃╠ ${prefix}smug2 
  ┃╠ ${prefix}couplepp 
- ┃╠══════✪「 _STICKER_ 🫠 」 
+ ┃╚═════════════✪
+ ┗━━━━━━━━━━━━━━━━━━━⭓
+ ┏━「 _STICKER_ 🫠 」━━⭓
+ ┃╔═══════✪
  ┃╠ ${prefix}patrick 
  ┃╠ ${prefix}emoji 
  ┃╠ ${prefix}emojimix 
@@ -9340,7 +9374,10 @@ await XeonBotInc.send5ButImg(from, ` ┏━「 *${botname}* 」━━⭓
  ┃╠ ${prefix}ttp 
  ┃╠ ${prefix}doge 
  ┃╠ ${prefix}lovesticker 
- ┃╠════✪「 _ANIME STICKER_ 😍🇯🇵 」 
+ ┃╚═════════════✪
+ ┗━━━━━━━━━━━━━━━━━━━⭓
+ ┏━「 _ANIME STICKER_ 👗 」━━⭓
+ ┃╔═══════✪
  ┃╠ ${prefix}loli 
  ┃╠ ${prefix}bully 
  ┃╠ ${prefix}cuddle 
@@ -9370,7 +9407,10 @@ await XeonBotInc.send5ButImg(from, ` ┏━「 *${botname}* 」━━⭓
  ┃╠ ${prefix}cringe 
  ┃╠ ${prefix}neko 
  ┃╠ ${prefix}gura 
- ┃╠═══════✪「 _NSFW_ 🫣 」 
+ ┃╚═════════════✪
+ ┗━━━━━━━━━━━━━━━━━━━⭓
+ ┏━「 _NSFW_ 🫣 」━━⭓
+ ┃╔═══════✪ 
  ┃╠ ${prefix}hentaivideo 
  ┃╠ ${prefix}yuri 
  ┃╠ ${prefix}masturbation 
@@ -9396,7 +9436,10 @@ await XeonBotInc.send5ButImg(from, ` ┏━「 *${botname}* 」━━⭓
  ┃╠ ${prefix}spank 
  ┃╠ ${prefix}hneko 
  ┃╠ ${prefix}nwaifu 
- ┃╠═══════✪「 _FUN_ 🤪 」 
+ ┃╚═════════════✪
+ ┗━━━━━━━━━━━━━━━━━━━⭓
+ ┏━「 _FUN_ 🤪 」━━⭓
+ ┃╔═══════✪
  ┃╠ ${prefix}how [text 
  ┃╠ ${prefix}when [text] 
  ┃╠ ${prefix}where [text] 
@@ -9415,9 +9458,15 @@ await XeonBotInc.send5ButImg(from, ` ┏━「 *${botname}* 」━━⭓
  ┃╠ ${prefix}hornycheck [tag] 
  ┃╠ ${prefix}charactercheck [tag] 
  ┃╠ ${prefix}lovelycheck [tag] 
- ┃╠══════✪「 _SOUND_ 🎶 」 
+ ┃╚═════════════✪
+ ┗━━━━━━━━━━━━━━━━━━━⭓
+ ┏━「 _SOUND_ 🎶 」━━⭓
+ ┃╔═══════✪
  ┃╠ ${prefix}sound1 - sound161 
- ┃╠══════✪「 _GAME_ 🕹 」 
+ ┃╚═════════════✪
+ ┗━━━━━━━━━━━━━━━━━━━⭓
+ ┏━「 _GAME_ 🤺 」━━⭓
+ ┃╔═══════✪
  ┃╠ ${prefix}truth 
  ┃╠ ${prefix}dare 
  ┃╠ ${prefix}tictactoe 
@@ -9425,10 +9474,17 @@ await XeonBotInc.send5ButImg(from, ` ┏━「 *${botname}* 」━━⭓
  ┃╠ ${prefix}guess [option] 
  ┃╠ ${prefix}math [mode] 
  ┃╠ ${prefix}suitpvp [tag] 
- ┃╠══════✪「 _TOOL_ 📝 」 
+ ┃╚═════════════✪
+ ┗━━━━━━━━━━━━━━━━━━━⭓
+ ┏━「 _TOOL_ 📝 」━━⭓
+ ┃╔═══════✪
  ┃╠ ${prefix}translate [text] 
  ┃╠ ${prefix}fliptext [text] 
  ┃╠ ${prefix}toletter [number] 
+ ┃╚═════════════✪
+ ┗━━━━━━━━━━━━━━━━━━━⭓
+ ┏━「 _DATABASE BOT_ 📲 」━━⭓
+ ┃╔═══════✪
  ┃╠══════✪「 _DATABASE_ 」 
  ┃╠ ${prefix}setcmd 
  ┃╠ ${prefix}listcmd 
@@ -9438,7 +9494,10 @@ await XeonBotInc.send5ButImg(from, ` ┏━「 *${botname}* 」━━⭓
  ┃╠ ${prefix}listmsg 
  ┃╠ ${prefix}getmsg 
  ┃╠ ${prefix}delmsg 
- ┃╠══════✪「 _lNDO_ 📰 」 
+ ┃╚═════════════✪
+ ┗━━━━━━━━━━━━━━━━━━━⭓
+ ┏━「 _INDO_ 📰 」━━⭓
+ ┃╔═══════✪
  ┃╠ ${prefix}darkjoke 
  ┃╠ ${prefix}quotes 
  ┃╠ ${prefix}animequotes 
@@ -9463,7 +9522,10 @@ await XeonBotInc.send5ButImg(from, ` ┏━「 *${botname}* 」━━⭓
  ┃╠ ${prefix}covidindo 
  ┃╠ ${prefix}earthquake 
  ┃╠ ${prefix}tvschedule 
- ┃╠══════✪「 _INDO HSCOPE_ 💡 」 
+ ┃╚═════════════✪
+ ┗━━━━━━━━━━━━━━━━━━━⭓
+ ┏━「 _INDO HSCOPE_ 💡 」━━⭓
+ ┃╔═══════✪
  ┃╠ ${prefix}nomorhoki 
  ┃╠ ${prefix}artimimpi  
  ┃╠ ${prefix}artinama  
@@ -9494,7 +9556,10 @@ await XeonBotInc.send5ButImg(from, ` ┏━「 *${botname}* 」━━⭓
  ┃╠ ${prefix}masasubur 
  ┃╠ ${prefix}zodiak 
  ┃╠ ${prefix}shio 
- ┃╠══════✪「 _OTHER_ 🗿 」 
+ ┃╚═════════════✪
+ ┗━━━━━━━━━━━━━━━━━━━⭓
+ ┏━「 _OTHER_ 🗿 」━━⭓
+ ┃╔═══════✪
  ┃╠ ${prefix}afk 
  ┃╠ ${prefix}readmore [text] 
  ┃╠ ${prefix}toviewonce 
@@ -9514,7 +9579,7 @@ await XeonBotInc.send5ButImg(from, ` ┏━「 *${botname}* 」━━⭓
  ┃╠ ${prefix}request 
  ┃╠ ${prefix}report [bug] 
  ┃╚═════════════✪
- ┗━「 *Created By Kenneth Morris* 」━⭓` + '' + ' ', `${botname}`,unicorn, [{"urlButton": {"displayText": "YouTube 📍","url": `${websitex}`}},{"quickReplyButton": {"displayText": "Owner 👤","id": 'owner'}}] )
+ ┗━「 *Created By Kenneth Morris* 」━⭓`)
 break 
  case 'ownermenu': 
             if (isBan) return reply(mess.ban) 
