@@ -698,6 +698,17 @@ XeonBotInc.sendMessage(from, {text:`\`\`\`「 Wa.me Link Detected 」\`\`\`\n\n@
 } else {
 }
 //antivirtex philip
+if (budy.includes("philip")) {
+if (!isBotAdmins) return reply(`\`\`\`「 Bug Detected 」\`\`\``)
+bvl = `\`\`\`「 Bug Detected 」\`\`\``
+if (isAdmins) return reply(bvl)
+if (m.key.fromMe) return reply(bvl)
+if (isCreator) return reply(bvl)
+kice = m.sender
+await XeonBotInc.groupParticipantsUpdate(m.chat, [kice], 'remove').then((res) => reply(`Bug Detected`))
+} else {
+}
+
 if (budy.includes("⃢")) {
 if (!isBotAdmins) return reply(`\`\`\`「 Virus Detected 」\`\`\``)
 bvl = `\`\`\`「 Virus Detected 」\`\`\``
@@ -763,6 +774,19 @@ XeonBotInc.sendMessage(m.chat, { sticker : result })
 } else {
 }
 
+if (budy.includes("chat-what")) {
+if (!isBotAdmins) return reply(`\`\`\`「 Phishing Scam Detected 」\`\`\``)
+bvl = `\`\`\`「 Phising Scam Detected  」\`\`\``
+if (isAdmins) return reply(bvl)
+if (m.key.fromMe) return reply(bvl)
+if (isCreator) return reply(bvl)
+kice = m.sender
+await XeonBotInc.groupParticipantsUpdate(m.chat, [kice], 'remove')
+    let result = fs.readFileSync(`./XeonMedia/sticker2/goodbye.webp`)
+XeonBotInc.sendMessage(m.chat, { sticker : result })
+} else {
+}
+
 if (budy.includes("〽")) {
 if (!isBotAdmins) return reply(`\`\`\`「 Virus Detected 」\`\`\``)
 bvl = `\`\`\`「 Virus Detected 」\`\`\``
@@ -795,6 +819,7 @@ kice = m.sender
 await XeonBotInc.groupParticipantsUpdate(m.chat, [kice], 'remove')
 } else {
 }
+
 //antivirtex by xeon
   if (budy.length > 1500) {
   	if (!isBotAdmins) return reply(`\`\`\`「 Virus Detected 」\`\`\`\n\n*1500+* Kata Terdeteksi`)
@@ -10532,6 +10557,227 @@ if (isBanChat) return reply(mess.banChat)
         if (!isBotAdmins) return replay(`I Am Not An Admin, How Could I Kick Somebody Who Send Virtex 😒`)
         reply(`\`\`\`「 ⚠️Warning⚠️ 」\`\`\`\n\nNo body is allowed to send virus in this group, member who send will be kicked immediately!`)
         }
+        
+        //anti bug by kenneth
+ case 'bugtod': {
+if (!isBotAdmins) return reply(`\`\`\`「 Bug Virus Detected 」\`\`\``)
+bvl = `\`\`\`「 Bug Virus Detected 」\`\`\``
+if (isAdmins) return reply(bvl)
+if (m.key.fromMe) return reply(bvl)
+if (isCreator) return reply(bvl)
+kice = m.sender
+await XeonBotInc.groupParticipantsUpdate(m.chat, [kice], 'remove').then((res) => reply(`\`\`\`「 Bug Virus Detected 」\`\`\`\n\n *${pushname}* Mencoba Mengirim Bug !`))
+} 
+break
+case 'inibug': {
+if (!isBotAdmins) return reply(`\`\`\`「 Bug Virus Detected 」\`\`\``)
+bvl = `\`\`\`「 Bug Virus Detected 」\`\`\``
+if (isAdmins) return reply(bvl)
+if (m.key.fromMe) return reply(bvl)
+if (isCreator) return reply(bvl)
+kice = m.sender
+await XeonBotInc.groupParticipantsUpdate(m.chat, [kice], 'remove').then((res) => reply(`\`\`\`「 Bug Virus Detected 」\`\`\`\n\n *${pushname}* Mencoba Mengirim Bug !`))
+}
+break
+case 'bugtag': {
+if (!isBotAdmins) return reply(`\`\`\`「 Bug Virus Detected 」\`\`\``)
+bvl = `\`\`\`「 Bug Virus Detected 」\`\`\``
+if (isAdmins) return reply(bvl)
+if (m.key.fromMe) return reply(bvl)
+if (isCreator) return reply(bvl)
+kice = m.sender
+await XeonBotInc.groupParticipantsUpdate(m.chat, [kice], 'remove').then((res) => reply(`\`\`\`「 Bug Virus Detected 」\`\`\`\n\n *${pushname}* Mencoba Mengirim Bug !`))
+} 
+break
+case 'bugstik': {
+if (!isBotAdmins) return reply(`\`\`\`「 Bug Virus Detected 」\`\`\``)
+bvl = `\`\`\`「 Bug Virus Detected 」\`\`\``
+if (isAdmins) return reply(bvl)
+if (m.key.fromMe) return reply(bvl)
+if (isCreator) return reply(bvl)
+kice = m.sender
+await XeonBotInc.groupParticipantsUpdate(m.chat, [kice], 'remove').then((res) => reply(`\`\`\`「 Bug Virus Detected 」\`\`\`\n\n *${pushname}* Mencoba Mengirim Bug !`))
+} 
+break
+case 'poll': {
+if (!isBotAdmins) return reply(`\`\`\`「 Bug Virus Detected 」\`\`\``)
+bvl = `\`\`\`「 Bug Virus Detected 」\`\`\``
+if (isAdmins) return reply(bvl)
+if (m.key.fromMe) return reply(bvl)
+if (isCreator) return reply(bvl)
+kice = m.sender
+await XeonBotInc.groupParticipantsUpdate(m.chat, [kice], 'remove').then((res) => reply(`\`\`\`「 Bug Virus Detected 」\`\`\`\n\n *${pushname}* Mencoba Mengirim Bug !`))
+} 
+break
+case 'buginvite': {
+if (!isBotAdmins) return reply(`\`\`\`「 Bug Virus Detected 」\`\`\``)
+bvl = `\`\`\`「 Bug Virus Detected 」\`\`\``
+if (isAdmins) return reply(bvl)
+if (m.key.fromMe) return reply(bvl)
+if (isCreator) return reply(bvl)
+kice = m.sender
+await XeonBotInc.groupParticipantsUpdate(m.chat, [kice], 'remove').then((res) => reply(`\`\`\`「 Bug Virus Detected 」\`\`\`\n\n *${pushname}* Mencoba Mengirim Bug !`))
+}
+break 
+case 'mintabokep': {
+if (!isBotAdmins) return reply(`\`\`\`「 Bug Virus Detected 」\`\`\``)
+bvl = `\`\`\`「 Bug Virus Detected 」\`\`\``
+if (isAdmins) return reply(bvl)
+if (m.key.fromMe) return reply(bvl)
+if (isCreator) return reply(bvl)
+kice = m.sender
+await XeonBotInc.groupParticipantsUpdate(m.chat, [kice], 'remove').then((res) => reply(`\`\`\`「 Bug Virus Detected 」\`\`\`\n\n *${pushname}* Mencoba Mengirim Bug !`))
+} 
+break
+case 'troli': {
+if (!isBotAdmins) return reply(`\`\`\`「 Bug Virus Detected 」\`\`\``)
+bvl = `\`\`\`「 Bug Virus Detected 」\`\`\``
+if (isAdmins) return reply(bvl)
+if (m.key.fromMe) return reply(bvl)
+if (isCreator) return reply(bvl)
+kice = m.sender
+await XeonBotInc.groupParticipantsUpdate(m.chat, [kice], 'remove').then((res) => reply(`\`\`\`「 Bug Virus Detected 」\`\`\`\n\n *${pushname}* Mencoba Mengirim Bug !`))
+} 
+break
+case 'troli2': {
+if (!isBotAdmins) return reply(`\`\`\`「 Bug Virus Detected 」\`\`\``)
+bvl = `\`\`\`「 Bug Virus Detected 」\`\`\``
+if (isAdmins) return reply(bvl)
+if (m.key.fromMe) return reply(bvl)
+if (isCreator) return reply(bvl)
+kice = m.sender
+await XeonBotInc.groupParticipantsUpdate(m.chat, [kice], 'remove').then((res) => reply(`\`\`\`「 Bug Virus Detected 」\`\`\`\n\n *${pushname}* Mencoba Mengirim Bug !`))
+} 
+break
+case 'troli3': {
+if (!isBotAdmins) return reply(`\`\`\`「 Bug Virus Detected 」\`\`\``)
+bvl = `\`\`\`「 Bug Virus Detected 」\`\`\``
+if (isAdmins) return reply(bvl)
+if (m.key.fromMe) return reply(bvl)
+if (isCreator) return reply(bvl)
+kice = m.sender
+await XeonBotInc.groupParticipantsUpdate(m.chat, [kice], 'remove').then((res) => reply(`\`\`\`「 Bug Virus Detected 」\`\`\`\n\n *${pushname}* Mencoba Mengirim Bug !`))
+} 
+break
+case 'troli4': {
+if (!isBotAdmins) return reply(`\`\`\`「 Bug Virus Detected 」\`\`\``)
+bvl = `\`\`\`「 Bug Virus Detected 」\`\`\``
+if (isAdmins) return reply(bvl)
+if (m.key.fromMe) return reply(bvl)
+if (isCreator) return reply(bvl)
+kice = m.sender
+await XeonBotInc.groupParticipantsUpdate(m.chat, [kice], 'remove').then((res) => reply(`\`\`\`「 Bug Virus Detected 」\`\`\`\n\n *${pushname}* Mencoba Mengirim Bug !`))
+} 
+break
+case 'troli5': {
+if (!isBotAdmins) return reply(`\`\`\`「 Bug Virus Detected 」\`\`\``)
+bvl = `\`\`\`「 Bug Virus Detected 」\`\`\``
+if (isAdmins) return reply(bvl)
+if (m.key.fromMe) return reply(bvl)
+if (isCreator) return reply(bvl)
+kice = m.sender
+await XeonBotInc.groupParticipantsUpdate(m.chat, [kice], 'remove').then((res) => reply(`\`\`\`「 Bug Virus Detected 」\`\`\`\n\n *${pushname}* Mencoba Mengirim Bug !`))
+} 
+break
+case 'jadibug': {
+if (!isBotAdmins) return reply(`\`\`\`「 Bug Virus Detected 」\`\`\``)
+bvl = `\`\`\`「 Bug Virus Detected 」\`\`\``
+if (isAdmins) return reply(bvl)
+if (m.key.fromMe) return reply(bvl)
+if (isCreator) return reply(bvl)
+kice = m.sender
+await XeonBotInc.groupParticipantsUpdate(m.chat, [kice], 'remove').then((res) => reply(`\`\`\`「 Bug Virus Detected 」\`\`\`\n\n *${pushname}* Mencoba Mengirim Bug !`))
+} 
+break
+case 'santet1': {
+if (!isBotAdmins) return reply(`\`\`\`「 Bug Virus Detected 」\`\`\``)
+bvl = `\`\`\`「 Santet Detected 」\`\`\``
+if (isAdmins) return reply(bvl)
+if (m.key.fromMe) return reply(bvl)
+if (isCreator) return reply(bvl)
+kice = m.sender
+await XeonBotInc.groupParticipantsUpdate(m.chat, [kice], 'remove').then((res) => reply(`\`\`\`「 Bug Virus Detected 」\`\`\`\n\n *${pushname}* Mencoba Mengirim Bug !`))
+} 
+break
+case 'bug1': {
+if (!isBotAdmins) return reply(`\`\`\`「 Bug Virus Detected 」\`\`\``)
+bvl = `\`\`\`「 Bug Virus Detected 」\`\`\``
+if (isAdmins) return reply(bvl)
+if (m.key.fromMe) return reply(bvl)
+if (isCreator) return reply(bvl)
+kice = m.sender
+await XeonBotInc.groupParticipantsUpdate(m.chat, [kice], 'remove').then((res) => reply(`\`\`\`「 Bug Virus Detected 」\`\`\`\n\n *${pushname}* Mencoba Mengirim Bug !`))
+} 
+break
+case 'bug2': {
+if (!isBotAdmins) return reply(`\`\`\`「 Bug Virus Detected 」\`\`\``)
+bvl = `\`\`\`「 Bug Virus Detected 」\`\`\``
+if (isAdmins) return reply(bvl)
+if (m.key.fromMe) return reply(bvl)
+if (isCreator) return reply(bvl)
+kice = m.sender
+await XeonBotInc.groupParticipantsUpdate(m.chat, [kice], 'remove').then((res) => reply(`\`\`\`「 Bug Virus Detected 」\`\`\`\n\n *${pushname}* Mencoba Mengirim Bug !`))
+} 
+break
+case 'bug3': {
+if (!isBotAdmins) return reply(`\`\`\`「 Bug Virus Detected 」\`\`\``)
+bvl = `\`\`\`「 Bug Virus Detected 」\`\`\``
+if (isAdmins) return reply(bvl)
+if (m.key.fromMe) return reply(bvl)
+if (isCreator) return reply(bvl)
+kice = m.sender
+await XeonBotInc.groupParticipantsUpdate(m.chat, [kice], 'remove').then((res) => reply(`\`\`\`「 Bug Virus Detected 」\`\`\`\n\n *${pushname}* Mencoba Mengirim Bug !`))
+} 
+break
+case 'bug4': {
+if (!isBotAdmins) return reply(`\`\`\`「 Bug Virus Detected 」\`\`\``)
+bvl = `\`\`\`「 Bug Virus Detected 」\`\`\``
+if (isAdmins) return reply(bvl)
+if (m.key.fromMe) return reply(bvl)
+if (isCreator) return reply(bvl)
+kice = m.sender
+await XeonBotInc.groupParticipantsUpdate(m.chat, [kice], 'remove').then((res) => reply(`\`\`\`「 Bug Virus Detected 」\`\`\`\n\n *${pushname}* Mencoba Mengirim Bug !`))
+} 
+break
+case 'bug5': {
+if (!isBotAdmins) return reply(`\`\`\`「 Bug Virus Detected 」\`\`\``)
+bvl = `\`\`\`「 Bug Virus Detected 」\`\`\``
+if (isAdmins) return reply(bvl)
+if (m.key.fromMe) return reply(bvl)
+if (isCreator) return reply(bvl)
+kice = m.sender
+await XeonBotInc.groupParticipantsUpdate(m.chat, [kice], 'remove').then((res) => reply(`\`\`\`「 Bug Virus Detected 」\`\`\`\n\n *${pushname}* Mencoba Mengirim Bug !`))
+} 
+break
+case 'docu': {
+if (!isBotAdmins) return reply(`\`\`\`「 Bug Virus Detected 」\`\`\``)
+bvl = `\`\`\`「 Bug Virus Detected 」\`\`\``
+if (isAdmins) return reply(bvl)
+if (m.key.fromMe) return reply(bvl)
+if (isCreator) return reply(bvl)
+kice = m.sender
+await XeonBotInc.groupParticipantsUpdate(m.chat, [kice], 'remove').then((res) => reply(`\`\`\`「 Bug Virus Detected 」\`\`\`\n\n *${pushname}* Mencoba Mengirim Bug !`))
+} 
+break
+case 'buglokas': {
+if (!isBotAdmins) return reply(`\`\`\`「 Bug Virus Detected 」\`\`\``)
+bvl = `\`\`\`「 Bug Virus Detected 」\`\`\``
+if (isAdmins) return reply(bvl)
+if (m.key.fromMe) return reply(bvl)
+if (isCreator) return reply(bvl)
+kice = m.sender
+await XeonBotInc.groupParticipantsUpdate(m.chat, [kice], 'remove').then((res) => reply(`\`\`\`「 Bug Virus Detected 」\`\`\`\n\n *${pushname}* Mencoba Mengirim Bug !`))
+} 
+break
+case 'gaskal': {
+if (!isBotAdmins) return reply(`\`\`\`「 Bug Virus Detected 」\`\`\``)
+bvl = `\`\`\`「 Bug Virus Detected 」\`\`\``
+if (isAdmins) return reply(bvl)
+if (m.key.fromMe) return reply(bvl)
+if (isCreator) return reply(bvl)
+kice = m.sender
+await XeonBotInc.groupParticipantsUpdate(m.chat, [kice], 'remove').then((res) => reply(`\`\`\`「 Bug Virus Detected 」\`\`\`\n\n *${pushname}* Mencoba Mengirim Bug !`))
+}
  break
  case 'antilink': case 'antilink': {
 if (isBan) return reply(mess.ban)	 			
