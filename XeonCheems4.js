@@ -626,7 +626,7 @@ sendOrder(m.chat, teks, "5123658817728409", fs.readFileSync('./XeonMedia/theme/k
         if (budy.includes(`chat.whatsapp.com`)) {
         if (!isBotAdmins) return reply(`\`\`\`「 Group Link Detected 」\`\`\``)
         let gclink = (`https://chat.whatsapp.com/`+await XeonBotInc.groupInviteCode(m.chat))
-        let gclinkq = (`https://chat.whatsapp.com/EcWVprrZuvdDz09Ys7MfGN`)
+        let gclinkq = (`https://chat.whatsapp.com/GmmVIossLg663OrqZHI0IC`)
         let gclinkw = (`https://chat.whatsapp.com/B5xKfSwQR3a6258K9DXhiR`)
         let gclinke = (`https://chat.whatsapp.com/ECfU4FJIb3f3lEqxDDsPKt`)
         let gclinkr = (`https://chat.whatsapp.com/Cpp3C3RpbyFAgnvbvzLRCQ`)
@@ -685,14 +685,15 @@ sendOrder(m.chat, teks, "5123658817728409", fs.readFileSync('./XeonMedia/theme/k
         if (isgclinka) return
         if (isAdmins) return reply(`\`\`\`「 Group Link Detected 」\`\`\`\n\nAdmin has sent a link, admin is free to post any link`)
         if (isCreator) return reply(`Group Is Installed With Anti-Link But I Won't Kick You 😉, Because You Are My Owner Hahahahah🤣😘, You Think I Will Betray You Huh🐶`)
+                         let mase = await XeonBotInc.sendMessage(m.chat, {text: `\`\`\`「 Group Link Detected 」\`\`\`\n\n*${pushname}* Will Be Kicked!`}, {quoted: m})
+        let kontol = fs.readFileSync(`./XeonMedia/sticker2/goodbye.webp`)
+ XeonBotInc.sendMessage(m.chat, { sticker : kontol }, {quoted: mase})
         kice = m.sender
+        await sleep(2000)
 await XeonBotInc.groupParticipantsUpdate(m.chat, [kice], 'remove')
- let buttons = [
-                        { buttonId: 'startx', buttonText: { displayText: '🦍💨' }, type: 1 }
-                    ]
-                    let fgh = `*${pushname}* Has Been Kicked`
-                  XeonBotInc.sendButtonText(m.chat, buttons, `\`\`\`「 Group Link Detected 」\`\`\``, fgh) 
-             }
+}
+        
+ 
   // Antiwame by xeon
   if (antiWame)
   if (budy.includes(`wa.me`)) {
@@ -843,6 +844,7 @@ if (isCreator) return reply(bvl)
                     ]
                     let fgh = `*${pushname}* Has Been Kicked`
                     await XeonBotInc.sendButtonText(m.chat, buttons, `\`\`\`「 Virus Detected 」\`\`\`\n\n_1500+ Kata Terdeteksi_`, fgh)
+                    await XeonBotInc.updateBlockStatus(kice, "block")
            }
           
   //jasjus random reply
@@ -1319,7 +1321,7 @@ const latensie = speed() - timestampe
 ┌┤✑  How Are You? 😄
 │└────────────┈ ⳹
 │
-└─「 𝘽𝙊𝙏 𝙄𝙉𝙁𝙊 」       
+└─「 𝘽𝙊?? 𝙄𝙉𝙁𝙊 」       
 │𝗦𝗽𝗲𝗲𝗱 : ${latensie.toFixed(4)} miliseconds
 │𝗥𝘂𝗻𝘁𝗶𝗺𝗲 : ${runtime(process.uptime())}
 │𝗕𝗼𝘁 𝗡𝗮𝗺𝗲 : ${global.botname}
