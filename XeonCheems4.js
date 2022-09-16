@@ -844,19 +844,7 @@ if (isCreator) return reply(bvl)
                     let fgh = `*${pushname}* Has Been Kicked`
                     await XeonBotInc.sendButtonText(m.chat, buttons, `\`\`\`「 Virus Detected 」\`\`\`\n\n_1500+ Kata Terdeteksi_`, fgh)
            }
-           //anti santet
-           for (let anjf of xeonysticker){
-				if (budy === anjf){
-					result = fs.readFileSync(`./XeonMedia/sticker2/${anjf}.webp`)
-					XeonBotInc.sendMessage(m.chat, { sticker: result }, { quoted: m })
-						if (!isBotAdmins) return
-if (isAdmins) return 
-if (m.key.fromMe) return 
-if (isCreator) return 
-  let kice = m.sender
-  await XeonBotInc.groupParticipantsUpdate(m.chat, [kice], 'remove')
-					}
-			}
+          
   //jasjus random reply
 
 //anti bad words by xeon
