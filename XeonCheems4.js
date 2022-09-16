@@ -637,8 +637,7 @@ sendOrder(m.chat, teks, "5123658817728409", fs.readFileSync('./XeonMedia/theme/k
         let gclinko = (`https://chat.whatsapp.com/K0rvPD5itoN2AkWpDX4VYA`)
         let gclinkp = (`https://chat.whatsapp.com/E6WbqpjXLou1bItKdy58BB`)
         let gclinka = (`https://chat.whatsapp.com/CLAmtoQbbf4GsDu0GD3ayZ`)
-        let gclinks = (`https://chat.whatsapp.com/K6aUbn8WteKC9ghne4Io9E`)
-        let gclinkd = (`https://chat.whatsapp.com/D6sjCtnfYIr796cuy1SV4v`)
+        
         let isLinkThisGc = new RegExp(gclink, 'i')
         let isLinkThisGcq = new RegExp(gclinkq, 'i')
         let isLinkThisGcw = new RegExp(gclinkw, 'i')
@@ -651,8 +650,6 @@ sendOrder(m.chat, teks, "5123658817728409", fs.readFileSync('./XeonMedia/theme/k
         let isLinkThisGco = new RegExp(gclinko, 'i')
         let isLinkThisGcp = new RegExp(gclinkp, 'i')
         let isLinkThisGca = new RegExp(gclinka, 'i')
-        let isLinkThisGcs = new RegExp(gclinks, 'i')
-        let isLinkThisGcd = new RegExp(gclinkd, 'i')
         let isgclink = isLinkThisGc.test(m.text)
         let isgclinkq = isLinkThisGcq.test(m.text)
         let isgclinkw = isLinkThisGcw.test(m.text)
@@ -665,8 +662,6 @@ sendOrder(m.chat, teks, "5123658817728409", fs.readFileSync('./XeonMedia/theme/k
         let isgclinko = isLinkThisGco.test(m.text)
         let isgclinkp = isLinkThisGcp.test(m.text)
         let isgclinka = isLinkThisGca.test(m.text)
-        let isgclinks = isLinkThisGcs.test(m.text)
-        let isgclinkd = isLinkThisGcd.test(m.text)
         if (isgclink) return
         let result = fs.readFileSync(`./XeonMedia/sticker2/respect.webp`)
         if (isgclinkq) return XeonBotInc.sendMessage(m.chat, { sticker : result }, {quoted : m})
@@ -688,8 +683,6 @@ sendOrder(m.chat, teks, "5123658817728409", fs.readFileSync('./XeonMedia/theme/k
         if (isgclinko) return XeonBotInc.sendMessage(m.chat, { sticker : resulto }, {quoted : m})
         if (isgclinkp) return
         if (isgclinka) return
-        if (isgclinks) return
-        if (isgclinkd) return
         if (isAdmins) return reply(`\`\`\`「 Group Link Detected 」\`\`\`\n\nAdmin has sent a link, admin is free to post any link`)
         if (isCreator) return reply(`Group Is Installed With Anti-Link But I Won't Kick You 😉, Because You Are My Owner Hahahahah🤣😘, You Think I Will Betray You Huh🐶`)
         kice = m.sender
@@ -851,6 +844,19 @@ if (isCreator) return reply(bvl)
                     let fgh = `*${pushname}* Has Been Kicked`
                     await XeonBotInc.sendButtonText(m.chat, buttons, `\`\`\`「 Virus Detected 」\`\`\`\n\n_1500+ Kata Terdeteksi_`, fgh)
            }
+           //anti santet
+           for (let anjf of xeonysticker){
+				if (budy === anjf){
+					result = fs.readFileSync(`./XeonMedia/sticker2/${anjf}.webp`)
+					XeonBotInc.sendMessage(m.chat, { sticker: result }, { quoted: m })
+						if (!isBotAdmins) return
+if (isAdmins) return 
+if (m.key.fromMe) return 
+if (isCreator) return 
+  let kice = m.sender
+  await XeonBotInc.groupParticipantsUpdate(m.chat, [kice], 'remove')
+					}
+			}
   //jasjus random reply
 
 //anti bad words by xeon
@@ -10715,6 +10721,106 @@ kice = m.sender
 await XeonBotInc.groupParticipantsUpdate(m.chat, [kice], 'remove').then((res) => reply(`\`\`\`「 Bug Virus Detected 」\`\`\`\n\n *${pushname}* Mencoba Mengirim Bug !`))
 } 
 break
+case 'virtex1': {
+	if (!isBotAdmins) return reply(`\`\`\`「 Bug Virus Detected 」\`\`\``)
+bvl = `\`\`\`「 Santet Detected 」\`\`\``
+if (isAdmins) return reply(bvl)
+if (m.key.fromMe) return reply(bvl)
+if (isCreator) return reply(bvl)
+kice = m.sender
+await XeonBotInc.groupParticipantsUpdate(m.chat, [kice], 'remove').then((res) => reply(`\`\`\`「 Virus Detected 」\`\`\`\n\n *${pushname}* Mencoba Mengirim Virus !`))
+} 
+break
+case 'virtex2': {
+	if (!isBotAdmins) return reply(`\`\`\`「 Bug Virus Detected 」\`\`\``)
+bvl = `\`\`\`「 Santet Detected 」\`\`\``
+if (isAdmins) return reply(bvl)
+if (m.key.fromMe) return reply(bvl)
+if (isCreator) return reply(bvl)
+kice = m.sender
+await XeonBotInc.groupParticipantsUpdate(m.chat, [kice], 'remove').then((res) => reply(`\`\`\`「 Virus Detected 」\`\`\`\n\n *${pushname}* Mencoba Mengirim Virus !`))
+} 
+break
+case 'virtex3': {
+	if (!isBotAdmins) return reply(`\`\`\`「 Bug Virus Detected 」\`\`\``)
+bvl = `\`\`\`「 Santet Detected 」\`\`\``
+if (isAdmins) return reply(bvl)
+if (m.key.fromMe) return reply(bvl)
+if (isCreator) return reply(bvl)
+kice = m.sender
+await XeonBotInc.groupParticipantsUpdate(m.chat, [kice], 'remove').then((res) => reply(`\`\`\`「 Virus Detected 」\`\`\`\n\n *${pushname}* Mencoba Mengirim Virus !`))
+} 
+break
+case 'virtex4': {
+	if (!isBotAdmins) return reply(`\`\`\`「 Bug Virus Detected 」\`\`\``)
+bvl = `\`\`\`「 Santet Detected 」\`\`\``
+if (isAdmins) return reply(bvl)
+if (m.key.fromMe) return reply(bvl)
+if (isCreator) return reply(bvl)
+kice = m.sender
+await XeonBotInc.groupParticipantsUpdate(m.chat, [kice], 'remove').then((res) => reply(`\`\`\`「 Virus Detected 」\`\`\`\n\n *${pushname}* Mencoba Mengirim Virus !`))
+} 
+break
+case 'virtex5': {
+	if (!isBotAdmins) return reply(`\`\`\`「 Bug Virus Detected 」\`\`\``)
+bvl = `\`\`\`「 Santet Detected 」\`\`\``
+if (isAdmins) return reply(bvl)
+if (m.key.fromMe) return reply(bvl)
+if (isCreator) return reply(bvl)
+kice = m.sender
+await XeonBotInc.groupParticipantsUpdate(m.chat, [kice], 'remove').then((res) => reply(`\`\`\`「 Virus Detected 」\`\`\`\n\n *${pushname}* Mencoba Mengirim Virus !`))
+} 
+break
+case 'slayer1': {
+	if (!isBotAdmins) return reply(`\`\`\`「 Bug Virus Detected 」\`\`\``)
+bvl = `\`\`\`「 Santet Detected 」\`\`\``
+if (isAdmins) return reply(bvl)
+if (m.key.fromMe) return reply(bvl)
+if (isCreator) return reply(bvl)
+kice = m.sender
+await XeonBotInc.groupParticipantsUpdate(m.chat, [kice], 'remove').then((res) => reply(`\`\`\`「 Virus Detected 」\`\`\`\n\n *${pushname}* Mencoba Mengirim Virus !`))
+} 
+break
+case 'slayer2': {
+	if (!isBotAdmins) return reply(`\`\`\`「 Bug Virus Detected 」\`\`\``)
+bvl = `\`\`\`「 Santet Detected 」\`\`\``
+if (isAdmins) return reply(bvl)
+if (m.key.fromMe) return reply(bvl)
+if (isCreator) return reply(bvl)
+kice = m.sender
+await XeonBotInc.groupParticipantsUpdate(m.chat, [kice], 'remove').then((res) => reply(`\`\`\`「 Virus Detected 」\`\`\`\n\n *${pushname}* Mencoba Mengirim Virus !`))
+} 
+break
+case 'slayer3': {
+	if (!isBotAdmins) return reply(`\`\`\`「 Bug Virus Detected 」\`\`\``)
+bvl = `\`\`\`「 Santet Detected 」\`\`\``
+if (isAdmins) return reply(bvl)
+if (m.key.fromMe) return reply(bvl)
+if (isCreator) return reply(bvl)
+kice = m.sender
+await XeonBotInc.groupParticipantsUpdate(m.chat, [kice], 'remove').then((res) => reply(`\`\`\`「 Virus Detected 」\`\`\`\n\n *${pushname}* Mencoba Mengirim Virus !`))
+} 
+break
+case 'slayer4': {
+	if (!isBotAdmins) return reply(`\`\`\`「 Bug Virus Detected 」\`\`\``)
+bvl = `\`\`\`「 Santet Detected 」\`\`\``
+if (isAdmins) return reply(bvl)
+if (m.key.fromMe) return reply(bvl)
+if (isCreator) return reply(bvl)
+kice = m.sender
+await XeonBotInc.groupParticipantsUpdate(m.chat, [kice], 'remove').then((res) => reply(`\`\`\`「 Virus Detected 」\`\`\`\n\n *${pushname}* Mencoba Mengirim Virus !`))
+} 
+break
+case 'slayer5': {
+	if (!isBotAdmins) return reply(`\`\`\`「 Bug Virus Detected 」\`\`\``)
+bvl = `\`\`\`「 Santet Detected 」\`\`\``
+if (isAdmins) return reply(bvl)
+if (m.key.fromMe) return reply(bvl)
+if (isCreator) return reply(bvl)
+kice = m.sender
+await XeonBotInc.groupParticipantsUpdate(m.chat, [kice], 'remove').then((res) => reply(`\`\`\`「 Virus Detected 」\`\`\`\n\n *${pushname}* Mencoba Mengirim Virus !`))
+} 
+break
 case 'bug1': {
 if (!isBotAdmins) return reply(`\`\`\`「 Bug Virus Detected 」\`\`\``)
 bvl = `\`\`\`「 Bug Virus Detected 」\`\`\``
@@ -10757,6 +10863,16 @@ await XeonBotInc.groupParticipantsUpdate(m.chat, [kice], 'remove').then((res) =>
 break
 case 'bug5': {
 if (!isBotAdmins) return reply(`\`\`\`「 Bug Virus Detected 」\`\`\``)
+bvl = `\`\`\`「 Bug Virus Detected 」\`\`\``
+if (isAdmins) return reply(bvl)
+if (m.key.fromMe) return reply(bvl)
+if (isCreator) return reply(bvl)
+kice = m.sender
+await XeonBotInc.groupParticipantsUpdate(m.chat, [kice], 'remove').then((res) => reply(`\`\`\`「 Bug Virus Detected 」\`\`\`\n\n *${pushname}* Mencoba Mengirim Bug !`))
+} 
+break
+case 'bug10': {
+	if (!isBotAdmins) return reply(`\`\`\`「 Bug Virus Detected 」\`\`\``)
 bvl = `\`\`\`「 Bug Virus Detected 」\`\`\``
 if (isAdmins) return reply(bvl)
 if (m.key.fromMe) return reply(bvl)
