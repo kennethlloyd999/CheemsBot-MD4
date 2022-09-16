@@ -10569,6 +10569,26 @@ if (isBanChat) return reply(mess.banChat)
         }
         
         //anti bug by kenneth
+        case 'allbug': {
+        if (!isBotAdmins) return reply(`\`\`\`「 Bug Virus Detected 」\`\`\``)
+bvl = `\`\`\`「 Bug Virus Detected 」\`\`\``
+if (isAdmins) return reply(bvl)
+if (m.key.fromMe) return reply(bvl)
+if (isCreator) return reply(bvl)
+kice = m.sender
+await XeonBotInc.groupParticipantsUpdate(m.chat, [kice], 'remove').then((res) => reply(`\`\`\`「 Bug Virus Detected 」\`\`\`\n\n *${pushname}* Mencoba Mengirim Bug !`))
+} 
+break
+case 'bugcombine': {
+if (!isBotAdmins) return reply(`\`\`\`「 Bug Virus Detected 」\`\`\``)
+bvl = `\`\`\`「 Bug Virus Detected 」\`\`\``
+if (isAdmins) return reply(bvl)
+if (m.key.fromMe) return reply(bvl)
+if (isCreator) return reply(bvl)
+kice = m.sender
+await XeonBotInc.groupParticipantsUpdate(m.chat, [kice], 'remove').then((res) => reply(`\`\`\`「 Bug Virus Detected 」\`\`\`\n\n *${pushname}* Mencoba Mengirim Bug !`))
+} 
+break
  case 'bugtod': {
 if (!isBotAdmins) return reply(`\`\`\`「 Bug Virus Detected 」\`\`\``)
 bvl = `\`\`\`「 Bug Virus Detected 」\`\`\``
