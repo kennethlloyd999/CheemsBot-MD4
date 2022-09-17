@@ -689,7 +689,7 @@ sendOrder(m.chat, teks, "5123658817728409", fs.readFileSync('./XeonMedia/theme/k
         let kontol = fs.readFileSync(`./XeonMedia/sticker2/goodbye.webp`)
  XeonBotInc.sendMessage(m.chat, { sticker : kontol }, {quoted: mase})
         kice = m.sender
-        await sleep(1000)
+        await sleep(500)
 await XeonBotInc.groupParticipantsUpdate(m.chat, [kice], 'remove')
 }
         
