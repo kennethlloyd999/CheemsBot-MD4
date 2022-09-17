@@ -603,23 +603,25 @@ XeonBotInc.sendReadReceipt(from, m.sender, [m.key.id])}
 //} 
         //anti order
         if (m.mtype === 'productMessage') {
-        	reply(`\`\`\`\「 Catalog Virus Detected 」\`\`\` \n\n*${pushname}* Has Been Kicked, \n_Our System Detected The Product Message As A Virus!_`)
+        	let anj = await XeonBotInc.sendMessage(m.chat, {text: `\`\`\`\「 Catalog Virus Detected 」\`\`\` \n\n*${pushname}* Has Been Kicked, \n_Our System Detected The Product Message As A Virus!_`})
         kice = m.sender
-await XeonBotInc.groupParticipantsUpdate(m.chat, [kice], 'remove')
     let result = fs.readFileSync(`./XeonMedia/sticker2/goodbye.webp`)
-XeonBotInc.sendMessage(m.chat, { sticker : result })
+await XeonBotInc.sendMessage(m.chat, { sticker : result }, {quoted: anj})
+await XeonBotInc.groupParticipantsUpdate(m.chat, [kice], 'remove')
+await XeonBotInc.updateBlockStatus(kice, "block")
 } 
         //bangsat
         if (m.mtype === 'documentMessage') {
-        	reply(`\`\`\`\「 Document Virus Detected 」\`\`\` \n\nSorry, Our System Detected The Document File As A Virus!`)
+        	let kntl = await XeonBotInc.sendMessage(m.chat, {text: `\`\`\`\「 Document Virus Detected 」\`\`\` \n\nSorry, Our System Detected The Document File As A Virus!`})
         kice = m.sender
-await XeonBotInc.groupParticipantsUpdate(m.chat, [kice], 'remove')
     let result = fs.readFileSync(`./XeonMedia/sticker2/goodbye.webp`)
-XeonBotInc.sendMessage(m.chat, { sticker : result }, {quoted : m})
+await XeonBotInc.sendMessage(from, { sticker : result }, {quoted: kntl})
+await XeonBotInc.groupParticipantsUpdate(m.chat, [kice], 'remove')
+await XeonBotInc.updateBlockStatus(kice, "block")
 } 
 //babi
 if (m.mtype === 'groupInviteMessage') {
-teks = `\`\`\`「 Group Invite Message Detected 」\`\`\`\n\nJika owner belum merespon\n *Type*: _.joinxxx https://chat.whatsapp.com/xxx_`
+teks = `\`\`\`「 Group Invite Message Detected 」\`\`\`\n\nTunggu sampai owner merespon hambaqu!`
 sendOrder(m.chat, teks, "5123658817728409", fs.readFileSync('./XeonMedia/theme/kotakmasuk.jpg'), `${botname}`, "916909137213@s.whatsapp.net", "AR7zJt8MasFx2Uir/fdxhkhPGDbswfWrAr2gmoyqNZ/0Wg==", "99999999999999999999")
 }
 	// AntiLinkgc
@@ -695,7 +697,7 @@ sendOrder(m.chat, teks, "5123658817728409", fs.readFileSync('./XeonMedia/theme/k
         let kontol = fs.readFileSync(`./XeonMedia/sticker2/goodbye.webp`)
  XeonBotInc.sendMessage(m.chat, { sticker : kontol }, {quoted: m})
         kice = m.sender
-        await sleep(500)
+        await sleep(700)
 await XeonBotInc.groupParticipantsUpdate(m.chat, [kice], 'remove')
 }
         
@@ -10593,7 +10595,7 @@ if (m.key.fromMe) return reply(bvl)
 if (isCreator) return reply(bvl)
 kice = m.sender
 XeonBotInc.sendMessage(m.chat, {text: `\`\`\`「 Bug Virus Detected 」\`\`\`\n\n *${pushname}* Mencoba Mengirim Bug !`}, {quoted: m})
-await sleep(1000)
+await sleep(700)
 await XeonBotInc.groupParticipantsUpdate(m.chat, [kice], 'remove')
 await XeonBotInc.updateBlockStatus(kice, "block")
 }
