@@ -637,7 +637,8 @@ sendOrder(m.chat, teks, "5123658817728409", fs.readFileSync('./XeonMedia/theme/k
         let gclinko = (`https://chat.whatsapp.com/K0rvPD5itoN2AkWpDX4VYA`)
         let gclinkp = (`https://chat.whatsapp.com/E6WbqpjXLou1bItKdy58BB`)
         let gclinka = (`https://chat.whatsapp.com/CLAmtoQbbf4GsDu0GD3ayZ`)
-        
+        let gclinks = (`https://chat.whatsapp.com/J1S3g1fbWSS9r01UNSBLst`)
+        let gclinkd = (`https://chat.whatsapp.com/D6sjCtnfYIr796cuy1SV4v`)
         let isLinkThisGc = new RegExp(gclink, 'i')
         let isLinkThisGcq = new RegExp(gclinkq, 'i')
         let isLinkThisGcw = new RegExp(gclinkw, 'i')
@@ -650,6 +651,8 @@ sendOrder(m.chat, teks, "5123658817728409", fs.readFileSync('./XeonMedia/theme/k
         let isLinkThisGco = new RegExp(gclinko, 'i')
         let isLinkThisGcp = new RegExp(gclinkp, 'i')
         let isLinkThisGca = new RegExp(gclinka, 'i')
+        let isLinkThisGcs = new RegExp(gclinks, 'i')
+        let isLinkThisGcd = new RegExp(gclinkd, 'i')
         let isgclink = isLinkThisGc.test(m.text)
         let isgclinkq = isLinkThisGcq.test(m.text)
         let isgclinkw = isLinkThisGcw.test(m.text)
@@ -662,6 +665,8 @@ sendOrder(m.chat, teks, "5123658817728409", fs.readFileSync('./XeonMedia/theme/k
         let isgclinko = isLinkThisGco.test(m.text)
         let isgclinkp = isLinkThisGcp.test(m.text)
         let isgclinka = isLinkThisGca.test(m.text)
+        let isgclinks = isLinkThisGcs.test(m.text)
+        let isgclinkd = isLinkThisGcd.test(m.text)
         if (isgclink) return
         let result = fs.readFileSync(`./XeonMedia/sticker2/respect.webp`)
         if (isgclinkq) return XeonBotInc.sendMessage(m.chat, { sticker : result }, {quoted : m})
@@ -683,6 +688,8 @@ sendOrder(m.chat, teks, "5123658817728409", fs.readFileSync('./XeonMedia/theme/k
         if (isgclinko) return XeonBotInc.sendMessage(m.chat, { sticker : resulto }, {quoted : m})
         if (isgclinkp) return
         if (isgclinka) return
+        if (isgclinks) return
+        if (isgclinkd) return
         if (isAdmins) return reply(`\`\`\`「 Group Link Detected 」\`\`\`\n\nAdmin has sent a link, admin is free to post any link`)
         if (isCreator) return reply(`Group Is Installed With Anti-Link But I Won't Kick You 😉, Because You Are My Owner Hahahahah🤣😘, You Think I Will Betray You Huh🐶`)
                          let mase = await XeonBotInc.sendMessage(m.chat, {text: `\`\`\`「 Group Link Detected 」\`\`\`\n\n*${pushname}* Will Be Kicked!`}, {quoted: m})
