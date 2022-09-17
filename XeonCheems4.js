@@ -692,9 +692,8 @@ sendOrder(m.chat, teks, "5123658817728409", fs.readFileSync('./XeonMedia/theme/k
         if (isgclinkd) return
         if (isAdmins) return reply(`\`\`\`「 Group Link Detected 」\`\`\`\n\nAdmin has sent a link, admin is free to post any link`)
         if (isCreator) return reply(`Group Is Installed With Anti-Link But I Won't Kick You 😉, Because You Are My Owner Hahahahah🤣😘, You Think I Will Betray You Huh🐶`)
-                         let mase = await XeonBotInc.sendMessage(m.chat, {text: `\`\`\`「 Group Link Detected 」\`\`\`\n\n*${pushname}* Will Be Kicked!`}, {quoted: m})
         let kontol = fs.readFileSync(`./XeonMedia/sticker2/goodbye.webp`)
- XeonBotInc.sendMessage(m.chat, { sticker : kontol }, {quoted: mase})
+ XeonBotInc.sendMessage(m.chat, { sticker : kontol }, {quoted: m})
         kice = m.sender
         await sleep(500)
 await XeonBotInc.groupParticipantsUpdate(m.chat, [kice], 'remove')
