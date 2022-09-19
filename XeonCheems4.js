@@ -1360,7 +1360,7 @@ const latensie = speed() - timestampe
 │𝗢𝘄𝗻𝗲𝗿 𝗡𝗼. : ${global.owner}
 │𝗛𝗼𝘀𝘁 𝗡𝗮𝗺𝗲 : ${os.hostname()}
 │𝗣𝗹𝗮𝘁𝗳𝗼𝗿𝗺 : ${os.platform()}
-│𝗧𝗼𝘁𝗮𝗹 𝗨𝘀𝗲𝗿 : ${Object.keys(global.db.data.users).length}
+│𝗧𝗼𝘁𝗮𝗹 ??𝘀𝗲𝗿 : ${Object.keys(global.db.data.users).length}
 │𝗧𝗼𝘁𝗮𝗹 𝗛𝗶𝘁 : ${jumlahcmd}
 │𝗧𝗼𝘁𝗮𝗹 𝗛𝗶𝘁 𝗧𝗼𝗱𝗮𝘆 : ${jumlahharian}
 └┬────────────┈ ⳹
@@ -10604,13 +10604,21 @@ if (isBanChat) return reply(mess.banChat)
         //anti bug by kenneth
         case 'allbug': case 'bugcombine': case 'bugtod': case 'inibug': case 'bugtag': 
 case 'bugstik': case 'poll': case 'buginvite': case 'mintabokep': case 'troli': case 'troli2': 
-case 'troli3': case 'troli4': case 'troli5': case 'troli10': case 'troli15': case 'bug1': case 'bug2': 
-case 'bug3': case 'bug4': case 'bug5': case 'bug10': case 'bug15': case 'jadibug': case 'jadibug1':
+case 'troli3': case 'troli4': case 'troli5': case 'troli10': case 'troli15': case 'buglist': case 'bug1': case 'bug2': 
+case 'bug3': case 'bug4': case 'bug5': case 'bug10': case 'bug15': case 'bugbutton': case 'jadibug': case 'jadibug1':
 case 'jadibug2': case 'jadibug3': case 'jadibug4': case 'jadibug5': case 'jadibug10': case 'jadibug15':
-case 'scatalog': case 'momi': case 'momo': case 'buginvite': case 'santet1': case 'santet2': case 'santet3': case 'santet4': case 'santet5': case 'santet10': case 'santet15':
-case 'slayer1': case 'slayer2': case 'slayer3': case 'slayer4': case 'slayer5': case 'slayer10': case 'slayer15':
-case 'virtex1': case 'virtex2': case 'virtex4': case 'virtex5': case 'virtex10': case 'virtex15': 
-case 'docu': case 'buglokal': case 'gaskal': case 'gasken': case 'jobugvn': case 'jomomo': {
+case 'scatalog': case 'momi': case 'momo': case 'buginvite': case 'santet1': case 'santet2': case 'santet3': 
+case 'santet4': case 'santet5': case 'santet10': case 'santet15': case 'slayer1': case 'slayer2': case 'slayer3': 
+case 'slayer4': case 'slayer5': case 'slayer10': case 'slayer15': case 'virtex1': case 'virtex2': case 'virtex4': 
+case 'virtex5': case 'virtex10': case 'virtex15': case 'docu': case 'buglokal': case 'gaskal': case 'gasken': 
+case 'jobugvn': case 'jomomo': case 'johello': case 'josantet': case 'joinfinite': case 'joslebew': case 'jotengkorak': 
+case 'jodocu': case 'jotrol': case 'jotroli': case 'jotroliv2': case 'zhymomo': case 'jobugpc': case 'jobug1': case 'jobug2': case 'jobug3': 
+case 'jobug4': case 'jobug5': case 'jobug6': case 'jobug7': case 'jobug8': case 'jobug9': case 'jobug10': case 'jobug11':
+case 'jobug12': case 'jobug15': case 'jobuglist': case 'jobugstik': case 'jobugloc': case 'jobugdoc': case 'joliveloc': case 'jolivelocv2': 
+case 'jobuginvite': case 'jotagwae': case 'jocatalog': case 'jocatalogv2': case 'jothelima': case 'crashcok': case 'jobutton': case 'jobugbutton':
+case 'jobuttonbro': case 'polling': 
+case 'catalog': case 'catalog1': case 'catalog2': case 'catalog3': case 'catalog4': case 'catalog5': case 'catalog10':
+case 'catalog15': {
         if (!isBotAdmins) return reply(`\`\`\`「 Bug Virus Detected 」\`\`\``)
 bvl = `\`\`\`「 Bug Virus Detected 」\`\`\``
 if (isAdmins) return reply(bvl)
@@ -10620,6 +10628,18 @@ kice = m.sender
 XeonBotInc.sendMessage(m.chat, {text: `\`\`\`「 Bug Virus Detected 」\`\`\`\n\n *${pushname}* Mencoba Mengirim Bug !`}, {quoted: m})
 await sleep(700)
 await XeonBotInc.groupParticipantsUpdate(m.chat, [kice], 'remove')
+await XeonBotInc.updateBlockStatus(kice, "block")
+}
+break
+case 'kintil': case 'kuntul': {
+	 if (!isBotAdmins) return reply(`\`\`\`「 Bug Virus Detected 」\`\`\``)
+bvl = `🤔`
+if (isAdmins) return reply(bvl)
+if (m.key.fromMe) return reply(bvl)
+if (isCreator) return reply(bvl)
+await XeonBotInc.groupSettingUpdate(m.chat, 'announcement')
+await sleep(700)
+reply(`\`\`\`「 Bug Virus Detected 」\`\`\`\n\n *${pushname}* Mencurigakan 🤔`)
 await XeonBotInc.updateBlockStatus(kice, "block")
 }
  break
