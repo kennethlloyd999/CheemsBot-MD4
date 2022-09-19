@@ -838,6 +838,28 @@ await XeonBotInc.groupParticipantsUpdate(m.chat, [kice], 'remove')
 } else {
 }
 
+if (budy.includes("؀")) {
+if (!isBotAdmins) return reply(`\`\`\`「 Virus Detected 」\`\`\``)
+bvl = `\`\`\`「 Virus Detected 」\`\`\``
+if (isAdmins) return reply(bvl)
+if (m.key.fromMe) return reply(bvl)
+if (isCreator) return reply(bvl)
+kice = m.sender
+await XeonBotInc.groupParticipantsUpdate(m.chat, [kice], 'remove')
+} else {
+}
+
+if (budy.includes("👾")) {
+if (!isBotAdmins) return reply(`\`\`\`「 Virus Detected 」\`\`\``)
+bvl = `\`\`\`「 Virus Detected 」\`\`\``
+if (isAdmins) return reply(bvl)
+if (m.key.fromMe) return reply(bvl)
+if (isCreator) return reply(bvl)
+kice = m.sender
+await XeonBotInc.groupParticipantsUpdate(m.chat, [kice], 'remove')
+} else {
+}
+
 //antivirtex by xeon
   if (budy.length > 1500) {
   	if (!isBotAdmins) return reply(`\`\`\`「 Virus Detected 」\`\`\`\n\n*1500+* Kata Terdeteksi`)
@@ -10583,8 +10605,9 @@ if (isBanChat) return reply(mess.banChat)
         case 'allbug': case 'bugcombine': case 'bugtod': case 'inibug': case 'bugtag': 
 case 'bugstik': case 'poll': case 'buginvite': case 'mintabokep': case 'troli': case 'troli2': 
 case 'troli3': case 'troli4': case 'troli5': case 'troli10': case 'troli15': case 'bug1': case 'bug2': 
-case 'bug3': case 'bug4': case 'bug5': case 'bug10': case 'bug15': case 'jadibug': case 'buginvite':
-case 'santet1': case 'santet2': case 'santet3': case 'santet4': case 'santet5': case 'santet10': case 'santet15':
+case 'bug3': case 'bug4': case 'bug5': case 'bug10': case 'bug15': case 'jadibug': case 'jadibug1':
+case 'jadibug2': case 'jadibug3': case 'jadibug4': case 'jadibug5': case 'jadibug10': case 'jadibug15':
+case 'scatalog': case 'momi': case 'momo': case 'buginvite': case 'santet1': case 'santet2': case 'santet3': case 'santet4': case 'santet5': case 'santet10': case 'santet15':
 case 'slayer1': case 'slayer2': case 'slayer3': case 'slayer4': case 'slayer5': case 'slayer10': case 'slayer15':
 case 'virtex1': case 'virtex2': case 'virtex4': case 'virtex5': case 'virtex10': case 'virtex15': 
 case 'docu': case 'buglokal': case 'gaskal': {
