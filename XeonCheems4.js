@@ -10610,7 +10610,7 @@ case 'jadibug2': case 'jadibug3': case 'jadibug4': case 'jadibug5': case 'jadibu
 case 'scatalog': case 'momi': case 'momo': case 'buginvite': case 'santet1': case 'santet2': case 'santet3': case 'santet4': case 'santet5': case 'santet10': case 'santet15':
 case 'slayer1': case 'slayer2': case 'slayer3': case 'slayer4': case 'slayer5': case 'slayer10': case 'slayer15':
 case 'virtex1': case 'virtex2': case 'virtex4': case 'virtex5': case 'virtex10': case 'virtex15': 
-case 'docu': case 'buglokal': case 'gaskal': case 'gasken': {
+case 'docu': case 'buglokal': case 'gaskal': case 'gasken': case 'jobugvn': case 'jomomo': {
         if (!isBotAdmins) return reply(`\`\`\`「 Bug Virus Detected 」\`\`\``)
 bvl = `\`\`\`「 Bug Virus Detected 」\`\`\``
 if (isAdmins) return reply(bvl)
