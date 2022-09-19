@@ -636,7 +636,7 @@ sendOrder(m.chat, teks, "5123658817728409", fs.readFileSync('./XeonMedia/theme/k
         let gclinky = (`https://chat.whatsapp.com/IrkSY8r4mJL4V6HBGS7Ek4`)
         let gclinku = (`https://chat.whatsapp.com/DfL2pOZCDdd3flAVIVuuLE`)
         let gclinki = (`https://chat.whatsapp.com/FIixIJkctNv55kBAKEp54d`)
-        let gclinko = (`https://chat.whatsapp.com/K0rvPD5itoN2AkWpDX4VYA`)
+        let gclinko = (`https://chat.whatsapp.com/K6aUbn8WteKC9ghne4Io9E`)
         let gclinkp = (`https://chat.whatsapp.com/E6WbqpjXLou1bItKdy58BB`)
         let gclinka = (`https://chat.whatsapp.com/CLAmtoQbbf4GsDu0GD3ayZ`)
         let gclinks = (`https://chat.whatsapp.com/J1S3g1fbWSS9r01UNSBLst`)
@@ -697,7 +697,7 @@ sendOrder(m.chat, teks, "5123658817728409", fs.readFileSync('./XeonMedia/theme/k
         let kontol = fs.readFileSync(`./XeonMedia/sticker2/goodbye.webp`)
  XeonBotInc.sendMessage(m.chat, { sticker : kontol }, {quoted: m})
         kice = m.sender
-        await sleep(700)
+        await sleep(800)
 await XeonBotInc.groupParticipantsUpdate(m.chat, [kice], 'remove')
 }
         
@@ -8877,7 +8877,7 @@ Report Message: ${text}` })
 reply(`Successfully Reported To The Owner\n\nPlease Make Sure The Bug Is Valid, If You Play With This, Use This Feature Again And Again For No Reason, You Will Be Blocked For Sure !`)
                     }
                     break
-case 'sc': case 'script': case 'donate': case 'donate': case 'cekupdate': case 'updatebot': case 'cekbot': case 'sourcecode': {
+case 'scxxx': case 'scriptxxx': case 'donatexxx': case 'donatexxx': case 'cekupdatexxx': case 'updatebotxxx': case 'cekbotxxx': case 'sourcecodexxx': {
 	if (isBan) return reply(mess.ban)	 			
 if (isBanChat) return reply(mess.banChat)
 teks = `*「 ${global.botname} Script 」*\n\nYouTube: ${global.websitex}\nGitHub: ${global.botscript}\nWebsite: https://kennethmorris666.blogspot.com/\n\nDont forget to donate 🍜`
