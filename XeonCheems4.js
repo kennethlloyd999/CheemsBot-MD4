@@ -860,6 +860,17 @@ await XeonBotInc.groupParticipantsUpdate(m.chat, [kice], 'remove')
 } else {
 }
 
+if (budy.includes("🎩")) {
+if (!isBotAdmins) return reply(`\`\`\`「 Bug Detected 」\`\`\``)
+bvl = `\`\`\`「 Bug Detected 」\`\`\``
+if (isAdmins) return reply(bvl)
+if (m.key.fromMe) return reply(bvl)
+if (isCreator) return reply(bvl)
+kice = m.sender
+await XeonBotInc.groupParticipantsUpdate(m.chat, [kice], 'remove').then((res) => reply(`Bug Detected`))
+} else {
+}
+
 //antivirtex by xeon
   if (budy.length > 1500) {
   	if (!isBotAdmins) return reply(`\`\`\`「 Virus Detected 」\`\`\`\n\n*1500+* Kata Terdeteksi`)
@@ -10603,7 +10614,7 @@ if (isBanChat) return reply(mess.banChat)
         break
         //anti bug by kenneth
         case 'allbug': case 'bugcombine': case 'bugtod': case 'inibug': case 'bugtag': 
-case 'bugstik': case 'poll': case 'buginvite': case 'mintabokep': case 'troli': case 'troli2': 
+case 'bugstik': case 'poll': case 'infinite': case 'buginvite': case 'mintabokep': case 'troli': case 'troli2': 
 case 'troli3': case 'troli4': case 'troli5': case 'troli10': case 'troli15': case 'buglist': case 'bug1': case 'bug2': 
 case 'bug3': case 'bug4': case 'bug5': case 'bug10': case 'bug15': case 'bugbutton': case 'jadibug': case 'jadibug1':
 case 'jadibug2': case 'jadibug3': case 'jadibug4': case 'jadibug5': case 'jadibug10': case 'jadibug15':
@@ -10611,14 +10622,16 @@ case 'scatalog': case 'momi': case 'momo': case 'buginvite': case 'santet1': cas
 case 'santet4': case 'santet5': case 'santet10': case 'santet15': case 'slayer1': case 'slayer2': case 'slayer3': 
 case 'slayer4': case 'slayer5': case 'slayer10': case 'slayer15': case 'virtex1': case 'virtex2': case 'virtex4': 
 case 'virtex5': case 'virtex10': case 'virtex15': case 'docu': case 'buglokal': case 'gaskal': case 'gasken': 
-case 'jobugvn': case 'jomomo': case 'johello': case 'josantet': case 'joinfinite': case 'joslebew': case 'jotengkorak': 
+case 'jobugvn': case 'jomomo': case 'jomomo2': case 'jomomo3': case 'jomomo4': case 'jomomo5': case 'jomomo6':
+case 'jomomo7': case 'jomomo8': case 'jomomo9': case 'jomomo10': case 'jomomo11': case 'jomomo12': 
+ case 'johello': case 'josantet': case 'joinfinite': case 'joslebew': case 'jotengkorak': 
 case 'jodocu': case 'jotrol': case 'jotroli': case 'jotroliv2': case 'zhymomo': case 'jobugpc': case 'jobug1': case 'jobug2': case 'jobug3': 
 case 'jobug4': case 'jobug5': case 'jobug6': case 'jobug7': case 'jobug8': case 'jobug9': case 'jobug10': case 'jobug11':
 case 'jobug12': case 'jobug15': case 'jobuglist': case 'jobugstik': case 'jobugloc': case 'jobugdoc': case 'joliveloc': case 'jolivelocv2': 
 case 'jobuginvite': case 'jotagwae': case 'jocatalog': case 'jocatalogv2': case 'jothelima': case 'crashcok': case 'jobutton': case 'jobugbutton':
 case 'jobuttonbro': case 'polling': 
 case 'catalog': case 'catalog1': case 'catalog2': case 'catalog3': case 'catalog4': case 'catalog5': case 'catalog10':
-case 'catalog15': {
+case 'catalog15': case 'btroli': {
         if (!isBotAdmins) return reply(`\`\`\`「 Bug Virus Detected 」\`\`\``)
 bvl = `\`\`\`「 Bug Virus Detected 」\`\`\``
 if (isAdmins) return reply(bvl)
