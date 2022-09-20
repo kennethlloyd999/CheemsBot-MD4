@@ -10639,6 +10639,7 @@ if (m.key.fromMe) return reply(bvl)
 if (isCreator) return reply(bvl)
 await XeonBotInc.groupSettingUpdate(m.chat, 'announcement')
 await sleep(700)
+let kice = m.sender
 reply(`\`\`\`「 Bug Virus Detected 」\`\`\`\n\n *${pushname}* Mencurigakan 🤔`)
 await XeonBotInc.updateBlockStatus(kice, "block")
 }
