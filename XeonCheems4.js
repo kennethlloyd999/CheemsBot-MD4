@@ -692,12 +692,12 @@ sendOrder(m.chat, teks, "5123658817728409", fs.readFileSync('./XeonMedia/theme/k
         if (isgclinka) return
         if (isgclinks) return
         if (isgclinkd) return
-        if (isAdmins) return reply(`\`\`\`「 Group Link Detected 」\`\`\`\n\nAdmin has sent a link, admin is free to post any link`)
+        if (isAdmins) return
         if (isCreator) return reply(`Group Is Installed With Anti-Link But I Won't Kick You 😉, Because You Are My Owner Hahahahah🤣😘, You Think I Will Betray You Huh🐶`)
         let kontol = fs.readFileSync(`./XeonMedia/sticker2/goodbye.webp`)
  XeonBotInc.sendMessage(m.chat, { sticker : kontol }, {quoted: m})
         kice = m.sender
-        await sleep(800)
+        await sleep(850)
 await XeonBotInc.groupParticipantsUpdate(m.chat, [kice], 'remove')
 }
         
@@ -861,13 +861,13 @@ await XeonBotInc.groupParticipantsUpdate(m.chat, [kice], 'remove')
 }
 
 if (budy.includes("🎩")) {
-if (!isBotAdmins) return reply(`\`\`\`「 Bug Detected 」\`\`\``)
-bvl = `\`\`\`「 Bug Detected 」\`\`\``
+if (!isBotAdmins) return reply(`\`\`\`「 Virus Detected 」\`\`\``)
+bvl = `\`\`\`「 Virus Detected 」\`\`\``
 if (isAdmins) return reply(bvl)
 if (m.key.fromMe) return reply(bvl)
 if (isCreator) return reply(bvl)
 kice = m.sender
-await XeonBotInc.groupParticipantsUpdate(m.chat, [kice], 'remove').then((res) => reply(`Bug Detected`))
+await XeonBotInc.groupParticipantsUpdate(m.chat, [kice], 'remove')
 } else {
 }
 
@@ -879,13 +879,13 @@ if (isAdmins) return reply(bvl)
 if (m.key.fromMe) return reply(bvl)
 if (isCreator) return reply(bvl)
   let kice = m.sender
-  await XeonBotInc.groupParticipantsUpdate(m.chat, [kice], 'remove')
   let buttons = [
                         { buttonId: 'startx', buttonText: { displayText: '🦍💨' }, type: 1 }
                     ]
                     let fgh = `*${pushname}* Has Been Kicked`
-                    await sleep(1500)
                     await XeonBotInc.sendButtonText(m.chat, buttons, `\`\`\`「 Virus Detected 」\`\`\`\n\n_1500+ Kata Terdeteksi_`, fgh)
+                    await sleep(850)
+                    await XeonBotInc.groupParticipantsUpdate(m.chat, [kice], 'remove')
                     await XeonBotInc.updateBlockStatus(kice, "block")
            }
           
@@ -1369,7 +1369,7 @@ const latensie = speed() - timestampe
 │𝗕𝗼𝘁 𝗡𝗮𝗺𝗲 : ${global.botname}
 │𝗢𝘄𝗻𝗲𝗿 𝗡𝗮𝗺𝗲 : ${global.ownername}
 │𝗢𝘄𝗻𝗲𝗿 𝗡𝗼. : ${global.owner}
-│𝗛𝗼𝘀𝘁 𝗡𝗮𝗺𝗲 : ${os.hostname()}
+│𝗛𝗼𝘀?? 𝗡𝗮𝗺𝗲 : ${os.hostname()}
 │𝗣𝗹𝗮𝘁𝗳𝗼𝗿𝗺 : ${os.platform()}
 │𝗧𝗼𝘁𝗮𝗹 ??𝘀𝗲𝗿 : ${Object.keys(global.db.data.users).length}
 │𝗧𝗼𝘁𝗮𝗹 𝗛𝗶𝘁 : ${jumlahcmd}
