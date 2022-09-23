@@ -6679,7 +6679,7 @@ if (isBanChat) return reply(mess.banChat)
                   if (!isUrl(args[0]) && !args[0].includes('facebook.com')) return reply(`The link you provided is not valid`)
   let noh = require('@bochilteam/scraper')                
   noh.savefrom(`${text}`).then(async (anu) => {  
-  XeonBotInc.sendMessage(m.chat, { audio: { url: anu.url[0].url }, mimetype: 'audio/mp4' }, { quoted: m })      
+  XeonBotInc.sendMessage(m.chat, { audio : { url: anu.url[0].url }, caption: 'audio/mp4' }, { quoted: m })      
                 }).catch((err) => {
                     reply(mess.error)
                 })
@@ -8148,7 +8148,7 @@ break
    const musim_rambutan = await XeonBotIncTiktok(`${q}`).catch(e => {
  reply(mess.error) 
 } )
-   console.log(musim_rambutan)
+  console.log(musim_rambutan)
    const xeontiktokop = musim_rambutan.result.watermark
 texttk = `Wanna download no watermark or audio?
 _Please choose the button below_`
@@ -8201,51 +8201,58 @@ case 'ttaud':{
    console.log(musim_rambutan)
    const xeonytiktokaudio = musim_rambutan.result.nowatermark
     XeonBotInc.sendMessage(from, { audio: { url: xeonytiktokaudio }, mimetype: 'audio/mp4' }, { quoted: m })
-   }
+ }
  break
-	case 'music': case 'play': case 'song': case 'ytplay': {
+case 'music': case 'play': case 'song': case 'ytplay': {
    if (isBan) return reply(mess.ban)	 			
 if (isBanChat) return reply(mess.banChat)
 if (!q) return reply('Error!\n\nExample: .play JASJOES')
-  reply(mess.wait)
+reply(mess.wait)
 let yts = require("yt-search")
 let search = await yts(text)
-let anu = search.videos[Math.floor(Math.random() * search.videos.length)]
-let ytvc = await hx.youtube(anu.url)
-let buttons = [
-{buttonId: `ytvd ${ytvc.link}`, buttonText: {displayText: '► Video'}, type: 1},
-{buttonId: `ytvn ${ytvc.mp3}`, buttonText: {displayText: '♫ Audio'}, type: 1}
-]
-let buttonMessage = {
-image: { url: anu.thumbnail },
-caption: `*| YOUTUBE PLAY |*
+let babi = search.videos[Math.floor(Math.random() * search.videos.length)]
+let ytvc = await hx.youtube(babi.url)
+anu = await fetchJson(`https://api.akuari.my.id/downloader/youtube?link=${babi.url}`)        
+                if (anu.filesize_video >= 999999) return reply('*File Over Limit* '+util.format(anu))
+                tummb = await getBuffer(anu.thumb)
+                audio = await getBuffer(anu.audio) 
+                await XeonBotInc.sendMessage(from, { video: { url: anu.video }, jpegThumbnail:tummb, caption: `Success!\n\n☑ *Title* : ${anu.title}\n☑ *Duration* : ${babi.timestamp}\n☑ *Size* : ${anu.filesize_video}\n☑ *Quality* : 480p\n☑ *Url* : ${babi.url}\n\n_Balas *tomp3* untuk mengonversi ke musik_\n_Balas *tovn* untuk mengonversi ke voice note_`}, { quoted: m }).catch((err) => reply(mess.error))
+            }
 
-${global.themeemoji} Title : ${anu.title}
-${global.themeemoji} Ext : Search
-${global.themeemoji} ID : ${anu.videoId}
-${global.themeemoji} Duration : ${anu.timestamp}
-${global.themeemoji} Viewers : ${anu.views}
-${global.themeemoji} Uploaded : ${anu.ago}
-${global.themeemoji} Author : ${anu.author.name}
-${global.themeemoji} Channel : ${anu.author.url}
-${global.themeemoji} Description : ${anu.description}
-${global.themeemoji} Url : ${anu.url}`,
-footer: `${global.botname}`,
-buttons: buttons,
-headerType: 4,
-contextInfo:{externalAdReply:{
-title: anu.title,
-body: `${global.botname}`,
-thumbnail: log0,
-mediaType:2,
-mediaUrl: anu.url,
-sourceUrl: anu.url
-}}
-}
-XeonBotInc.sendMessage(m.chat, buttonMessage, { quoted: m })
-}
 break
-case 'getmusic': case 'getvideo': case 'yt': case 'youtube': case 'ytvideo': case 'ytmp3': case 'ytmp4': case 'ytmusic': {
+case 'ytmp3': case 'ytmusic': case 'getmusic': {
+if (isBan) return reply(mess.ban) 
+	if (isBanChat) return reply(mess.banChat)
+                if (!text) return reply(mess.linkm)
+                if (!isUrl(args[0]) && !args[0].includes('youtube.com')) return reply(`The link you provided is invalid`)
+                let yts = require("yt-search")
+let search = await yts(text)
+let babi = search.videos[Math.floor(Math.random() * search.videos.length)]
+                anu = await fetchJson(`https://api.akuari.my.id/downloader/youtube?link=${text}`)        
+                if (anu.filesize_video >= 999999) return reply('*File Over Limit* '+util.format(anu))
+                tummb = await getBuffer(anu.thumb)
+                audio = await getBuffer(anu.audio)        
+                let kntl = await XeonBotInc.sendMessage(m.chat, {text: `\`\`\`「 YOUTUBE DOWNLOADER 」\`\`\`\n\n☑ *Title* : ${anu.title}\n☑ *Duration* : ${babi.timestamp}\n☑ *Size* : ${anu.filesize_audio}\n☑ *Quality* : 128kbps`}, {quoted: m})
+               await XeonBotInc.sendMessage(from, {document: audio, mimetype: 'audio/mpeg', fileName: `${anu.title}`}, { quoted : kntl }).catch((err) => reply(mess.error))
+            }
+break
+case 'getvideo': case 'ytmp4': case 'ytvideo': case 'yt': case 'youtube': {
+if (isBan) return reply(mess.ban) 
+	if (isBanChat) return reply(mess.banChat)
+                if (!text) return reply(mess.linkm)
+                if (!isUrl(args[0]) && !args[0].includes('youtube.com')) return reply(`The link you provided is invalid`)
+                let yts = require("yt-search")
+let search = await yts(text)
+let babi = search.videos[Math.floor(Math.random() * search.videos.length)]
+                anu = await fetchJson(`https://api.akuari.my.id/downloader/youtube?link=${text}`)        
+                if (anu.filesize_video >= 999999) return reply('*File Over Limit* '+util.format(anu))
+                tummb = await getBuffer(anu.thumb)
+                audio = await getBuffer(anu.audio)        
+                let kntl = await XeonBotInc.sendMessage(m.chat, {text: `\`\`\`「 YOUTUBE DOWNLOADER 」\`\`\`\n\n☑ *Title* : ${anu.title}\n☑ *Duration* : ${babi.timestamp}\n☑ *Size* : ${anu.filesize_video}\n☑ *Quality* : 480p`}, {quoted: m})
+                XeonBotInc.sendMessage(from, { video: { url: anu.video }, jpegThumbnail:tummb, caption: `Success`}, { quoted: kntl }).catch((err) => reply(mess.error))
+            }
+break
+ case 'ytmp4xxx': {
    if (isBan) return reply(mess.ban)	 			
 if (isBanChat) return reply(mess.banChat)
 if (!args[0]) return reply(mess.linkm)
@@ -9922,7 +9929,7 @@ break
  ┃╠ ${prefix}mcserver [ip|port] 
  ┃╠ ${prefix}drakor [query] 
  ┃╚═════════════✪
- ┗━「 *Created By Kenneth Morris* 」━⭓` + '' + ' ', `${pushname}`,unicorn, [{"urlButton": {"displayText": "YouTube 📍","url": `${websitex}`}},{"quickReplyButton": {"displayText": "Owner 👤","id": 'owner'}}] )
+ ┗━「 *Created By Kenneth Morris* 」━⭓` + '' + ' ', `${pushname}`,unicorn, [{"urlButton": {"displayText": "YouTube ??","url": `${websitex}`}},{"quickReplyButton": {"displayText": "Owner 👤","id": 'owner'}}] )
  break 
  case 'convertmenu': 
             if (isBan) return reply(mess.ban) 
