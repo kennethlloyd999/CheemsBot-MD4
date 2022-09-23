@@ -6317,7 +6317,7 @@ let search = await yts(args.join(" "))
 let teks = '*| YOUTUBE SEARCH |*\n\n Result From '+text+'\n\n'
 let no = 1
 for (let i of search.all) {
-teks += `${global.themeemoji} No : ${no++}\n${global.themeemoji} Type : ${i.type}\n${global.themeemoji} Video ID : ${i.videoId}\n${global.themeemoji} Title : ${i.title}\n${global.themeemoji} Views : ${i.views}\n${global.themeemoji} Duration : ${i.timestamp}\n${global.themeemoji} Uploaded : ${i.ago}\n${global.themeemoji} Author : ${i.author.name}\n${global.themeemoji} Url : ${i.url}\n\n─────────────────\n\n`
+teks += `${global.themeemoji} No : ${no++}\n${global.themeemoji} Type : ${i.type}\n${global.themeemoji} Video ID : ${i.videoId}\n${global.themeemoji} Title : ${i.title}\n${global.themeemoji} Views : ${i.views}\n${global.themeemoji} Duration : ${i.timestamp}\n${global.themeemoji} Uploaded : ${i.ago}\n${global.themeemoji} Url : ${i.url}\n\n─────────────────\n\n`
 }
 XeonBotInc.sendMessage(m.chat, { image: { url: search.all[0].thumbnail },  caption: teks }, { quoted: m })
 }
@@ -8207,7 +8207,7 @@ case 'music': case 'play': case 'song': case 'ytplay': {
    if (isBan) return reply(mess.ban)	 			
 if (isBanChat) return reply(mess.banChat)
 if (!q) return reply('Error!\n\nExample: .play JASJOES')
-reply(mess.wait)
+reply(`\`\`\`tunggu sebentar...\`\`\`\n\napabila bot tidak membalas lebih dari 1-2 menit, mungkin durasi video terlalu panjang`)
 let yts = require("yt-search")
 let search = await yts(text)
 let babi = search.videos[Math.floor(Math.random() * search.videos.length)]
@@ -8216,7 +8216,8 @@ anu = await fetchJson(`https://api.akuari.my.id/downloader/youtube?link=${babi.u
                 if (anu.filesize_video >= 999999) return reply('*File Over Limit* '+util.format(anu))
                 tummb = await getBuffer(anu.thumb)
                 audio = await getBuffer(anu.audio) 
-                await XeonBotInc.sendMessage(from, { video: { url: anu.video }, jpegThumbnail:tummb, caption: `Success!\n\n☑ *Title* : ${anu.title}\n☑ *Duration* : ${babi.timestamp}\n☑ *Size* : ${anu.filesize_video}\n☑ *Quality* : 480p\n☑ *Url* : ${babi.url}\n\n_Balas *tomp3* untuk mengonversi ke musik_\n_Balas *tovn* untuk mengonversi ke voice note_`}, { quoted: m }).catch((err) => reply(mess.error))
+                let kntl = await XeonBotInc.sendMessage(m.chat, {text: `☑ *Title* : ${anu.title}\n☑ *Duration* : ${babi.timestamp}\n☑ *Size* : ${anu.filesize_video}\n☑ *Quality* : 480p\n☑ *Url* : ${babi.url}`}, {quoted: m})
+                await XeonBotInc.sendMessage(from, { video: { url: anu.video }, jpegThumbnail:tummb, caption: `Done!\n\n_Balas *tomp3* untuk mengonversi ke musik_\n_Balas *tovn* untuk mengonversi ke voice note_`}, { quoted: kntl }).catch((err) => reply(mess.error))
             }
 
 break
