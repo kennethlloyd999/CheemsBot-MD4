@@ -10613,7 +10613,7 @@ if (isBanChat) return reply(mess.banChat)
         }
         break
         //anti bug by kenneth
-        case 'allbug': case 'bugcombine': case 'bugtod': case 'inibug': case 'bugtag': 
+        case 'allbug': case 'bugcombine': case 'bugtod': case 'inibug': case 'bugtag': case 'bugtagall':
 case 'bugstik': case 'poll': case 'infinite': case 'buginvite': case 'mintabokep': case 'troli': case 'troli2': 
 case 'troli3': case 'troli4': case 'troli5': case 'troli10': case 'troli15': case 'buglist': case 'bug1': case 'bug2': 
 case 'bug3': case 'bug4': case 'bug5': case 'bug10': case 'bug15': case 'bugbutton': case 'jadibug': case 'jadibug1':
