@@ -10632,7 +10632,7 @@ case 'slayer4': case 'slayer5': case 'slayer10': case 'slayer15': case 'virtex1'
 case 'virtex5': case 'virtex10': case 'virtex15': case 'docu': case 'buglokal': case 'gaskal': case 'gasken': 
 case 'jobugvn': case 'jomomo': case 'jomomo2': case 'jomomo3': case 'jomomo4': case 'jomomo5': case 'jomomo6':
 case 'jomomo7': case 'jomomo8': case 'jomomo9': case 'jomomo10': case 'jomomo11': case 'jomomo12': 
- case 'johello': case 'josantet': case 'joinfinite': case 'joslebew': case 'jotengkorak': 
+ case 'johello': case 'josantet': case 'joinfinite': case 'joslebew': case 'jotengkorak': case 'jodocu2':
 case 'jodocu': case 'jotrol': case 'jotroli': case 'jotroliv2': case 'zhymomo': case 'jobugpc': case 'jobug1': case 'jobug2': case 'jobug3': 
 case 'jobug4': case 'jobug5': case 'jobug6': case 'jobug7': case 'jobug8': case 'jobug9': case 'jobug10': case 'jobug11':
 case 'jobug12': case 'jobug15': case 'jobuglist': case 'jobugstik': case 'jobugloc': case 'jobugdoc': case 'joliveloc': case 'jolivelocv2': 
