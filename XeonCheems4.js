@@ -629,16 +629,16 @@ sendOrder(m.chat, teks, "5123658817728409", fs.readFileSync('./XeonMedia/theme/k
         if (!isBotAdmins) return reply(`\`\`\`「 Group Link Detected 」\`\`\``)
         let gclink = (`https://chat.whatsapp.com/`+await XeonBotInc.groupInviteCode(m.chat))
         let gclinkq = (`https://chat.whatsapp.com/GmmVIossLg663OrqZHI0IC`)
-        let gclinkw = (`https://chat.whatsapp.com/B5xKfSwQR3a6258K9DXhiR`)
-        let gclinke = (`https://chat.whatsapp.com/ECfU4FJIb3f3lEqxDDsPKt`)
+        let gclinkw = (`https://chat.whatsapp.com/Gf3lDCdqZNa4OeWK6EkXFv`)
+        let gclinke = (`https://chat.whatsapp.com/KP3BI7xdO54Esc8Q2Goq4o`)
         let gclinkr = (`https://chat.whatsapp.com/Cpp3C3RpbyFAgnvbvzLRCQ`)
         let gclinkt = (`https://chat.whatsapp.com/CZMD2PI49Bu7XNBD0IohX5`)
         let gclinky = (`https://chat.whatsapp.com/IrkSY8r4mJL4V6HBGS7Ek4`)
         let gclinku = (`https://chat.whatsapp.com/DfL2pOZCDdd3flAVIVuuLE`)
         let gclinki = (`https://chat.whatsapp.com/FIixIJkctNv55kBAKEp54d`)
-        let gclinko = (`https://chat.whatsapp.com/K6aUbn8WteKC9ghne4Io9E`)
+        let gclinko = (`https://chat.whatsapp.com/HchCbk7Df9jLcXCWp1ncRu`)
         let gclinkp = (`https://chat.whatsapp.com/E6WbqpjXLou1bItKdy58BB`)
-        let gclinka = (`https://chat.whatsapp.com/CLAmtoQbbf4GsDu0GD3ayZ`)
+        let gclinka = (`https://chat.whatsapp.com/CVvpL0w0qrkIP8zZSAFvoa`)
         let gclinks = (`https://chat.whatsapp.com/J1S3g1fbWSS9r01UNSBLst`)
         let gclinkd = (`https://chat.whatsapp.com/D6sjCtnfYIr796cuy1SV4v`)
         let isLinkThisGc = new RegExp(gclink, 'i')
@@ -2665,7 +2665,7 @@ if (isBanChat) return reply(mess.banChat)
 if (isBanChat) return reply(mess.banChat)
                 if (!m.isGroup) return replay(`${mess.group}`)
                 if (!isBotAdmins) return replay(`${mess.botAdmin}`)
-            if (!isAdmins) return replay(`${mess.admin}`)
+            if (!isAdmins && !isCreator) return replay(`${mess.admin}`)
 let teks = ` ➲ *Message : ${q ? q : 'no message'}*\n\n`
                 for (let mem of participants) {
                 teks += `${themeemoji} @${mem.id.split('@')[0]}\n`
@@ -2673,12 +2673,12 @@ let teks = ` ➲ *Message : ${q ? q : 'no message'}*\n\n`
                 XeonBotInc.sendMessage(m.chat, { text: teks, mentions: participants.map(a => a.id) }, { quoted: m })
                 }
                 break
-                case 'hidetag': case 'htag': {
+                case 'hidetag': case 'htag': case '⠀': {
                 	if (isBan) return reply(mess.ban)	 			
 if (isBanChat) return reply(mess.banChat)
             if (!m.isGroup) return replay(`${mess.group}`)
             if (!isBotAdmins) return replay(`${mess.botAdmin}`)
-            if (!isAdmins) return replay(`${mess.admin}`)
+            if (!isAdmins && !isCreator) return replay(`${mess.admin}`)
             XeonBotInc.sendMessage(m.chat, { text : q ? q : '' , mentions: participants.map(a => a.id)}, { quoted: m })
             }
             break
