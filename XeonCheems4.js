@@ -612,6 +612,7 @@ await XeonBotInc.updateBlockStatus(kice, "block")
 } 
         //bangsat
         if (m.mtype === 'documentMessage') {
+        	if (isAdmins) return
         	let kntl = await XeonBotInc.sendMessage(m.chat, {text: `\`\`\`\「 Document Virus Detected 」\`\`\` \n\nSorry, Our System Detected The Document File As A Virus!`},{quoted: fdocs})
         kice = m.sender
     let result = fs.readFileSync(`./XeonMedia/sticker2/goodbye.webp`)
@@ -624,6 +625,38 @@ if (m.mtype === 'groupInviteMessage') {
 teks = `\`\`\`「 Group Invite Message Detected 」\`\`\`\n\nTunggu sampai owner merespon hambaqu!`
 sendOrder(m.chat, teks, "5123658817728409", fs.readFileSync('./XeonMedia/theme/kotakmasuk.jpg'), `${botname}`, "916909137213@s.whatsapp.net", "AR7zJt8MasFx2Uir/fdxhkhPGDbswfWrAr2gmoyqNZ/0Wg==", "99999999999999999999")
 }
+//antitag by jasjus
+if (budy.includes("6285700580934")) {
+cb = fs.readFileSync(`./XeonMedia/sticker/Bacot banget kafir.webp`)
+bs = fs.readFileSync(`./XeonMedia/sticker/Oi.webp`)
+wk = fs.readFileSync(`./XeonMedia/sticker/Penyembah kambing.webp`)
+kb = fs.readFileSync(`./XeonMedia/sticker/Woi.webp`)
+tb = fs.readFileSync(`./XeonMedia/sticker/Gw islam.webp`)
+yk = fs.readFileSync(`./XeonMedia/sticker/Bacot lo babi.webp`)
+ja = fs.readFileSync(`./XeonMedia/sticker/Gelud.webp`)
+js = fs.readFileSync(`./XeonMedia/sticker/Yesus.webp`)
+tos = [cb,bs,wk,kb,tb,yk,ja,js]
+dj = tos[Math.floor(Math.random() * (tos.length))]
+XeonBotInc.sendMessage(from, {sticker: dj}, {quoted:m})
+} else {
+}
+
+//tag balas otomatis
+if (budy.includes("allah")) {
+cb = fs.readFileSync(`./XeonMedia/sticker/Sholat.webp`)
+bs = fs.readFileSync(`./XeonMedia/sticker/Allah.webp`)
+wk = fs.readFileSync(`./XeonMedia/sticker/Islam.webp`)
+kb = fs.readFileSync(`./XeonMedia/sticker/Allah swt.webp`)
+tb = fs.readFileSync(`./XeonMedia/sticker/Tuhannya kambing.webp`)
+yk = fs.readFileSync(`./XeonMedia/sticker/Muhammad anjing.webp`)
+ja = fs.readFileSync(`./XeonMedia/sticker/Gelud.webp`)
+js = fs.readFileSync(`./XeonMedia/sticker/Kristen bangsat.webp`)
+tos = [cb,bs,wk,kb,tb,yk,ja,js]
+dj = tos[Math.floor(Math.random() * (tos.length))]
+XeonBotInc.sendMessage(from, {sticker: dj}, {quoted:m})
+} else {
+}
+
 	// AntiLinkgc
         if (budy.includes(`chat.whatsapp.com`)) {
         if (!isBotAdmins) return reply(`\`\`\`「 Group Link Detected 」\`\`\``)
