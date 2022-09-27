@@ -2559,7 +2559,7 @@ if (isBanChat) return reply(mess.banChat)
 		await XeonBotInc.groupParticipantsUpdate(m.chat, [users], 'remove').then((res) => reply(`Done ✓`))
 	}
 	break
-	case 'addxxx': {
+	case 'adxx': {
 	if (isBan) return reply(mess.ban)	 			
 if (isBanChat) return reply(mess.banChat)
 if (!m.isGroup) return replay(`${mess.group}`)
@@ -2576,7 +2576,7 @@ if (isBanChat) return reply(mess.banChat)
         if (!isAdmins) return replay(`${mess.admin}`)
         if (!isBotAdmins) return replay(`${mess.botAdmin}`)
 		let users = m.quoted ? m.quoted.sender : text.replace(/[^0-9]/g, '')+'@s.whatsapp.net'
-		await XeonBotInc.groupParticipantsUpdate(m.chat, [users], 'add').then((res) => reply(`⠀\n[ "wa.me/${users.split("@")[0]}" ]\n⠀`))
+		await XeonBotInc.groupParticipantsUpdate(m.chat, [users], 'add').then((res) => reply(`Done! ✅`))
 	}
 	break
 	case 'promote': {
