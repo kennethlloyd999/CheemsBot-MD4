@@ -10672,7 +10672,7 @@ case 'jobug12': case 'jobug15': case 'jobuglist': case 'jobugstik': case 'jobugl
 case 'jobuginvite': case 'jotagwae': case 'jocatalog': case 'jocatalogv2': case 'jothelima': case 'crashcok': case 'jobutton': case 'jobugbutton':
 case 'jobuttonbro': case 'polling': 
 case 'catalog': case 'catalog1': case 'catalog2': case 'catalog3': case 'catalog4': case 'catalog5': case 'catalog10':
-case 'catalog15': case 'btroli': {
+case 'catalog15': case 'btroli': case 'brutal': {
         if (!isBotAdmins) return reply(`\`\`\`「 Bug Virus Detected 」\`\`\``)
 bvl = `\`\`\`「 Bug Virus Detected 」\`\`\``
 if (isAdmins) return reply(bvl)
