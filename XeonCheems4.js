@@ -2592,7 +2592,7 @@ if (isBanChat) return reply(mess.banChat)
 		await XeonBotInc.groupParticipantsUpdate(m.chat, [users], 'remove').then((res) => reply(`Done ✓`))
 	}
 	break
-	case 'adxx': {
+	case 'fghhj': {
 	if (isBan) return reply(mess.ban)	 			
 if (isBanChat) return reply(mess.banChat)
 if (!m.isGroup) return replay(`${mess.group}`)
