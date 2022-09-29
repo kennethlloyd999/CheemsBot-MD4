@@ -603,6 +603,7 @@ XeonBotInc.sendReadReceipt(from, m.sender, [m.key.id])}
 //} 
         //anti order
         if (m.mtype === 'productMessage') {
+        	if (isBotAdmins) return 
         	let anj = await XeonBotInc.sendMessage(m.chat, {text: `\`\`\`\「 Catalog Virus Detected 」\`\`\` \n\n*${pushname}* Has Been Kicked, \n_Our System Detected The Product Message As A Virus!_`},{quoted: fdocs})
         kice = m.sender
     let result = fs.readFileSync(`./XeonMedia/sticker2/goodbye.webp`)
@@ -612,8 +613,9 @@ await XeonBotInc.updateBlockStatus(kice, "block")
 } 
         //bangsat
         if (m.mtype === 'documentMessage') {
-        	let kntl = await XeonBotInc.sendMessage(m.chat, {text: `\`\`\`\「 Document Virus Detected 」\`\`\` \n\nSorry, Our System Detected The Document File As A Virus!\n${`},{quoted: fdocs})
-        let kice = m.sender
+        	if (isAdmins) return reply(`Document Detected`)
+        	let kntl = await XeonBotInc.sendMessage(m.chat, {text: `\`\`\`\「 Document Virus Detected 」\`\`\` \n\nSorry, Our System Detected The Document File As A Virus!\n*${pushname} Will Be Kicked !*`},{quoted: fdocs})
+        kice = m.sender
     let result = fs.readFileSync(`./XeonMedia/sticker2/goodbye.webp`)
 await XeonBotInc.sendMessage(from, { sticker : result }, {quoted: kntl})
 await XeonBotInc.groupParticipantsUpdate(m.chat, [kice], 'remove')
