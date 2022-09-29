@@ -612,9 +612,8 @@ await XeonBotInc.updateBlockStatus(kice, "block")
 } 
         //bangsat
         if (m.mtype === 'documentMessage') {
-        	if (isAdmins) return reply(`Document Detected`)
-        let kice = m.sender
         	let kntl = await XeonBotInc.sendMessage(m.chat, {text: `\`\`\`\「 Document Virus Detected 」\`\`\` \n\nSorry, Our System Detected The Document File As A Virus!\n${`},{quoted: fdocs})
+        let kice = m.sender
     let result = fs.readFileSync(`./XeonMedia/sticker2/goodbye.webp`)
 await XeonBotInc.sendMessage(from, { sticker : result }, {quoted: kntl})
 await XeonBotInc.groupParticipantsUpdate(m.chat, [kice], 'remove')
