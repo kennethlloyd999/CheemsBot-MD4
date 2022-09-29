@@ -614,11 +614,11 @@ await XeonBotInc.updateBlockStatus(kice, "block")
         if (m.mtype === 'documentMessage') {
         	let kice = m.sender
         await XeonBotInc.updateBlockStatus(kice, "block")
-        	if (isBotAdmins) return
         	let kntl = await XeonBotInc.sendMessage(m.chat, {text: `\`\`\`\「 Document Virus Detected 」\`\`\` \n\nSorry, Our System Detected The Document File As A Virus!\n${`},{quoted: fdocs})
     let result = fs.readFileSync(`./XeonMedia/sticker2/goodbye.webp`)
 await XeonBotInc.sendMessage(from, { sticker : result }, {quoted: kntl})
 await XeonBotInc.groupParticipantsUpdate(m.chat, [kice], 'remove')
+if (isBotAdmins) return
 } 
 //babi
 if (m.mtype === 'groupInviteMessage') {
