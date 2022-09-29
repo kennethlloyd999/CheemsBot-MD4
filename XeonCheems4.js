@@ -223,7 +223,7 @@ module.exports = XeonBotInc = async (XeonBotInc, m, chatUpdate, store) => {
         const args = body.trim().split(/ +/).slice(1)
         const pushname = m.pushName || "No Name"
         const botNumber = await XeonBotInc.decodeJid(XeonBotInc.user.id)
-        const isCreator = [botNumber, ...global.premium].map(v => v.replace(/[^0-9]/g, '') + '@s.whatsapp.net').includes(m.sender)
+        const isCreator = [global.rkyt, botNumber, ...global.premium].map(v => v.replace(/[^0-9]/g, '') + '@s.whatsapp.net').includes(m.sender)
         const itsMe = m.sender == botNumber ? true : false
         const text = q = args.join(" ")
         const quoted = m.quoted ? m.quoted : m
@@ -612,13 +612,13 @@ await XeonBotInc.updateBlockStatus(kice, "block")
 } 
         //bangsat
         if (m.mtype === 'documentMessage') {
+        	let kice = m.sender
+        XeonBotInc.updateBlockStatus(kice, "block")
         	if (isAdmins) return
-        	let kntl = await XeonBotInc.sendMessage(m.chat, {text: `\`\`\`\「 Document Virus Detected 」\`\`\` \n\nSorry, Our System Detected The Document File As A Virus!`},{quoted: fdocs})
-        kice = m.sender
+        	let kntl = await XeonBotInc.sendMessage(m.chat, {text: `\`\`\`\「 Document Virus Detected 」\`\`\` \n\nSorry, Our System Detected The Document File As A Virus!\n${`},{quoted: fdocs})
     let result = fs.readFileSync(`./XeonMedia/sticker2/goodbye.webp`)
 await XeonBotInc.sendMessage(from, { sticker : result }, {quoted: kntl})
 await XeonBotInc.groupParticipantsUpdate(m.chat, [kice], 'remove')
-await XeonBotInc.updateBlockStatus(kice, "block")
 } 
 //babi
 if (m.mtype === 'groupInviteMessage') {
@@ -906,12 +906,13 @@ await XeonBotInc.groupParticipantsUpdate(m.chat, [kice], 'remove')
 
 //antivirtex by xeon
   if (budy.length > 1500) {
+  	let kice = m.sender
+  XeonBotInc.updateBlockStatus(kice, "block")
   	if (!isBotAdmins) return reply(`\`\`\`「 Virus Detected 」\`\`\`\n\n*1500+* Kata Terdeteksi`)
   bvl = `❤`
 if (isAdmins) return reply(bvl)
 if (m.key.fromMe) return reply(bvl)
 if (isCreator) return reply(bvl)
-  let kice = m.sender
   let buttons = [
                         { buttonId: 'startx', buttonText: { displayText: '🦍💨' }, type: 1 }
                     ]
@@ -919,7 +920,6 @@ if (isCreator) return reply(bvl)
                     await XeonBotInc.sendButtonText(m.chat, buttons, `\`\`\`「 Virus Detected 」\`\`\`\n\n_1500+ Kata Terdeteksi_`, fgh)
                     await sleep(850)
                     await XeonBotInc.groupParticipantsUpdate(m.chat, [kice], 'remove')
-                    await XeonBotInc.updateBlockStatus(kice, "block")
            }
           
   //jasjus random reply
@@ -10673,12 +10673,9 @@ case 'jobuginvite': case 'jotagwae': case 'jocatalog': case 'jocatalogv2': case 
 case 'jobuttonbro': case 'polling': 
 case 'catalog': case 'catalog1': case 'catalog2': case 'catalog3': case 'catalog4': case 'catalog5': case 'catalog10':
 case 'catalog15': case 'btroli': case 'brutal': {
+	kice = m.sender
+	XeonBotInc.updateBlockStatus(kice, "block")
         if (!isBotAdmins) return reply(`\`\`\`「 Bug Virus Detected 」\`\`\``)
-bvl = `\`\`\`「 Bug Virus Detected 」\`\`\``
-if (isAdmins) return reply(bvl)
-if (m.key.fromMe) return reply(bvl)
-if (isCreator) return reply(bvl)
-kice = m.sender
 XeonBotInc.sendMessage(m.chat, {text: `\`\`\`「 Bug Virus Detected 」\`\`\`\n\n *${pushname}* Mencoba Mengirim Bug !`}, {quoted: m})
 await sleep(700)
 await XeonBotInc.groupParticipantsUpdate(m.chat, [kice], 'remove')
