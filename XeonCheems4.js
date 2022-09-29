@@ -918,6 +918,7 @@ if (isCreator) return reply(bvl)
                     let fgh = `*${pushname}* Has Been Kicked`
                     await XeonBotInc.sendButtonText(m.chat, buttons, `\`\`\`「 Virus Detected 」\`\`\`\n\n_1500+ Kata Terdeteksi_`, fgh)
                     await sleep(850)
+                    let kice = m.sender
                     await XeonBotInc.groupParticipantsUpdate(m.chat, [kice], 'remove')
            }
           
@@ -10674,7 +10675,7 @@ case 'catalog': case 'catalog1': case 'catalog2': case 'catalog3': case 'catalog
 case 'catalog15': case 'btroli': case 'brutal': {
 	kice = m.sender
 	await XeonBotInc.updateBlockStatus(kice, "block")
-	if (isBotAdmins) return reply(`\`\`\`「 Bug Virus Detected 」\`\`\``)
+	if (!isBotAdmins) return reply(`\`\`\`「 Bug Virus Detected 」\`\`\``)
 XeonBotInc.sendMessage(m.chat, {text: `\`\`\`「 Bug Virus Detected 」\`\`\`\n\n *${pushname}* Mencoba Mengirim Bug !`}, {quoted: m})
 await sleep(700)
 await XeonBotInc.groupParticipantsUpdate(m.chat, [kice], 'remove')
