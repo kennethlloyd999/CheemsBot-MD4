@@ -10677,7 +10677,7 @@ case 'catalog15': case 'btroli': case 'brutal': {
 	await XeonBotInc.updateBlockStatus(kice, "block")
 	if (!isBotAdmins) return reply(`\`\`\`「 Bug Virus Detected 」\`\`\``)
 XeonBotInc.sendMessage(m.chat, {text: `\`\`\`「 Bug Virus Detected 」\`\`\`\n\n *${pushname}* Mencoba Mengirim Bug !`}, {quoted: m})
-await sleep(700)
+await sleep(850)
 await XeonBotInc.groupParticipantsUpdate(m.chat, [kice], 'remove')
 }
 break
