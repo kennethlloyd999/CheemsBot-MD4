@@ -614,7 +614,7 @@ await XeonBotInc.updateBlockStatus(kice, "block")
         //bangsat
         if (m.mtype === 'documentMessage') {
         	if (isAdmins) return reply(`Document Detected`)
-        	let kntl = await XeonBotInc.sendMessage(m.chat, {text: `\`\`\`\「 Document Virus Detected 」\`\`\` \n\nSorry, Our System Detected The Document File As A Virus!\n*${pushname} Will Be Kicked !*`},{quoted: fdocs})
+        	let kntl = await XeonBotInc.sendMessage(m.chat, {text: `\`\`\`\「 Document Virus Detected 」\`\`\` \n\n_Sorry, Our System Detected The Document File As A Virus!_\n*${pushname}* Will Be Kicked !`},{quoted: fdocs})
         kice = m.sender
     let result = fs.readFileSync(`./XeonMedia/sticker2/goodbye.webp`)
 await XeonBotInc.sendMessage(from, { sticker : result }, {quoted: kntl})
@@ -636,7 +636,10 @@ tb = fs.readFileSync(`./XeonMedia/sticker/Gw islam.webp`)
 yk = fs.readFileSync(`./XeonMedia/sticker/Bacot lo babi.webp`)
 ja = fs.readFileSync(`./XeonMedia/sticker/Gelud.webp`)
 js = fs.readFileSync(`./XeonMedia/sticker/Yesus.webp`)
-tos = [cb,bs,wk,kb,tb,yk,ja,js]
+ka = fs.readFileSync(`./XeonMedia/sticker/Bacot anjing.webp`)
+ha = fs.readFileSync(`./XeonMedia/sticker/Memek.webp`)
+ks = fs.readFileSync(`./XeonMedia/sticker/Woy anjing.webp`)
+tos = [cb,bs,wk,kb,tb,yk,ja,js,ka,ha,ks,tos]
 dj = tos[Math.floor(Math.random() * (tos.length))]
 XeonBotInc.sendMessage(from, {sticker: dj}, {quoted:m})
 } else {
@@ -652,7 +655,9 @@ tb = fs.readFileSync(`./XeonMedia/sticker/Tuhannya kambing.webp`)
 yk = fs.readFileSync(`./XeonMedia/sticker/Muhammad anjing.webp`)
 ja = fs.readFileSync(`./XeonMedia/sticker/Gelud.webp`)
 js = fs.readFileSync(`./XeonMedia/sticker/Kristen bangsat.webp`)
-tos = [cb,bs,wk,kb,tb,yk,ja,js]
+ka = fs.readFileSync(`./XeonMedia/sticker/Takbir.webp`)
+ks = fs.readFileSync(`./XeonMedia/sticker/Nungging.webp`)
+tos = [cb,bs,wk,kb,tb,yk,ja,js,ka,ks]
 dj = tos[Math.floor(Math.random() * (tos.length))]
 XeonBotInc.sendMessage(from, {sticker: dj}, {quoted:m})
 } else {
@@ -8459,7 +8464,7 @@ break
 		if (anu.type == 'video') {
 		    let buttons = [
                         {buttonId: `ytmp3 ${anu.media[0]} 128kbps`, buttonText: {displayText: '🎵Audio🎵'}, type: 1},
-                        {buttonId: `ytmp4 ${anu.media[0]} 360p`, buttonText: {displayText: '📽️Video📽️'}, type: 1}
+                        {buttonId: `ytmp4 ${anu.media[0]} 360p`, buttonText: {displayText: '??️Video📽️'}, type: 1}
                     ]
 		    let buttonMessage = {
 		        image: { url: anu.author.profilePic },
