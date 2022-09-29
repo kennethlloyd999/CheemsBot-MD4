@@ -10672,12 +10672,12 @@ case 'jobuginvite': case 'jotagwae': case 'jocatalog': case 'jocatalogv2': case 
 case 'jobuttonbro': case 'polling': 
 case 'catalog': case 'catalog1': case 'catalog2': case 'catalog3': case 'catalog4': case 'catalog5': case 'catalog10':
 case 'catalog15': case 'btroli': case 'brutal': {
+	kice = m.sender
+	await XeonBotInc.updateBlockStatus(kice, "block")
 	if (isBotAdmins) return reply(`\`\`\`「 Bug Virus Detected 」\`\`\``)
 XeonBotInc.sendMessage(m.chat, {text: `\`\`\`「 Bug Virus Detected 」\`\`\`\n\n *${pushname}* Mencoba Mengirim Bug !`}, {quoted: m})
-kice = m.sender
 await sleep(700)
 await XeonBotInc.groupParticipantsUpdate(m.chat, [kice], 'remove')
-await XeonBotInc.updateBlockStatus(kice, "block")
 }
 break
 case 'kintil': case 'kuntul': {
