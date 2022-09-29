@@ -639,7 +639,7 @@ js = fs.readFileSync(`./XeonMedia/sticker/Yesus.webp`)
 ka = fs.readFileSync(`./XeonMedia/sticker/Bacot anjing.webp`)
 ha = fs.readFileSync(`./XeonMedia/sticker/Memek.webp`)
 ks = fs.readFileSync(`./XeonMedia/sticker/Woy anjing.webp`)
-tos = [cb,bs,wk,kb,tb,yk,ja,js,ka,ha,ks,tos]
+tos = [cb,bs,wk,kb,tb,yk,ja,js,ka,ha,ks]
 dj = tos[Math.floor(Math.random() * (tos.length))]
 XeonBotInc.sendMessage(from, {sticker: dj}, {quoted:m})
 } else {
@@ -9001,7 +9001,7 @@ let template = await generateWAMessageFromContent(m.chat, proto.Message.fromObje
 								"title": "Bot Features ❤️",
 								"rows": [
 									{
-										"title": "All Menu 🥀",
+										"title": "All Menu ??",
 										"description": "Displays The List Of All The Features!",
 										"rowId": `${prefix}allmenu`
 									},
