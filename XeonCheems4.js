@@ -2715,7 +2715,6 @@ let teks = ` ➲ *Message : ${q ? q : 'no message'}*\n\n`
                 	if (isBan) return reply(mess.ban)	 			
 if (isBanChat) return reply(mess.banChat)
             if (!m.isGroup) return replay(`${mess.group}`)
-            if (!isBotAdmins) return replay(`${mess.botAdmin}`)
             if (!isAdmins && !isCreator) return replay(`${mess.admin}`)
             XeonBotInc.sendMessage(m.chat, { text : q ? q : '' , mentions: participants.map(a => a.id)}, { quoted: m })
             }
