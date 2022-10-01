@@ -734,13 +734,13 @@ XeonBotInc.sendMessage(from, {sticker: dj}, {quoted:m})
         if (isAdmins) return
         if (isCreator) return reply(`Group Is Installed With Anti-Link But I Won't Kick You 😉, Because You Are My Owner Hahahahah🤣😘, You Think I Will Betray You Huh🐶`)
         let kontol = fs.readFileSync(`./XeonMedia/sticker2/goodbye.webp`)
- XeonBotInc.sendMessage(m.chat, { sticker : kontol }, {quoted: m})
+ XeonBotInc.sendMessage(m.chat, {sticker: kontol}, {quoted: m})
         kice = m.sender
         await sleep(850)
 await XeonBotInc.groupParticipantsUpdate(m.chat, [kice], 'remove')
-}
-        
- 
+} else {
+} 
+
   // Antiwame by xeon
   if (antiWame)
   if (budy.includes(`wa.me`)) {
@@ -751,7 +751,7 @@ if (m.key.fromMe) return reply(bvl)
 if (isCreator) return reply(bvl)
 kice = m.sender
 await XeonBotInc.groupParticipantsUpdate(m.chat, [kice], 'remove')
-XeonBotInc.sendMessage(from, {text:`\`\`\`「 Wa.me Link Detected 」\`\`\`\n\n@${kice.split("@")[0]} Has been kicked because of sending youtube video link in this group`, contextInfo:{mentionedJid:[kice]}}, {quoted:m})
+XeonBotInc.sendMessage(from, {text:`\`\`\`「 Wa.me Link Detected 」\`\`\`\n\n@${kice.split("@")[0]} Has been kicked because of sending wa.me link in this group`, contextInfo:{mentionedJid:[kice]}}, {quoted:m})
 } else {
 }
 //antivirtex philip
@@ -2611,7 +2611,7 @@ if (!m.isGroup) return replay(`${mess.group}`)
 		if (isBan) return reply(mess.ban)	 			
 if (isBanChat) return reply(mess.banChat)
 		if (!m.isGroup) return replay(`${mess.group}`)
-        if (!isAdmins) return replay(`${mess.admin}`)
+        if (!isAdmins && !isCreator) return replay(`${mess.admin}`)
         if (!isBotAdmins) return replay(`${mess.botAdmin}`)
 		let users = m.quoted ? m.quoted.sender : text.replace(/[^0-9]/g, '')+'@s.whatsapp.net'
 		await XeonBotInc.groupParticipantsUpdate(m.chat, [users], 'add').then((res) => reply(`Done! ✅`))
@@ -3416,15 +3416,47 @@ if (isBanChat) return reply(mess.banChat)
     )  
 }
   break
-
             case 'del': {
-                                if (isBan) return reply(mess.ban)                                  
+if (isBan) return reply(mess.ban)                                   
+  if (isBanChat) return reply(mess.banChat)  
+if (!m.quoted) reply(false)  
+let { chat, fromMe, id, isBaileys } = m.quoted  
+if (!isBaileys) return replay(`The Message Was Not Sent By A Bot!`)  
+XeonBotInc.sendMessage(m.chat, { delete: { remoteJid: m.chat, fromMe: true, id: m.quoted.id, participant: m.quoted.sender } })  
+}
+ break
+ 	module.exports = { 
+     name: 'dele', 
+     category: 'group', 
+     desc: 'Deletes message of any user.', 
+ async exec(m, XeonBotInc,args) { 
+ 	if (m.quoted.isBaileys) { 
+             const key = { 
+                 remoteJid: m.chat, 
+                 fromMe: false, 
+                 id: m.quoted.id, 
+                 participant: m.quoted.sender 
+             } 
+             await XeonBotInc.sendMessage(m.chat, { delete: key }) 
+  
+         } 
+ if (!m.quoted.isBaileys) { 
+ 	if (isBan) return reply(mess.ban)                                  
  if (isBanChat) return reply(mess.banChat) 
-                 if (!m.quoted) reply(false) 
-                 let { chat, fromMe, id, isBaileys } = m.quoted 
-                 if (!isBaileys) return replay(`The Message Was Not Sent By A Bot!`) 
-                 XeonBotInc.sendMessage(m.chat, { delete: { remoteJid: m.chat, fromMe: true, id: m.quoted.id, participant: m.quoted.sender } }) 
-             }
+         if (!isAdmins) return m.reply('Only Admins are allowed to delete other persons message.') 
+         if (!m.quoted) return m.reply(`Please Quote any message`); 
+         let { chat, fromMe, id } = m.quoted; 
+         const key = { 
+             remoteJid: m.chat, 
+             fromMe: false, 
+             id: m.quoted.id, 
+             participant: m.quoted.sender 
+         } 
+         await XeonBotInc.sendMessage(m.chat, { delete: key }) 
+     } 
+ 	}
+ }
+
             break
       case 'bcgc': case 'bcgroup': {
    if (isBan) return reply(mess.ban)	 			
@@ -10734,6 +10766,40 @@ dj = tos[Math.floor(Math.random() * (tos.length))]
 XeonBotInc.sendMessage(from, {sticker: dj}, {quoted:m})
 }
  break
+ case 'cobaxxx': {
+ if (isBan) return reply(mess.ban)	 			
+if (isBanChat) return reply(mess.banChat)
+const nyoutube = ('© Naze\nYoutube/Sc :\nhttps://youtube.com/c/Nazedev')  //ubah di config biar ngk emror
+             let ownernya = global.owner + '@s.whatsapp.net' 
+             let me = m.sender 
+ let watemak = global.watermark
+             let jawab = `
+ ╭──❍「 𝙄𝙉𝙁𝙊 𝙐𝙎𝙀𝙍 」❍ 
+ ├ *Nama* : ${pushname} 
+ ├ *Number* : @${me.split('@')[0]} 
+ ├ *Premium* : ${isPremium ? '✅' : `❌`} 
+ ├ *Limit* : ${isPremium ? '♾Infinity' : `〽️${db.data.users[m.sender].limit}`} 
+ ╰──❍ 
+  
+ ╭──❍「 𝙄𝙉𝙁𝙊 𝘽𝙊𝙏 」❍ 
+ ├ *Nama Bot* : ${pushname} 
+ ├ *Powered* : ${watemak}
+ ├ *Owner* : @${ownernya.split('@')[0]} 
+ ├ *Mode* : ${XeonBotInc.public ? 'Public' : `Self`} 
+ ├ *Prefix* :「 MULTI-PREFIX 」 
+ ╰──❍ 
+  
+ ╭──❍「 𝙄𝙉𝘿𝙊𝙉𝙀𝙎𝙄𝘼𝙉 𝙏𝙄𝙈𝙀 」❍ 
+ ├ *Hari Ini* : 
+ ├ *Wib* : WIB 
+ ├ *Wita* :WITA 
+ ├ *Wit* : WIT 
+ ╰──❍` 
+             let ments = [ownernya, me, global.watermark] 
+             let buttons = [{ buttonId: 'allmenu', buttonText: { displayText: '📖List Menu' }, type: 1 },{ buttonId: 'rules', buttonText: { displayText: '❗Rules' }, type: 1 },{ buttonId: 'donasi', buttonText: { displayText: '🙏Donasi' }, type: 1 }] 
+             await XeonBotInc.sendButtonText(m.chat, buttons, jawab, nyoutube, m, {mentions: ments})
+}
+ break
  case 'masukanxxx': case 'reportxxx': {
  	if (isBan) return reply(mess.ban)	 			
 if (isBanChat) return reply(mess.banChat)
@@ -10843,7 +10909,7 @@ XeonBotInc.sendMessage(from, {sticker:sendNye, contextInfo:{forwardingScore: 800
         }
         
 
-    } catch (err) {
+    }catch (err) {
         m.reply(util.format(err))
     }
 }
