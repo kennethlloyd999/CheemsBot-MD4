@@ -3932,7 +3932,7 @@ break
                                    // })
                                    XeonBotInc.sendMessage(from, { react: { text: `❌`, key: m.key }})
 	                
-                     }
+                     
 break
 case 'blowjobgif': case 'bj' :
    if (isBan) return reply(mess.ban)	 			
