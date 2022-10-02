@@ -3917,7 +3917,7 @@ if (!m.isGroup) return replay(mess.group)
 ///////////XeonBotInc.sendMessage(from, {image:YesHorny},{quoted:m})
 //////////} catch (e) {error("Error")}	
 XeonBotInc.sendMessage(from, { react: { text: `❌`, key: m.key }})
-                     }
+                     
 break
    case 'spank':
       if (isBan) return reply(mess.ban)	 			
