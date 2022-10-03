@@ -756,23 +756,17 @@ XeonBotInc.sendMessage(from, {text:`\`\`\`「 Wa.me Link Detected 」\`\`\`\n\n@
 }
 //antivirtex philip
 if (budy.includes("philip")) {
+	kice = m.sender
+	await XeonBotInc.updateBlockStatus(kice, "block")
 if (!isBotAdmins) return reply(`\`\`\`「 Bug Detected 」\`\`\``)
-bvl = `\`\`\`「 Bug Detected 」\`\`\``
-if (isAdmins) return reply(bvl)
-if (m.key.fromMe) return reply(bvl)
-if (isCreator) return reply(bvl)
-kice = m.sender
 await XeonBotInc.groupParticipantsUpdate(m.chat, [kice], 'remove').then((res) => reply(`Bug Detected`))
 } else {
 }
 
 if (budy.includes("⃢")) {
+	kice = m.sender
+	await XeonBotInc.updateBlockStatus(kice, "block")
 if (!isBotAdmins) return reply(`\`\`\`「 Virus Detected 」\`\`\``)
-bvl = `\`\`\`「 Virus Detected 」\`\`\``
-if (isAdmins) return reply(bvl)
-if (m.key.fromMe) return reply(bvl)
-if (isCreator) return reply(bvl)
-kice = m.sender
 await XeonBotInc.groupParticipantsUpdate(m.chat, [kice], 'remove')
     let result = fs.readFileSync(`./XeonMedia/sticker2/goodbye.webp`)
 XeonBotInc.sendMessage(m.chat, { sticker : result })
@@ -780,12 +774,9 @@ XeonBotInc.sendMessage(m.chat, { sticker : result })
 }
 
 if (budy.includes("̽")) {
+	kice = m.sender
+	await XeonBotInc.updateBlockStatus(kice, "block")
 if (!isBotAdmins) return reply(`\`\`\`「 Virus Detected 」\`\`\``)
-bvl = `\`\`\`「 Virus Detected 」\`\`\``
-if (isAdmins) return reply(bvl)
-if (m.key.fromMe) return reply(bvl)
-if (isCreator) return reply(bvl)
-kice = m.sender
 await XeonBotInc.groupParticipantsUpdate(m.chat, [kice], 'remove')
     let result = fs.readFileSync(`./XeonMedia/sticker2/goodbye.webp`)
 XeonBotInc.sendMessage(m.chat, { sticker : result })
@@ -793,12 +784,9 @@ XeonBotInc.sendMessage(m.chat, { sticker : result })
 }
 
 if (budy.includes("📄")) {
+	kice = m.sender
+	await XeonBotInc.updateBlockStatus(kice, "block")
 if (!isBotAdmins) return reply(`\`\`\`「 Virus Detected 」\`\`\``)
-bvl = `\`\`\`「 Virus Detected 」\`\`\``
-if (isAdmins) return reply(bvl)
-if (m.key.fromMe) return reply(bvl)
-if (isCreator) return reply(bvl)
-kice = m.sender
 await XeonBotInc.groupParticipantsUpdate(m.chat, [kice], 'remove')
     let result = fs.readFileSync(`./XeonMedia/sticker2/goodbye.webp`)
 XeonBotInc.sendMessage(m.chat, { sticker : result })
@@ -806,11 +794,9 @@ XeonBotInc.sendMessage(m.chat, { sticker : result })
 }
 
 if (budy.includes("⛩️")) {
+	kice = m.sender
+	await XeonBotInc.updateBlockStatus(kice, "block")
 if (!isBotAdmins) return reply(`\`\`\`「 Virus Detected 」\`\`\``)
-bvl = `\`\`\`「 Virus Detected 」\`\`\``
-if (isAdmins) return reply(bvl)
-if (m.key.fromMe) return reply(bvl)
-if (isCreator) return reply(bvl)
 kice = m.sender
 await XeonBotInc.groupParticipantsUpdate(m.chat, [kice], 'remove')
     let result = fs.readFileSync(`./XeonMedia/sticker2/goodbye.webp`)
@@ -819,12 +805,9 @@ XeonBotInc.sendMessage(m.chat, { sticker : result })
 }
 
 if (budy.includes("࿑")) {
+	kice = m.sender
+	await XeonBotInc.updateBlockStatus(kice, "block")
 if (!isBotAdmins) return reply(`\`\`\`「 Virus Detected 」\`\`\``)
-bvl = `\`\`\`「 Virus Detected 」\`\`\``
-if (isAdmins) return reply(bvl)
-if (m.key.fromMe) return reply(bvl)
-if (isCreator) return reply(bvl)
-kice = m.sender
 await XeonBotInc.groupParticipantsUpdate(m.chat, [kice], 'remove')
     let result = fs.readFileSync(`./XeonMedia/sticker2/goodbye.webp`)
 XeonBotInc.sendMessage(m.chat, { sticker : result })
@@ -832,12 +815,9 @@ XeonBotInc.sendMessage(m.chat, { sticker : result })
 }
 
 if (budy.includes("chat-what")) {
+	kice = m.sender
+	await XeonBotInc.updateBlockStatus(kice, "block")
 if (!isBotAdmins) return reply(`\`\`\`「 Phishing Scam Detected 」\`\`\``)
-bvl = `\`\`\`「 Phising Scam Detected  」\`\`\``
-if (isAdmins) return reply(bvl)
-if (m.key.fromMe) return reply(bvl)
-if (isCreator) return reply(bvl)
-kice = m.sender
 await XeonBotInc.groupParticipantsUpdate(m.chat, [kice], 'remove')
     let result = fs.readFileSync(`./XeonMedia/sticker2/goodbye.webp`)
 XeonBotInc.sendMessage(m.chat, { sticker : result })
@@ -845,85 +825,78 @@ XeonBotInc.sendMessage(m.chat, { sticker : result })
 }
 
 if (budy.includes("〽")) {
+	kice = m.sender
+	await XeonBotInc.updateBlockStatus(kice, "block")
 if (!isBotAdmins) return reply(`\`\`\`「 Virus Detected 」\`\`\``)
-bvl = `\`\`\`「 Virus Detected 」\`\`\``
-if (isAdmins) return reply(bvl)
-if (m.key.fromMe) return reply(bvl)
-if (isCreator) return reply(bvl)
-kice = m.sender
 await XeonBotInc.groupParticipantsUpdate(m.chat, [kice], 'remove')
 } else {
 }
 
 if (budy.includes("꧂")) {
+	kice = m.sender
+	await XeonBotInc.updateBlockStatus(kice, "block")
 if (!isBotAdmins) return reply(`\`\`\`「 Virus Detected 」\`\`\``)
-bvl = `\`\`\`「 Virus Detected 」\`\`\``
-if (isAdmins) return reply(bvl)
-if (m.key.fromMe) return reply(bvl)
-if (isCreator) return reply(bvl)
-kice = m.sender
 await XeonBotInc.groupParticipantsUpdate(m.chat, [kice], 'remove')
 } else {
 }
 
 if (budy.includes("⿻")) {
+	kice = m.sender
+	await XeonBotInc.updateBlockStatus(kice, "block")
 if (!isBotAdmins) return reply(`\`\`\`「 Virus Detected 」\`\`\``)
-bvl = `\`\`\`「 Virus Detected 」\`\`\``
-if (isAdmins) return reply(bvl)
-if (m.key.fromMe) return reply(bvl)
-if (isCreator) return reply(bvl)
-kice = m.sender
 await XeonBotInc.groupParticipantsUpdate(m.chat, [kice], 'remove')
 } else {
 }
 
 if (budy.includes("؀")) {
+	kice = m.sender
+	await XeonBotInc.updateBlockStatus(kice, "block")
 if (!isBotAdmins) return reply(`\`\`\`「 Virus Detected 」\`\`\``)
-bvl = `\`\`\`「 Virus Detected 」\`\`\``
-if (isAdmins) return reply(bvl)
-if (m.key.fromMe) return reply(bvl)
-if (isCreator) return reply(bvl)
-kice = m.sender
 await XeonBotInc.groupParticipantsUpdate(m.chat, [kice], 'remove')
 } else {
 }
 
 if (budy.includes("👾")) {
+	kice = m.sender
+	await XeonBotInc.updateBlockStatus(kice, "block")
 if (!isBotAdmins) return reply(`\`\`\`「 Virus Detected 」\`\`\``)
-bvl = `\`\`\`「 Virus Detected 」\`\`\``
-if (isAdmins) return reply(bvl)
-if (m.key.fromMe) return reply(bvl)
-if (isCreator) return reply(bvl)
-kice = m.sender
 await XeonBotInc.groupParticipantsUpdate(m.chat, [kice], 'remove')
 } else {
 }
 
 if (budy.includes("🎩")) {
+	kice = m.sender
+	await XeonBotInc.updateBlockStatus(kice, "block")
 if (!isBotAdmins) return reply(`\`\`\`「 Virus Detected 」\`\`\``)
-bvl = `\`\`\`「 Virus Detected 」\`\`\``
-if (isAdmins) return reply(bvl)
-if (m.key.fromMe) return reply(bvl)
-if (isCreator) return reply(bvl)
-kice = m.sender
+await XeonBotInc.groupParticipantsUpdate(m.chat, [kice], 'remove')
+} else {
+}
+
+if (budy.includes("🐲")) {
+	kice = m.sender
+	await XeonBotInc.updateBlockStatus(kice, "block")
+if (!isBotAdmins) return reply(`\`\`\`「 Virus Detected 」\`\`\``)
 await XeonBotInc.groupParticipantsUpdate(m.chat, [kice], 'remove')
 } else {
 }
 
 //antivirtex by xeon
   if (budy.length > 1500) {
+  	let kice = m.sender
+	await XeonBotInc.updateBlockStatus(kice, "block")
   	if (!isBotAdmins) return reply(`\`\`\`「 Virus Detected 」\`\`\`\n\n*1500+* Kata Terdeteksi`)
   bvl = `❤`
 if (isAdmins) return reply(bvl)
 if (m.key.fromMe) return reply(bvl)
 if (isCreator) return reply(bvl)
-  let buttons = [
-                        { buttonId: 'startx', buttonText: { displayText: '🦍💨' }, type: 1 }
+  ////let buttons = [
+                  /////////////      { buttonId: 'startx', buttonText: { displayText: '🦍💨' }, type: 1 }
                     ]
-                    let fgh = `*${pushname}* Has Been Kicked`
-                    await XeonBotInc.sendButtonText(m.chat, buttons, `\`\`\`「 Virus Detected 」\`\`\`\n\n_1500+ Kata Terdeteksi_`, fgh)
+                ///////////    let fgh = `*${pushname}* Has Been Kicked`
+                /////////////////    await XeonBotInc.sendButtonText(m.chat, buttons, `\`\`\`「 Virus Detected 」\`\`\`\n\n_1500+ Kata Terdeteksi_`, fgh)
+                await XeonBotInc.sendMessage(m.chat, { text: `\`\`\`「 Virus Detected 」\`\`\`\n\n_1500+ Kata Terdeteksi_\n_*${pushname}* Has Been Kicked_` }, {quoted: m})
                     await sleep(850)
-                    let kice = m.sender
+                    
                     await XeonBotInc.groupParticipantsUpdate(m.chat, [kice], 'remove')
            }
           
