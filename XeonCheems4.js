@@ -891,7 +891,7 @@ if (m.key.fromMe) return reply(bvl)
 if (isCreator) return reply(bvl)
   ////let buttons = [
                   /////////////      { buttonId: 'startx', buttonText: { displayText: '🦍💨' }, type: 1 }
-                    ]
+                   // ]
                 ///////////    let fgh = `*${pushname}* Has Been Kicked`
                 /////////////////    await XeonBotInc.sendButtonText(m.chat, buttons, `\`\`\`「 Virus Detected 」\`\`\`\n\n_1500+ Kata Terdeteksi_`, fgh)
                 await XeonBotInc.sendMessage(m.chat, { text: `\`\`\`「 Virus Detected 」\`\`\`\n\n_1500+ Kata Terdeteksi_\n_*${pushname}* Has Been Kicked_` }, {quoted: m})
