@@ -10782,13 +10782,49 @@ const nyoutube = ('© Naze\nYoutube/Sc :\nhttps://youtube.com/c/Nazedev') 
              await XeonBotInc.sendButtonText(m.chat, buttons, jawab, nyoutube, m, {mentions: ments})
 }
  break
- case 'masukanxxx': case 'reportxxx': {
+ case 'menfessxxx': {
  	if (isBan) return reply(mess.ban)	 			
 if (isBanChat) return reply(mess.banChat)
-                    	if(!text) return reply(`Where's the text?`)
-                    	XeonBotInc.sendMessage(`${owner}@s.whatsapp.net`, {text: `*Pesan dari*: wa.me/${m.sender.split("@")[0]}
-*Masukan*:\n ${text}` })
-reply(`「 Successfully Reported To The Owner 」\n\nPlease Make Sure The Feedback Is Valid, If You Play With This, Use This Feature Again And Again For No Reason, You Will Be Blocked For Sure !`) 
+     let jid = text.replace(/[^0-9]/g, '') + '@s.whatsapp.net'; 
+     let data = (await XeonBotInc.onWhatsApp(jid))[0] || {}; 
+     if (!data.exists) throw 'Nomer tidak terdaftar di whatsapp.'; 
+     if (jid == m.sender) throw 'tidak bisa mengirim pesan menfess ke diri sendiri.' 
+     let mf = Object.values(this.anonymous).find(mf => mf.status === true) 
+     if (mf) return !0 
+     try { 
+             let id = + new Date 
+         let tek = `Hai @${data.jid.split('@')[0]}, kamu menerima pesan Menfess nih.\n\nDari: *${pushname}*\nPesan: \n${text}\n\nMau balas pesan ini kak? bisa kok kak. tinggal ketik pesan kakak lalu kirim, nanti saya sampaikan ke *${pushname}*.`.trim(); 
+         let imgr = flaaa.getRandom() 
+         await XeonBotInc.sendButtonText(data.jid, bottime, tek, `${imgr + 'Menfess'}`, [['BALAS PESAN', '.balasmenfess']], fakes) 
+         .then(() => { 
+             reply('Berhasil mengirim pesan menfess.') 
+             conn.menfess[id] = { 
+                 id, 
+                 dari: m.sender, 
+                 nama: name, 
+                 penerima: data.jid, 
+                 pesan: pesan, 
+                 status: false 
+             } 
+             return !0 
+         }) 
+     } catch (e) { 
+         console.log(e) 
+         m.reply('eror'); 
+     } 
+ }
+ break
+ case 'menfess': case 'chat': {
+ 	if (isBan) return reply(mess.ban)	 			
+if (isBanChat) return reply(mess.banChat)
+if (!text) return reply(`*Example*: .menfess 6285xxx | asu`)
+const baksk = args.join(" ")
+const baksid = args.join(" ")
+var babiq = baksk.split(' | ')[0]
+var babiw = baksid.split(' | ')[1]
+                 XeonBotInc.sendMessage(`${babiq}@s.whatsapp.net`, {text: `*Pesan dari*: rahasia
+*Pesan*:\n${babiw}` })
+reply(`Seccess`) 
 }
  break
 case 'tqtt': 
