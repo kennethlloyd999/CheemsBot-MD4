@@ -10817,7 +10817,7 @@ if (isBanChat) return reply(mess.banChat)
  case 'menfess': case 'chat': {
  	if (isBan) return reply(mess.ban)	 			
 if (isBanChat) return reply(mess.banChat)
-if (!text) return reply(`*Example*: .menfess 6285xxx | asu`)
+if (!text) return reply(`*Example*: .chat 6285xxx | asu`)
 const baksk = args.join(" ")
 const baksid = args.join(" ")
 var babiq = baksk.split(' | ')[0]
