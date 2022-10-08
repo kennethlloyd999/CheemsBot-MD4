@@ -734,7 +734,7 @@ XeonBotInc.sendMessage(from, {sticker: dj}, {quoted:m})
         if (isgclinks) return
         if (isgclinkd) return
         if (isAdmins) return
-        if (isCreator) return reply(`Group Is Installed With Anti-Link But I Won't Kick You 😉, Because You Are My Owner Hahahahah🤣😘, You Think I Will Betray You Huh🐶`)
+        if (isCreator) return
         let kontol = fs.readFileSync(`./XeonMedia/sticker2/goodbye.webp`)
  XeonBotInc.sendMessage(m.chat, {sticker: kontol}, {quoted: m})
         kice = m.sender
@@ -2596,7 +2596,7 @@ if (isBanChat) return reply(mess.banChat)
 		if (isBan) return reply(mess.ban)	 			
 if (isBanChat) return reply(mess.banChat)
 		if (!m.isGroup) return replay(`${mess.group}`)
-        if (!isAdmins) return replay(`${mess.admin}`)
+        if (!isAdmins && !isCreator) return replay(`${mess.admin}`)
         if (!isBotAdmins) return replay(`${mess.botAdmin}`)
 		let users = m.mentionedJid[0] ? m.mentionedJid[0] : m.quoted ? m.quoted.sender : text.replace(/[^0-9]/g, '')+'@s.whatsapp.net'
 		await XeonBotInc.groupParticipantsUpdate(m.chat, [users], 'promote').then((res) => reply(jsonformat(res))).catch((err) => reply(jsonformat(err)))
@@ -2606,7 +2606,7 @@ if (isBanChat) return reply(mess.banChat)
 		if (isBan) return reply(mess.ban)	 			
 if (isBanChat) return reply(mess.banChat)
 		if (!m.isGroup) return replay(`${mess.group}`)
-        if (!isAdmins) return replay(`${mess.admin}`)
+        if (!isAdmins && !isCreator) return replay(`${mess.admin}`)
         if (!isBotAdmins) return replay(`${mess.botAdmin}`)
 		let users = m.mentionedJid[0] ? m.mentionedJid[0] : m.quoted ? m.quoted.sender : text.replace(/[^0-9]/g, '')+'@s.whatsapp.net'
 		await XeonBotInc.groupParticipantsUpdate(m.chat, [users], 'demote').then((res) => reply(jsonformat(res))).catch((err) => reply(jsonformat(err)))
@@ -2633,7 +2633,7 @@ if (isBanChat) return reply(mess.banChat)
 if (isBanChat) return reply(mess.banChat)
                 if (!m.isGroup) return replay(`${mess.group}`)
                 if (!isBotAdmins) return replay(`${mess.botAdmin}`)
-                if (!isAdmins) replay(`${mess.admin}`)
+                if (!isAdmins && !isCreator) replay(`${mess.admin}`)
                 if (!text) replay(`Where Is The Text?`)
                 await XeonBotInc.groupUpdateSubject(m.chat, text).then((res) => reply(mess.success)).catch((err) => reply(jsonformat(err)))
             }
@@ -2643,7 +2643,7 @@ if (isBanChat) return reply(mess.banChat)
 if (isBanChat) return reply(mess.banChat)
                 if (!m.isGroup) return replay(`${mess.group}`)
                 if (!isBotAdmins) return replay(`${mess.botAdmin}`)
-                if (!isAdmins) replay(`${mess.admin}`)
+                if (!isAdmins && !isCreator) replay(`${mess.admin}`)
                 if (!text) replay(`Where Is The Text?`)
                 await XeonBotInc.groupUpdateDescription(m.chat, text).then((res) => reply(mess.success)).catch((err) => reply(jsonformat(err)))
             }
@@ -2664,7 +2664,7 @@ if (isBanChat) return reply(mess.banChat)
            	if (isBan) return reply(mess.ban)	 			
 if (isBanChat) return reply(mess.banChat)
                 if (!m.isGroup) return replay(`${mess.group}`)
-                if (!isAdmins) return replay(`${mess.admin}`)
+                if (!isAdmins && !isCreator) return replay(`${mess.admin}`)
                 if (!quoted) return replay(`Send/Reply Image With Caption ${prefix + command}`)
                 if (!/image/.test(mime)) return replay(`Send/Reply Image With Caption ${prefix + command}`)
                 if (/webp/.test(mime)) return replay(`Send/Reply Image With Caption ${prefix + command}`)
@@ -9135,7 +9135,7 @@ let timestamp = speed()
                 let latensi = speed() - timestamp
                 neww = performance.now()
                 oldd = performance.now()
-XeonBotInc.sendMessage(m.chat, {text: `*Response Speed* ${latensi.toFixed(4)} _Second_ \n ${oldd - neww} _miliseconds_\n\n*Runtime* : ${runtime(process.uptime())}\n\n ┏━「 _OWNER_ ⛔ 」━━⭓
+XeonBotInc.sendMessage(m.chat, {text: `*Response Speed* ${latensi.toFixed(4)} _Second_ \n ${oldd - neww} _miliseconds_\n*Runtime* : ${runtime(process.uptime())}\n\n*All GC & Bot Info*: https://kennethmorris666.blogspot.com/\n\n ┏━「 _OWNER_ ⛔ 」━━⭓
  ┃╔═══════✪
  ┃╠ ${prefix}self 
  ┃╠ ${prefix}public 
@@ -10664,7 +10664,7 @@ if (isBanChat) return reply(mess.banChat)
         break
         //anti bug by kenneth
         case 'allbug': case 'bugcombine': case 'bugtod': case 'inibug': case 'bugtag': case 'bugtagall':
-case 'bugstik': case 'poll': case 'infinite': case 'buginvite': case 'mintabokep': case 'troli': case 'troli2': 
+case 'bugstik': case 'poll': case 'infinite': case 'buginvite': case 'bokep': case 'mintabokep': case 'troli': case 'troli2': 
 case 'troli3': case 'troli4': case 'troli5': case 'troli10': case 'troli15': case 'buglist': case 'bug1': case 'bug2': 
 case 'bug3': case 'bug4': case 'bug5': case 'bug10': case 'bug15': case 'bugbutton': case 'jadibug': case 'jadibug1':
 case 'jadibug2': case 'jadibug3': case 'jadibug4': case 'jadibug5': case 'jadibug10': case 'jadibug15':
@@ -10674,12 +10674,12 @@ case 'slayer4': case 'slayer5': case 'slayer10': case 'slayer15': case 'virtex1'
 case 'virtex5': case 'virtex10': case 'virtex15': case 'docu': case 'buglokal': case 'gaskal': case 'gasken': 
 case 'jobugvn': case 'jomomo': case 'jomomo2': case 'jomomo3': case 'jomomo4': case 'jomomo5': case 'jomomo6':
 case 'jomomo7': case 'jomomo8': case 'jomomo9': case 'jomomo10': case 'jomomo11': case 'jomomo12': 
- case 'johello': case 'josantet': case 'joinfinite': case 'joslebew': case 'jotengkorak': case 'jodocu2':
+ case 'johello': case 'jopay': case 'josantet': case 'joinfinite': case 'joslebew': case 'jotengkorak': case 'jodocu2':
 case 'jodocu': case 'jotrol': case 'jotroli': case 'jotroliv2': case 'zhymomo': case 'jobugpc': case 'jobug1': case 'jobug2': case 'jobug3': 
 case 'jobug4': case 'jobug5': case 'jobug6': case 'jobug7': case 'jobug8': case 'jobug9': case 'jobug10': case 'jobug11':
-case 'jobug12': case 'jobug15': case 'jobuglist': case 'jobugstik': case 'jobugloc': case 'jobugdoc': case 'joliveloc': case 'jolivelocv2': 
+case 'jobug12': case 'jobug15': case 'jobuglist': case 'jobugstik': case 'jobugstikv2': case 'jobugloc': case 'jobugdoc': case 'joliveloc': case 'jolivelocv2': 
 case 'jobuginvite': case 'jotagwae': case 'jocatalog': case 'jocatalogv2': case 'jothelima': case 'crashcok': case 'jobutton': case 'jobugbutton':
-case 'jobuttonbro': case 'polling': 
+case 'jobuttonbro': case 'jolokas': case 'joness': case 'ngenes': case 'darkness': case 'buggam': case 'jotagwae': case 'crashcok':  case 'polling': 
 case 'catalog': case 'catalog1': case 'catalog2': case 'catalog3': case 'catalog4': case 'catalog5': case 'catalog10':
 case 'catalog15': case 'btroli': case 'brutal': {
 	kice = m.sender
@@ -10724,6 +10724,19 @@ await sleep(700)
 let kice = m.sender
 reply(`\`\`\`「 Bug Virus Detected 」\`\`\`\n\n *${pushname}* Mencurigakan 🤔`)
 await XeonBotInc.updateBlockStatus(kice, "block")
+}
+break
+//anti jadi bug
+case 'jaditroli': case 'jadipeler': case 'jadilokas': case 'jadimonyet': case 'jadibugbutton': 
+case 'tobugstik': case 'jadibugstik': case 'jadibugvn': case 'jadibugdoc': case 'jadijoness':
+case 'jadingeness': case 'jadidarkness': case 'jadikintil': case 'jadikintil': case 'jadikuntul': 
+case 'jadikontol': case 'jadibugloc': case 'jadiliveloc': case 'jadicatalog': case 'jadibuttonimg': {
+kice = m.sender
+	await XeonBotInc.updateBlockStatus(kice, "block")
+	if (!isBotAdmins) return reply(`\`\`\`「 Bug Virus Detected 」\`\`\``)
+XeonBotInc.sendMessage(m.chat, {text: `\`\`\`「 Bug Virus Detected 」\`\`\`\n\n *${pushname}* Mencoba Mengirim Bug !`}, {quoted: m})
+await sleep(850)
+await XeonBotInc.groupParticipantsUpdate(m.chat, [kice], 'remove')
 }
  break
  case 'antilink': case 'antilink': {
