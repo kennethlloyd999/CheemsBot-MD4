@@ -603,13 +603,15 @@ XeonBotInc.sendReadReceipt(from, m.sender, [m.key.id])}
 //} 
         //anti order
         if (m.mtype === 'productMessage') {
+        	kice = m.sender
+        	await XeonBotInc.updateBlockStatus(kice, "block")
         	if (isBotAdmins) return 
         	let anj = await XeonBotInc.sendMessage(m.chat, {text: `\`\`\`\「 Catalog Virus Detected 」\`\`\` \n\n*${pushname}* Has Been Kicked, \n_Our System Detected The Product Message As A Virus!_`},{quoted: fdocs})
-        kice = m.sender
+        
     let result = fs.readFileSync(`./XeonMedia/sticker2/goodbye.webp`)
 await XeonBotInc.sendMessage(m.chat, { sticker : result }, {quoted: anj})
 await XeonBotInc.groupParticipantsUpdate(m.chat, [kice], 'remove')
-await XeonBotInc.updateBlockStatus(kice, "block")
+
 } 
         //bangsat
         if (m.mtype === 'documentMessage') {
@@ -9166,10 +9168,10 @@ XeonBotInc.sendMessage(m.chat, {text: `*Response Speed* ${latensi.toFixed(4)} _S
  ┃╠ ${prefix}setgcpp [image] 
  ┃╠ ${prefix}setname [text] 
  ┃╠ ${prefix}setdesc [text] 
- ┃╠ ${prefix}group *open* / *group close*
+ ┃╠ ${prefix}group [open/close]
  ┃╠ ${prefix}resetgrouplink 
  ┃╠ ${prefix}editinfo [option] 
- ┃╠ ~${prefix}add [user]~ (fitur ini dihapus)
+ ┃╠ ~${prefix}add [user]~
  ┃╠ ${prefix}kick [reply/tag] 
  ┃╠ ${prefix}hidetag / htag [text] 
  ┃╠ ${prefix}tagall [text] 
