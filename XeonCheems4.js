@@ -737,8 +737,8 @@ XeonBotInc.sendMessage(from, {sticker: dj}, {quoted:m})
         if (isCreator) return
         let kontol = fs.readFileSync(`./XeonMedia/sticker2/goodbye.webp`)
  XeonBotInc.sendMessage(m.chat, {sticker: kontol}, {quoted: m})
-        kice = m.sender
         await sleep(850)
+        let kice = m.sender
 await XeonBotInc.groupParticipantsUpdate(m.chat, [kice], 'remove')
 } else {
 } 
@@ -3780,7 +3780,7 @@ reply(`Send Image/Video With Caption ${prefix + command}\nVideo Duration 1-9 Sec
 }
 }
 break
-case 'smeme': case 'stickermeme': case 'stickmeme': {
+case 'smeme': case 'stickermeme': case 'stickmeme': try{
 	if (isBan) return reply(mess.ban)	 			
 if (isBanChat) return reply(mess.banChat)
 let { TelegraPh } = require('./lib/uploader')
@@ -3791,9 +3791,10 @@ reply(mess.wait)
 mee = await XeonBotInc.downloadAndSaveMediaMessage(quoted)
 mem = await TelegraPh(mee)
 meme = `https://api.memegen.link/images/custom/-/${text}.png?background=${mem}`
-memek = await XeonBotInc.sendImageAsSticker(m.chat, meme, m, { packname: global.packname, author: global.author })
+memek = await XeonBotInc.sendImageAsSticker(m.chat, meme, m, { packname: global.packname, author: global.author }).catch((err) => reply(`Tidak dapat menggunakan tanda tanya/emot!\n\n*Error Type*: \n ${jsonformat(err)}`))
 await fs.unlinkSync(memek)
-}
+} catch (e) { return }
+
 break
 case 'smeme2': case 'stickermeme2': case 'stickmeme2': {
 	   if (isBan) return reply(mess.ban)	 			
@@ -3809,9 +3810,9 @@ var logo9 = inilogo9.split('|')[1]
 mee = await XeonBotInc.downloadAndSaveMediaMessage(quoted)
 mem = await TelegraPh(mee)
 meme = `https://api.memegen.link/images/custom/${logo4}/${logo9}.png?background=${mem}`
-memek = await XeonBotInc.sendImageAsSticker(m.chat, meme, m, { packname: global.packname, author: global.author })
+memek = await XeonBotInc.sendImageAsSticker(m.chat, meme, m, { packname: global.packname, author: global.author }).catch((err) => reply(`Tidak dapat menggunakan tanda tanya/emot!\n\n*Error Type*: \n ${jsonformat(err)}`))
 await fs.unlinkSync(memek)
-}
+} catch (e) { return }
 break
             case 'ebinary': {
             	   if (isBan) return reply(mess.ban)	 			
