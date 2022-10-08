@@ -3796,7 +3796,7 @@ await fs.unlinkSync(memek)
 } catch (e) { return }
 
 break
-case 'smeme2': case 'stickermeme2': case 'stickmeme2': {
+case 'smeme2': case 'stickermeme2': case 'stickmeme2': try{
 	   if (isBan) return reply(mess.ban)	 			
 if (isBanChat) return reply(mess.banChat)
 let { TelegraPh } = require('./lib/uploader')
