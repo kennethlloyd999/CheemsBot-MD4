@@ -668,6 +668,8 @@ XeonBotInc.sendMessage(from, {sticker: dj}, {quoted:m})
 	// AntiLinkgc
         if (budy.includes(`chat.whatsapp.com`)) {
         if (!isBotAdmins) return reply(`\`\`\`「 Group Link Detected 」\`\`\``)
+        
+        // satu
         let gclink = (`https://chat.whatsapp.com/`+await XeonBotInc.groupInviteCode(m.chat))
         let gclinkq = (`https://chat.whatsapp.com/GmmVIossLg663OrqZHI0IC`)
         let gclinkw = (`https://chat.whatsapp.com/EaFKoIimOoG828H2GS2i1A`)
@@ -682,6 +684,9 @@ XeonBotInc.sendMessage(from, {sticker: dj}, {quoted:m})
         let gclinka = (`https://chat.whatsapp.com/CVvpL0w0qrkIP8zZSAFvoa`)
         let gclinks = (`https://chat.whatsapp.com/J1S3g1fbWSS9r01UNSBLst`)
         let gclinkd = (`https://chat.whatsapp.com/Kg3y0VkG9ag9z9JECGCSjR`)
+        let gclinkf = (`https://chat.whatsapp.com/K2mJoQNyjz8EaWUDs6iYjY`)
+        
+        // dua
         let isLinkThisGc = new RegExp(gclink, 'i')
         let isLinkThisGcq = new RegExp(gclinkq, 'i')
         let isLinkThisGcw = new RegExp(gclinkw, 'i')
@@ -696,6 +701,9 @@ XeonBotInc.sendMessage(from, {sticker: dj}, {quoted:m})
         let isLinkThisGca = new RegExp(gclinka, 'i')
         let isLinkThisGcs = new RegExp(gclinks, 'i')
         let isLinkThisGcd = new RegExp(gclinkd, 'i')
+        let isLinkThisGcf = new RegExp(gclinkf, 'i')
+        
+        // tiga
         let isgclink = isLinkThisGc.test(m.text)
         let isgclinkq = isLinkThisGcq.test(m.text)
         let isgclinkw = isLinkThisGcw.test(m.text)
@@ -710,6 +718,9 @@ XeonBotInc.sendMessage(from, {sticker: dj}, {quoted:m})
         let isgclinka = isLinkThisGca.test(m.text)
         let isgclinks = isLinkThisGcs.test(m.text)
         let isgclinkd = isLinkThisGcd.test(m.text)
+        let isgclinkf = isLinkThisGcf.test(m.text)
+        
+        // empat
         if (isgclink) return
         let result = fs.readFileSync(`./XeonMedia/sticker2/respect.webp`)
         if (isgclinkq) return XeonBotInc.sendMessage(m.chat, { sticker : result }, {quoted : m})
@@ -733,8 +744,13 @@ XeonBotInc.sendMessage(from, {sticker: dj}, {quoted:m})
         if (isgclinka) return
         if (isgclinks) return
         if (isgclinkd) return
+        if (isgclinkf) return 
+        
+        // admin&creator
         if (isAdmins) return
         if (isCreator) return
+        
+        // mengirim
         let kontol = fs.readFileSync(`./XeonMedia/sticker2/goodbye.webp`)
  XeonBotInc.sendMessage(m.chat, {sticker: kontol}, {quoted: m})
         await sleep(850)
@@ -3791,7 +3807,7 @@ reply(mess.wait)
 mee = await XeonBotInc.downloadAndSaveMediaMessage(quoted)
 mem = await TelegraPh(mee)
 meme = `https://api.memegen.link/images/custom/-/${text}.png?background=${mem}`
-memek = await XeonBotInc.sendImageAsSticker(m.chat, meme, m, { packname: global.packname, author: global.author }).catch((err) => reply(`Tidak dapat menggunakan tanda tanya/emot!\n\n*Error Type*: \n ${jsonformat(err)}`))
+memek = await XeonBotInc.sendImageAsSticker(m.chat, meme, m, { packname: global.packname, author: global.author }).catch((err) => reply(`Tidak dapat menggunakan tanda tanya/emot!\n\n*TypeError*: \n ${jsonformat(err)}`))
 await fs.unlinkSync(memek)
 } catch (e) { return }
 
@@ -3810,7 +3826,7 @@ var logo9 = inilogo9.split('|')[1]
 mee = await XeonBotInc.downloadAndSaveMediaMessage(quoted)
 mem = await TelegraPh(mee)
 meme = `https://api.memegen.link/images/custom/${logo4}/${logo9}.png?background=${mem}`
-memek = await XeonBotInc.sendImageAsSticker(m.chat, meme, m, { packname: global.packname, author: global.author }).catch((err) => reply(`Tidak dapat menggunakan tanda tanya/emot!\n\n*Error Type*: \n ${jsonformat(err)}`))
+memek = await XeonBotInc.sendImageAsSticker(m.chat, meme, m, { packname: global.packname, author: global.author }).catch((err) => reply(`Tidak dapat menggunakan tanda tanya/emot!\n\n*TypeError*: \n ${jsonformat(err)}`))
 await fs.unlinkSync(memek)
 } catch (e) { return }
 break
