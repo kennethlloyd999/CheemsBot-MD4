@@ -8982,7 +8982,17 @@ break
 case 'alive': case 'panel': case 'list': case 'bot': case 'help': case '?': {
 		if (isBan) return reply(mess.ban)	 			
 if (isBanChat) return reply(mess.banChat)
-XeonBotInc.sendMessage(from, { react: { text: `${global.reactmoji}`, key: m.key }})
+cb = `🫥`
+bs = `😘`
+wk = `☝`
+kb = `🥰️`
+tb = `🥱`
+yk = `😎`
+ja = `🤨`
+ks = `😭`
+tos = [cb,bs,wk,kb,tb,yk,ja,ks]
+dj = tos[Math.floor(Math.random() * (tos.length))]
+XeonBotInc.sendMessage(from, { react: { text: dj, key: m.key }})
 	                
                      }
             break
