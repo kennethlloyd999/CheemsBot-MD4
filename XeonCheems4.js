@@ -3775,10 +3775,11 @@ break
 case 'swm': case 'take': case 'stickerwm': {
    if (isBan) return reply(mess.ban)	 			
 if (isBanChat) return reply(mess.banChat)
-if (!args.join(" ")) return reply(`Example :\nswm ${global.author}|${global.packname}`)
+if (!args.join(" ")) return reply(`Example :\nswm kontol|yesus`)
 const swn = args.join(" ")
+const jmb = args.join(" ")
 const pcknm = swn.split("|")[0];
-const atnm = swn.split("|")[1];
+const atnm = jmb.split("|")[1];
 if (m.quoted.isAnimated === true) {
 XeonBotInc.downloadAndSaveMediaMessage(quoted, "gifee")
 XeonBotInc.sendMessage(from, {sticker:fs.readFileSync("gifee.webp")},{quoted:m})
@@ -4956,11 +4957,12 @@ break
 case 'translate': case 'trans': {
 if (isBan) return reply(mess.ban)
 const bakk = args.join(" ")
-const baksd = args.join(" ")[1]
-if (!bakk) return replay(`en = inggris\nin = indonesia\n\nExample:\n${prefix + command} en *text*`)
-if (!baksd) return replay(`en = inggris\nin = indonesia\n\nExample:\n${prefix + command} en *text*`)
-const ka = bakk.split(' ')[0];
-tes = await fetchJson (`https://megayaa.herokuapp.com/api/translate?to=${ka}&kata=${baksd}`)
+const baksd = args.join(" ")
+if (!bakk) return replay(`en = inggris\nin = indonesia\n\nExample:\n${prefix + command} en | *text*`)
+if (!baksd) return replay(`en = inggris\nin = indonesia\n\nExample:\n${prefix + command} en | *text*`)
+const ka = bakk.split(' | ')[0];
+const ko = baksd.split(" | ")[1];
+tes = await fetchJson (`https://megayaa.herokuapp.com/api/translate?to=${ka}&kata=${ko}`)
 Infoo = tes.info
 Detek = tes.translate
 replay(`🌐Translate : ${Detek}\n📘Results : ${Infoo}`)
