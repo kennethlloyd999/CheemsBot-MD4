@@ -4955,8 +4955,8 @@ replay(`Error!`)
 break
 case 'translate': case 'trans': {
 if (isBan) return reply(mess.ban)
-if (!ka) return replay("en = inggris\nin = indonesia\n\nExample:\n${command} en *text*")
-if (!ko) return replay("en = inggris\nin = indonesia\n\nExample:\n${command} en *text*")
+if (!bakk) return replay(`en = inggris\nin = indonesia\n\nExample:\n${prefix + command} en *text*`)
+if (!baksd) return replay(`en = inggris\nin = indonesia\n\nExample:\n${prefix + command} en *text*`)
 const bakk = args.join(" ")
 const baksd = args.join(" ")
 var ka = bakk.split(' ')[0]
