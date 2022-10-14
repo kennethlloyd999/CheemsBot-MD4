@@ -4962,7 +4962,8 @@ if (!bakk) return replay(`en = inggris\nin = indonesia\n\nExample:\n${prefix + c
 if (!baksd) return replay(`en = inggris\nin = indonesia\n\nExample:\n${prefix + command} en | *text*`)
 const ka = bakk.split(" | ")[0];
 const ko = baksd.split(" | ")[1];
-if (!text.includes('|')) return replay(`en = inggris\nin = indonesia\n\nExample:\n${prefix + command} en | *text*`)
+if (!text.includes(' | ')) return replay(`en = inggris\nin = indonesia\n\nExample:\n${prefix + command} en | *text*`)
+if (text.includes('|')) return replay(`kurang spasi \n\nContoh salah:\n ${prefix + command} en|kamu jasjus ya? ❌`\n\nContoh yg benar:\n${prefix + command} en | kamu jasjus ya? ✅`)
 tes = await fetchJson (`https://megayaa.herokuapp.com/api/translate?to=${ka}&kata=${ko}`)
 Infoo = tes.info
 Detek = tes.translate
