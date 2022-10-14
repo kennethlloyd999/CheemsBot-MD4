@@ -4956,12 +4956,11 @@ break
 case 'translate': case 'trans': {
 if (isBan) return reply(mess.ban)
 const bakk = args.join(" ")
-const baksd = args.join(" ")
+const baksd = args.join(" ")[1]
 if (!bakk) return replay(`en = inggris\nin = indonesia\n\nExample:\n${prefix + command} en *text*`)
 if (!baksd) return replay(`en = inggris\nin = indonesia\n\nExample:\n${prefix + command} en *text*`)
 const ka = bakk.split(' ')[0];
-const ko = baksd.split(" ")[1];
-tes = await fetchJson (`https://megayaa.herokuapp.com/api/translate?to=${ka}&kata=${ko}`)
+tes = await fetchJson (`https://megayaa.herokuapp.com/api/translate?to=${ka}&kata=${baksd}`)
 Infoo = tes.info
 Detek = tes.translate
 replay(`🌐Translate : ${Detek}\n📘Results : ${Infoo}`)
