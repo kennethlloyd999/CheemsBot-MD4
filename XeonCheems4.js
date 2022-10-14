@@ -3798,20 +3798,20 @@ reply(`Send Image/Video With Caption ${prefix + command}\nVideo Duration 1-9 Sec
 }
 break
 case 'smeme': case 'stickermeme': case 'stickmeme': try{
-	if (isBan) return reply(mess.ban)	 			
-if (isBanChat) return reply(mess.banChat)
-let { TelegraPh } = require('./lib/uploader')
-if (!text) return reply(`Send/Reply Photo With Caption ${prefix + command} *text*\n\nSimilar Features: 「 smeme2 」 New🔥\n*smeme2 [reply text | text]*`)
-if (text.includes('|')) return reply(`Send/Reply Photo With Caption ${prefix + command} *text*`)
-if (!/image/.test(mime)) return reply(`Send/Reply Photo With Caption ${prefix + command} *text*`)
-reply(mess.wait)
-mee = await XeonBotInc.downloadAndSaveMediaMessage(quoted)
-mem = await TelegraPh(mee)
-meme = `https://api.memegen.link/images/custom/-/${text}.png?background=${mem}`
-memek = await XeonBotInc.sendImageAsSticker(m.chat, meme, m, { packname: global.packname, author: global.author }).catch((err) => reply(`Tidak dapat menggunakan tanda tanya/emot!\n\n*TypeError*: \n ${jsonformat(err)}`))
-await fs.unlinkSync(memek)
-} catch (e) { return }
-
+	                if (isBan) return reply(mess.ban)                                  
+ if (isBanChat) return reply(mess.banChat) 
+ let { TelegraPh } = require('./lib/uploader') 
+ if (!text) return reply(`Send/Reply Photo With Caption ${prefix + command} *text*\n\nSimilar Features: smeme2 *text | text*`) 
+ if (text.includes('|')) return reply(`Send/Reply Photo With Caption ${prefix + command} *text*`) 
+ if (!/image/.test(mime)) return reply(`Send/Reply Photo With Caption ${prefix + command} *text*`) 
+ if (/webp/.test(mime)) return reply(`perlu mengonversi ke gambar terlebih dahulu\ndengan cara balas sticker dengan caption *toimg*`)
+ reply(mess.wait) 
+ mee = await XeonBotInc.downloadAndSaveMediaMessage(quoted) 
+ mem = await TelegraPh(mee) 
+ meme = `https://api.memegen.link/images/custom/-/${text}.png?background=${mem}` 
+ memek = await XeonBotInc.sendImageAsSticker(m.chat, meme, m, { packname: global.packname, author: global.author }).catch((err) => reply(`Tidak dapat menggunakan tanda tanya/emot!\n\n*TypeError*: ${jsonformat(err)}`)) 
+ await fs.unlinkSync(memek) 
+ } catch (e) { return }
 break
 case 'smeme2': case 'stickermeme2': case 'stickmeme2': try{
 	   if (isBan) return reply(mess.ban)	 			
