@@ -4955,8 +4955,13 @@ replay(`Error!`)
 break
 case 'translate': case 'trans': {
 if (isBan) return reply(mess.ban)
-if (!args.join(" ")) return replay("The text?")
-tes = await fetchJson (`https://megayaa.herokuapp.com/api/translate?to=en&kata=${args.join(" ")}`)
+if (!ka) return replay("en = inggris\nin = indonesia\n\nExample:\n${command} en *text*")
+if (!ko) return replay("en = inggris\nin = indonesia\n\nExample:\n${command} en *text*")
+const bakk = args.join(" ")
+const baksd = args.join(" ")
+var ka = bakk.split(' ')[0]
+var ko = baksd.split(' ')[1]
+tes = await fetchJson (`https://megayaa.herokuapp.com/api/translate?to=${ka}&kata=${ko}`)
 Infoo = tes.info
 Detek = tes.translate
 replay(`🌐Translate : ${Detek}\n📘Results : ${Infoo}`)
@@ -9635,8 +9640,8 @@ XeonBotInc.sendMessage(m.chat, {text: `*Response Speed* ${latensi.toFixed(4)} _S
  ┃╚═════════════✪
  ┗━━━━━━━━━━━━━━━━━━━⭓
  ┏━「 _TOOL_ 📝 」━━⭓
- ┃╔═══════✪
- ┃╠ ${prefix}translate [text] 
+ ┃╔═✪ _en = inggris / in = indonesia_
+ ┃╠ ${prefix}translate en [text]
  ┃╠ ${prefix}fliptext [text] 
  ┃╠ ${prefix}toletter [number] 
  ┃╚═════════════✪
