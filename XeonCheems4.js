@@ -753,9 +753,14 @@ XeonBotInc.sendMessage(from, {sticker: dj}, {quoted:m})
         // mengirim
       ///////////////////  let kontol = fs.readFileSync(`./XeonMedia/sticker2/goodbye.webp`)
 ////////////////////// XeonBotInc.sendMessage(m.chat, {sticker: kontol}, {quoted: m})
+tu = `Buddy Christ`
+wa = `Ghetto Jesus`
+tos = [tu,wa]
+dj = tos[Math.floor(Math.random() * (tos.length))]
  satu = `https://telegra.ph/file/9c5e06ffe882ec14a18cb.png`
  dua = `https://api.memegen.link/images/custom/-/${pushname}.png?background=${satu}` 
-memek = await XeonBotInc.sendImageAsSticker(m.chat, dua, m, { packname: global.packname, author: global.author })
+ tiga = `https://apimeme.com/meme?meme=${dj}&top=Goodbye&bottom=${pushname}`
+memek = await XeonBotInc.sendImageAsSticker(m.chat, tiga, m, { packname: global.packname, author: global.author })
  await fs.unlinkSync(memek)
         await sleep(850)
         let kice = m.sender
