@@ -751,8 +751,12 @@ XeonBotInc.sendMessage(from, {sticker: dj}, {quoted:m})
         if (isCreator) return
         
         // mengirim
-        let kontol = fs.readFileSync(`./XeonMedia/sticker2/goodbye.webp`)
- XeonBotInc.sendMessage(m.chat, {sticker: kontol}, {quoted: m})
+      ///////////////////  let kontol = fs.readFileSync(`./XeonMedia/sticker2/goodbye.webp`)
+////////////////////// XeonBotInc.sendMessage(m.chat, {sticker: kontol}, {quoted: m})
+ satu = `https://telegra.ph/file/9c5e06ffe882ec14a18cb.png`
+ memek = await XeonBotInc.sendImageAsSticker(m.chat, satu, m, { packname: global.packname, author: global.author }).catch((err) => reply(`Tidak dapat menggunakan tanda tanya/emot!\n\n*TypeError*: ${jsonformat(err)}`)) 
+ await fs.unlinkSync(memek)
+}
         await sleep(850)
         let kice = m.sender
 await XeonBotInc.groupParticipantsUpdate(m.chat, [kice], 'remove')
@@ -10802,35 +10806,11 @@ XeonBotInc.sendMessage(from, {sticker: dj}, {quoted:m})
  case 'cobaxxx': {
  if (isBan) return reply(mess.ban)	 			
 if (isBanChat) return reply(mess.banChat)
-const nyoutube = ('© Naze\nYoutube/Sc :\nhttps://youtube.com/c/Nazedev')  //ubah di config biar ngk emror
-             let ownernya = global.owner + '@s.whatsapp.net' 
-             let me = m.sender 
- let watemak = global.watermark
-             let jawab = `
- ╭──❍「 𝙄𝙉𝙁𝙊 𝙐𝙎𝙀𝙍 」❍ 
- ├ *Nama* : ${pushname} 
- ├ *Number* : @${me.split('@')[0]} 
- ├ *Premium* : ${isPremium ? '✅' : `❌`} 
- ├ *Limit* : ${isPremium ? '♾Infinity' : `〽️${db.data.users[m.sender].limit}`} 
- ╰──❍ 
-  
- ╭──❍「 𝙄𝙉𝙁𝙊 𝘽𝙊𝙏 」❍ 
- ├ *Nama Bot* : ${pushname} 
- ├ *Powered* : ${watemak}
- ├ *Owner* : @${ownernya.split('@')[0]} 
- ├ *Mode* : ${XeonBotInc.public ? 'Public' : `Self`} 
- ├ *Prefix* :「 MULTI-PREFIX 」 
- ╰──❍ 
-  
- ╭──❍「 𝙄𝙉𝘿𝙊𝙉𝙀𝙎𝙄𝘼𝙉 𝙏𝙄𝙈𝙀 」❍ 
- ├ *Hari Ini* : 
- ├ *Wib* : WIB 
- ├ *Wita* :WITA 
- ├ *Wit* : WIT 
- ╰──❍` 
-             let ments = [ownernya, me, global.watermark] 
-             let buttons = [{ buttonId: 'allmenu', buttonText: { displayText: '📖List Menu' }, type: 1 },{ buttonId: 'rules', buttonText: { displayText: '❗Rules' }, type: 1 },{ buttonId: 'donasi', buttonText: { displayText: '🙏Donasi' }, type: 1 }] 
-             await XeonBotInc.sendButtonText(m.chat, buttons, jawab, nyoutube, m, {mentions: ments})
+satu = `https://telegra.ph/file/9c5e06ffe882ec14a18cb.png`
+dua = `https://api.memegen.link/images/custom/-/${pushname}.png?background=${satu}` 
+tiga = `https://apimeme.com/meme?background=${satu}&top=Goodbye&bottom=${pushname}`
+ memek = await XeonBotInc.sendImageAsSticker(m.chat, tiga, m, { packname: global.packname, author: global.author }).catch((err) => reply(`Tidak dapat menggunakan tanda tanya/emot!\n\n*TypeError*: ${jsonformat(err)}`)) 
+ await fs.unlinkSync(memek)
 }
  break
  case 'menfessxxx': {
