@@ -754,7 +754,8 @@ XeonBotInc.sendMessage(from, {sticker: dj}, {quoted:m})
       ///////////////////  let kontol = fs.readFileSync(`./XeonMedia/sticker2/goodbye.webp`)
 ////////////////////// XeonBotInc.sendMessage(m.chat, {sticker: kontol}, {quoted: m})
  satu = `https://telegra.ph/file/9c5e06ffe882ec14a18cb.png`
- memek = await XeonBotInc.sendImageAsSticker(m.chat, satu, m, { packname: global.packname, author: global.author })
+ dua = `https://api.memegen.link/images/custom/-/${pushname}.png?background=${satu}` 
+memek = await XeonBotInc.sendImageAsSticker(m.chat, dua, m, { packname: global.packname, author: global.author })
  await fs.unlinkSync(memek)
         await sleep(850)
         let kice = m.sender
