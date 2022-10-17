@@ -53,6 +53,24 @@ global.doc4 = 'application/zip'
 global.doc5 = 'application/pdf'
 global.doc6 = 'application/vnd.android.package-archive'
 
+//image njim
+global.wan = fs.readFileSync('./XeonMedia/theme/cheemspic.jpg')
+global.tu = fs.readFileSync('./XeonMedia/theme/cheemspic2.jpg')
+global.tri = fs.readFileSync('./XeonMedia/theme/cheemspic3.jpg')
+global.fo = fs.readFileSync('./XeonMedia/theme/cheemspic4.jpg')
+global.faif = fs.readFileSync('./XeonMedia/theme/cheemspic5.jpg')
+global.sik = fs.readFileSync('./XeonMedia/theme/cheemspic6.jpg')
+global.seven = fs.readFileSync('./XeonMedia/theme/cheemspic7.jpg')
+global.egh = fs.readFileSync('./XeonMedia/theme/cheemspic8.jpg')
+global.nen = fs.readFileSync('./XeonMedia/theme/cheemspic9.jpg')
+global.ten = fs.readFileSync('./XeonMedia/theme/cheemspic10.jpg')
+global.elepen = fs.readFileSync('./XeonMedia/theme/cheemspic11.jpg')
+global.welep = fs.readFileSync('./XeonMedia/theme/cheemspic12.jpg')
+global.terten = fs.readFileSync('./XeonMedia/theme/cheemspic13.jpg')
+global.foten = fs.readFileSync('./XeonMedia/theme/cheemspic14.jpg')
+global.faiften = fs.readFileSync('./XeonMedia/theme/cheemspic15.jpg')
+global.sikten = fs.readFileSync('./XeonMedia/theme/cheemspic16.jpg')
+
 //owmner v card
 global.vcardowner = ['447404876730'] //ur owner number
 global.ownername = "Kenneth Lai" //ur owner name
@@ -100,6 +118,38 @@ global.autorep = []
 global.ntilink = []
 
 //omther
+global.fgclink = { 
+            "key": { 
+                "fromMe": true, 
+                "participant": "0@s.whatsapp.net", 
+                "remoteJid": "0@s.whatsapp.net" 
+            }, 
+            "message": { 
+                "groupInviteMessage": { 
+                    "groupJid": "6285736178354-1625305606@g.us", 
+                    "inviteCode": "null", 
+                    "groupName": "Kawan Elaina",  
+                    "caption": "njir",  
+                    'jpegThumbnail': fs.readFileSync('./XeonMedia/theme/cheemspic.jpg') 
+                } 
+            } 
+        }
+                global.adReply = { 
+                         contextInfo: { 
+                                 forwardingScore: 9999, 
+                                 isForwarded: false, // ini biar ada tulisannya diteruskan berkali-kali, jika ingin di hilangkan ganti true menjadi false 
+                                 externalAdReply: { // Bagian ini sesuka kalian berkreasi :'v 
+                     showAdAttribution: true, 
+                                         title: global.ucapan, 
+                                         body: "Click To Donate", 
+                                         mediaUrl: "anjing", 
+                                         description: 'Elaina-MultiDevice', 
+                                         previewType: "PHOTO", 
+                                         thumbnail: fs.readFileSync('./XeonMedia/theme/cheemspic.jpg'), 
+                                         sourceUrl: "https://github.com/ImYanXiao",                                         
+                                 } 
+                         } 
+                 }
 global.sessionName = 'session'
 global.antitags = true
 global.prefa = ['','!','.','🐦','🐤','🗿']

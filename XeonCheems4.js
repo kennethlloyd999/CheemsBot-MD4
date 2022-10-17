@@ -332,6 +332,9 @@ if (!('templateVideo' in setting)) setting.templateVideo = false
             console.error(err)
         }
 	
+	// FAKE ANJ
+	                    
+	
 	// FAKE TEXT IMG
 const textImg = (teks) => {
 XeonBotInc.sendMessage(m.chat, { text :teks, }, {quoted: m, thumbnail: fs.readFileSync('./XeonMedia/image/wpmobile.png')}) 
@@ -556,9 +559,9 @@ await XeonBotInc.sendPresenceUpdate('composing', m.chat)
 XeonBotInc.sendReadReceipt(from, m.sender, [m.key.id])}
 }
   //autoread gc only
-  if (global.autoReadGc) {
-  if (m.isGroup) { XeonBotInc.sendReadReceipt(m.chat, m.sender, [m.key.id]) }
-}
+ //////// if (global.autoReadGc) {
+ //////////////////////// if (m.isGroup) { XeonBotInc.sendReadReceipt(m.chat, m.sender, [m.key.id]) }
+///}
   //auto recording all
     if (global.autoRecord) { if (m.chat) { XeonBotInc.sendPresenceUpdate('recording', m.chat) }
 }
@@ -603,8 +606,7 @@ XeonBotInc.sendReadReceipt(from, m.sender, [m.key.id])}
 //} 
         //anti order
         if (m.mtype === 'productMessage') {
-        	kice = m.sender
-        	await XeonBotInc.updateBlockStatus(kice, "block")
+        	if (!m.isGroup) return XeonBotInc.sendMessage(m.chat, {text: `\`\`\`\「 Catalog Virus Detected 」\`\`\`\n\nKami Menandai Pesan Produk Sebagai Virus\nMaaf, Anda Akan Kami Blokir!\n\nSilakan bertanya atau hubungi owner kami untuk membuka blokir Anda`}, {quoted: m}).then((res) => XeonBotInc.sendContact(m.chat, global.rkyt)).then((res) => sleep(850)).then((res) => XeonBotInc.updateBlockStatus(m.sender, "block"))
         	if (isBotAdmins) return 
         	let anj = await XeonBotInc.sendMessage(m.chat, {text: `\`\`\`\「 Catalog Virus Detected 」\`\`\` \n\n*${pushname}* Has Been Kicked, \n_Our System Detected The Product Message As A Virus!_`},{quoted: fdocs})
         
@@ -615,13 +617,18 @@ await XeonBotInc.groupParticipantsUpdate(m.chat, [kice], 'remove')
 } 
         //bangsat
         if (m.mtype === 'documentMessage') {
-        	if (isAdmins) return reply(`Document Detected`)
+        	if (isAdmins) return
+        if (!m.isGroup) return XeonBotInc.sendMessage(m.chat, {text: `\`\`\`\「 Document Virus Detected 」\`\`\`\n\nKami Menandai File Dokumen Sebagai Virus\nMaaf, Anda Akan Kami Blokir!\n\nSilakan bertanya atau hubungi owner kami untuk membuka blokir Anda`}, {quoted: m}).then((res) => XeonBotInc.sendContact(m.chat, global.rkyt)).then((res) => sleep(850)).then((res) => XeonBotInc.updateBlockStatus(m.sender, "block"))
+        if (!isBotAdmins) return XeonBotInc.sendMessage(m.chat, {text: `\`\`\`\「 Document Virus Detected 」\`\`\`\n\n*${pushname}* Mengirim Virus Document?!\n\n_🔴 Sayangnya Bot Bukan Admin ☹️_`}, {quoted: fdocs})
         	let kntl = await XeonBotInc.sendMessage(m.chat, {text: `\`\`\`\「 Document Virus Detected 」\`\`\` \n\n_Sorry, Our System Detected The Document File As A Virus!_\n*${pushname}* Will Be Kicked !`},{quoted: fdocs})
         kice = m.sender
     let result = fs.readFileSync(`./XeonMedia/sticker2/goodbye.webp`)
 await XeonBotInc.sendMessage(from, { sticker : result }, {quoted: kntl})
-await XeonBotInc.groupParticipantsUpdate(m.chat, [kice], 'remove')
-await XeonBotInc.updateBlockStatus(kice, "block")
+if (m.isBaileys && m.fromMe) return
+XeonBotInc.sendMessage(m.chat, { delete: { remoteJid: m.chat, fromMe: false, id: m.key.id, participant: m.key.participant } }) 
+//////await sleep(850)
+//////////////await XeonBotInc.groupParticipantsUpdate(m.chat, [kice], 'remove')
+/////////await XeonBotInc.updateBlockStatus(kice, "block")
 } 
 //babi
 if (m.mtype === 'groupInviteMessage') {
@@ -668,7 +675,7 @@ XeonBotInc.sendMessage(from, {sticker: dj}, {quoted:m})
 	// AntiLinkgc
         if (budy.includes(`chat.whatsapp.com`)) {
         if (!isBotAdmins) return reply(`\`\`\`「 Group Link Detected 」\`\`\``)
-        
+        if (!m.isGroup) return
         // satu
         let gclink = (`https://chat.whatsapp.com/`+await XeonBotInc.groupInviteCode(m.chat))
         let gclinkq = (`https://chat.whatsapp.com/GmmVIossLg663OrqZHI0IC`)
@@ -751,8 +758,12 @@ XeonBotInc.sendMessage(from, {sticker: dj}, {quoted:m})
         if (isCreator) return
         
         // mengirim
+        if (m.isBaileys && m.fromMe) return
      let kontol = fs.readFileSync(`./XeonMedia/sticker2/goodbye.webp`)
+     
+XeonBotInc.sendMessage(m.chat, { delete: { remoteJid: m.chat, fromMe: false, id: m.key.id, participant: m.key.participant } }) 
  XeonBotInc.sendMessage(m.chat, {sticker: kontol}, {quoted: m})
+ 
 tu = `Buddy Christ`
 wa = `Ghetto Jesus`
 tos = [tu,wa]
@@ -783,16 +794,14 @@ XeonBotInc.sendMessage(from, {text:`\`\`\`「 Wa.me Link Detected 」\`\`\`\n\n@
 }
 //antivirtex philip
 if (budy.includes("philip")) {
-	kice = m.sender
-	await XeonBotInc.updateBlockStatus(kice, "block")
+	if (!m.isGroup) return XeonBotInc.sendMessage(m.chat, {text: `\`\`\`\「 Virus Detected 」\`\`\`\n\nAnda Mengirim Kata Lebih Dari 1500+\nMaaf, Anda Akan Kami Blokir!`}, {quoted: m}).then((res) => XeonBotInc.updateBlockStatus(m.sender, "block"))
 if (!isBotAdmins) return reply(`\`\`\`「 Bug Detected 」\`\`\``)
 await XeonBotInc.groupParticipantsUpdate(m.chat, [kice], 'remove').then((res) => reply(`Bug Detected`))
 } else {
 }
 
 if (budy.includes("⃢")) {
-	kice = m.sender
-	await XeonBotInc.updateBlockStatus(kice, "block")
+	if (!m.isGroup) return XeonBotInc.sendMessage(m.chat, {text: `\`\`\`\「 Virus Detected 」\`\`\`\n\nAnda Mengirim Kata Lebih Dari 1500+\nMaaf, Anda Akan Kami Blokir!`}, {quoted: m}).then((res) => XeonBotInc.updateBlockStatus(m.sender, "block"))
 if (!isBotAdmins) return reply(`\`\`\`「 Virus Detected 」\`\`\``)
 await XeonBotInc.groupParticipantsUpdate(m.chat, [kice], 'remove')
     let result = fs.readFileSync(`./XeonMedia/sticker2/goodbye.webp`)
@@ -801,8 +810,7 @@ XeonBotInc.sendMessage(m.chat, { sticker : result })
 }
 
 if (budy.includes("̽")) {
-	kice = m.sender
-	await XeonBotInc.updateBlockStatus(kice, "block")
+	  	if (!m.isGroup) return XeonBotInc.sendMessage(m.chat, {text: `\`\`\`\「 Virus Detected 」\`\`\`\n\nAnda Mengirim Kata Lebih Dari 1500+\nMaaf, Anda Akan Kami Blokir!`}, {quoted: m}).then((res) => XeonBotInc.updateBlockStatus(m.sender, "block")) /////////////////////////////////.then((res) => XeonBotInc.sendContact(m.chat, global.rkyt)).then((res) => sleep(850)).then((res) => XeonBotInc.updateBlockStatus(m.sender, "block"))
 if (!isBotAdmins) return reply(`\`\`\`「 Virus Detected 」\`\`\``)
 await XeonBotInc.groupParticipantsUpdate(m.chat, [kice], 'remove')
     let result = fs.readFileSync(`./XeonMedia/sticker2/goodbye.webp`)
@@ -811,8 +819,7 @@ XeonBotInc.sendMessage(m.chat, { sticker : result })
 }
 
 if (budy.includes("📄")) {
-	kice = m.sender
-	await XeonBotInc.updateBlockStatus(kice, "block")
+	  	if (!m.isGroup) return XeonBotInc.sendMessage(m.chat, {text: `\`\`\`\「 Virus Detected 」\`\`\`\n\nAnda Mengirim Kata Lebih Dari 1500+\nMaaf, Anda Akan Kami Blokir!`}, {quoted: m}).then((res) => XeonBotInc.updateBlockStatus(m.sender, "block")) /////////////////////////////////.then((res) => XeonBotInc.sendContact(m.chat, global.rkyt)).then((res) => sleep(850)).then((res) => XeonBotInc.updateBlockStatus(m.sender, "block"))
 if (!isBotAdmins) return reply(`\`\`\`「 Virus Detected 」\`\`\``)
 await XeonBotInc.groupParticipantsUpdate(m.chat, [kice], 'remove')
     let result = fs.readFileSync(`./XeonMedia/sticker2/goodbye.webp`)
@@ -821,8 +828,7 @@ XeonBotInc.sendMessage(m.chat, { sticker : result })
 }
 
 if (budy.includes("⛩️")) {
-	kice = m.sender
-	await XeonBotInc.updateBlockStatus(kice, "block")
+	  	if (!m.isGroup) return XeonBotInc.sendMessage(m.chat, {text: `\`\`\`\「 Virus Detected 」\`\`\`\n\nAnda Mengirim Kata Lebih Dari 1500+\nMaaf, Anda Akan Kami Blokir!`}, {quoted: m}).then((res) => XeonBotInc.updateBlockStatus(m.sender, "block")) /////////////////////////////////.then((res) => XeonBotInc.sendContact(m.chat, global.rkyt)).then((res) => sleep(850)).then((res) => XeonBotInc.updateBlockStatus(m.sender, "block"))
 if (!isBotAdmins) return reply(`\`\`\`「 Virus Detected 」\`\`\``)
 kice = m.sender
 await XeonBotInc.groupParticipantsUpdate(m.chat, [kice], 'remove')
@@ -832,8 +838,7 @@ XeonBotInc.sendMessage(m.chat, { sticker : result })
 }
 
 if (budy.includes("࿑")) {
-	kice = m.sender
-	await XeonBotInc.updateBlockStatus(kice, "block")
+	  	if (!m.isGroup) return XeonBotInc.sendMessage(m.chat, {text: `\`\`\`\「 Virus Detected 」\`\`\`\n\nAnda Mengirim Kata Lebih Dari 1500+\nMaaf, Anda Akan Kami Blokir!`}, {quoted: m}).then((res) => XeonBotInc.updateBlockStatus(m.sender, "block")) /////////////////////////////////.then((res) => XeonBotInc.sendContact(m.chat, global.rkyt)).then((res) => sleep(850)).then((res) => XeonBotInc.updateBlockStatus(m.sender, "block"))
 if (!isBotAdmins) return reply(`\`\`\`「 Virus Detected 」\`\`\``)
 await XeonBotInc.groupParticipantsUpdate(m.chat, [kice], 'remove')
     let result = fs.readFileSync(`./XeonMedia/sticker2/goodbye.webp`)
@@ -852,56 +857,49 @@ XeonBotInc.sendMessage(m.chat, { sticker : result })
 }
 
 if (budy.includes("〽")) {
-	kice = m.sender
-	await XeonBotInc.updateBlockStatus(kice, "block")
+	  	if (!m.isGroup) return XeonBotInc.sendMessage(m.chat, {text: `\`\`\`\「 Virus Detected 」\`\`\`\n\nAnda Mengirim Kata Lebih Dari 1500+\nMaaf, Anda Akan Kami Blokir!`}, {quoted: m}).then((res) => XeonBotInc.updateBlockStatus(m.sender, "block")) /////////////////////////////////.then((res) => XeonBotInc.sendContact(m.chat, global.rkyt)).then((res) => sleep(850)).then((res) => XeonBotInc.updateBlockStatus(m.sender, "block"))
 if (!isBotAdmins) return reply(`\`\`\`「 Virus Detected 」\`\`\``)
 await XeonBotInc.groupParticipantsUpdate(m.chat, [kice], 'remove')
 } else {
 }
 
 if (budy.includes("꧂")) {
-	kice = m.sender
-	await XeonBotInc.updateBlockStatus(kice, "block")
+	  	if (!m.isGroup) return XeonBotInc.sendMessage(m.chat, {text: `\`\`\`\「 Virus Detected 」\`\`\`\n\nAnda Mengirim Kata Lebih Dari 1500+\nMaaf, Anda Akan Kami Blokir!`}, {quoted: m}).then((res) => XeonBotInc.updateBlockStatus(m.sender, "block")) /////////////////////////////////.then((res) => XeonBotInc.sendContact(m.chat, global.rkyt)).then((res) => sleep(850)).then((res) => XeonBotInc.updateBlockStatus(m.sender, "block"))
 if (!isBotAdmins) return reply(`\`\`\`「 Virus Detected 」\`\`\``)
 await XeonBotInc.groupParticipantsUpdate(m.chat, [kice], 'remove')
 } else {
 }
 
 if (budy.includes("⿻")) {
-	kice = m.sender
-	await XeonBotInc.updateBlockStatus(kice, "block")
+	  	if (!m.isGroup) return XeonBotInc.sendMessage(m.chat, {text: `\`\`\`\「 Virus Detected 」\`\`\`\n\nAnda Mengirim Kata Lebih Dari 1500+\nMaaf, Anda Akan Kami Blokir!`}, {quoted: m}).then((res) => XeonBotInc.updateBlockStatus(m.sender, "block")) /////////////////////////////////.then((res) => XeonBotInc.sendContact(m.chat, global.rkyt)).then((res) => sleep(850)).then((res) => XeonBotInc.updateBlockStatus(m.sender, "block"))
 if (!isBotAdmins) return reply(`\`\`\`「 Virus Detected 」\`\`\``)
 await XeonBotInc.groupParticipantsUpdate(m.chat, [kice], 'remove')
 } else {
 }
 
 if (budy.includes("؀")) {
-	kice = m.sender
-	await XeonBotInc.updateBlockStatus(kice, "block")
+	  	if (!m.isGroup) return XeonBotInc.sendMessage(m.chat, {text: `\`\`\`\「 Virus Detected 」\`\`\`\n\nAnda Mengirim Kata Lebih Dari 1500+\nMaaf, Anda Akan Kami Blokir!`}, {quoted: m}).then((res) => XeonBotInc.updateBlockStatus(m.sender, "block")) /////////////////////////////////.then((res) => XeonBotInc.sendContact(m.chat, global.rkyt)).then((res) => sleep(850)).then((res) => XeonBotInc.updateBlockStatus(m.sender, "block"))
 if (!isBotAdmins) return reply(`\`\`\`「 Virus Detected 」\`\`\``)
 await XeonBotInc.groupParticipantsUpdate(m.chat, [kice], 'remove')
 } else {
 }
 
 if (budy.includes("👾")) {
-	kice = m.sender
-	await XeonBotInc.updateBlockStatus(kice, "block")
+	  	if (!m.isGroup) return XeonBotInc.sendMessage(m.chat, {text: `\`\`\`\「 Virus Detected 」\`\`\`\n\nAnda Mengirim Kata Lebih Dari 1500+\nMaaf, Anda Akan Kami Blokir!`}, {quoted: m}).then((res) => XeonBotInc.updateBlockStatus(m.sender, "block")) /////////////////////////////////.then((res) => XeonBotInc.sendContact(m.chat, global.rkyt)).then((res) => sleep(850)).then((res) => XeonBotInc.updateBlockStatus(m.sender, "block"))
 if (!isBotAdmins) return reply(`\`\`\`「 Virus Detected 」\`\`\``)
 await XeonBotInc.groupParticipantsUpdate(m.chat, [kice], 'remove')
 } else {
 }
 
 if (budy.includes("🎩")) {
-	kice = m.sender
-	await XeonBotInc.updateBlockStatus(kice, "block")
+	  	if (!m.isGroup) return XeonBotInc.sendMessage(m.chat, {text: `\`\`\`\「 Virus Detected 」\`\`\`\n\nAnda Mengirim Kata Lebih Dari 1500+\nMaaf, Anda Akan Kami Blokir!`}, {quoted: m}).then((res) => XeonBotInc.updateBlockStatus(m.sender, "block")) /////////////////////////////////.then((res) => XeonBotInc.sendContact(m.chat, global.rkyt)).then((res) => sleep(850)).then((res) => XeonBotInc.updateBlockStatus(m.sender, "block"))
 if (!isBotAdmins) return reply(`\`\`\`「 Virus Detected 」\`\`\``)
 await XeonBotInc.groupParticipantsUpdate(m.chat, [kice], 'remove')
 } else {
 }
 
 if (budy.includes("🐲")) {
-	kice = m.sender
-	await XeonBotInc.updateBlockStatus(kice, "block")
+	  	if (!m.isGroup) return XeonBotInc.sendMessage(m.chat, {text: `\`\`\`\「 Virus Detected 」\`\`\`\n\nAnda Mengirim Kata Lebih Dari 1500+\nMaaf, Anda Akan Kami Blokir!`}, {quoted: m}).then((res) => XeonBotInc.updateBlockStatus(m.sender, "block")) /////////////////////////////////.then((res) => XeonBotInc.sendContact(m.chat, global.rkyt)).then((res) => sleep(850)).then((res) => XeonBotInc.updateBlockStatus(m.sender, "block"))
 if (!isBotAdmins) return reply(`\`\`\`「 Virus Detected 」\`\`\``)
 await XeonBotInc.groupParticipantsUpdate(m.chat, [kice], 'remove')
 } else {
@@ -909,19 +907,17 @@ await XeonBotInc.groupParticipantsUpdate(m.chat, [kice], 'remove')
 
 //antivirtex by xeon
   if (budy.length > 1500) {
-  	let kice = m.sender
-	await XeonBotInc.updateBlockStatus(kice, "block")
-  	if (!isBotAdmins) return reply(`\`\`\`「 Virus Detected 」\`\`\`\n\n*1500+* Kata Terdeteksi`)
-  bvl = `❤`
-if (isAdmins) return reply(bvl)
-if (m.key.fromMe) return reply(bvl)
-if (isCreator) return reply(bvl)
-  ////let buttons = [
-                  /////////////      { buttonId: 'startx', buttonText: { displayText: '🦍💨' }, type: 1 }
-                   // ]
-                ///////////    let fgh = `*${pushname}* Has Been Kicked`
-                /////////////////    await XeonBotInc.sendButtonText(m.chat, buttons, `\`\`\`「 Virus Detected 」\`\`\`\n\n_1500+ Kata Terdeteksi_`, fgh)
-                await XeonBotInc.sendMessage(m.chat, { text: `\`\`\`「 Virus Detected 」\`\`\`\n\n_1500+ Kata Terdeteksi_\n_*${pushname}* Has Been Kicked_` }, {quoted: m})
+  	if (!m.isGroup) return XeonBotInc.sendMessage(m.chat, {text: `\`\`\`\「 Virus Detected 」\`\`\`\n\nAnda Mengirim Kata Lebih Dari 1500+\nMaaf, Anda Akan Kami Blokir!`}, {quoted: m}) /////////////////////////////////.then((res) => XeonBotInc.sendContact(m.chat, global.rkyt)).then((res) => sleep(850)).then((res) => XeonBotInc.updateBlockStatus(m.sender, "block"))
+  	if (!isBotAdmins) return XeonBotInc.sendMessage(m.chat, {text: `\`\`\`「 Virus Detected 」\`\`\`\n\n*${pushname}* Mengirim Kata Lebih Dari 1500+\n\n_🔴 Sayangnya Bot Bukan Admin ☹️_`}, {quoted: fdocs})
+if (isAdmins) return 
+if (m.key.fromMe) return 
+if (isCreator) return 
+  let buttons = [
+                  { buttonId: 'startx', buttonText: { displayText: '🦍💨' }, type: 1 }
+                    ]
+                    let fgh = `*${pushname}* Akan Dikick ! `
+                    await XeonBotInc.sendButtonText(m.chat, buttons, `\`\`\`「 Virus Detected 」\`\`\`\n\n_1500+ Kata Terdeteksi_`, fgh, {quoted: fdocs})
+               //////////////////////////////// await XeonBotInc.sendMessage(m.chat, { text: `\`\`\`「 Virus Detected 」\`\`\`\n\n_1500+ Kata Terdeteksi_\n_*${pushname}* Has Been Kicked_` }, {quoted: m})
                     await sleep(850)
                     
                     await XeonBotInc.groupParticipantsUpdate(m.chat, [kice], 'remove')
@@ -3420,9 +3416,9 @@ if (isBanChat) return reply(mess.banChat)
 if (isBan) return reply(mess.ban)                                   
   if (isBanChat) return reply(mess.banChat)  
 if (!m.quoted) reply(false)  
+if (!isAdmins && !isCreator) return
 let { chat, fromMe, id, isBaileys } = m.quoted  
-if (!isBaileys) return replay(`The Message Was Not Sent By A Bot!`)  
-XeonBotInc.sendMessage(m.chat, { delete: { remoteJid: m.chat, fromMe: true, id: m.quoted.id, participant: m.quoted.sender } })  
+XeonBotInc.sendMessage(m.chat, { delete: { remoteJid: m.chat, fromMe: false, id: m.quoted.id, participant: m.quoted.sender } })  
 }
  break
  	module.exports = { 
@@ -3955,7 +3951,14 @@ case 'hentaivid': case 'hentaivideo': {
                 reply(mess.wait)
                 anu = await hentai()
                 result912 = anu[Math.floor(Math.random(), anu.length)]
-                XeonBotInc.sendMessage(m.chat, { video: { url: result912.video_1 }, caption: `${themeemoji} Title : ${result912.title}\n${themeemoji} Category : ${result912.category}\n${themeemoji} Mimetype : ${result912.type}\n${themeemoji} Views : ${result912.views_count}\n${themeemoji} Shares : ${result912.share_count}\n${themeemoji} Source : ${result912.link}\n${themeemoji} Media Url : ${result912.video_1}` }, { quoted: m })
+               let button = [{buttonId: `hentaivideo`, buttonText: {displayText: 'Next ⏭'}, type: 1}]
+               let button3Messages = {
+   video: {url:result912.video_1},
+   caption:  `${themeemoji} Title : ${result912.title}\n${themeemoji} Category : ${result912.category}\n${themeemoji} Mimetype : ${result912.type}\n${themeemoji} Views : ${result912.views_count}\n${themeemoji} Shares : ${result912.share_count}\n${themeemoji} Source : ${result912.link}\n${themeemoji} Media Url : ${result912.video_1}`,
+  buttons: button,
+  headerType: 1
+  }      
+                XeonBotInc.sendMessage(m.chat, button3Messages, { quoted: m })
             }
             break
 case 'trap' :
@@ -7878,7 +7881,7 @@ break
 	if (isBanChat) return reply(mess.banChat)
 		let { quotesAnime } = require('./lib/scraper')
                 let anu = await quotesAnime()
-                result = anu[Math.floor(Math.random() * anu.length)]
+                let result = anu[Math.floor(Math.random() * anu.length)]
                 let buttons = [
                     {buttonId: `quotesanime`, buttonText: {displayText: '➡️Next➡️'}, type: 1}
                 ]
@@ -9014,17 +9017,10 @@ XeonBotInc.sendMessage(from, { react: { text: dj, key: m.key }})
 	                
                      }
             break
-                case 'command': {
+                case 'command': case 'listmenu': {
                 	   if (isBan) return reply(mess.ban)
 	if (isBanChat) return reply(mess.banChat)
-let template = await generateWAMessageFromContent(m.chat, proto.Message.fromObject({
-                listMessage :{
-                    title: `Hi ${pushname}`,
-                    description: `Please Choose The Menu\n\n`,
-                    buttonText: "Menu",
-                    footerText: `${global.botname}`,
-                    listType: "SINGLE_SELECT",
-                    sections: [{
+	let sections = [{
 								"title": "Initial Features Of Bot 🦄",
 								"rows": [
 									{
@@ -9048,7 +9044,7 @@ let template = await generateWAMessageFromContent(m.chat, proto.Message.fromObje
 								"title": "Bot Features ❤️",
 								"rows": [
 									{
-										"title": "All Menu ??",
+										"title": "All Menu 📄",
 										"description": "Displays The List Of All The Features!",
 										"rowId": `${prefix}allmenu`
 									},
@@ -9164,14 +9160,19 @@ let template = await generateWAMessageFromContent(m.chat, proto.Message.fromObje
 									}
 								]
 							}
-						],
-          listType: 1
-                }
-            }), {})
-            XeonBotInc.relayMessage(m.chat, template.message, { messageId: template.key.id })
-            }
+						] 
+  const sendm =  XeonBotInc.sendMessage(
+      m.chat, 
+      {
+       text: `${pushname} \n*Here is the list of menus*, \n*click the button below to choose*`,
+       footer: `${botname}`,
+       title: "*LIST MENU*",
+       buttonText: "CLICK HERE",
+       sections
+      }, { quoted : m })
+      }
             break
-case 'allmenu': case 'menu': 
+case 'allmenu': case 'menu': {
 	   if (isBan) return reply(mess.ban)
 	if (isBanChat) return reply(mess.banChat)
 	XeonBotInc.sendMessage(from, { react: { text: `${global.reactmoji}`, key: m.key }})
@@ -9180,7 +9181,7 @@ let timestamp = speed()
                 let latensi = speed() - timestamp
                 neww = performance.now()
                 oldd = performance.now()
-XeonBotInc.sendMessage(m.chat, {text: `*Response Speed* ${latensi.toFixed(4)} _Second_ \n ${oldd - neww} _miliseconds_\n*Runtime* : ${runtime(process.uptime())}\n\n*All GC & Bot Info*: https://kennethmorris666.blogspot.com/\n\n ┏━「 _OWNER_ ⛔ 」━━⭓
+teks = `*Response Speed* ${latensi.toFixed(4)} _Second_ \n ${oldd - neww} _miliseconds_\n*Runtime* : ${runtime(process.uptime())}\n\n*All GC & Bot Info*: https://kennethmorris666.blogspot.com/\n\n ┏━「 _OWNER_ ⛔ 」━━⭓
  ┃╔═══════✪
  ┃╠ ${prefix}self 
  ┃╠ ${prefix}public 
@@ -9752,13 +9753,167 @@ XeonBotInc.sendMessage(m.chat, {text: `*Response Speed* ${latensi.toFixed(4)} _S
  ┃╠ ${prefix}request 
  ┃╠ ${prefix}report [bug] 
  ┃╚═════════════✪
- ┗━「 *Created By Kenneth Morris* 」━⭓`}, {quoted: fdocs})
+ ┗━「 *Created By Kenneth Morris* 」━⭓`
+ 
+//////////////////contoh  [{"urlButton": {"displayText": "YouTube 📍","url": `${websitex}`}}
+ let sections = [{
+								"title": "Initial Features Of Bot 🦄",
+								"rows": [
+									{
+										"title": "Other ☕",
+										"description": "Displays The List Of Other Features",
+										"rowId": `${prefix}othermenu`
+									}
+								]
+							},
+							{
+								"title": "War Features 🛐",
+								"rows": [
+									{
+										"title": "Adzan Remix 🎧😎",
+										"description": "Displays The List Of *War Features*",
+										"rowId": `${prefix}adzanmenu`
+									}
+								]
+							},
+							{
+								"title": "Bot Features ❤️",
+								"rows": [
+									{
+										"title": "All Menu ??",
+										"description": "Displays The List Of All The Features!",
+										"rowId": `${prefix}allmenu`
+									},
+									{
+										"title": "Owner Menu 💠",
+										"description": "Displays The List Of Owner Features",
+										"rowId": `${prefix}ownermenu`
+										},
+									{
+										"title": "Group Menu ✨",
+										"description": "Displays The List Of Main Features",
+										"rowId": `${prefix}groupmenu`
+										},
+										{
+										"title": "Maker Menu 🌈",
+										"description": "Displays The List Of Logo Making Features",
+										"rowId": `${prefix}makermenu`
+									},
+									{
+										"title": "Sound Menu 🎵",
+										"description": "Displays The List Of Sound Features",
+										"rowId": `${prefix}soundmenu`
+									},
+									{
+										"title": "Download Menu ↘️",
+										"description": "Displays The List Of Download Features",
+										"rowId": `${prefix}downloadmenu`
+									},
+									{
+										"title": "Sticker Menu 🃏",
+										"description": "Displays The List Of Sticker Features",
+										"rowId": `${prefix}stickermenu`
+									},
+									{
+										"title": "Search Menu 🔎",
+										"description": "Displays The List Of Searching Features",
+										"rowId": `${prefix}searchmenu`
+									},
+									{
+										"title": "Tool Menu ⚙️",
+										"description": "Displays The List Of Tool Features",
+										"rowId": `${prefix}toolmenu`
+									},
+									{
+										"title": "Random Image Menu 🌆",
+										"description": "Displays The List Of Random Image Features",
+										"rowId": `${prefix}randomimagemenu`
+									},
+									{
+										"title": "Image Effect Menu 🖼️",
+										"description": "Displays The List Of Image Effect Features",
+										"rowId": `${prefix}imageeffectmenu`
+									},
+										{
+											"title": "Anime Menu 😘",
+										"description": "Displays The List Of Random Anime Features",
+										"rowId": `${prefix}animemenu`
+										},
+										{
+											"title": "Emote Menu 😀",
+										"description": "Displays The List Of Emote Features",
+										"rowId": `${prefix}emotemenu`
+										},
+										{
+										"title": "Anime Sticker Menu ☺️",
+										"description": "Displays The List Of Anime Sticker Features",
+										"rowId": `${prefix}animestickermenu`
+									     },
+									{
+										"title": "Nsfw Menu 🤓",
+										"description": "Displays The List Of Nsfe Features",
+										"rowId": `${prefix}nsfwmenu`
+									     },
+										{
+											"title": "Fun Menu 🕺",
+										"description": "Displays The List Of Fun Features",
+										"rowId": `${prefix}funmenu`
+										},
+										{
+										"title": "Game Menu 🎮",
+										"description": "Displays The List Of Game Features",
+										"rowId": `${prefix}gamemenu`
+									},
+										{
+											"title": "Convert Menu ⚒️",
+										"description": "Displays The List Of Convert Features",
+										"rowId": `${prefix}convertmenu`
+										},
+										{
+											"title": "Database Menu ♻️",
+										"description": "Displays The List Of Database Features",
+										"rowId": `${prefix}databasemenu`
+										},
+										{
+										"title": "Indo Menu  🦜",
+										"description": "Displays The List Of Indo Features",
+										"rowId": `${prefix}indomenu`
+									},
+										{
+											"title": "Horoscope Menu 🕊️",
+										"description": "Displays The List Of Horoscope Features",
+										"rowId": `${prefix}indohoroscopemenu`
+										}
+								]
+							},
+							{
+								"title": "Credit ©️",
+								"rows": [
+									{
+										"title": "Thanks To ❤️",
+										"description": "Displays The List Of Credit Of The Bot !!",
+										"rowId": `${prefix}tqtt`
+									}
+								]
+							}
+						] 
+						
+  XeonBotInc.sendMessage(
+      m.chat, 
+      {
+       text: teks,
+       footer: `${botname}`,
+       title: "*LIST MENU*",
+       buttonText: "CLICK HERE",
+       sections
+      }, { quoted : fdocs })
+      }
 break 
- case 'ownermenu': 
+ case 'ownermenu': {
             if (isBan) return reply(mess.ban) 
          if (isBanChat) return reply(mess.banChat) 
  var unicorn = await getBuffer(picak+'Owner Menu') 
- await XeonBotInc.send5ButImg(from, ` ┏━「 _OWNER_ 」━━⭓ 
+ anjay = ` ┏━「 _OWNER_ 」━━⭓ 
  ┃╔═══════✪         
  ┃╠ ${prefix}self 
  ┃╠ ${prefix}public 
@@ -9779,13 +9934,40 @@ break
  ┃╠ ${prefix}setppbot [image] 
  ┃╠ ${prefix}setexif 
  ┃╚═════════════✪
- ┗━「 *Created By Kenneth Morris* 」━⭓` + '' + ' ', `${pushname}`,unicorn, [{"urlButton": {"displayText": "YouTube 📍","url": `${websitex}`}},{"quickReplyButton": {"displayText": "Owner 👤","id": 'owner'}}] )
+ ┗━「 *Created By Kenneth Morris* 」━⭓`
+let documents = [doc1,doc2,doc3] 
+ let docs = pickRandom(documents)
+ let buttons = [ 
+ {buttonId: `menu`, buttonText: {displayText: 'All Menu'}, type: 1} 
+ ] 
+ let pic = [wan,tu,tri,fo,faif,sik,seven,egh,nen,ten,elepen,welep,terten,foten,faiften,sikten]
+ let pics = pic[Math.floor(Math.random() * (pic.length))]
+ let buttonMessage = { 
+  document: fs.readFileSync('./XeonMedia/theme/cheems.xlsx'), 
+ mimetype: docs,
+ mentions: [m.sender], 
+ fileName: `Hi, ${pushname}`, 
+ caption: anjay, 
+ footer: `${botname}`, 
+ buttons: buttons, 
+ headerType: 4,
+contextInfo: { externalAdReply: { 
+title: `Jasjus ID 🔰`, 
+ body: `Random Images`, 
+mediaType: 4, 
+ thumbnail: pics, 
+sourceUrl: `${websitex}`, 
+  mediaUrl: `${websitex}` 
+}} 
+} 
+ XeonBotInc.sendMessage(m.chat, buttonMessage, {quoted: fdocs})
+ }
  break 
- case 'groupmenu': 
+ case 'groupmenu': {
             if (isBan) return reply(mess.ban) 
          if (isBanChat) return reply(mess.banChat) 
  var unicorn = await getBuffer(picak+'Group Menu') 
- await XeonBotInc.send5ButImg(from, ` ┏━「 _GROUP_ 」━━⭓ 
+ anjay = ` ┏━「 _GROUP_ 」━━⭓ 
  ┃╔═══════✪
  ┃╠ ${prefix}grousetting 
  ┃╠ ${prefix}grouplink 
@@ -9823,13 +10005,40 @@ break
  ┃╠ ${prefix}checkvote 
  ┃╠ ${prefix}delvote 
  ┃╚═════════════✪
- ┗━「 *Created By Kenneth Morris* 」━⭓` + '' + ' ', `${pushname}`,unicorn, [{"urlButton": {"displayText": "YouTube 📍","url": `${websitex}`}},{"quickReplyButton": {"displayText": "Owner 👤","id": 'owner'}}] )
+ ┗━「 *Created By Kenneth Morris* 」━⭓` 
+let documents = [doc1,doc2,doc3] 
+ let docs = pickRandom(documents)
+ let buttons = [ 
+ {buttonId: `command`, buttonText: {displayText: 'List Menu'}}, {buttonId: `menu`, buttonText: {displayText: 'All Menu'}} //////////////////////// {buttonId: `command`, buttonText: {displayText: 'List Menu 🗂'}} 
+ ] 
+ let pic = [wan,tu,tri,fo,faif,sik,seven,egh,nen,ten,elepen,welep,terten,foten,faiften,sikten]
+ let pics = pic[Math.floor(Math.random() * (pic.length))]
+ let buttonMessage = { 
+  document: fs.readFileSync('./XeonMedia/theme/cheems.xlsx'), 
+ mimetype: docs,
+ mentions: [m.sender], 
+ fileName: `Hi, ${pushname}`, 
+ caption: anjay, 
+ footer: `${botname}`, 
+ buttons: buttons, 
+ headerType: 4,
+contextInfo: { externalAdReply: { 
+title: `Jasjus ID 🔰`, 
+ body: `Random Images`, 
+mediaType: 4, 
+ thumbnail: pics, 
+sourceUrl: `${websitex}`, 
+  mediaUrl: `${websitex}` 
+}} 
+} 
+ XeonBotInc.sendMessage(m.chat, buttonMessage, {quoted: fdocs})
+ }
  break 
- case 'rpgmenu': 
+ case 'rpgmenu': {
             if (isBan) return reply(mess.ban) 
          if (isBanChat) return reply(mess.banChat) 
  var unicorn = await getBuffer(picak+'Rpg Menu') 
- await XeonBotInc.send5ButImg(from, ` ┏━「 _RPG_ 」━━⭓ 
+ anjay = ` ┏━「 _RPG_ 」━━⭓ 
  ┃╔═══════✪         
  ┃╠ ${prefix}hunt 
  ┃╠ ${prefix}mine 
@@ -9843,13 +10052,40 @@ break
  ┃╠ ${prefix}inventory 
  ┃╠ ${prefix}leaderboard 
  ┃╚═════════════✪
- ┗━「 *Created By Kenneth Morris* 」━⭓` + '' + ' ', `${pushname}`,unicorn, [{"urlButton": {"displayText": "YouTube 📍","url": `${websitex}`}},{"quickReplyButton": {"displayText": "Owner 👤","id": 'owner'}}] )
+ ┗━「 *Created By Kenneth Morris* 」━⭓` 
+let documents = [doc1,doc2,doc3] 
+ let docs = pickRandom(documents)
+ let buttons = [ 
+ {buttonId: `command`, buttonText: {displayText: 'List Menu'}}, {buttonId: `menu`, buttonText: {displayText: 'All Menu'}}
+ ] 
+ let pic = [wan,tu,tri,fo,faif,sik,seven,egh,nen,ten,elepen,welep,terten,foten,faiften,sikten]
+ let pics = pic[Math.floor(Math.random() * (pic.length))]
+ let buttonMessage = { 
+  document: fs.readFileSync('./XeonMedia/theme/cheems.xlsx'), 
+ mimetype: docs,
+ mentions: [m.sender], 
+ fileName: `Hi, ${pushname}`, 
+ caption: anjay, 
+ footer: `${botname}`, 
+ buttons: buttons, 
+ headerType: 4,
+contextInfo: { externalAdReply: { 
+title: `Jasjus ID 🔰`, 
+ body: `Random Images`, 
+mediaType: 4, 
+ thumbnail: pics, 
+sourceUrl: `${websitex}`, 
+  mediaUrl: `${websitex}` 
+}} 
+} 
+ XeonBotInc.sendMessage(m.chat, buttonMessage, {quoted: fdocs})
+ }
  break 
- case 'makermenu': 
+ case 'makermenu': {
             if (isBan) return reply(mess.ban) 
          if (isBanChat) return reply(mess.banChat) 
  var unicorn = await getBuffer(picak+'Maker Menu') 
- await XeonBotInc.send5ButImg(from, ` ┏━「 _MAKER_ 」━━⭓ 
+ anjay = ` ┏━「 _MAKER_ 」━━⭓ 
  ┃╔═══════✪
  ┃╠ ${prefix}candy 
  ┃╠ ${prefix}blackpinkneon 
@@ -9955,13 +10191,40 @@ break
  ┃╠ ${prefix}watercolor 
  ┃╠ ${prefix}classic 
  ┃╚═════════════✪
- ┗━「 *Created By Kenneth Morris* 」━⭓` + '' + ' ', `${pushname}`,unicorn, [{"urlButton": {"displayText": "YouTube 📍","url": `${websitex}`}},{"quickReplyButton": {"displayText": "Owner 👤","id": 'owner'}}] )
+ ┗━「 *Created By Kenneth Morris* 」━⭓` 
+let documents = [doc1,doc2,doc3] 
+ let docs = pickRandom(documents)
+ let buttons = [ 
+ {buttonId: `command`, buttonText: {displayText: 'List Menu'}}, {buttonId: `menu`, buttonText: {displayText: 'All Menu'}}
+ ] 
+ let pic = [wan,tu,tri,fo,faif,sik,seven,egh,nen,ten,elepen,welep,terten,foten,faiften,sikten]
+ let pics = pic[Math.floor(Math.random() * (pic.length))]
+ let buttonMessage = { 
+  document: fs.readFileSync('./XeonMedia/theme/cheems.xlsx'), 
+ mimetype: docs,
+ mentions: [m.sender], 
+ fileName: `Hi, ${pushname}`, 
+ caption: anjay, 
+ footer: `${botname}`, 
+ buttons: buttons, 
+ headerType: 4,
+contextInfo: { externalAdReply: { 
+title: `Jasjus ID 🔰`, 
+ body: `Random Images`, 
+mediaType: 4, 
+ thumbnail: pics, 
+sourceUrl: `${websitex}`, 
+  mediaUrl: `${websitex}` 
+}} 
+} 
+ XeonBotInc.sendMessage(m.chat, buttonMessage, {quoted: fdocs})
+ }
  break 
- case 'downloadmenu': 
+ case 'downloadmenu': {
             if (isBan) return reply(mess.ban) 
          if (isBanChat) return reply(mess.banChat) 
  var unicorn = await getBuffer(picak+'Download Menu') 
- await XeonBotInc.send5ButImg(from, ` ┏━「 _DOWNLOAD_ 」━━⭓ 
+ anjay = ` ┏━「 _DOWNLOAD_ 」━━⭓ 
  ┃╔═══════✪         
  ┃╠ ${prefix}instagram [url] 
  ┃╠ ${prefix}igtv [url] 
@@ -9982,13 +10245,40 @@ break
  ┃╠ ${prefix}soundcloud [url] 
  ┃╠ ${prefix}zippyshare [url] 
  ┃╚═════════════✪
- ┗━「 *Created By Kenneth Morris* 」━⭓` + '' + ' ', `${pushname}`,unicorn, [{"urlButton": {"displayText": "YouTube 📍","url": `${websitex}`}},{"quickReplyButton": {"displayText": "Owner 👤","id": 'owner'}}] )
+ ┗━「 *Created By Kenneth Morris* 」━⭓` 
+let documents = [doc1,doc2,doc3] 
+ let docs = pickRandom(documents)
+ let buttons = [ 
+ {buttonId: `command`, buttonText: {displayText: 'List Menu'}}, {buttonId: `menu`, buttonText: {displayText: 'All Menu'}}
+ ] 
+ let pic = [wan,tu,tri,fo,faif,sik,seven,egh,nen,ten,elepen,welep,terten,foten,faiften,sikten]
+ let pics = pic[Math.floor(Math.random() * (pic.length))]
+ let buttonMessage = { 
+  document: fs.readFileSync('./XeonMedia/theme/cheems.xlsx'), 
+ mimetype: docs,
+ mentions: [m.sender], 
+ fileName: `Hi, ${pushname}`, 
+ caption: anjay, 
+ footer: `${botname}`, 
+ buttons: buttons, 
+ headerType: 4,
+contextInfo: { externalAdReply: { 
+title: `Jasjus ID 🔰`, 
+ body: `Random Images`, 
+mediaType: 4, 
+ thumbnail: pics, 
+sourceUrl: `${websitex}`, 
+  mediaUrl: `${websitex}` 
+}} 
+} 
+ XeonBotInc.sendMessage(m.chat, buttonMessage, {quoted: fdocs})
+ }
  break 
- case 'searchmenu': 
+ case 'searchmenu': {
             if (isBan) return reply(mess.ban) 
          if (isBanChat) return reply(mess.banChat) 
  var unicorn = await getBuffer(picak+'Search Menu') 
- await XeonBotInc.send5ButImg(from, `┏━「 _SEARCH_ 」━━⭓ 
+ anjay = `┏━「 _SEARCH_ 」━━⭓ 
  ┃╔═══════✪
  ┃╠ ${prefix}play [query] 
  ┃╠ ${prefix}song [query] 
@@ -10017,13 +10307,40 @@ break
  ┃╠ ${prefix}mcserver [ip|port] 
  ┃╠ ${prefix}drakor [query] 
  ┃╚═════════════✪
- ┗━「 *Created By Kenneth Morris* 」━⭓` + '' + ' ', `${pushname}`,unicorn, [{"urlButton": {"displayText": "YouTube ??","url": `${websitex}`}},{"quickReplyButton": {"displayText": "Owner 👤","id": 'owner'}}] )
+ ┗━「 *Created By Kenneth Morris* 」━⭓` 
+let documents = [doc1,doc2,doc3] 
+ let docs = pickRandom(documents)
+ let buttons = [ 
+ {buttonId: `command`, buttonText: {displayText: 'List Menu'}}, {buttonId: `menu`, buttonText: {displayText: 'All Menu'}}
+ ] 
+ let pic = [wan,tu,tri,fo,faif,sik,seven,egh,nen,ten,elepen,welep,terten,foten,faiften,sikten]
+ let pics = pic[Math.floor(Math.random() * (pic.length))]
+ let buttonMessage = { 
+  document: fs.readFileSync('./XeonMedia/theme/cheems.xlsx'), 
+ mimetype: docs,
+ mentions: [m.sender], 
+ fileName: `Hi, ${pushname}`, 
+ caption: anjay, 
+ footer: `${botname}`, 
+ buttons: buttons, 
+ headerType: 4,
+contextInfo: { externalAdReply: { 
+title: `Jasjus ID 🔰`, 
+ body: `Random Images`, 
+mediaType: 4, 
+ thumbnail: pics, 
+sourceUrl: `${websitex}`, 
+  mediaUrl: `${websitex}` 
+}} 
+} 
+ XeonBotInc.sendMessage(m.chat, buttonMessage, {quoted: fdocs})
+ }
  break 
- case 'convertmenu': 
+ case 'convertmenu': {
             if (isBan) return reply(mess.ban) 
          if (isBanChat) return reply(mess.banChat) 
  var unicorn = await getBuffer(picak+'Convert Menu') 
- await XeonBotInc.send5ButImg(from, ` ┏━「 _CONVERT_ 」━━⭓ 
+ anjay = ` ┏━「 _CONVERT_ 」━━⭓ 
  ┃╔═══════✪
  ┃╠ ${prefix}toimage [reply stick] 
  ┃╠ ${prefix}sticker [reply img|gif] 
@@ -10055,13 +10372,40 @@ break
  ┃╠ ${prefix}slow [reply aud] 
  ┃╠ ${prefix}squirrel [reply aud] 
  ┃╚═════════════✪
- ┗━「 *Created By Kenneth Morris* 」━⭓` + '' + ' ', `${pushname}`,unicorn, [{"urlButton": {"displayText": "YouTube 📍","url": `${websitex}`}},{"quickReplyButton": {"displayText": "Owner 👤","id": 'owner'}}] )
+ ┗━「 *Created By Kenneth Morris* 」━⭓` 
+let documents = [doc1,doc2,doc3] 
+ let docs = pickRandom(documents)
+ let buttons = [ 
+{buttonId: `command`, buttonText: {displayText: 'List Menu'}}, {buttonId: `menu`, buttonText: {displayText: 'All Menu'}}
+ ] 
+ let pic = [wan,tu,tri,fo,faif,sik,seven,egh,nen,ten,elepen,welep,terten,foten,faiften,sikten]
+ let pics = pic[Math.floor(Math.random() * (pic.length))]
+ let buttonMessage = { 
+  document: fs.readFileSync('./XeonMedia/theme/cheems.xlsx'), 
+ mimetype: docs,
+ mentions: [m.sender], 
+ fileName: `Hi, ${pushname}`, 
+ caption: anjay, 
+ footer: `${botname}`, 
+ buttons: buttons, 
+ headerType: 4,
+contextInfo: { externalAdReply: { 
+title: `Jasjus ID 🔰`, 
+ body: `Random Images`, 
+mediaType: 4, 
+ thumbnail: pics, 
+sourceUrl: `${websitex}`, 
+  mediaUrl: `${websitex}` 
+}} 
+} 
+ XeonBotInc.sendMessage(m.chat, buttonMessage, {quoted: fdocs})
+ }
  break 
- case 'randomimagemenu': 
+ case 'randomimagemenu': {
             if (isBan) return reply(mess.ban) 
          if (isBanChat) return reply(mess.banChat) 
  var unicorn = await getBuffer(picak+'Random Image Menu') 
- await XeonBotInc.send5ButImg(from, ` ┏━「 _RANDOM IMG_ 」━━⭓ 
+ anjay = ` ┏━「 _RANDOM IMG_ 」━━⭓ 
  ┃╔═══════✪
  ┃╠ ${prefix}coffee 
  ┃╠ ${prefix}woof 
@@ -10075,14 +10419,41 @@ break
  ┃╠ ${prefix}animewall [query] 
  ┃╠ ${prefix}animewall2 [query] 
  ┃╚═════════════✪
- ┗━「 *Created By Kenneth Morris* 」━⭓` + '' + ' ', `${pushname}`,unicorn, [{"urlButton": {"displayText": "YouTube 📍","url": `${websitex}`}},{"quickReplyButton": {"displayText": "Owner 👤","id": 'owner'}}] )
+ ┗━「 *Created By Kenneth Morris* 」━⭓` 
+let documents = [doc1,doc2,doc3] 
+ let docs = pickRandom(documents)
+ let buttons = [ 
+ {buttonId: `command`, buttonText: {displayText: 'List Menu'}}, {buttonId: `menu`, buttonText: {displayText: 'All Menu'}}
+ ] 
+ let pic = [wan,tu,tri,fo,faif,sik,seven,egh,nen,ten,elepen,welep,terten,foten,faiften,sikten]
+ let pics = pic[Math.floor(Math.random() * (pic.length))]
+ let buttonMessage = { 
+  document: fs.readFileSync('./XeonMedia/theme/cheems.xlsx'), 
+ mimetype: docs,
+ mentions: [m.sender], 
+ fileName: `Hi, ${pushname}`, 
+ caption: anjay, 
+ footer: `${botname}`, 
+ buttons: buttons, 
+ headerType: 4,
+contextInfo: { externalAdReply: { 
+title: `Jasjus ID 🔰`, 
+ body: `Random Images`, 
+mediaType: 4, 
+ thumbnail: pics, 
+sourceUrl: `${websitex}`, 
+  mediaUrl: `${websitex}` 
+}} 
+} 
+ XeonBotInc.sendMessage(m.chat, buttonMessage, {quoted: fdocs})
+ }
  break 
   
- case 'emotemenu': 
+ case 'emotemenu': {
             if (isBan) return reply(mess.ban) 
          if (isBanChat) return reply(mess.banChat) 
  var unicorn = await getBuffer(picak+'Emote Menu') 
- await XeonBotInc.send5ButImg(from, ` ┏━「 _EMOTE_ 」━━⭓ 
+ anjay = ` ┏━「 _EMOTE_ 」━━⭓ 
  ┃╔═══════✪
  ┃╠ ${prefix}instagramemoji 
  ┃╠ ${prefix}facebookemoji 
@@ -10097,13 +10468,40 @@ break
  ┃╠ ${prefix}pediaemoji 
  ┃╠ ${prefix}microsoftemoji 
  ┃╚═════════════✪
- ┗━「 *Created By Kenneth Morris* 」━⭓` + '' + ' ', `${pushname}`,unicorn, [{"urlButton": {"displayText": "YouTube 📍","url": `${websitex}`}},{"quickReplyButton": {"displayText": "Owner 👤","id": 'owner'}}] )
+ ┗━「 *Created By Kenneth Morris* 」━⭓` 
+let documents = [doc1,doc2,doc3] 
+ let docs = pickRandom(documents)
+ let buttons = [ 
+ {buttonId: `command`, buttonText: {displayText: 'List Menu'}}, {buttonId: `menu`, buttonText: {displayText: 'All Menu'}}
+ ] 
+ let pic = [wan,tu,tri,fo,faif,sik,seven,egh,nen,ten,elepen,welep,terten,foten,faiften,sikten]
+ let pics = pic[Math.floor(Math.random() * (pic.length))]
+ let buttonMessage = { 
+  document: fs.readFileSync('./XeonMedia/theme/cheems.xlsx'), 
+ mimetype: docs,
+ mentions: [m.sender], 
+ fileName: `Hi, ${pushname}`, 
+ caption: anjay, 
+ footer: `${botname}`, 
+ buttons: buttons, 
+ headerType: 4,
+contextInfo: { externalAdReply: { 
+title: `Jasjus ID 🔰`, 
+ body: `Random Images`, 
+mediaType: 4, 
+ thumbnail: pics, 
+sourceUrl: `${websitex}`, 
+  mediaUrl: `${websitex}` 
+}} 
+} 
+ XeonBotInc.sendMessage(m.chat, buttonMessage, {quoted: fdocs})
+ }
  break 
- case 'imageeffectmenu': 
+ case 'imageeffectmenu': {
             if (isBan) return reply(mess.ban) 
          if (isBanChat) return reply(mess.banChat) 
  var unicorn = await getBuffer(picak+'Image Effect Menu') 
- await XeonBotInc.send5ButImg(from, ` ┏━「 _IMG EFFECT_ 」━━⭓ 
+ anjay = ` ┏━「 _IMG EFFECT_ 」━━⭓ 
  ┃╔═════✪ 
  ┃╠ ${prefix}wanted 
  ┃╠ ${prefix}blur 
@@ -10120,13 +10518,40 @@ break
  ┃╠ ${prefix}deleteeffect 
  ┃╠ ${prefix}pixelate 
  ┃╚═════════════✪
- ┗━「 *Created By Kenneth Morris* 」━⭓` + '' + ' ', `${pushname}`,unicorn, [{"urlButton": {"displayText": "YouTube 📍","url": `${websitex}`}},{"quickReplyButton": {"displayText": "Owner 👤","id": 'owner'}}] )
+ ┗━「 *Created By Kenneth Morris* 」━⭓`
+let documents = [doc1,doc2,doc3] 
+ let docs = pickRandom(documents)
+ let buttons = [ 
+ {buttonId: `command`, buttonText: {displayText: 'List Menu'}}, {buttonId: `menu`, buttonText: {displayText: 'All Menu'}}
+ ] 
+ let pic = [wan,tu,tri,fo,faif,sik,seven,egh,nen,ten,elepen,welep,terten,foten,faiften,sikten]
+ let pics = pic[Math.floor(Math.random() * (pic.length))]
+ let buttonMessage = { 
+  document: fs.readFileSync('./XeonMedia/theme/cheems.xlsx'), 
+ mimetype: docs,
+ mentions: [m.sender], 
+ fileName: `Hi, ${pushname}`, 
+ caption: anjay, 
+ footer: `${botname}`, 
+ buttons: buttons, 
+ headerType: 4,
+contextInfo: { externalAdReply: { 
+title: `Jasjus ID 🔰`, 
+ body: `Random Images`, 
+mediaType: 4, 
+ thumbnail: pics, 
+sourceUrl: `${websitex}`, 
+  mediaUrl: `${websitex}` 
+}} 
+} 
+ XeonBotInc.sendMessage(m.chat, buttonMessage, {quoted: fdocs})
+ }
  break 
- case 'animemenu': 
+ case 'animemenu': {
             if (isBan) return reply(mess.ban) 
          if (isBanChat) return reply(mess.banChat) 
  var unicorn = await getBuffer(picak+'Anime Menu') 
- await XeonBotInc.send5ButImg(from, ` ┏━「 _ANIME_ 」━━⭓ 
+ anjay = ` ┏━「 _ANIME_ 」━━⭓ 
  ┃╔═══════✪  
  ┃╠ ${prefix}naruto 
  ┃╠ ${prefix}yaoi 
@@ -10177,13 +10602,40 @@ break
  ┃╠ ${prefix}smug2 
  ┃╠ ${prefix}couplepp 
  ┃╚═════════════✪
- ┗━「 *Created By Kenneth Morris* 」━⭓` + '' + ' ', `${pushname}`,unicorn, [{"urlButton": {"displayText": "YouTube 📍","url": `${websitex}`}},{"quickReplyButton": {"displayText": "Owner 👤","id": 'owner'}}] )
+ ┗━「 *Created By Kenneth Morris* 」━⭓` 
+let documents = [doc1,doc2,doc3] 
+ let docs = pickRandom(documents)
+ let buttons = [ 
+ {buttonId: `command`, buttonText: {displayText: 'List Menu'}}, {buttonId: `menu`, buttonText: {displayText: 'All Menu'}}
+ ] 
+ let pic = [wan,tu,tri,fo,faif,sik,seven,egh,nen,ten,elepen,welep,terten,foten,faiften,sikten]
+ let pics = pic[Math.floor(Math.random() * (pic.length))]
+ let buttonMessage = { 
+  document: fs.readFileSync('./XeonMedia/theme/cheems.xlsx'), 
+ mimetype: docs,
+ mentions: [m.sender], 
+ fileName: `Hi, ${pushname}`, 
+ caption: anjay, 
+ footer: `${botname}`, 
+ buttons: buttons, 
+ headerType: 4,
+contextInfo: { externalAdReply: { 
+title: `Jasjus ID 🔰`, 
+ body: `Random Images`, 
+mediaType: 4, 
+ thumbnail: pics, 
+sourceUrl: `${websitex}`, 
+  mediaUrl: `${websitex}` 
+}} 
+} 
+ XeonBotInc.sendMessage(m.chat, buttonMessage, {quoted: fdocs})
+ }
  break 
- case 'stickermenu': 
+ case 'stickermenu': {
             if (isBan) return reply(mess.ban) 
          if (isBanChat) return reply(mess.banChat) 
  var unicorn = await getBuffer(picak+'Sticker Menu') 
- await XeonBotInc.send5ButImg(from, ` ┏━「 _STICKER_ 」━━⭓ 
+ anjay = ` ┏━「 _STICKER_ 」━━⭓ 
  ┃╔═══════✪
  ┃╠ ${prefix}patrick 
  ┃╠ ${prefix}emoji 
@@ -10193,13 +10645,40 @@ break
  ┃╠ ${prefix}doge 
  ┃╠ ${prefix}lovesticker 
  ┃╚═════════════✪
- ┗━「 *Created By Kenneth Morris* 」━⭓` + '' + ' ', `${pushname}`,unicorn, [{"urlButton": {"displayText": "YouTube 📍","url": `${websitex}`}},{"quickReplyButton": {"displayText": "Owner 👤","id": 'owner'}}] )
+ ┗━「 *Created By Kenneth Morris* 」━⭓` 
+let documents = [doc1,doc2,doc3] 
+ let docs = pickRandom(documents)
+ let buttons = [ 
+ {buttonId: `command`, buttonText: {displayText: 'List Menu'}}, {buttonId: `menu`, buttonText: {displayText: 'All Menu'}}
+ ] 
+ let pic = [wan,tu,tri,fo,faif,sik,seven,egh,nen,ten,elepen,welep,terten,foten,faiften,sikten]
+ let pics = pic[Math.floor(Math.random() * (pic.length))]
+ let buttonMessage = { 
+  document: fs.readFileSync('./XeonMedia/theme/cheems.xlsx'), 
+ mimetype: docs,
+ mentions: [m.sender], 
+ fileName: `Hi, ${pushname}`, 
+ caption: anjay, 
+ footer: `${botname}`, 
+ buttons: buttons, 
+ headerType: 4,
+contextInfo: { externalAdReply: { 
+title: `Jasjus ID 🔰`, 
+ body: `Random Images`, 
+mediaType: 4, 
+ thumbnail: pics, 
+sourceUrl: `${websitex}`, 
+  mediaUrl: `${websitex}` 
+}} 
+} 
+ XeonBotInc.sendMessage(m.chat, buttonMessage, {quoted: fdocs})
+ }
  break 
- case 'animestickermenu': 
+ case 'animestickermenu': {
             if (isBan) return reply(mess.ban) 
          if (isBanChat) return reply(mess.banChat) 
  var unicorn = await getBuffer(picak+'Anime Sticker Menu') 
- await XeonBotInc.send5ButImg(from, ` ┏━「 _ANIME STICKER_ 」━━⭓ 
+ anjay = ` ┏━「 _ANIME STICKER_ 」━━⭓ 
  ┃╔═══════✪
  ┃╠ ${prefix}loli 
  ┃╠ ${prefix}bully 
@@ -10231,13 +10710,40 @@ break
  ┃╠ ${prefix}neko 
  ┃╠ ${prefix}gura 
  ┃╚═════════════✪
- ┗━「 *Created By Kenneth Morris* 」━⭓` + '' + ' ', `${pushname}`,unicorn, [{"urlButton": {"displayText": "YouTube 📍","url": `${websitex}`}},{"quickReplyButton": {"displayText": "Owner 👤","id": 'owner'}}] )
+ ┗━「 *Created By Kenneth Morris* 」━⭓` 
+let documents = [doc1,doc2,doc3] 
+ let docs = pickRandom(documents)
+ let buttons = [ 
+ {buttonId: `command`, buttonText: {displayText: 'List Menu'}}, {buttonId: `menu`, buttonText: {displayText: 'All Menu'}}
+ ] 
+ let pic = [wan,tu,tri,fo,faif,sik,seven,egh,nen,ten,elepen,welep,terten,foten,faiften,sikten]
+ let pics = pic[Math.floor(Math.random() * (pic.length))]
+ let buttonMessage = { 
+  document: fs.readFileSync('./XeonMedia/theme/cheems.xlsx'), 
+ mimetype: docs,
+ mentions: [m.sender], 
+ fileName: `Hi, ${pushname}`, 
+ caption: anjay, 
+ footer: `${botname}`, 
+ buttons: buttons, 
+ headerType: 4,
+contextInfo: { externalAdReply: { 
+title: `Jasjus ID 🔰`, 
+ body: `Random Images`, 
+mediaType: 4, 
+ thumbnail: pics, 
+sourceUrl: `${websitex}`, 
+  mediaUrl: `${websitex}` 
+}} 
+} 
+ XeonBotInc.sendMessage(m.chat, buttonMessage, {quoted: fdocs})
+ }
  break 
- case 'nsfwmenu': 
+ case 'nsfwmenu': {
             if (isBan) return reply(mess.ban) 
          if (isBanChat) return reply(mess.banChat) 
  var unicorn = await getBuffer(picak+'Nsfw Menu') 
- await XeonBotInc.send5ButImg(from, ` ┏━「 _NSFW_ 」━━⭓ 
+ anjay = ` ┏━「 _NSFW_ 」━━⭓ 
  ┃╔═══════✪
  ┃╠ ${prefix}hentaivideo 
  ┃╠ ${prefix}yuri 
@@ -10265,13 +10771,40 @@ break
  ┃╠ ${prefix}hneko 
  ┃╠ ${prefix}nwaifu 
  ┃╚═════════════✪
- ┗━「 *Created By Kenneth Morris* 」━⭓` + '' + ' ', `${pushname}`,unicorn, [{"urlButton": {"displayText": "YouTube 📍","url": `${websitex}`}},{"quickReplyButton": {"displayText": "Owner 👤","id": 'owner'}}] )
+ ┗━「 *Created By Kenneth Morris* 」━⭓` 
+let documents = [doc1,doc2,doc3] 
+ let docs = pickRandom(documents)
+ let buttons = [ 
+ {buttonId: `command`, buttonText: {displayText: 'List Menu'}}, {buttonId: `menu`, buttonText: {displayText: 'All Menu'}}
+ ] 
+ let pic = [wan,tu,tri,fo,faif,sik,seven,egh,nen,ten,elepen,welep,terten,foten,faiften,sikten]
+ let pics = pic[Math.floor(Math.random() * (pic.length))]
+ let buttonMessage = { 
+  document: fs.readFileSync('./XeonMedia/theme/cheems.xlsx'), 
+ mimetype: docs,
+ mentions: [m.sender], 
+ fileName: `Hi, ${pushname}`, 
+ caption: anjay, 
+ footer: `${botname}`, 
+ buttons: buttons, 
+ headerType: 4,
+contextInfo: { externalAdReply: { 
+title: `Jasjus ID 🔰`, 
+ body: `Random Images`, 
+mediaType: 4, 
+ thumbnail: pics, 
+sourceUrl: `${websitex}`, 
+  mediaUrl: `${websitex}` 
+}} 
+} 
+ XeonBotInc.sendMessage(m.chat, buttonMessage, {quoted: fdocs})
+ }
  break 
- case 'funmenu': 
+ case 'funmenu': {
             if (isBan) return reply(mess.ban) 
          if (isBanChat) return reply(mess.banChat) 
  var unicorn = await getBuffer(picak+'Fun Menu') 
- await XeonBotInc.send5ButImg(from, ` ┏━「 _FUN_ 」━━⭓ 
+ anjay = ` ┏━「 _FUN_ 」━━⭓ 
  ┃╔═══════✪
  ┃╠ ${prefix}how [text 
  ┃╠ ${prefix}when [text] 
@@ -10338,13 +10871,40 @@ break
  ┃╠ ${prefix}fuckgirl 
  ┃╠ ${prefix}playgirl 
  ┃╚═════════════✪
- ┗━「 *Created By Kenneth Morris* 」━⭓` + '' + ' ', `${pushname}`,unicorn, [{"urlButton": {"displayText": "YouTube 📍","url": `${websitex}`}},{"quickReplyButton": {"displayText": "Owner 👤","id": 'owner'}}] )
+ ┗━「 *Created By Kenneth Morris* 」━⭓` 
+let documents = [doc1,doc2,doc3] 
+ let docs = pickRandom(documents)
+ let buttons = [ 
+ {buttonId: `command`, buttonText: {displayText: 'List Menu'}}, {buttonId: `menu`, buttonText: {displayText: 'All Menu'}}
+ ] 
+ let pic = [wan,tu,tri,fo,faif,sik,seven,egh,nen,ten,elepen,welep,terten,foten,faiften,sikten]
+ let pics = pic[Math.floor(Math.random() * (pic.length))]
+ let buttonMessage = { 
+  document: fs.readFileSync('./XeonMedia/theme/cheems.xlsx'), 
+ mimetype: docs,
+ mentions: [m.sender], 
+ fileName: `Hi, ${pushname}`, 
+ caption: anjay, 
+ footer: `${botname}`, 
+ buttons: buttons, 
+ headerType: 4,
+contextInfo: { externalAdReply: { 
+title: `Jasjus ID 🔰`, 
+ body: `Random Images`, 
+mediaType: 4, 
+ thumbnail: pics, 
+sourceUrl: `${websitex}`, 
+  mediaUrl: `${websitex}` 
+}} 
+} 
+ XeonBotInc.sendMessage(m.chat, buttonMessage, {quoted: fdocs})
+ }
  break 
- case 'soundmenu': 
+ case 'soundmenu': {
             if (isBan) return reply(mess.ban) 
          if (isBanChat) return reply(mess.banChat) 
  var unicorn = await getBuffer(picak+'Sound Menu') 
- await XeonBotInc.send5ButImg(from, ` ┏━「 _SOUND_ 」━━⭓ 
+ anjay = ` ┏━「 _SOUND_ 」━━⭓ 
  ┃╔═══════✪
  ┃╠ ${prefix}sound1 
  ┃╠ ${prefix}sound2 
@@ -10508,13 +11068,40 @@ break
  ┃╠ ${prefix}sound160 
  ┃╠ ${prefix}sound161 
  ┃╚═════════════✪
- ┗━「 *Created By Kenneth Morris* 」━⭓` + '' + ' ', `${pushname}`,unicorn, [{"urlButton": {"displayText": "YouTube 📍","url": `${websitex}`}},{"quickReplyButton": {"displayText": "Owner 👤","id": 'owner'}}] )
+ ┗━「 *Created By Kenneth Morris* 」━⭓` 
+let documents = [doc1,doc2,doc3] 
+ let docs = pickRandom(documents)
+ let buttons = [ 
+ {buttonId: `command`, buttonText: {displayText: 'List Menu'}}, {buttonId: `menu`, buttonText: {displayText: 'All Menu'}}
+ ] 
+ let pic = [wan,tu,tri,fo,faif,sik,seven,egh,nen,ten,elepen,welep,terten,foten,faiften,sikten]
+ let pics = pic[Math.floor(Math.random() * (pic.length))]
+ let buttonMessage = { 
+  document: fs.readFileSync('./XeonMedia/theme/cheems.xlsx'), 
+ mimetype: docs,
+ mentions: [m.sender], 
+ fileName: `Hi, ${pushname}`, 
+ caption: anjay, 
+ footer: `${botname}`, 
+ buttons: buttons, 
+ headerType: 4,
+contextInfo: { externalAdReply: { 
+title: `Jasjus ID 🔰`, 
+ body: `Random Images`, 
+mediaType: 4, 
+ thumbnail: pics, 
+sourceUrl: `${websitex}`, 
+  mediaUrl: `${websitex}` 
+}} 
+} 
+ XeonBotInc.sendMessage(m.chat, buttonMessage, {quoted: fdocs})
+ }
  break 
- case 'adzanmenu': 
+ case 'adzanmenu': {
             if (isBan) return reply(mess.ban) 
          if (isBanChat) return reply(mess.banChat) 
  var unicorn = await getBuffer(`https://telegra.ph/file/4e72707e3de85cca2e925.jpg`) 
- await XeonBotInc.send5ButImg(from, `┏━「 _ADZAN REMIX_ 🎧」━━⭓ 
+ anjay = `┏━「 _ADZAN REMIX_ 🎧」━━⭓ 
 ┃╔══✪
 ┃╠> ezan remix 
 ┃╠> ezan remix 1
@@ -10533,13 +11120,40 @@ break
 ┃╠> ezan remix 14
 ┃╠> ezan remix 15
 ┃╚═════════════✪
-┗━━「 *Created by Kenneth Morris* 」━⭓` + '' + ' ', `${pushname}`,unicorn, [{"urlButton": {"displayText": "YouTube 📍","url": `${websitex}`}},{"quickReplyButton": {"displayText": "Owner 👤","id": 'owner'}}] )
+┗━━「 *Created by Kenneth Morris* 」━⭓` 
+let documents = [doc1,doc2,doc3] 
+ let docs = pickRandom(documents)
+ let buttons = [ 
+ {buttonId: `command`, buttonText: {displayText: 'List Menu'}}, {buttonId: `menu`, buttonText: {displayText: 'All Menu'}}
+ ] 
+ let pic = [wan,tu,tri,fo,faif,sik,seven,egh,nen,ten,elepen,welep,terten,foten,faiften,sikten]
+ let pics = pic[Math.floor(Math.random() * (pic.length))]
+ let buttonMessage = { 
+  document: fs.readFileSync('./XeonMedia/theme/cheems.xlsx'), 
+ mimetype: docs,
+ mentions: [m.sender], 
+ fileName: `Hi, ${pushname}`, 
+ caption: anjay, 
+ footer: `${botname}`, 
+ buttons: buttons, 
+ headerType: 4,
+contextInfo: { externalAdReply: { 
+title: `Jasjus ID 🔰`, 
+ body: `Random Images`, 
+mediaType: 4, 
+ thumbnail: pics, 
+sourceUrl: `${websitex}`, 
+  mediaUrl: `${websitex}` 
+}} 
+} 
+ XeonBotInc.sendMessage(m.chat, buttonMessage, {quoted: fdocs})
+ }
  break 
- case 'gamemenu': 
+ case 'gamemenu': {
             if (isBan) return reply(mess.ban) 
          if (isBanChat) return reply(mess.banChat) 
  var unicorn = await getBuffer(picak+'Game Menu') 
- await XeonBotInc.send5ButImg(from, ` ┏━「 _GAME_ 」━━⭓ 
+ anjay = ` ┏━「 _GAME_ 」━━⭓ 
  ┃╔═══════✪
  ┃╠ ${prefix}truth
  ┃╠ ${prefix}dare 
@@ -10549,38 +11163,119 @@ break
  ┃╠ ${prefix}math [mode] 
  ┃╠ ${prefix}suitpvp [tag] 
  ┃╚═════════════✪
- ┗━「 *Created By Kenneth Morris* 」━⭓` + '' + ' ', `${pushname}`,unicorn, [{"urlButton": {"displayText": "YouTube 📍","url": `${websitex}`}},{"quickReplyButton": {"displayText": "Owner 👤","id": 'owner'}}] )
+ ┗━「 *Created By Kenneth Morris* 」━⭓` 
+let documents = [doc1,doc2,doc3] 
+ let docs = pickRandom(documents)
+ let buttons = [ 
+ {buttonId: `command`, buttonText: {displayText: 'List Menu'}}, {buttonId: `menu`, buttonText: {displayText: 'All Menu'}}
+ ] 
+ let pic = [wan,tu,tri,fo,faif,sik,seven,egh,nen,ten,elepen,welep,terten,foten,faiften,sikten]
+ let pics = pic[Math.floor(Math.random() * (pic.length))]
+ let buttonMessage = { 
+  document: fs.readFileSync('./XeonMedia/theme/cheems.xlsx'), 
+ mimetype: docs,
+ mentions: [m.sender], 
+ fileName: `Hi, ${pushname}`, 
+ caption: anjay, 
+ footer: `${botname}`, 
+ buttons: buttons, 
+ headerType: 4,
+contextInfo: { externalAdReply: { 
+title: `Jasjus ID 🔰`, 
+ body: `Random Images`, 
+mediaType: 4, 
+ thumbnail: pics, 
+sourceUrl: `${websitex}`, 
+  mediaUrl: `${websitex}` 
+}} 
+} 
+ XeonBotInc.sendMessage(m.chat, buttonMessage, {quoted: fdocs})
+ }
  break 
- case 'anonymousmenu': 
+ case 'anonymousmenu': {
             if (isBan) return reply(mess.ban) 
          if (isBanChat) return reply(mess.banChat) 
  var unicorn = await getBuffer(picak+'Anonymous Menu') 
- await XeonBotInc.send5ButImg(from, ` ┏━「 _ANONYMOUS_ 」━━⭓ 
+ anjay = ` ┏━「 _ANONYMOUS_ 」━━⭓ 
  ┃╔═══✪
  ┃╠ ${prefix}anonymous 
  ┃╠ ${prefix}start 
  ┃╠ ${prefix}next 
  ┃╠ ${prefix}leave 
  ┃╚═════════════✪
- ┗━「 *Created By Kenneth Morris* 」━⭓` + '' + ' ', `${pushname}`,unicorn, [{"urlButton": {"displayText": "YouTube 📍","url": `${websitex}`}},{"quickReplyButton": {"displayText": "Owner 👤","id": 'owner'}}] )
+ ┗━「 *Created By Kenneth Morris* 」━⭓` 
+let documents = [doc1,doc2,doc3] 
+ let docs = pickRandom(documents)
+ let buttons = [ 
+ {buttonId: `command`, buttonText: {displayText: 'List Menu'}}, {buttonId: `menu`, buttonText: {displayText: 'All Menu'}}
+ ] 
+ let pic = [wan,tu,tri,fo,faif,sik,seven,egh,nen,ten,elepen,welep,terten,foten,faiften,sikten]
+ let pics = pic[Math.floor(Math.random() * (pic.length))]
+ let buttonMessage = { 
+  document: fs.readFileSync('./XeonMedia/theme/cheems.xlsx'), 
+ mimetype: docs,
+ mentions: [m.sender], 
+ fileName: `Hi, ${pushname}`, 
+ caption: anjay, 
+ footer: `${botname}`, 
+ buttons: buttons, 
+ headerType: 4,
+contextInfo: { externalAdReply: { 
+title: `Jasjus ID 🔰`, 
+ body: `Random Images`, 
+mediaType: 4, 
+ thumbnail: pics, 
+sourceUrl: `${websitex}`, 
+  mediaUrl: `${websitex}` 
+}} 
+} 
+ XeonBotInc.sendMessage(m.chat, buttonMessage, {quoted: fdocs})
+ }
  break 
- case 'toolmenu': 
+ case 'toolmenu': {
             if (isBan) return reply(mess.ban) 
          if (isBanChat) return reply(mess.banChat) 
  var unicorn = await getBuffer(picak+'Tool Menu') 
- await XeonBotInc.send5ButImg(from, ` ┏━「 _TOOL_ 」━━⭓ 
+anjay = ` ┏━「 _TOOL_ 」━━⭓ 
  ┃╔═══════✪
  ┃╠ ${prefix}translate [text] 
  ┃╠ ${prefix}fliptext [text] 
  ┃╠ ${prefix}toletter [number] 
  ┃╚═════════════✪
- ┗━「 *Created By Kenneth Morris* 」━⭓` + '' + ' ', `${pushname}`,unicorn, [{"urlButton": {"displayText": "YouTube 📍","url": `${websitex}`}},{"quickReplyButton": {"displayText": "Owner 👤","id": 'owner'}}] )
- break 
- case 'databasemenu': 
+ ┗━「 *Created By Kenneth Morris* 」━⭓` 
+ let documents = [doc1,doc2,doc3] 
+ let docs = pickRandom(documents)
+ let buttons = [ 
+ {buttonId: `command`, buttonText: {displayText: 'List Menu'}}, {buttonId: `menu`, buttonText: {displayText: 'All Menu'}}
+ ] 
+ let pic = [wan,tu,tri,fo,faif,sik,seven,egh,nen,ten,elepen,welep,terten,foten,faiften,sikten]
+ let pics = pic[Math.floor(Math.random() * (pic.length))]
+ let buttonMessage = { 
+  document: fs.readFileSync('./XeonMedia/theme/cheems.xlsx'), 
+ mimetype: docs,
+ mentions: [m.sender], 
+ fileName: `Hi, ${pushname}`, 
+ caption: anjay, 
+ footer: `${botname}`, 
+ buttons: buttons, 
+ headerType: 4,
+contextInfo: { externalAdReply: { 
+title: `Jasjus ID 🔰`, 
+ body: `Random Images`, 
+mediaType: 4, 
+ thumbnail: pics, 
+sourceUrl: `${websitex}`, 
+  mediaUrl: `${websitex}` 
+}} 
+} 
+ XeonBotInc.sendMessage(m.chat, buttonMessage, {quoted: fdocs})
+ }
+break 
+ case 'databasemenu': {
             if (isBan) return reply(mess.ban) 
          if (isBanChat) return reply(mess.banChat) 
  var unicorn = await getBuffer(picak+'Database Menu') 
- await XeonBotInc.send5ButImg(from, ` ┏━「 _DATABASE_ 」━━⭓ 
+ anjay = ` ┏━「 _DATABASE_ 」━━⭓ 
  ┃╔═══✪ 
  ┃╠ ${prefix}setcmd 
  ┃╠ ${prefix}listcmd 
@@ -10591,13 +11286,40 @@ break
  ┃╠ ${prefix}getmsg 
  ┃╠ ${prefix}delmsg 
  ┃╚═════════════✪
- ┗━「 *Created By Kenneth Morris* 」━⭓` + '' + ' ', `${pushname}`,unicorn, [{"urlButton": {"displayText": "YouTube 📍","url": `${websitex}`}},{"quickReplyButton": {"displayText": "Owner 👤","id": 'owner'}}] )
- break 
- case 'indomenu': 
+ ┗━「 *Created By Kenneth Morris* 」━⭓` 
+let documents = [doc1,doc2,doc3] 
+ let docs = pickRandom(documents)
+ let buttons = [ 
+ {buttonId: `command`, buttonText: {displayText: 'List Menu'}}, {buttonId: `menu`, buttonText: {displayText: 'All Menu'}}
+ ] 
+ let pic = [wan,tu,tri,fo,faif,sik,seven,egh,nen,ten,elepen,welep,terten,foten,faiften,sikten]
+ let pics = pic[Math.floor(Math.random() * (pic.length))]
+ let buttonMessage = { 
+  document: fs.readFileSync('./XeonMedia/theme/cheems.xlsx'), 
+ mimetype: docs,
+ mentions: [m.sender], 
+ fileName: `Hi, ${pushname}`, 
+ caption: anjay, 
+ footer: `${botname}`, 
+ buttons: buttons, 
+ headerType: 4,
+contextInfo: { externalAdReply: { 
+title: `Jasjus ID 🔰`, 
+ body: `Random Images`, 
+mediaType: 4, 
+ thumbnail: pics, 
+sourceUrl: `${websitex}`, 
+  mediaUrl: `${websitex}` 
+}} 
+} 
+ XeonBotInc.sendMessage(m.chat, buttonMessage, {quoted: fdocs})
+ }
+break 
+ case 'indomenu': {
             if (isBan) return reply(mess.ban) 
          if (isBanChat) return reply(mess.banChat) 
  var unicorn = await getBuffer(picak+'Indo Menu') 
- await XeonBotInc.send5ButImg(from, ` ┏━「 _INDO_ 」━━⭓ 
+ anjay = ` ┏━「 _INDO_ 」━━⭓ 
  ┃╔═══════✪
  ┃╠ ${prefix}darkjoke 
  ┃╠ ${prefix}quotes 
@@ -10624,13 +11346,40 @@ break
  ┃╠ ${prefix}earthquake 
  ┃╠ ${prefix}tvschedule 
  ┃╚═════════════✪
- ┗━「 *Created By Kenneth Morris* 」━⭓` + '' + ' ', `${pushname}`,unicorn, [{"urlButton": {"displayText": "YouTube 📍","url": `${websitex}`}},{"quickReplyButton": {"displayText": "Owner 👤","id": 'owner'}}] )
- break 
- case 'indohoroscopemenu': 
+ ┗━「 *Created By Kenneth Morris* 」━⭓`
+ let documents = [doc1,doc2,doc3] 
+ let docs = pickRandom(documents)
+ let buttons = [ 
+ {buttonId: `command`, buttonText: {displayText: 'List Menu'}}, {buttonId: `menu`, buttonText: {displayText: 'All Menu'}}
+ ] 
+ let pic = [wan,tu,tri,fo,faif,sik,seven,egh,nen,ten,elepen,welep,terten,foten,faiften,sikten]
+ let pics = pic[Math.floor(Math.random() * (pic.length))]
+ let buttonMessage = { 
+  document: fs.readFileSync('./XeonMedia/theme/cheems.xlsx'), 
+ mimetype: docs,
+ mentions: [m.sender], 
+ fileName: `Hi, ${pushname}`, 
+ caption: anjay, 
+ footer: `${botname}`, 
+ buttons: buttons, 
+ headerType: 4,
+contextInfo: { externalAdReply: { 
+title: `Jasjus ID 🔰`, 
+ body: `Random Images`, 
+mediaType: 4, 
+ thumbnail: pics, 
+sourceUrl: `${websitex}`, 
+  mediaUrl: `${websitex}` 
+}} 
+} 
+ XeonBotInc.sendMessage(m.chat, buttonMessage, {quoted: fdocs})
+ }
+break 
+ case 'indohoroscopemenu': {
             if (isBan) return reply(mess.ban) 
          if (isBanChat) return reply(mess.banChat) 
  var unicorn = await getBuffer(picak+'Indo Horoscope Menu') 
- await XeonBotInc.send5ButImg(from, ` ┏━「 _INDO HOROSCOPE_ 」━━⭓ 
+anjay = ` ┏━「 _INDO HOROSCOPE_ 」━━⭓ 
  ┃╔═✪      
  ┃╠ ${prefix}nomorhoki 
  ┃╠ ${prefix}artimimpi  
@@ -10663,13 +11412,41 @@ break
  ┃╠ ${prefix}zodiak 
  ┃╠ ${prefix}shio 
  ┃╚═════════════✪
- ┗━「 *Created By Kenneth Morris* 」━⭓` + '' + ' ', `${pushname}`,unicorn, [{"urlButton": {"displayText": "YouTube 📍","url": `${websitex}`}},{"quickReplyButton": {"displayText": "Owner 👤","id": 'owner'}}] )
+ ┗━「 *Created By Kenneth Morris* 」━⭓`
+
+ let documents = [doc1,doc2,doc3] 
+ let docs = pickRandom(documents)
+ let buttons = [ 
+ {buttonId: `command`, buttonText: {displayText: 'List Menu'}}, {buttonId: `menu`, buttonText: {displayText: 'All Menu'}}
+ ] 
+ let pic = [wan,tu,tri,fo,faif,sik,seven,egh,nen,ten,elepen,welep,terten,foten,faiften,sikten]
+ let pics = pic[Math.floor(Math.random() * (pic.length))]
+ let buttonMessage = { 
+  document: fs.readFileSync('./XeonMedia/theme/cheems.xlsx'), 
+ mimetype: docs,
+ mentions: [m.sender], 
+ fileName: `Hi, ${pushname}`, 
+ caption: anjay, 
+ footer: `${botname}`, 
+ buttons: buttons, 
+ headerType: 4,
+contextInfo: { externalAdReply: { 
+title: `Jasjus ID 🔰`, 
+ body: `Random Images`, 
+mediaType: 4, 
+ thumbnail: pics, 
+sourceUrl: `${websitex}`, 
+  mediaUrl: `${websitex}` 
+}} 
+} 
+ XeonBotInc.sendMessage(m.chat, buttonMessage, {quoted: fdocs})
+ }
  break 
  case 'othermenu': 
             if (isBan) return reply(mess.ban) 
          if (isBanChat) return reply(mess.banChat) 
  var unicorn = await getBuffer(picak+'Other Menu') 
- await XeonBotInc.send5ButImg(from, ` ┏━「 _OTHER_ 」━━⭓ 
+ anjay = ` ┏━「 _OTHER_ 」━━⭓ 
  ┃╔═══════✪      
  ┃╠ ${prefix}afk 
  ┃╠ ${prefix}readmore [text] 
@@ -10690,8 +11467,39 @@ break
  ┃╠ ${prefix}request 
  ┃╠ ${prefix}report [bug] 
  ┃╚═════════════✪
- ┗━「 *Created By Kenneth Morris* 」━⭓` + '' + ' ', `${pushname}`,unicorn, [{"urlButton": {"displayText": "YouTube 📍","url": `${websitex}`}},{"quickReplyButton": {"displayText": "Owner 👤","id": 'owner'}}] )
- break
+ ┗━「 *Created By Kenneth Morris* 」━⭓`
+                     let unicorndoc = {key: {fromMe: false,"participant":"0@s.whatsapp.net", "remoteJid": "916909137213-1604595598@g.us"}, "message": {orderMessage: {itemCount: 9999999,status: 200, thumbnail: fs.readFileSync('./XeonMedia/theme/cheemspic.jpg'), surface: 200, message: `${pushname}`, orderTitle: 'xeon', sellerJid: '0@s.whatsapp.net'}}, contextInfo: {"forwardingScore":999,"isForwarded":true},sendEphemeral: true}
+ let documents = [doc1,doc2,doc3] 
+ let docs = pickRandom(documents)
+ let buttons = [ 
+ {buttonId: `command`, buttonText: {displayText: 'List Menu'}}, {buttonId: `menu`, buttonText: {displayText: 'All Menu'}}
+ ] 
+ let pic = [wan,tu,tri,fo,faif,sik,seven,egh,nen,ten,elepen,welep,terten,foten,faiften,sikten]
+ let pics = pic[Math.floor(Math.random() * (pic.length))]
+ let buttonMessage = { 
+  document: fs.readFileSync('./XeonMedia/theme/cheems.xlsx'), 
+ mimetype: docs, 
+ /////////////// jpegThumbnail: fs.readFileSync('./XeonMedia/theme/cheemspic2.jpg'), 
+ mentions: [m.sender], 
+ fileName: `Hi, ${pushname}`, 
+///// fileLength: 666, 
+//// pageCount: 666,
+ caption: anjay, 
+ footer: `${botname}`, 
+ buttons: buttons, 
+ headerType: 4,
+contextInfo: { externalAdReply: { 
+title: `Jasjus ID 🔰`, 
+ body: `Random Images`, 
+mediaType: 4, 
+ thumbnail: pics, 
+sourceUrl: `${websitex}`, 
+  mediaUrl: `${websitex}` 
+}} 
+} 
+ XeonBotInc.sendMessage(m.chat, buttonMessage, {quoted: fdocs})
+ 
+break
  case 'apacsc':
  if (isBan) return reply(mess.ban)
 	if (isBanChat) return reply(mess.banChat)
@@ -10863,17 +11671,71 @@ var babiw = baksid.split(' | ')[1]
 reply(`Seccess`) 
 }
  break
+ case 'tes': {
+ if (isBan) return reply(mess.ban)	 			
+if (isBanChat) return reply(mess.banChat)
+  if (!text) return m.reply(`Failed to download media and send audio ${prefix + command} url link`) 
+  if (!isUrl(args[0]) && !args[0].includes('facebook.com')) return reply(`The link you provided is invalid`)
+  let noh = require('@bochilteam/scraper')                
+  noh.savefrom(`${text}`).then(async (data) => {
+  let sections = []   
+  for (let i of data.url) {
+  const list = {title: `${i.type}`,
+  rows: [
+	    {
+	     title: `Quality ${i.subname}`, 
+	     rowId: `${prefix}get ${text}`,
+      description: `${data.hosting}`	     
+	    }, 
+	    ]
+     }
+     sections.push(list)   
+     }
+  const sendm =  XeonBotInc.sendMessage(
+      m.chat, 
+      {
+       text: `${data.meta.title} *Here is the list of videos, click the button below to choose*`,
+       footer: `${botname}`,
+       title: "*SAVE FROM*",
+       buttonText: "CLICK HERE",
+       sections
+      }, { quoted : m })                 
+                }).catch((err) => {
+                    reply(mess.error)
+                })
+            }
+ break
+ case 'zp': 
+ if (isBan) return
+ if (isBanChat) return
+ let sections = []   
+  const list = [{
+urlButton: {
+displayText: 'YouTube 🍓',
+url: `${global.websitex}`
+}
+}]
+     
+     sections.push(list)   
+     
+  const sendm =  XeonBotInc.sendMessage(
+      m.chat, 
+      {
+       text: `${pushname} *Here is the list of videos, click the button below to choose*`,
+       footer: `${botname}`,
+       title: "*SAVE FROM*",
+       buttonText: "CLICK HERE",
+       sections
+      }, { quoted : m })
+ break
 case 'tqtt': 
 	   if (isBan) return reply(mess.ban)
 	if (isBanChat) return reply(mess.banChat)
 reply(`Thanks to
-LORD LUCIFER
+LUCIFER 🤘
 Kenneth (Me)
 My dog
-And all monkey who helped assemble this sexy script!
-Jangan lupa *join gc yesus*
-bagi2 jasjus gratis setiap *hari minggu*
-klik disini 👇`)
+And all monkey who helped assemble this sexy script!`)
 break
             default:
                 if (budy.startsWith('=>')) {
