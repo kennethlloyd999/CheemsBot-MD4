@@ -2603,7 +2603,7 @@ if (isBanChat) return reply(mess.banChat)
                  }
  const kenbuffer = await getBuffer(ppuser)
  XeonBotInc.sendMessage(m.chat, {image: kenbuffer, caption: `Here you go!`}, {quoted: m})
- } else {
+ } catch {
 reply(`Kirim/Balas pesan orang dengan caption *.getpp* \natau *.getpp @6285xxx*` )
 }
  break
