@@ -4775,7 +4775,7 @@ case 'cry':case 'kill':case 'hug':case 'pat':case 'lick':case 'kiss':case 'bite'
 						XeonBotInc.sendImageAsSticker(m.chat, data.url, m, { packname: global.packname, author: global.author })
 					})
 					break
-case 'waifu': case 'loli':
+case 'waifu2': case 'waifu': case 'loli':
 					   if (isBan) return reply(mess.ban)
 	if (isBanChat) return reply(mess.banChat)
 					reply(mess.wait)
@@ -9051,7 +9051,8 @@ ja = `🤭`
 ks = `🥳`
 jd = `😆`
 ha = `😂`
-tos = [cb,bs,wk,kb,tb,yk,ja,ks,jd,ha]
+pe = `🗿`
+tos = [cb,bs,wk,kb,tb,yk,ja,ks,jd,ha,pe]
 dj = tos[Math.floor(Math.random() * (tos.length))]
 XeonBotInc.sendMessage(from, { react: { text: dj, key: m.key }})
 	                
