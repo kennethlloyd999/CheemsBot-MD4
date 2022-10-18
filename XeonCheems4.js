@@ -2606,7 +2606,6 @@ if (isBanChat) return reply(mess.banChat)
  } else {
 reply(`Kirim/Balas pesan orang dengan caption *.getpp* \natau *.getpp @6285xxx*` )
 }
-}
  break
 	case 'kick': {
 		if (isBan) return reply(mess.ban)	 			
