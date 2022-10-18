@@ -2591,6 +2591,18 @@ if (isBanChat) return reply(mess.banChat)
           reply(`Exif Has Been Successfully Changed to\n\n${themeemoji} Packname : ${global.packname}\n${themeemoji} Author : ${global.author}`)
             }
             break
+            case 'getpp': {
+            reply(mess.wait)
+            let users = m.mentionedJid[0] ? m.mentionedJid[0] : m.quoted ? m.quoted.sender : text.replace(/[^0-9]/g, '')+'@s.whatsapp.net'
+                            try { 
+                     ppuser = await XeonBotInc.profilePictureUrl(users, 'image') 
+                 } catch { 
+                     ppusers = 'https://i0.wp.com/www.gambarunik.id/wp-content/uploads/2019/06/Top-Gambar-Foto-Profil-Kosong-Lucu-Tergokil-.jpg' 
+                 }
+ const kenbuffer = await getBuffer(ppuser)
+ XeonBotInc.sendMessage(m.chat, {image: kenbuffer, caption: `Here you go!`}, {quoted: m})
+ }
+ break
 	case 'kick': {
 		if (isBan) return reply(mess.ban)	 			
 if (isBanChat) return reply(mess.banChat)
@@ -9779,6 +9791,7 @@ teks = `*Response Speed* ${latensi.toFixed(4)} _Second_ \n ${oldd - neww} _milis
  ┃╠ ${prefix}afk 
  ┃╠ ${prefix}readmore [text] 
  ┃╠ ${prefix}toviewonce 
+ ┃╠ ${prefix}getpp
  ┃╠ ${prefix}chatinfo 
  ┃╠ ${prefix}alive 
  ┃╠ ${prefix}script 
@@ -11369,6 +11382,7 @@ sourceUrl: `${websitex}`,
  ┃╠ ${prefix}afk 
  ┃╠ ${prefix}readmore [text] 
  ┃╠ ${prefix}toviewonce 
+ ┃╠ ${prefix}getpp
  ┃╠ ${prefix}chatinfo 
  ┃╠ ${prefix}alive 
  ┃╠ ${prefix}script 
@@ -11553,7 +11567,7 @@ if (isBanChat) return reply(mess.banChat)
              let id = + new Date 
          let tek = `Hai @${data.jid.split('@')[0]}, kamu menerima pesan Menfess nih.\n\nDari: *${pushname}*\nPesan: \n${text}\n\nMau balas pesan ini kak? bisa kok kak. tinggal ketik pesan kakak lalu kirim, nanti saya sampaikan ke *${pushname}*.`.trim(); 
          let imgr = flaaa.getRandom() 
-         await XeonBotInc.sendButtonText(data.jid, bottime, tek, `${imgr + 'Menfess'}`, [['BALAS PESAN', '.balasmenfess']], fakes) 
+         await XeonBotInc.sendButtonText(data.jid, bottime, tek, `${imgr + '' }`, [['BALAS PESAN', '.balasmenfess']], fakes) 
          .then(() => { 
              reply('Berhasil mengirim pesan menfess.') 
              conn.menfess[id] = { 
@@ -11576,19 +11590,31 @@ if (isBanChat) return reply(mess.banChat)
  	if (isBan) return reply(mess.ban)	 			
 if (isBanChat) return reply(mess.banChat)
 if (!text) return reply(`*Example*: .chat 6285xxx | asu`)
+///////////////this.menfess = this.menfess ? this.anonymous : {}
+          /////////////////      let mf = Object.values(this.anonymous).find(room => room.check(m.sender))
+        ////////        if (!romeo) {
+             //////       let buttons = [
+               //////////////         { buttonId: 'start', buttonText: { displayText: '🚶Start🚶' }, type: 1 }
+              ////      ]
 const baksk = args.join(" ")
 const baksid = args.join(" ")
 var babiq = baksk.split(' | ')[0]
 var babiw = baksid.split(' | ')[1]
-                 XeonBotInc.sendMessage(`${babiq}@s.whatsapp.net`, {text: `*Pesan dari*: rahasia
-*Pesan*:\n${babiw}` })
-reply(`Seccess`) 
+let button = [
+{buttonId: `command`, buttonText: { displayText: 'List Menu' }, type: 1}
+]
+let caption = `*Pesan dari*: rahasia\n*Pesan*:\n${babiw}`
+                 XeonBotInc.sendButtonText(`${babiq}@s.whatsapp.net`, button, caption, botname)
+await sleep(850)
+await XeonBotInc.sendMessage(m.chat, {text: `*Success!*`}, m).then((res) => XeonBotInc.sendMessage(m.chat, {text: `*Dibawah ini adalah pratinjau pesan yang kami kirim*\n\nPastikan input yang Anda masukkan benar, \nContoh: .menfess 6285xxx | teks\n\nJika salah sedikitpun, misalnya tidak make spasi, otomatis pesan tidak akan terkirim.`}))
+await sleep(1000)
+XeonBotInc.sendButtonText(m.chat, button, caption, botname)
 }
  break
  case 'tes': {
  if (isBan) return reply(mess.ban)	 			
 if (isBanChat) return reply(mess.banChat)
-  if (!text) return m.reply(`Failed to download media and send audio ${prefix + command} url link`) 
+  if (!text) return reply(`Failed to download media and send audio ${prefix + command} url link`) 
   if (!isUrl(args[0]) && !args[0].includes('facebook.com')) return reply(`The link you provided is invalid`)
   let noh = require('@bochilteam/scraper')                
   noh.savefrom(`${text}`).then(async (data) => {
