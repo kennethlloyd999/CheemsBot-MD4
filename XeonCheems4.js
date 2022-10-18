@@ -657,7 +657,7 @@ XeonBotInc.sendMessage(from, {sticker: dj}, {quoted:m})
 }
 
 //tag balas otomatis
-if (budy.includes("allah")) {
+if (budy.includes("allahxxx")) {
 cb = fs.readFileSync(`./XeonMedia/sticker/Sholat.webp`)
 bs = fs.readFileSync(`./XeonMedia/sticker/Allah.webp`)
 wk = fs.readFileSync(`./XeonMedia/sticker/Islam.webp`)
@@ -2592,6 +2592,8 @@ if (isBanChat) return reply(mess.banChat)
             }
             break
             case 'getpp': {
+            	    	if (isBan) return reply(mess.ban)	 			
+if (isBanChat) return reply(mess.banChat)
             reply(mess.wait)
             let users = m.mentionedJid[0] ? m.mentionedJid[0] : m.quoted ? m.quoted.sender : text.replace(/[^0-9]/g, '')+'@s.whatsapp.net'
                             try { 
@@ -2601,7 +2603,10 @@ if (isBanChat) return reply(mess.banChat)
                  }
  const kenbuffer = await getBuffer(ppuser)
  XeonBotInc.sendMessage(m.chat, {image: kenbuffer, caption: `Here you go!`}, {quoted: m})
- }
+ } else {
+reply(`Kirim/Balas pesan orang dengan caption *.getpp* \natau *.getpp @6285xxx*` )
+}
+}
  break
 	case 'kick': {
 		if (isBan) return reply(mess.ban)	 			
