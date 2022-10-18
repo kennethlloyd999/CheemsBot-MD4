@@ -2591,7 +2591,7 @@ if (isBanChat) return reply(mess.banChat)
           reply(`Exif Has Been Successfully Changed to\n\n${themeemoji} Packname : ${global.packname}\n${themeemoji} Author : ${global.author}`)
             }
             break
-            case 'getpp': {
+            case 'getpp': try{
             	    	if (isBan) return reply(mess.ban)	 			
 if (isBanChat) return reply(mess.banChat)
             reply(mess.wait)
