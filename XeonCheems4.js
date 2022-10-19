@@ -8642,10 +8642,10 @@ break
  ja = `⏰`
 XeonBotInc.sendMessage(from, { react: { text: ja, key: m.key }})
 
- anu = await fetchJson(`https://api.akuari.my.id/downloader/youtube3?link=${text}&type=360`)        
+ anu = await fetchJson(`https://api.akuari.my.id/downloader/youtube3?link=${args.join(" ")}&type=360`)        
                 if (anu.filesize_video >= 999999) return reply('*File Over Limit* '+util.format(anu))
                 tummb = await getBuffer(anu.thumbnail)
-                audio = await getBuffer(anu.audio)      
+                audio = await getBuffer(anu.audio.audio)      
  XeonBotInc.sendMessage(m.chat, {audio:{url: anu.audio.audio}, mimetype: "audio/mpeg", ptt:true}, {quoted: m}) ////////contextInfo:{externalAdReply:{ 
 ///////////////// title:`Reply this Audio to convert \ninto mp3 with caption tomp3`, 
 //////// body:`${global.botname}`, 
@@ -8664,10 +8664,10 @@ if (isBanChat) return reply(mess.banChat)
 ja = `⏰`
 XeonBotInc.sendMessage(from, { react: { text: ja, key: m.key }})
 
-anu = await fetchJson(`https://api.akuari.my.id/downloader/youtube3?link=${text}&type=360`)        
+anu = await fetchJson(`https://api.akuari.my.id/downloader/youtube3?link=${args.join(" ")}&type=360`)        
                 if (anu.filesize_video >= 999999) return reply('*File Over Limit* '+util.format(anu))
                 tummb = await getBuffer(anu.thumbnail)
-                audio = await getBuffer(anu.audio)      
+                audio = await getBuffer(anu.audio.audio)      
 XeonBotInc.sendMessage(from, {video:{url: anu.mp4.download}, mimetype:"video/mp4", caption:"Here you go!", contextInfo:{externalAdReply:{
 title:`Jasjus ID 🔰`,
 body:`${global.botname}`,
@@ -8684,7 +8684,7 @@ case 'ytad': try{
 if (isBanChat) return reply(mess.banChat)
 ja = `⏰`
 XeonBotInc.sendMessage(from, { react: { text: ja, key: m.key }})
-anu = await fetchJson(`https://api.akuari.my.id/downloader/youtube3?link=${text}&type=360`)        
+anu = await fetchJson(`https://api.akuari.my.id/downloader/youtube3?link=${args.join(" ")}&type=360`)        
                 if (anu.filesize_video >= 999999) return reply('*File Over Limit* '+util.format(anu))
                 tummb = await getBuffer(anu.thumbnail)
                 audio = await getBuffer(anu.audio.audio)      
@@ -8705,7 +8705,7 @@ if (isBanChat) return reply(mess.banChat)
 ja = `⏰`
 XeonBotInc.sendMessage(from, { react: { text: ja, key: m.key }})
 
-anu = await fetchJson(`https://api.akuari.my.id/downloader/youtube3?link=${text}&type=360`)        
+anu = await fetchJson(`https://api.akuari.my.id/downloader/youtube3?link=${args.join(" ")}&type=360`)        
                 if (anu.filesize_video >= 999999) return reply('*File Over Limit* '+util.format(anu))
                 tummb = await getBuffer(anu.thumbnail)
                 audio = await getBuffer(anu.audio.audio)      
@@ -8726,7 +8726,7 @@ if (isBanChat) return reply(mess.banChat)
 ja = `⏰`
 XeonBotInc.sendMessage(from, { react: { text: ja, key: m.key }})
 
-anu = await fetchJson(`https://api.akuari.my.id/downloader/youtube3?link=${text}&type=360`)        
+anu = await fetchJson(`https://api.akuari.my.id/downloader/youtube3?link=${args.join(" ")}&type=360`)        
                 if (anu.filesize_video >= 999999) return reply('*File Over Limit* '+util.format(anu))
                 tummb = await getBuffer(anu.thumbnail)
                 audio = await getBuffer(anu.audio.audio)      
