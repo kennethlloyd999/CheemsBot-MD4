@@ -8496,9 +8496,10 @@ break
                 if (anu.filesize_video >= 999999) return reply('*File Over Limit* '+util.format(anu))
                 tummb = await getBuffer(anu.thumbnail)
                 audio = await getBuffer(anu.audio)        
+                video = await getBuffer(anu.download)
                 ////////////////////////////////////XeonBotInc.sendMessage(m.chat, {document: audio, mimetype: 'audio/mpeg', fileName: `${anu.title}`}, { quoted : m }).catch((err) => reply(mess.error))
                 /////////////////////////////XeonBotInc.sendMessage(m.chat, {audio: audio, mimetype: 'audio/mpeg', ptt: true}, { quoted : m }).catch((err) => reply(mess.error))
-                XeonBotInc.sendMessage(m.chat, { video: {url: anu.download}, mimetype: 'video/mp4', caption: {url: anu.title}}, { quoted: m }).catch((err) => reply(mess.error))
+                XeonBotInc.sendMessage(m.chat, { video: {url: anu.mp4}, mimetype: 'video/mp4', caption: `${anu.title}`}, { quoted: m }).catch((err) => reply(mess.error))
             }
             break
 case 'ytshorts': case 'shorts': {
