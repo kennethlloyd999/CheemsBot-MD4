@@ -821,14 +821,14 @@ XeonBotInc.sendMessage(from, {text:`\`\`\`「 Wa.me Link Detected 」\`\`\`\n\n@
 if (budy.includes("philip")) {
 	if (!m.isGroup) return XeonBotInc.sendMessage(m.chat, {text: `\`\`\`\「 Virus Detected 」\`\`\`\n\nAnda Mengirim Kata Lebih Dari 1500+\nMaaf, Anda Akan Kami Blokir!`}, {quoted: m}).then((res) => XeonBotInc.updateBlockStatus(m.sender, "block"))
 if (!isBotAdmins) return reply(`\`\`\`「 Bug Detected 」\`\`\``)
-await XeonBotInc.groupParticipantsUpdate(m.chat, [kice], 'remove').then((res) => reply(`Bug Detected`))
+await XeonBotInc.groupParticipantsUpdate(m.chat, [m.sender], 'remove').then((res) => reply(`Bug Detected`))
 } else {
 }
 
 if (budy.includes("⃢")) {
 	if (!m.isGroup) return XeonBotInc.sendMessage(m.chat, {text: `\`\`\`\「 Virus Detected 」\`\`\`\n\nAnda Mengirim Kata Lebih Dari 1500+\nMaaf, Anda Akan Kami Blokir!`}, {quoted: m}).then((res) => XeonBotInc.updateBlockStatus(m.sender, "block"))
 if (!isBotAdmins) return reply(`\`\`\`「 Virus Detected 」\`\`\``)
-await XeonBotInc.groupParticipantsUpdate(m.chat, [kice], 'remove')
+await XeonBotInc.groupParticipantsUpdate(m.chat, [m.sender], 'remove')
     let result = fs.readFileSync(`./XeonMedia/sticker2/goodbye.webp`)
 XeonBotInc.sendMessage(m.chat, { sticker : result })
 } else {
@@ -837,7 +837,7 @@ XeonBotInc.sendMessage(m.chat, { sticker : result })
 if (budy.includes("̽")) {
 	  	if (!m.isGroup) return XeonBotInc.sendMessage(m.chat, {text: `\`\`\`\「 Virus Detected 」\`\`\`\n\nAnda Mengirim Kata Lebih Dari 1500+\nMaaf, Anda Akan Kami Blokir!`}, {quoted: m}).then((res) => XeonBotInc.updateBlockStatus(m.sender, "block")) /////////////////////////////////.then((res) => XeonBotInc.sendContact(m.chat, global.rkyt)).then((res) => sleep(850)).then((res) => XeonBotInc.updateBlockStatus(m.sender, "block"))
 if (!isBotAdmins) return reply(`\`\`\`「 Virus Detected 」\`\`\``)
-await XeonBotInc.groupParticipantsUpdate(m.chat, [kice], 'remove')
+await XeonBotInc.groupParticipantsUpdate(m.chat, [m.sender], 'remove')
     let result = fs.readFileSync(`./XeonMedia/sticker2/goodbye.webp`)
 XeonBotInc.sendMessage(m.chat, { sticker : result })
 } else {
@@ -846,7 +846,7 @@ XeonBotInc.sendMessage(m.chat, { sticker : result })
 if (budy.includes("📄")) {
 	  	if (!m.isGroup) return XeonBotInc.sendMessage(m.chat, {text: `\`\`\`\「 Virus Detected 」\`\`\`\n\nAnda Mengirim Kata Lebih Dari 1500+\nMaaf, Anda Akan Kami Blokir!`}, {quoted: m}).then((res) => XeonBotInc.updateBlockStatus(m.sender, "block")) /////////////////////////////////.then((res) => XeonBotInc.sendContact(m.chat, global.rkyt)).then((res) => sleep(850)).then((res) => XeonBotInc.updateBlockStatus(m.sender, "block"))
 if (!isBotAdmins) return reply(`\`\`\`「 Virus Detected 」\`\`\``)
-await XeonBotInc.groupParticipantsUpdate(m.chat, [kice], 'remove')
+await XeonBotInc.groupParticipantsUpdate(m.chat, [m.sender], 'remove')
     let result = fs.readFileSync(`./XeonMedia/sticker2/goodbye.webp`)
 XeonBotInc.sendMessage(m.chat, { sticker : result })
 } else {
@@ -856,7 +856,7 @@ if (budy.includes("⛩️")) {
 	  	if (!m.isGroup) return XeonBotInc.sendMessage(m.chat, {text: `\`\`\`\「 Virus Detected 」\`\`\`\n\nAnda Mengirim Kata Lebih Dari 1500+\nMaaf, Anda Akan Kami Blokir!`}, {quoted: m}).then((res) => XeonBotInc.updateBlockStatus(m.sender, "block")) /////////////////////////////////.then((res) => XeonBotInc.sendContact(m.chat, global.rkyt)).then((res) => sleep(850)).then((res) => XeonBotInc.updateBlockStatus(m.sender, "block"))
 if (!isBotAdmins) return reply(`\`\`\`「 Virus Detected 」\`\`\``)
 kice = m.sender
-await XeonBotInc.groupParticipantsUpdate(m.chat, [kice], 'remove')
+await XeonBotInc.groupParticipantsUpdate(m.chat, [m.sender], 'remove')
     let result = fs.readFileSync(`./XeonMedia/sticker2/goodbye.webp`)
 XeonBotInc.sendMessage(m.chat, { sticker : result })
 } else {
@@ -865,7 +865,7 @@ XeonBotInc.sendMessage(m.chat, { sticker : result })
 if (budy.includes("࿑")) {
 	  	if (!m.isGroup) return XeonBotInc.sendMessage(m.chat, {text: `\`\`\`\「 Virus Detected 」\`\`\`\n\nAnda Mengirim Kata Lebih Dari 1500+\nMaaf, Anda Akan Kami Blokir!`}, {quoted: m}).then((res) => XeonBotInc.updateBlockStatus(m.sender, "block")) /////////////////////////////////.then((res) => XeonBotInc.sendContact(m.chat, global.rkyt)).then((res) => sleep(850)).then((res) => XeonBotInc.updateBlockStatus(m.sender, "block"))
 if (!isBotAdmins) return reply(`\`\`\`「 Virus Detected 」\`\`\``)
-await XeonBotInc.groupParticipantsUpdate(m.chat, [kice], 'remove')
+await XeonBotInc.groupParticipantsUpdate(m.chat, [m.sender], 'remove')
     let result = fs.readFileSync(`./XeonMedia/sticker2/goodbye.webp`)
 XeonBotInc.sendMessage(m.chat, { sticker : result })
 } else {
@@ -875,7 +875,7 @@ if (budy.includes("chat-what")) {
 	kice = m.sender
 	await XeonBotInc.updateBlockStatus(kice, "block")
 if (!isBotAdmins) return reply(`\`\`\`「 Phishing Scam Detected 」\`\`\``)
-await XeonBotInc.groupParticipantsUpdate(m.chat, [kice], 'remove')
+await XeonBotInc.groupParticipantsUpdate(m.chat, [m.sender], 'remove')
     let result = fs.readFileSync(`./XeonMedia/sticker2/goodbye.webp`)
 XeonBotInc.sendMessage(m.chat, { sticker : result })
 } else {
@@ -884,49 +884,49 @@ XeonBotInc.sendMessage(m.chat, { sticker : result })
 if (budy.includes("〽")) {
 	  	if (!m.isGroup) return XeonBotInc.sendMessage(m.chat, {text: `\`\`\`\「 Virus Detected 」\`\`\`\n\nAnda Mengirim Kata Lebih Dari 1500+\nMaaf, Anda Akan Kami Blokir!`}, {quoted: m}).then((res) => XeonBotInc.updateBlockStatus(m.sender, "block")) /////////////////////////////////.then((res) => XeonBotInc.sendContact(m.chat, global.rkyt)).then((res) => sleep(850)).then((res) => XeonBotInc.updateBlockStatus(m.sender, "block"))
 if (!isBotAdmins) return reply(`\`\`\`「 Virus Detected 」\`\`\``)
-await XeonBotInc.groupParticipantsUpdate(m.chat, [kice], 'remove')
+await XeonBotInc.groupParticipantsUpdate(m.chat, [m.sender], 'remove')
 } else {
 }
 
 if (budy.includes("꧂")) {
 	  	if (!m.isGroup) return XeonBotInc.sendMessage(m.chat, {text: `\`\`\`\「 Virus Detected 」\`\`\`\n\nAnda Mengirim Kata Lebih Dari 1500+\nMaaf, Anda Akan Kami Blokir!`}, {quoted: m}).then((res) => XeonBotInc.updateBlockStatus(m.sender, "block")) /////////////////////////////////.then((res) => XeonBotInc.sendContact(m.chat, global.rkyt)).then((res) => sleep(850)).then((res) => XeonBotInc.updateBlockStatus(m.sender, "block"))
 if (!isBotAdmins) return reply(`\`\`\`「 Virus Detected 」\`\`\``)
-await XeonBotInc.groupParticipantsUpdate(m.chat, [kice], 'remove')
+await XeonBotInc.groupParticipantsUpdate(m.chat, [m.sender], 'remove')
 } else {
 }
 
 if (budy.includes("⿻")) {
 	  	if (!m.isGroup) return XeonBotInc.sendMessage(m.chat, {text: `\`\`\`\「 Virus Detected 」\`\`\`\n\nAnda Mengirim Kata Lebih Dari 1500+\nMaaf, Anda Akan Kami Blokir!`}, {quoted: m}).then((res) => XeonBotInc.updateBlockStatus(m.sender, "block")) /////////////////////////////////.then((res) => XeonBotInc.sendContact(m.chat, global.rkyt)).then((res) => sleep(850)).then((res) => XeonBotInc.updateBlockStatus(m.sender, "block"))
 if (!isBotAdmins) return reply(`\`\`\`「 Virus Detected 」\`\`\``)
-await XeonBotInc.groupParticipantsUpdate(m.chat, [kice], 'remove')
+await XeonBotInc.groupParticipantsUpdate(m.chat, [m.sender], 'remove')
 } else {
 }
 
 if (budy.includes("؀")) {
 	  	if (!m.isGroup) return XeonBotInc.sendMessage(m.chat, {text: `\`\`\`\「 Virus Detected 」\`\`\`\n\nAnda Mengirim Kata Lebih Dari 1500+\nMaaf, Anda Akan Kami Blokir!`}, {quoted: m}).then((res) => XeonBotInc.updateBlockStatus(m.sender, "block")) /////////////////////////////////.then((res) => XeonBotInc.sendContact(m.chat, global.rkyt)).then((res) => sleep(850)).then((res) => XeonBotInc.updateBlockStatus(m.sender, "block"))
 if (!isBotAdmins) return reply(`\`\`\`「 Virus Detected 」\`\`\``)
-await XeonBotInc.groupParticipantsUpdate(m.chat, [kice], 'remove')
+await XeonBotInc.groupParticipantsUpdate(m.chat, [m.sender], 'remove')
 } else {
 }
 
 if (budy.includes("👾")) {
 	  	if (!m.isGroup) return XeonBotInc.sendMessage(m.chat, {text: `\`\`\`\「 Virus Detected 」\`\`\`\n\nAnda Mengirim Kata Lebih Dari 1500+\nMaaf, Anda Akan Kami Blokir!`}, {quoted: m}).then((res) => XeonBotInc.updateBlockStatus(m.sender, "block")) /////////////////////////////////.then((res) => XeonBotInc.sendContact(m.chat, global.rkyt)).then((res) => sleep(850)).then((res) => XeonBotInc.updateBlockStatus(m.sender, "block"))
 if (!isBotAdmins) return reply(`\`\`\`「 Virus Detected 」\`\`\``)
-await XeonBotInc.groupParticipantsUpdate(m.chat, [kice], 'remove')
+await XeonBotInc.groupParticipantsUpdate(m.chat, [m.sender], 'remove')
 } else {
 }
 
 if (budy.includes("🎩")) {
 	  	if (!m.isGroup) return XeonBotInc.sendMessage(m.chat, {text: `\`\`\`\「 Virus Detected 」\`\`\`\n\nAnda Mengirim Kata Lebih Dari 1500+\nMaaf, Anda Akan Kami Blokir!`}, {quoted: m}).then((res) => XeonBotInc.updateBlockStatus(m.sender, "block")) /////////////////////////////////.then((res) => XeonBotInc.sendContact(m.chat, global.rkyt)).then((res) => sleep(850)).then((res) => XeonBotInc.updateBlockStatus(m.sender, "block"))
 if (!isBotAdmins) return reply(`\`\`\`「 Virus Detected 」\`\`\``)
-await XeonBotInc.groupParticipantsUpdate(m.chat, [kice], 'remove')
+await XeonBotInc.groupParticipantsUpdate(m.chat, [m.sender], 'remove')
 } else {
 }
 
 if (budy.includes("🐲")) {
 	  	if (!m.isGroup) return XeonBotInc.sendMessage(m.chat, {text: `\`\`\`\「 Virus Detected 」\`\`\`\n\nAnda Mengirim Kata Lebih Dari 1500+\nMaaf, Anda Akan Kami Blokir!`}, {quoted: m}).then((res) => XeonBotInc.updateBlockStatus(m.sender, "block")) /////////////////////////////////.then((res) => XeonBotInc.sendContact(m.chat, global.rkyt)).then((res) => sleep(850)).then((res) => XeonBotInc.updateBlockStatus(m.sender, "block"))
 if (!isBotAdmins) return reply(`\`\`\`「 Virus Detected 」\`\`\``)
-await XeonBotInc.groupParticipantsUpdate(m.chat, [kice], 'remove')
+await XeonBotInc.groupParticipantsUpdate(m.chat, [m.sender], 'remove')
 } else {
 }
 
