@@ -6615,9 +6615,9 @@ sourceUrl: ``,
                 let documents = [doc1,doc2,doc3] 
  let docs = pickRandom(documents)
  let button = [
-                {buttonId: `.ytvn ${args.join(" ")}`, buttonText: { displayText: "▶ Voice Note" }, type: 1},
-                {buttonId: `.ytad ${args.join(" ")}`, buttonText: { displayText: "🎵 Audio" }, type: 1},
-                {buttonId: `.ytdc2 ${args.join(" ")}`, buttonText: { displayText: "🎵 MP3" }, type: 1}
+                {buttonId: `.ytvn ${args.join(" ")} | 360`, buttonText: { displayText: "▶ Voice Note" }, type: 1},
+                {buttonId: `.ytad ${args.join(" ")} | 360`, buttonText: { displayText: "🎵 Audio" }, type: 1},
+                {buttonId: `.ytdc2 ${args.join(" ")} | 360`, buttonText: { displayText: "🎵 MP3" }, type: 1}
                 ]
                 let caption = `*Title*: ${anu.title}\n*Link* : ${args.join(" ")}\n\n_Choose the video quality below_ \n_by clicking the button_`
                 
@@ -8671,8 +8671,11 @@ break
  if (isBanChat) return reply(mess.banChat) 
  ja = `⏰`
 XeonBotInc.sendMessage(from, { react: { text: ja, key: m.key }})
-
- anu = await fetchJson(`https://api.akuari.my.id/downloader/youtube3?link=${args.join(" ")}&type=360`)        
+const jettempur = args.join(" ")
+const jetbosok = args.join(" ")
+const jetasu = jettempur.split(" ")[0]
+const jetkontol = jetbosok.split(" ")[1]
+ anu = await fetchJson(`https://api.akuari.my.id/downloader/youtube3?link=${jetasu}&type=${jetkontol}`)        
                 if (anu.filesize_video >= 999999) return reply('*File Over Limit* '+util.format(anu))
                 tummb = await getBuffer(anu.thumbnail)
                 audio = await getBuffer(anu.audio.audio)      
@@ -8693,8 +8696,11 @@ case 'ytvd': try{
 if (isBanChat) return reply(mess.banChat)
 ja = `⏰`
 XeonBotInc.sendMessage(from, { react: { text: ja, key: m.key }})
-
-anu = await fetchJson(`https://api.akuari.my.id/downloader/youtube3?link=${args.join(" ")}&type=360`)        
+const jettempur = args.join(" ")
+const jetbosok = args.join(" ")
+const jetasu = jettempur.split(" ")[0]
+const jetkontol = jetbosok.split(" ")[1]
+ anu = await fetchJson(`https://api.akuari.my.id/downloader/youtube3?link=${jetasu}&type=${jetkontol}`)        
                 if (anu.filesize_video >= 999999) return reply('*File Over Limit* '+util.format(anu))
                 tummb = await getBuffer(anu.thumbnail)
                 audio = await getBuffer(anu.audio.audio)      
@@ -8714,7 +8720,11 @@ case 'ytad': try{
 if (isBanChat) return reply(mess.banChat)
 ja = `⏰`
 XeonBotInc.sendMessage(from, { react: { text: ja, key: m.key }})
-anu = await fetchJson(`https://api.akuari.my.id/downloader/youtube3?link=${args.join(" ")}&type=360`)        
+const jettempur = args.join(" ")
+const jetbosok = args.join(" ")
+const jetasu = jettempur.split(" ")[0]
+const jetkontol = jetbosok.split(" ")[1]
+ anu = await fetchJson(`https://api.akuari.my.id/downloader/youtube3?link=${jetasu}&type=${jetkontol}`)        
                 if (anu.filesize_video >= 999999) return reply('*File Over Limit* '+util.format(anu))
                 tummb = await getBuffer(anu.thumbnail)
                 audio = await getBuffer(anu.audio.audio)      
@@ -8734,8 +8744,11 @@ case 'ytdc': try{
 if (isBanChat) return reply(mess.banChat)
 ja = `⏰`
 XeonBotInc.sendMessage(from, { react: { text: ja, key: m.key }})
-
-anu = await fetchJson(`https://api.akuari.my.id/downloader/youtube3?link=${args.join(" ")}&type=360`)        
+const jettempur = args.join(" ")
+const jetbosok = args.join(" ")
+const jetasu = jettempur.split(" ")[0]
+const jetkontol = jetbosok.split(" ")[1]
+ anu = await fetchJson(`https://api.akuari.my.id/downloader/youtube3?link=${jetasu}&type=${jetkontol}`)        
                 if (anu.filesize_video >= 999999) return reply('*File Over Limit* '+util.format(anu))
                 tummb = await getBuffer(anu.thumbnail)
                 audio = await getBuffer(anu.audio.audio)      
@@ -8755,8 +8768,11 @@ case 'ytdc2': try{
 if (isBanChat) return reply(mess.banChat)
 ja = `⏰`
 XeonBotInc.sendMessage(from, { react: { text: ja, key: m.key }})
-
-anu = await fetchJson(`https://api.akuari.my.id/downloader/youtube3?link=${args.join(" ")}&type=360`)        
+const jettempur = args.join(" ")
+const jetbosok = args.join(" ")
+const jetasu = jettempur.split(" ")[0]
+const jetkontol = jetbosok.split(" ")[1]
+ anu = await fetchJson(`https://api.akuari.my.id/downloader/youtube3?link=${jetasu}&type=${jetkontol}`)        
                 if (anu.filesize_video >= 999999) return reply('*File Over Limit* '+util.format(anu))
                 tummb = await getBuffer(anu.thumbnail)
                 audio = await getBuffer(anu.audio.audio)      
