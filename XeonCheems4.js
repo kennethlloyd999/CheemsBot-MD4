@@ -6527,7 +6527,7 @@ let search = await yts(args.join(" "))
   rows: [
 	    {
 	     title: `${i.title}`, 
-	     rowId: `${prefix}fghjk ${i.url}`,
+	     rowId: `${prefix}fghjk ${i.url} | 360`,
       description: `Duration ${i.timestamp} | Views: ${i.views} | Uploaded: ${i.ago}`	     
 	    }, 
 	    ]
@@ -6555,8 +6555,12 @@ let search = await yts(args.join(" "))
                 if (!text) return reply(mess.linkm)
                 if (!isUrl(args[0]) && !args[0].includes('youtube.com')) return reply(`The link you provided is invalid`)
                 reply(mess.wait)
-                anu = await fetchJson(`https://api.akuari.my.id/downloader/youtube3?link=${text}&type=360`)        
-                if (anu.filesize_video >= 999999) return reply('*File Over Limit* '+util.format(anu))
+                const jettempur = args.join(" ")
+const jetbosok = args.join(" ")
+const jetasu = jettempur.split(" | ")[0]
+const jetkontol = jetbosok.split(" | ")[1]
+ anu = await fetchJson(`https://api.akuari.my.id/downloader/youtube3?link=${jetasu}&type=${jetkontol}`)
+                 if (anu.filesize_video >= 999999) return reply('*File Over Limit* '+util.format(anu))
                 tummb = await getBuffer(anu.thumbnail)
                 audio = await getBuffer(anu.audio)        
                 
@@ -8607,20 +8611,51 @@ let babi = search.videos[Math.floor(Math.random() * search.videos.length)]
             }
 break
 case 'getvideo': case 'ytmp4': case 'ytvideo': case 'yt': case 'youtube': {
-if (isBan) return reply(mess.ban) 
+            if (isBan) return reply(mess.ban) 
 	if (isBanChat) return reply(mess.banChat)
                 if (!text) return reply(mess.linkm)
                 if (!isUrl(args[0]) && !args[0].includes('youtube.com')) return reply(`The link you provided is invalid`)
-                let yts = require("yt-search")
-let search = await yts(text)
-let babi = search.videos[Math.floor(Math.random() * search.videos.length)]
-                anu = await fetchJson(`https://api.akuari.my.id/downloader/youtube?link=${text}`)        
-                if (anu.filesize_video >= 999999) return reply('*File Over Limit* '+util.format(anu))
-                tummb = await getBuffer(anu.thumb)
+                reply(mess.wait)
+                
+ anu = await fetchJson(`https://api.akuari.my.id/downloader/youtube3?link=${text}&type=360`)
+                 if (anu.filesize_video >= 999999) return reply('*File Over Limit* '+util.format(anu))
+                tummb = await getBuffer(anu.thumbnail)
                 audio = await getBuffer(anu.audio)        
-                let kntl = await XeonBotInc.sendMessage(m.chat, {text: `\`\`\`「 YOUTUBE DOWNLOADER 」\`\`\`\n\n☑ *Title* : ${anu.title}\n☑ *Duration* : ${babi.timestamp}\n☑ *Size* : ${anu.filesize_video}\n☑ *Quality* : 480p`}, {quoted: m})
-                XeonBotInc.sendMessage(from, { video: { url: anu.video }, jpegThumbnail:tummb, caption: `Success`}, { quoted: kntl }).catch((err) => reply(mess.error))
-            }
+                
+                
+                // contoh ↓
+                let documents = [doc1,doc2,doc3] 
+ let docs = pickRandom(documents)
+ let button = [
+                {buttonId: `ytdonwan ${args.join(" ")} | 360`, buttonText: { displayText: "360p" }, type: 1},
+                {buttonId: `ytdonwan ${args.join(" ")} | 480`, buttonText: { displayText: "480p" }, type: 1},
+                {buttonId: `ytdonwan ${args.join(" ")} | 720`, buttonText: { displayText: "720p" }, type: 1}
+                //////////////////////{buttonId: `ytdontu ${args.join(" ")}`, buttonText: { displayText: "To MP3" }, type: 1}
+                ]
+                let caption = `*Title*: ${anu.title}\n*Link* : ${args.join(" ")}\n\n_Choose the video quality below_ \n_by clicking the button_`
+                
+ let pic = [wan,tu,tri,fo,faif,sik,seven,egh,nen,ten,elepen,welep,terten,foten,faiften,sikten]
+ let pics = pic[Math.floor(Math.random() * (pic.length))]
+ let buttonMessage = { 
+  document: fs.readFileSync('./XeonMedia/theme/cheems.xlsx'), 
+ mimetype: docs,
+ mentions: [m.sender], 
+ fileName: `Hi, ${pushname}`, 
+ caption: caption, 
+ footer: `${botname}`, 
+ buttons: button, 
+ headerType: 4,
+contextInfo: { externalAdReply: { 
+title: `Jasjus ID 🔰`, 
+ body: `By Kenneth ID`, 
+mediaType: 4, 
+ thumbnail: tummb, 
+sourceUrl: ``, 
+  mediaUrl: `${linkz}` 
+}} 
+} 
+ XeonBotInc.sendMessage(m.chat, buttonMessage, {quoted: fdocs})
+ }
 break
  case 'ytmp4xxx': {
    if (isBan) return reply(mess.ban)	 			
