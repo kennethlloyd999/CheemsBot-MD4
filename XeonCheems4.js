@@ -9049,7 +9049,8 @@ ja = `🤨`
 ks = `😭`
 jd = `😠`
 ha = `🤔`
-tos = [cb,bs,wk,kb,tb,yk,ja,ks,jd,ha]
+je = `🗿`
+tos = [cb,bs,wk,kb,tb,yk,ja,ks,jd,ha,je]
 dj = tos[Math.floor(Math.random() * (tos.length))]
 XeonBotInc.sendMessage(from, { react: { text: dj, key: m.key }})
 	                
