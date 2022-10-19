@@ -6473,7 +6473,7 @@ let audio = await toAudio(media, 'mp4')
 XeonBotInc.sendMessage(m.chat, {document: audio, mimetype: 'audio/mpeg', fileName: `${jetones}`}, { quoted : m })
 }
 break
-case 'music': case 'song': {
+case 'music': case 'song': case 'ytmp3': case 'ytmusic': case 'getmusic':  {
 	if (isBan) return reply(mess.ban)	 			
 if (isBanChat) return reply(mess.banChat)
   ////////////////////////if (!isUrl(args[0]) && !args[0].includes('facebook.com')) return reply(`The link you provided is invalid`)
@@ -6488,7 +6488,7 @@ let search = await yts(args.join(" "))
   rows: [
 	    {
 	     title: `${i.title}`, 
-	     rowId: `${prefix}fghjk ${i.url}`,
+	     rowId: `${prefix}ytdontu ${i.url}`,
       description: `Duration ${i.timestamp} | Views: ${i.views} | Uploaded: ${i.ago}`	     
 	    }, 
 	    ]
@@ -6600,19 +6600,49 @@ sourceUrl: ``,
                 
             break
             case 'ytdontu': {
-            	const jetsatu = args.join(" ")
-                const jetdua = args.join(" ")
-                const one = jetsatu.split(" | ")[0]
-                const two = jetdua.split(" | ")[1]
-                anu = await fetchJson(`https://api.akuari.my.id/downloader/youtube3?link=${one}&type=${two}`)        
+            	if (isBan) return reply(mess.ban) 
+	if (isBanChat) return reply(mess.banChat)
+                if (!text) return reply(mess.linkm)
+                if (!isUrl(args[0]) && !args[0].includes('youtube.com')) return reply(`The link you provided is invalid`)
+                reply(mess.wait)
+                anu = await fetchJson(`https://api.akuari.my.id/downloader/youtube3?link=${args.join(" ")}&type=360`)        
                 if (anu.filesize_video >= 999999) return reply('*File Over Limit* '+util.format(anu))
                 tummb = await getBuffer(anu.thumbnail)
                 audio = await getBuffer(anu.audio)        
-                video = await getBuffer(anu.download)
-                ////////////////////////////////////XeonBotInc.sendMessage(m.chat, {document: audio, mimetype: 'audio/mpeg', fileName: `${anu.title}`}, { quoted : m }).catch((err) => reply(mess.error))
-                /////////////////////////////XeonBotInc.sendMessage(m.chat, {audio: audio, mimetype: 'audio/mpeg', ptt: true}, { quoted : m }).catch((err) => reply(mess.error))
-                XeonBotInc.sendMessage(m.chat, { document: {url: anu.audio.audio}, mimetype: 'audio/mpeg', fileName: `${anu.title}`}, { quoted: m }).catch((err) => reply(mess.error))
-            }
+                
+                
+                // contoh ↓
+                let documents = [doc1,doc2,doc3] 
+ let docs = pickRandom(documents)
+ let button = [
+                {buttonId: `.ytvn ${args.join(" ")}`, buttonText: { displayText: "▶ Voice Note" }, type: 1},
+                {buttonId: `.ytad ${args.join(" ")}`, buttonText: { displayText: "🎵 Audio" }, type: 1},
+                {buttonId: `.ytdc2 ${args.join(" ")}`, buttonText: { displayText: "🎵 MP3" }, type: 1}
+                ]
+                let caption = `*Title*: ${anu.title}\n*Link* : ${args.join(" ")}\n\n_Choose the video quality below_ \n_by clicking the button_`
+                
+ let pic = [wan,tu,tri,fo,faif,sik,seven,egh,nen,ten,elepen,welep,terten,foten,faiften,sikten]
+ let pics = pic[Math.floor(Math.random() * (pic.length))]
+ let buttonMessage = { 
+  document: fs.readFileSync('./XeonMedia/theme/cheems.xlsx'), 
+ mimetype: docs,
+ mentions: [m.sender], 
+ fileName: `Hi, ${pushname}`, 
+ caption: caption, 
+ footer: `${botname}`, 
+ buttons: button, 
+ headerType: 4,
+contextInfo: { externalAdReply: { 
+title: `Jasjus ID 🔰`, 
+ body: `By Kenneth ID`, 
+mediaType: 4, 
+ thumbnail: tummb, 
+sourceUrl: ``, 
+  mediaUrl: `${linkz}` 
+}} 
+} 
+ XeonBotInc.sendMessage(m.chat, buttonMessage, {quoted: fdocs})
+ }
             break
 case 'ytdonwan': try{ 
             if (isBan) return reply(mess.ban) 
@@ -8560,7 +8590,7 @@ anu = await fetchJson(`https://api.akuari.my.id/downloader/youtube?link=${babi.u
             }
 
 break
-case 'ytmp3': case 'ytmusic': case 'getmusic': {
+case 'ytmp3xxx': case 'ytmusicxxx': case 'getmusicxxx': {
 if (isBan) return reply(mess.ban) 
 	if (isBanChat) return reply(mess.banChat)
                 if (!text) return reply(mess.linkm)
