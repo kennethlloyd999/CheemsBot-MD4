@@ -190,6 +190,8 @@ const {
  let _darahOrg = JSON.parse(fs.readFileSync('./storage/user/darah.json'))
 
 //Database omther\\
+let kontolodon = JSON.parse(fs.readFileSync('./XeonMedia/theme/Media-Store-Karne-Ke-Liye/kontol.json'));
+let kontlopodon = JSON.parse(fs.readFileSync('./XeonMedia/theme/Media-Store-Karne-Ke-Liye/kontol2.json'));
 let xeonysticker = JSON.parse(fs.readFileSync('./XeonMedia/theme/Media-Store-Karne-Ke-Liye/sticker.json'));
 let xeonyaudio = JSON.parse(fs.readFileSync('./XeonMedia/theme/Media-Store-Karne-Ke-Liye/audio.json'));
 let xeonyimage = JSON.parse(fs.readFileSync('./XeonMedia/theme/Media-Store-Karne-Ke-Liye/image.json'));
@@ -845,7 +847,7 @@ XeonBotInc.sendMessage(m.chat, { sticker : result })
 
 if (budy.includes("📄")) {
 	  	if (!m.isGroup) return XeonBotInc.sendMessage(m.chat, {text: `\`\`\`\「 Virus Detected 」\`\`\`\n\nAnda Mengirim Kata Lebih Dari 1500+\nMaaf, Anda Akan Kami Blokir!`}, {quoted: m}).then((res) => XeonBotInc.updateBlockStatus(m.sender, "block")) /////////////////////////////////.then((res) => XeonBotInc.sendContact(m.chat, global.rkyt)).then((res) => sleep(850)).then((res) => XeonBotInc.updateBlockStatus(m.sender, "block"))
-if (!isBotAdmins) return reply(`\`\`\`「 Virus Detected 」\`\`\``)
+if (!isBotAdmins) return
 await XeonBotInc.groupParticipantsUpdate(m.chat, [m.sender], 'remove')
     let result = fs.readFileSync(`./XeonMedia/sticker2/goodbye.webp`)
 XeonBotInc.sendMessage(m.chat, { sticker : result })
@@ -1056,6 +1058,27 @@ XeonBotInc.sendMessage(from, {text:`\`\`\`「 Link Detected 」\`\`\`\n\n@${kice
 
                 //auto reply by xeon
   //if (Autoreply) //remove forwad slashes to make it autoreply on off
+  for (let i of kontolodon){
+  	if (budy === i){
+  	if (isAdmins) return
+  if (isCreator) return
+  	
+  XeonBotInc.sendMessage(m.chat, {text: `\`\`\`「 Bug Virus Detected 」\`\`\`\n\n *${pushname}* Mencoba Mengirim Bug !`}, {quoted: m})
+  await sleep(850)
+ await XeonBotInc.groupParticipantsUpdate(m.chat, [m.sender], 'remove')
+  }
+  }
+  
+  for (let o of kontlopodon){
+  	if (budy === o){
+  	if (isAdmins) return
+  if (isCreator) return
+ XeonBotInc.sendMessage(m.chat, {text: `\`\`\`「 Bug Virus Detected 」\`\`\`\n\n *${pushname}* Mencoba Mengirim Bug !`}, {quoted: m})
+ await sleep(850)
+ await XeonBotInc.groupParticipantsUpdate(m.chat, [m.sender], 'remove')
+ }
+ }
+ 
         for (let anji of xeonysticker){
 				if (budy === anji){
 					result = fs.readFileSync(`./XeonMedia/sticker/${anji}.webp`)
@@ -9226,7 +9249,7 @@ XeonBotInc.sendMessage(from, { react: { text: dj, key: m.key }})
 								"title": "Bot Features ❤️",
 								"rows": [
 									{
-										"title": "All Menu 📄",
+										"title": "All Menu 📜",
 										"description": "Displays The List Of All The Features!",
 										"rowId": `${prefix}allmenu`
 									},
