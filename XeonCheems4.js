@@ -6557,7 +6557,7 @@ sourceUrl: `${websitex}`,
                 video = await getBuffer(anu.download)
                 ////////////////////////////////////XeonBotInc.sendMessage(m.chat, {document: audio, mimetype: 'audio/mpeg', fileName: `${anu.title}`}, { quoted : m }).catch((err) => reply(mess.error))
                 /////////////////////////////XeonBotInc.sendMessage(m.chat, {audio: audio, mimetype: 'audio/mpeg', ptt: true}, { quoted : m }).catch((err) => reply(mess.error))
-                XeonBotInc.sendMessage(m.chat, { document: {url: anu.audio.audio}, mimetype: 'audio/mpeg', fileName: `${anu.title}\n\n_Balas *tomp3* untuk mengonversi ke musik_\n_Balas *tovn* untuk mengonversi ke voice note_`}, { quoted: m }).catch((err) => reply(mess.error))
+                XeonBotInc.sendMessage(m.chat, { document: {url: anu.audio.audio}, mimetype: 'audio/mpeg', fileName: `${anu.title}`}, { quoted: m }).catch((err) => reply(mess.error))
             }
             break
 case 'ytdonwan': try{ 
@@ -6576,7 +6576,7 @@ case 'ytdonwan': try{
                 video = await getBuffer(anu.download)
                 ////////////////////////////////////XeonBotInc.sendMessage(m.chat, {document: audio, mimetype: 'audio/mpeg', fileName: `${anu.title}`}, { quoted : m }).catch((err) => reply(mess.error))
                 /////////////////////////////XeonBotInc.sendMessage(m.chat, {audio: audio, mimetype: 'audio/mpeg', ptt: true}, { quoted : m }).catch((err) => reply(mess.error))
-                XeonBotInc.sendMessage(m.chat, { video: {url: anu.mp4.download}, mimetype: 'video/mp4', caption: `${anu.title}`}, { quoted: m }).catch((err) => reply(mess.error))
+                XeonBotInc.sendMessage(m.chat, { video: {url: anu.mp4.download}, mimetype: 'video/mp4', caption: `${anu.title}\n\n_Balas *tomp3* untuk mengonversi ke musik_\n_Balas *tovn* untuk mengonversi ke voice note_`}, { quoted: m }).catch((err) => reply(mess.error))
             } catch {const jetsatu = args.join(" ")
                 const jetdua = args.join(" ")
                 const one = jetsatu.split(" | ")[0]
@@ -6588,7 +6588,7 @@ case 'ytdonwan': try{
                 video = await getBuffer(anu.download)
                 ////////////////////////////////////XeonBotInc.sendMessage(m.chat, {document: audio, mimetype: 'audio/mpeg', fileName: `${anu.title}`}, { quoted : m }).catch((err) => reply(mess.error))
                 /////////////////////////////XeonBotInc.sendMessage(m.chat, {audio: audio, mimetype: 'audio/mpeg', ptt: true}, { quoted : m }).catch((err) => reply(mess.error))
-                XeonBotInc.sendMessage(m.chat, { video: {url: anu.mp4.download}, mimetype: 'video/mp4', caption: `${anu.title}`}, { quoted: m }).catch((err) => reply(mess.error))
+                XeonBotInc.sendMessage(m.chat, { video: {url: anu.mp4.download}, mimetype: 'video/mp4', caption: `${anu.title}/n/n_Balas *tomp3* untuk mengonversi ke musik_\n_Balas *tovn* untuk mengonversi ke voice note_`}, { quoted: m }).catch((err) => reply(mess.error))
             }
             break
 case 'google': {
