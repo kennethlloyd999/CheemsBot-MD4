@@ -6422,7 +6422,7 @@ break
 	    })
 	    }
 	    break
-	case 'yts': case 'ytsearch': {
+	case 'ytsxxx': case 'ytsearchxxx': {
    if (isBan) return reply(mess.ban)	 			
 if (isBanChat) return reply(mess.banChat)
 if (!args.join(" ")) return replay(`Example : ${prefix + command} stay jb`)
@@ -6436,7 +6436,7 @@ teks += `${global.themeemoji} No : ${no++}\n${global.themeemoji} Type : ${i.type
 XeonBotInc.sendMessage(m.chat, { image: { url: search.all[0].thumbnail },  caption: teks }, { quoted: m })
 }
 break
-case 'sf': {
+case 'yts': case 'ytsearch': case 'music': case 'play': case 'song': case 'ytplay': {
 if (isBan) return reply(mess.ban)	 			
 if (isBanChat) return reply(mess.banChat)
   ////////////////////////if (!isUrl(args[0]) && !args[0].includes('facebook.com')) return reply(`The link you provided is invalid`)
@@ -6451,8 +6451,8 @@ let search = await yts(args.join(" "))
   rows: [
 	    {
 	     title: `${i.title}`, 
-	     rowId: `${prefix}ytdl ${i.url}`,
-      description: `Duration ${i.timestamp}`	     
+	     rowId: `${prefix}fghjk ${i.url}`,
+      description: `Duration ${i.timestamp} | Views: ${i.views} | Uploaded: ${i.ago}`	     
 	    }, 
 	    ]
      }
@@ -6462,15 +6462,110 @@ let search = await yts(args.join(" "))
   const sendm =  XeonBotInc.sendMessage(
       m.chat, 
       {
-       text: `${pushname} *Here is the list of videos, click the button below to choose*`,
+       text: `${pushname} \n*Here is the list of videos, click the button below to choose*`,
        footer: `${botname}`,
-       title: "*SAVE FROM*",
+       title: "*YT SEARCH*",
        buttonText: "CLICK HERE",
        sections
       }, { quoted : m })                 
                 }).catch((err) => {
                     reply(mess.error)
                 })
+            }
+            break
+ case 'fghjk': {
+            if (isBan) return reply(mess.ban) 
+	if (isBanChat) return reply(mess.banChat)
+                if (!text) return reply(mess.linkm)
+                if (!isUrl(args[0]) && !args[0].includes('youtube.com')) return reply(`The link you provided is invalid`)
+                anu = await fetchJson(`https://api.akuari.my.id/downloader/youtube3?link=${text}&type=360`)        
+                if (anu.filesize_video >= 999999) return reply('*File Over Limit* '+util.format(anu))
+                tummb = await getBuffer(anu.thumbnail)
+                audio = await getBuffer(anu.audio)        
+                
+                
+                // contoh ↓
+                let documents = [doc1,doc2,doc3] 
+ let docs = pickRandom(documents)
+ let button = [
+                {buttonId: `ytdonwan ${args.join(" ")} | 360`, buttonText: { displayText: "360p" }, type: 1},
+                {buttonId: `ytdonwan ${args.join(" ")} | 480`, buttonText: { displayText: "480p" }, type: 1},
+                {buttonId: `ytdonwan ${args.join(" ")} | 720`, buttonText: { displayText: "720p" }, type: 1}
+                //////////////////////{buttonId: `ytdontu ${args.join(" ")}`, buttonText: { displayText: "To MP3" }, type: 1}
+                ]
+                let caption = `*Title*: ${anu.title}\n*Link* : ${args.join(" ")}\n\n_Choose the video quality below_ \n_by clicking the button_`
+                
+ let pic = [wan,tu,tri,fo,faif,sik,seven,egh,nen,ten,elepen,welep,terten,foten,faiften,sikten]
+ let pics = pic[Math.floor(Math.random() * (pic.length))]
+ let buttonMessage = { 
+  document: fs.readFileSync('./XeonMedia/theme/cheems.xlsx'), 
+ mimetype: docs,
+ mentions: [m.sender], 
+ fileName: `Hi, ${pushname}`, 
+ caption: caption, 
+ footer: `${botname}`, 
+ buttons: button, 
+ headerType: 4,
+contextInfo: { externalAdReply: { 
+title: `Jasjus ID 🔰`, 
+ body: `By Kenneth ID`, 
+mediaType: 4, 
+ thumbnail: tummb, 
+sourceUrl: `${websitex}`, 
+  mediaUrl: `${websitex}` 
+}} 
+} 
+ XeonBotInc.sendMessage(m.chat, buttonMessage, {quoted: fdocs})
+ }
+ //contoh ^
+                ////////////////////////////////////XeonBotInc.sendMessage(m.chat, {document: audio, mimetype: 'audio/mpeg', fileName: `${anu.title}`}, { quoted : m }).catch((err) => reply(mess.error))
+                /////////////////////////////XeonBotInc.sendMessage(m.chat, {audio: audio, mimetype: 'audio/mpeg', ptt: true}, { quoted : m }).catch((err) => reply(mess.error))
+                
+            break
+            case 'ytdontu': {
+            	const jetsatu = args.join(" ")
+                const jetdua = args.join(" ")
+                const one = jetsatu.split(" | ")[0]
+                const two = jetdua.split(" | ")[1]
+                anu = await fetchJson(`https://api.akuari.my.id/downloader/youtube3?link=${one}&type=${two}`)        
+                if (anu.filesize_video >= 999999) return reply('*File Over Limit* '+util.format(anu))
+                tummb = await getBuffer(anu.thumbnail)
+                audio = await getBuffer(anu.audio)        
+                video = await getBuffer(anu.download)
+                ////////////////////////////////////XeonBotInc.sendMessage(m.chat, {document: audio, mimetype: 'audio/mpeg', fileName: `${anu.title}`}, { quoted : m }).catch((err) => reply(mess.error))
+                /////////////////////////////XeonBotInc.sendMessage(m.chat, {audio: audio, mimetype: 'audio/mpeg', ptt: true}, { quoted : m }).catch((err) => reply(mess.error))
+                XeonBotInc.sendMessage(m.chat, { document: {url: anu.audio.audio}, mimetype: 'audio/mpeg', fileName: `${anu.title}\n\n_Balas *tomp3* untuk mengonversi ke musik_\n_Balas *tovn* untuk mengonversi ke voice note_`}, { quoted: m }).catch((err) => reply(mess.error))
+            }
+            break
+case 'ytdonwan': try{ 
+            if (isBan) return reply(mess.ban) 
+	if (isBanChat) return reply(mess.banChat)
+                if (!text) return reply(mess.linkm)
+                if (!isUrl(args[0]) && !args[0].includes('youtube.com')) return reply(`The link you provided is invalid`)
+                const jetsatu = args.join(" ")
+                const jetdua = args.join(" ")
+                const one = jetsatu.split(" | ")[0]
+                const two = jetdua.split(" | ")[1]
+                anu = await fetchJson(`https://api.akuari.my.id/downloader/youtube3?link=${one}&type=${two}`)        
+                if (anu.filesize_video >= 999999) return reply('*File Over Limit* '+util.format(anu))
+                tummb = await getBuffer(anu.thumbnail)
+                audio = await getBuffer(anu.audio)        
+                video = await getBuffer(anu.download)
+                ////////////////////////////////////XeonBotInc.sendMessage(m.chat, {document: audio, mimetype: 'audio/mpeg', fileName: `${anu.title}`}, { quoted : m }).catch((err) => reply(mess.error))
+                /////////////////////////////XeonBotInc.sendMessage(m.chat, {audio: audio, mimetype: 'audio/mpeg', ptt: true}, { quoted : m }).catch((err) => reply(mess.error))
+                XeonBotInc.sendMessage(m.chat, { video: {url: anu.mp4.download}, mimetype: 'video/mp4', caption: `${anu.title}`}, { quoted: m }).catch((err) => reply(mess.error))
+            } catch {const jetsatu = args.join(" ")
+                const jetdua = args.join(" ")
+                const one = jetsatu.split(" | ")[0]
+                const two = jetdua.split(" | ")[1]
+                anu = await fetchJson(`https://api.akuari.my.id/downloader/youtube3?link=${one}&type=360`)        
+                if (anu.filesize_video >= 999999) return reply('*File Over Limit* '+util.format(anu))
+                tummb = await getBuffer(anu.thumbnail)
+                audio = await getBuffer(anu.audio)        
+                video = await getBuffer(anu.download)
+                ////////////////////////////////////XeonBotInc.sendMessage(m.chat, {document: audio, mimetype: 'audio/mpeg', fileName: `${anu.title}`}, { quoted : m }).catch((err) => reply(mess.error))
+                /////////////////////////////XeonBotInc.sendMessage(m.chat, {audio: audio, mimetype: 'audio/mpeg', ptt: true}, { quoted : m }).catch((err) => reply(mess.error))
+                XeonBotInc.sendMessage(m.chat, { video: {url: anu.mp4.download}, mimetype: 'video/mp4', caption: `${anu.title}`}, { quoted: m }).catch((err) => reply(mess.error))
             }
             break
 case 'google': {
@@ -8499,7 +8594,7 @@ break
                 video = await getBuffer(anu.download)
                 ////////////////////////////////////XeonBotInc.sendMessage(m.chat, {document: audio, mimetype: 'audio/mpeg', fileName: `${anu.title}`}, { quoted : m }).catch((err) => reply(mess.error))
                 /////////////////////////////XeonBotInc.sendMessage(m.chat, {audio: audio, mimetype: 'audio/mpeg', ptt: true}, { quoted : m }).catch((err) => reply(mess.error))
-                XeonBotInc.sendMessage(m.chat, { video: {url: anu.mp4}, mimetype: 'video/mp4', caption: `${anu.title}`}, { quoted: m }).catch((err) => reply(mess.error))
+                XeonBotInc.sendMessage(m.chat, { video: {url: anu.mp4.download}, mimetype: 'video/mp4', caption: `${anu.title}`}, { quoted: m }).catch((err) => reply(mess.error))
             }
             break
 case 'ytshorts': case 'shorts': {
