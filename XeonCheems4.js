@@ -8519,7 +8519,7 @@ break
                 XeonBotInc.sendText(m.chat, `${themeemoji} *Results :* ${anu.message}`, m)
             }
             break
-	    case 'tiktok':{
+	    case 'tiktok': {
   	if (isBan) return reply(mess.ban)
 	if (isBanChat) return reply(mess.banChat)
   if (!q) return reply('Where is the link?')
@@ -8532,8 +8532,8 @@ break
 ////////////   const xeontiktokop = musim_rambutan.result.watermark
 const anj = args.join(" ")
 const bab = anj.split(" | ")[0]
-anu = await fetchJson(`https://api.akuari.my.id/downloader/tiktok3?link=${bab}`)
-texttk = `*Username* : ${anu.hasil.username}\n*Title* : ${anu.hasil.video_title}\n\n*Like* : ${anu.hasil.like}\n*Comment* : ${anu.hasil.comment}\n*Share* : ${anu.hasil.share}\n*Music Author* : ${anu.hasil.music_author}`
+let anu = await fetchJson(`https://api.akuari.my.id/downloader/tiktok3?link=${bab}`)
+let texttk = `*Username* : ${anu.hasil.username}\n*Title* : ${anu.hasil.video_title}\n\n*Like* : ${anu.hasil.like}\n*Comment* : ${anu.hasil.comment}\n*Share* : ${anu.hasil.share}\n*Music Author* : ${anu.hasil.music_author}`
 let buttons = [
 {buttonId: `command`, buttonText: {displayText: 'List Menu'}, type: 1},
 {buttonId: `ttaud ${bab}`, buttonText: {displayText: 'Audio 🎶'}, type: 1},
