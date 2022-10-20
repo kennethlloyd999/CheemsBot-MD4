@@ -2277,29 +2277,29 @@ if (isBanChat) return reply(mess.banChat)
 					const sange = sangeh[Math.floor(Math.random() * sangeh.length)]
 XeonBotInc.sendMessage(from, { text: `*${command}*\n\nName : ${q}\nAnswer : *${sange}%*` }, { quoted: m })
 					break
-                    case 'stupidxxx':
-      case 'foolishxxx':
-      case 'smartxxz':
-      case 'idiotxxx':
-      case 'gayxxx':
-      case 'lesbixxx':
-      case 'bastardxxx':
-      case 'stubblexxx':
-      case 'dogxxx':
-      case 'fuckxxx':
+                    case 'stupid':
+      case 'foolish':
+      case 'smart':
+      case 'idiot':
+      case 'gay':
+      case 'lesbi':
+      case 'bastard':
+      case 'stubble':
+      case 'dog':
+      case 'fuck':
       case 'apexxx':
-      case 'noobxxx':
+      case 'noob':
       case 'greatxxx':
-      case 'hornyxxx':
-      case 'wibuxxx':
+      case 'horny':
+      case 'wibu':
       case 'assholexxx':
-      case 'handsomexxx':
-      case 'beautifulxzz':
-      case 'cutexxx':
+      case 'handsome':
+      case 'beautiful':
+      case 'cute':
       case 'kindxxx':
-      case 'uglyxxx':
-      case 'prettyxxx':
-      case 'lesbianxxx':
+      case 'ugly':
+      case 'pretty':
+      case 'lesbian':
       case 'randixxx':
       case 'ganduxxx':
       case 'madarchodxxx':
@@ -2326,10 +2326,10 @@ XeonBotInc.sendMessage(from, { text: `*${command}*\n\nName : ${q}\nAnswer : *${s
       case 'mcxxx':
       case 'bsdkxxx':
       case 'bhosdkxxx':
-      case 'niggerxxx':
+      case 'nigger':
       case 'lodaxxx':
       case 'laundxxx':
-      case 'niggaxxx':
+      case 'nigga':
       case 'noobraxxx':
       case 'tharkixxx':
       case 'nibbaxxx':
@@ -2346,7 +2346,7 @@ XeonBotInc.sendMessage(from, { text: `*${command}*\n\nName : ${q}\nAnswer : *${s
       case 'guccixxx':
       case 'litxxx':
       case 'dumbassxxx':
-      case 'sexyxxx':
+      case 'sexy':
       case 'crackheadxxx':
       case 'mfxxx':
       case 'motherfuckerxxx':
@@ -2356,24 +2356,26 @@ XeonBotInc.sendMessage(from, { text: `*${command}*\n\nName : ${q}\nAnswer : *${s
       case 'khankixxx':
       case 'balxxx':
       case 'suckerxxx':
-      case 'fuckboyxxx':
-      case 'playboyxxx':
-      case 'fuckgirlxxx':
-      case 'playgirlxxx':
-      case 'hotxxx': {
+      case 'fuckboy':
+      case 'playboy':
+      case 'fuckgirl':
+      case 'playgirl':
+      case 'hotx': {
       	            	if (isBan) return reply(mess.ban)
 	if (isBanChat) return reply(mess.banChat)
             if (!m.isGroup) return replay(`${mess.group}`)
+            
             let member = participants.map(u => u.id)
             let me = m.sender
             let jodoh = member[Math.floor(Math.random() * member.length)]
             let jawab = `The Most *${command}* Here Is @${jodoh.split('@')[0]}`
             let ments = [me, jodoh]
             let buttons = [
-                        { buttonId: '👀', buttonText: { displayText: '👀😂' }, type: 1 }
+                        { buttonId: 'startx', buttonText: { displayText: '👀😂' }, type: 1 }
                     ]
                     await XeonBotInc.sendButtonText(m.chat, buttons, jawab, botname, m, {mentions: ments})
             }
+            
             break
 case 'dare':
                    if (isBan) return reply(mess.ban)
@@ -6694,6 +6696,11 @@ XeonBotInc.sendMessage(m.chat, buttonMessage, {quoted: m})
                 XeonBotInc.sendMessage(m.chat, { video: {url: anu.mp4.download}, mimetype: "video/mp4", caption: `${anu.title}
 _Balas *tomp3* untuk mengonversi ke musik_\n_Balas *tovn* untuk mengonversi ke voice note_`}, { quoted: m }).catch((err) => reply(mess.error))
             }
+            break
+            case 'chamnel': {
+            	if (isBan) return reply(mess.ban)	 			
+if (isBanChat) return reply(mess.banChat)
+            	}
             break
 case 'google': {
    if (isBan) return reply(mess.ban)	 			
