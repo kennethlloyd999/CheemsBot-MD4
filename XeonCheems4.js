@@ -719,6 +719,7 @@ if (isCreator) return
         let gclinks = (`https://chat.whatsapp.com/J1S3g1fbWSS9r01UNSBLst`)
         let gclinkd = (`https://chat.whatsapp.com/Kg3y0VkG9ag9z9JECGCSjR`)
         let gclinkf = (`https://chat.whatsapp.com/K2mJoQNyjz8EaWUDs6iYjY`)
+        let gclinkg = (`https://chat.whatsapp.com/F6FvVrCEXvp1GH8ChCkSss`)
         
         // dua
         let isLinkThisGc = new RegExp(gclink, 'i')
@@ -736,6 +737,7 @@ if (isCreator) return
         let isLinkThisGcs = new RegExp(gclinks, 'i')
         let isLinkThisGcd = new RegExp(gclinkd, 'i')
         let isLinkThisGcf = new RegExp(gclinkf, 'i')
+        let isLinkThisGcg = new RegExp(gclinkg, 'i')
         
         // tiga
         let isgclink = isLinkThisGc.test(m.text)
@@ -753,6 +755,7 @@ if (isCreator) return
         let isgclinks = isLinkThisGcs.test(m.text)
         let isgclinkd = isLinkThisGcd.test(m.text)
         let isgclinkf = isLinkThisGcf.test(m.text)
+        let isgclinkg = isLinkThisGcg.test(m.text)
         
         // empat
         if (isgclink) return
@@ -779,6 +782,7 @@ if (isCreator) return
         if (isgclinks) return
         if (isgclinkd) return
         if (isgclinkf) return 
+        if (isgclinkg) return
         
         // admin&creator
         if (isAdmins) return
