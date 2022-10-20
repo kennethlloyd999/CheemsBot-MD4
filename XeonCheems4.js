@@ -8537,7 +8537,7 @@ let texttk = `*Username* : ${anu.hasil.username}\n*Title* : ${anu.hasil.video_ti
 let buttons = [
 {buttonId: `command`, buttonText: {displayText: 'List Menu'}, type: 1},
 {buttonId: `ttaud ${bab}`, buttonText: {displayText: 'Audio 🎶'}, type: 1},
-{buttonId: `ttavn ${bab}`, buttonText: {displayText: 'Voice Note ▶'}, type: 1}
+{buttonId: `ttvn ${bab}`, buttonText: {displayText: 'Voice Note ▶'}, type: 1}
 ]
 let pic = [wan,tu,tri,fo,faif,sik,seven,egh,nen,ten,elepen,welep,terten,foten,faiften,sikten]
  let pics = pic[Math.floor(Math.random() * (pic.length))]
@@ -8549,11 +8549,11 @@ buttons: buttons,
 headerType: 4,
 contextInfo:{externalAdReply:{
 title: `${ownername}`,
-body: `${pushname}`,
+body: `Hi, ${pushname}!`,
 thumbnail: pics,
 mediaType:1,
-mediaUrl: q,
-sourceUrl: q
+mediaUrl: `${bab}`,
+sourceUrl: ``
 }}
 }
 XeonBotInc.sendMessage(from, buttonMessage, {quoted:m})
@@ -8576,6 +8576,8 @@ break
   case 'ttmp3': case 'tiktokmp3': {
   	if (isBan) return reply(mess.ban)	 			
 if (isBanChat) return reply(mess.banChat)
+ ja = `⏰`
+XeonBotInc.sendMessage(from, { react: { text: ja, key: m.key }})
 let pic = [wan,tu,tri,fo,faif,sik,seven,egh,nen,ten,elepen,welep,terten,foten,faiften,sikten]
  let pics = pic[Math.floor(Math.random() * (pic.length))]
 const jetbosok = args.join(" ")
@@ -8583,48 +8585,53 @@ const bapakkau = jetbosok.split(" | ")[0]
 ttaudio = await fetchJson(`https://api.akuari.my.id/downloader/tiktok3?link=${bapakkau}`)
 XeonBotInc.sendMessage(m.chat, {document: {url: ttaudio.hasil.download_mp3}, mimetype: "audio/mpeg", contextInfo: { externalAdReply: {
 	title: `Jasjus ID 🔰`,
-	body: `${botname}`,
+	body: `MP3 | 128K`,
 	thumbnail: pics,
 	mediaType: 2,
 	mediaUrl: `${bapakkau}`,
 	sourceUrl: ``
-  	}}})
+  	}}}, {quoted: m})
   }
   break 
   case 'ttvn': case 'tiktokvn': {
   if (isBan) return reply(mess.ban)	 			
 if (isBanChat) return reply(mess.banChat)
+ ja = `⏰`
+XeonBotInc.sendMessage(from, { react: { text: ja, key: m.key }})
 let pic = [wan,tu,tri,fo,faif,sik,seven,egh,nen,ten,elepen,welep,terten,foten,faiften,sikten]
  let pics = pic[Math.floor(Math.random() * (pic.length))]
 const jetbosok = args.join(" ")
 const bapakkau = jetbosok.split(" | ")[0]
-ttaudio = await fetchJson(`https://api.akuari.my.id/downloader/tiktok3?link=${bapakkau}`)
-XeonBotInc.sendMessage(m.chat, {audio: {url: ttaudio.hasil.download_mp3}, mimetype: "audio/mpeg", ptt: true}, {quoted: m}) ///////////// contextInfo: { externalAdReply: {
-	///////title: `Jasjus ID 🔰`,
-	////////body: `${botname}`,
-	////thumbnail: pics,
-	/////mediaType: 2,
-	//////mediaUrl: `${bapakkau}`,
-	////sourceUrl: ``
-/////  	}}})
+let ttaudio = await fetchJson(`https://api.akuari.my.id/downloader/tiktok3?link=${bapakkau}`)
+let ola = await getBuffer(ttaudio.hasil.download_mp3)
+XeonBotInc.sendMessage(m.chat, {audio: ola, mimetype: "audio/mpeg", ptt: true, contextInfo: { externalAdReply: {
+	title: `Jasjus ID 🔰`,
+	body: `Voice Note | 128K`,
+	thumbnail: pics,
+	mediaType: 2,
+	mediaUrl: `${bapakkau}`,
+	sourceUrl: ``
+  	}}}, {quoted: m})
   }
   break 
   case 'tiktokaudio': case 'tiktokmusic': case 'ttaud': {
   	if (isBan) return reply(mess.ban)	 			
 if (isBanChat) return reply(mess.banChat)
+ ja = `⏰`
+XeonBotInc.sendMessage(from, { react: { text: ja, key: m.key }})
 const jetbosok = args.join(" ")
 const bapakkau = jetbosok.split(" | ")[0]
 let pic = [wan,tu,tri,fo,faif,sik,seven,egh,nen,ten,elepen,welep,terten,foten,faiften,sikten]
  let pics = pic[Math.floor(Math.random() * (pic.length))]
-ttaudio = await fetchJson(`https://api.akuari.my.id/downloader/tiktok3?link=${bapakkau}`)
+let ttaudio = await fetchJson(`https://api.akuari.my.id/downloader/tiktok3?link=${bapakkau}`)
 XeonBotInc.sendMessage(m.chat, {audio: {url: ttaudio.hasil.download_mp3}, mimetype: "audio/mpeg", contextInfo: { externalAdReply: {
 	title: `Jasjus ID 🔰`,
-	body: `${botname}`,
+	body: `Audio | 128K`,
 	thumbnail: pics,
 	mediaType: 2,
 	mediaUrl: `${bapakkau}`,
 	sourceUrl: ``
-  	}}})
+  	}}}, {quoted: m})
   }
   break
   break
@@ -8652,7 +8659,7 @@ let yts = require("yt-search")
 let search = await yts(text)
 let babi = search.videos[Math.floor(Math.random() * search.videos.length)]
 let ytvc = await hx.youtube(babi.url)
-anu = await fetchJson(`https://api.akuari.my.id/downloader/youtube?link=${babi.url}`)        
+let anu = await fetchJson(`https://api.akuari.my.id/downloader/youtube?link=${babi.url}`)        
                 if (anu.filesize_video >= 999999) return reply('*File Over Limit* '+util.format(anu))
                 tummb = await getBuffer(anu.thumb)
                 audio = await getBuffer(anu.audio) 
@@ -9681,7 +9688,7 @@ let timestamp = speed()
                 let latensi = speed() - timestamp
                 neww = performance.now()
                 oldd = performance.now()
-teks = `*Response Speed* ${latensi.toFixed(4)} _Second_ \n ${oldd - neww} _miliseconds_\n*Runtime* : ${runtime(process.uptime())}\n\n*All GC & Bot Info*: https://kennethmorris666.blogspot.com/\n\n ┏━「 _OWNER_ ⛔ 」━━⭓
+teks = `*Response Speed* ${latensi.toFixed(4)} _Second_ \n ${oldd - neww} _miliseconds_\n\n*Runtime* : ${runtime(process.uptime())}\n\n*All GC & Bot Info* : https://kennethmorris666.blogspot.com/\n\n ┏━「 _OWNER_ ⛔ 」━━⭓
  ┃╔═══════✪
  ┃╠ ${prefix}self 
  ┃╠ ${prefix}public 
@@ -10263,8 +10270,8 @@ teks = `*Response Speed* ${latensi.toFixed(4)} _Second_ \n ${oldd - neww} _milis
  {buttonId: `command`, buttonText: {displayText: 'List Menu'}, type: 1},
  {buttonId: `owner`, buttonText: {displayText: 'Owner'}, type: 1}
  ] 
- let pic = [wan,tu,tri,fo,faif,sik,seven,egh,nen,ten,elepen,welep,terten,foten,faiften,sikten]
- let pics = pic[Math.floor(Math.random() * (pic.length))]
+let pic = [wan,tu,tri,fo,faif,sik,seven,egh,nen,ten,elepen,welep,terten,foten,faiften,sikten]
+let pics = pic[Math.floor(Math.random() * (pic.length))]
  let buttonMessage = { 
   document: fs.readFileSync('./XeonMedia/theme/cheems.xlsx'), 
  mimetype: docs,
