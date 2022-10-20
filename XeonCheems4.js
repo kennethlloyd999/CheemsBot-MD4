@@ -8525,19 +8525,24 @@ break
   if (!q) return reply('Where is the link?')
   reply(mess.wait)
   if (!q.includes('tiktok')) return reply(`That's not a tiktok link!`)
-   const musim_rambutan = await XeonBotIncTiktok(`${q}`).catch(e => {
- reply(mess.error) 
-} )
-  console.log(musim_rambutan)
-   const xeontiktokop = musim_rambutan.result.watermark
-texttk = `Wanna download no watermark or audio?
-_Please choose the button below_`
+ /////////////  const musim_rambutan = await XeonBotIncTiktok(`${q}`).catch(e => {
+////// reply(mess.error) 
+//////} )
+///////  console.log(musim_rambutan)
+////////////   const xeontiktokop = musim_rambutan.result.watermark
+const anj = args.join(" ")
+const bab = anj.split(" | ")[0]
+anu = await fetchJson(`https://api.akuari.my.id/downloader/tiktok3?link=${bab}`)
+texttk = `*Username* : ${anu.hasil.username}\n*Title* : ${anu.hasil.video_title}\n\n*Like* : ${anu.hasil.like}\n*Comment* : ${anu.hasil.comment}\n*Share* : ${anu.hasil.share}\n*Music Author* : ${anu.hasil.music_author}`
 let buttons = [
-{buttonId: `ttnowm ${q}`, buttonText: {displayText: 'No Watermark ❌'}, type: 1},
-{buttonId: `ttaud ${q}`, buttonText: {displayText: 'Audio 🎶'}, type: 1}
+{buttonId: `command`, buttonText: {displayText: 'List Menu'}, type: 1},
+{buttonId: `ttaud ${bab}`, buttonText: {displayText: 'Audio 🎶'}, type: 1},
+{buttonId: `ttavn ${bab}`, buttonText: {displayText: 'Voice Note ▶'}, type: 1}
 ]
+let pic = [wan,tu,tri,fo,faif,sik,seven,egh,nen,ten,elepen,welep,terten,foten,faiften,sikten]
+ let pics = pic[Math.floor(Math.random() * (pic.length))]
 let buttonMessage = {
-video: {url:xeontiktokop},
+video: {url:anu.hasil.download_mp4},
 caption: texttk,
 footer: `${botname}`,
 buttons: buttons,
@@ -8545,7 +8550,7 @@ headerType: 4,
 contextInfo:{externalAdReply:{
 title: `${ownername}`,
 body: `${pushname}`,
-thumbnail: log0,
+thumbnail: pics,
 mediaType:1,
 mediaUrl: q,
 sourceUrl: q
@@ -8554,7 +8559,7 @@ sourceUrl: q
 XeonBotInc.sendMessage(from, buttonMessage, {quoted:m})
 }
 break
-  case 'tiktoknowm': case 'ttnowm':{
+  case 'tiktoknowmxxx': case 'ttnowmxxx':{
   	if (isBan) return reply(mess.ban)
 	if (isBanChat) return reply(mess.banChat)
   if (!q) return reply('Where is the link?')
@@ -8568,9 +8573,64 @@ break
     XeonBotInc.sendMessage(from, { video: { url: xeonytiktoknowm }, caption: "Here you go!" }, { quoted: m })
    }
   break
-  case 'tiktokaudio':
-case 'tiktokmusic':
-case 'ttaud':{
+  case 'ttmp3': case 'tiktokmp3': {
+  	if (isBan) return reply(mess.ban)	 			
+if (isBanChat) return reply(mess.banChat)
+let pic = [wan,tu,tri,fo,faif,sik,seven,egh,nen,ten,elepen,welep,terten,foten,faiften,sikten]
+ let pics = pic[Math.floor(Math.random() * (pic.length))]
+const jetbosok = args.join(" ")
+const bapakkau = jetbosok.split(" | ")[0]
+ttaudio = await fetchJson(`https://api.akuari.my.id/downloader/tiktok3?link=${bapakkau}`)
+XeonBotInc.sendMessage(m.chat, {document: {url: ttaudio.hasil.download_mp3}, mimetype: "audio/mpeg", contextInfo: { externalAdReply: {
+	title: `Jasjus ID 🔰`,
+	body: `${botname}`,
+	thumbnail: pics,
+	mediaType: 2,
+	mediaUrl: `${bapakkau}`,
+	sourceUrl: ``
+  	}}})
+  }
+  break 
+  case 'ttvn': case 'tiktokvn': {
+  if (isBan) return reply(mess.ban)	 			
+if (isBanChat) return reply(mess.banChat)
+let pic = [wan,tu,tri,fo,faif,sik,seven,egh,nen,ten,elepen,welep,terten,foten,faiften,sikten]
+ let pics = pic[Math.floor(Math.random() * (pic.length))]
+const jetbosok = args.join(" ")
+const bapakkau = jetbosok.split(" | ")[0]
+ttaudio = await fetchJson(`https://api.akuari.my.id/downloader/tiktok3?link=${bapakkau}`)
+XeonBotInc.sendMessage(m.chat, {audio: {url: ttaudio.hasil.download_mp3}, mimetype: "audio/mpeg", ptt: true}, {quoted: m}) ///////////// contextInfo: { externalAdReply: {
+	///////title: `Jasjus ID 🔰`,
+	////////body: `${botname}`,
+	////thumbnail: pics,
+	/////mediaType: 2,
+	//////mediaUrl: `${bapakkau}`,
+	////sourceUrl: ``
+/////  	}}})
+  }
+  break 
+  case 'tiktokaudio': case 'tiktokmusic': case 'ttaud': {
+  	if (isBan) return reply(mess.ban)	 			
+if (isBanChat) return reply(mess.banChat)
+const jetbosok = args.join(" ")
+const bapakkau = jetbosok.split(" | ")[0]
+let pic = [wan,tu,tri,fo,faif,sik,seven,egh,nen,ten,elepen,welep,terten,foten,faiften,sikten]
+ let pics = pic[Math.floor(Math.random() * (pic.length))]
+ttaudio = await fetchJson(`https://api.akuari.my.id/downloader/tiktok3?link=${bapakkau}`)
+XeonBotInc.sendMessage(m.chat, {audio: {url: ttaudio.hasil.download_mp3}, mimetype: "audio/mpeg", contextInfo: { externalAdReply: {
+	title: `Jasjus ID 🔰`,
+	body: `${botname}`,
+	thumbnail: pics,
+	mediaType: 2,
+	mediaUrl: `${bapakkau}`,
+	sourceUrl: ``
+  	}}})
+  }
+  break
+  break
+  case 'tiktokaudioxxx':
+case 'tiktokmusicxxx':
+case 'ttaudxxx':{
 	if (isBan) return reply(mess.ban)
 	if (isBanChat) return reply(mess.banChat)
   if (!q) return reply('Where is the audio?')
@@ -10551,8 +10611,9 @@ sourceUrl: `${websitex}`,
  ┃╠ ${prefix}twitter [url] 
  ┃╠ ${prefix}twittermp3 [url] 
  ┃╠ ${prefix}tiktok [url] 
- ┃╠ ${prefix}tiktokaudio[url] 
- ┃╠ ${prefix}tiktoknowm [url] 
+ ┃╠ ${prefix}tiktokaudio [url] 
+ ┃╠ ${prefix}tiktokmp3 [url]
+ ┃╠ ${prefix}tiktokvn [url]
  ┃╠ ${prefix}mediafire [url] 
  ┃╠ ${prefix}ytmp3 [url|quality] 
  ┃╠ ${prefix}ytmp4 [url|quality] 
