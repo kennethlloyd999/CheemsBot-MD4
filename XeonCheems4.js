@@ -247,6 +247,7 @@ module.exports = XeonBotInc = async (XeonBotInc, m, chatUpdate, store) => {
     	const isPremium = isCreator || global.premium.map(v => v.replace(/[^0-9]/g, '') + '@s.whatsapp.net').includes(m.sender) || false
         
 const AntiLinkYoutubeVid = m.isGroup ? ntilinkytvid.includes(from) : false
+const AntiLinkGc = m.isGroup ? ntilink.includes(from) : false
 const AntiLinkYoutubeChannel = m.isGroup ? ntilinkytch.includes(from) : false
 const AntiLinkInstagram = m.isGroup ? ntilinkig.includes(from) : false
 const AntiLinkFacebook = m.isGroup ? ntilinkfb.includes(from) : false
@@ -700,6 +701,7 @@ if (isCreator) return
            }
           
 	// AntiLinkgc
+	if (!AntiLinkGc)
         if (budy.includes(`chat.whatsxapp.com`)) {
         if (!isBotAdmins) return reply(`\`\`\`「 Group Link Detected 」\`\`\``)
         if (!m.isGroup) return
@@ -3035,6 +3037,41 @@ _autostick.splice(anu, 1)
 fs.writeFileSync('./database/autostickpc.json', JSON.stringify(autosticker))
 reply('autosticker pc deactivated')
 }
+break
+case 'antilink': case 'antilinkgc': case 'algc': {
+if (isBan) return reply(mess.ban)	 			
+if (isBanChat) return reply(mess.banChat)
+if (!m.isGroup) return replay(mess.group)
+if (!isBotAdmins) return replay(mess.botAdmin)
+if (!isAdmins && !isCreator) return replay(mess.admin)
+if (args[0] === "on") {
+if (AntiLinkGc) return replay('Already activated')
+ntilink.push(from)
+ ja = `✅`
+XeonBotInc.sendMessage(from, { react: { text: ja, key: m.key }})
+////////////replay('Success in turning on antilink gc in this group')
+var groupe = await XeonBotInc.groupMetadata(from)
+var members = groupe['participants']
+var mems = []
+members.map(async adm => {
+mems.push(adm.id.replace('c.us', 's.whatsapp.net'))
+})
+/////////////////////////XeonBotInc.sendMessage(from, {text: `\`\`\`「 ⚠️Warning⚠️ 」\`\`\`\n\nIf you're not an admin, don't send the youtube video link in this group or u will be kicked immediately!`, contextInfo: { mentionedJid : mems }}, {quoted:m})
+} else if (args[0] === "off") {
+if (!AntiLinkGc) return replay('Already deactivated')
+let off = ntilink.indexOf(from)
+ntilink.splice(off, 1)
+ ja = `✅`
+XeonBotInc.sendMessage(from, { react: { text: ja, key: m.key }})
+///////////////////replay('Success in turning off gc antilink in this group')
+} else {
+  let buttonsntilink = [
+  { buttonId: `${command} on`, buttonText: { displayText: 'ON' }, type: 1 },
+  { buttonId: `${command} off`, buttonText: { displayText: 'OFF' }, type: 1 }
+  ]
+  await XeonBotInc.sendButtonText(m.chat, buttonsntilink, `Please click the button below\n\nOn to enable\nOff to disable`, `${global.botname}`, m)
+  }
+  }
 break
   case 'antilinkyoutubevideo': case 'antilinkyoutubevid': case 'antilinkytvid': {
    if (isBan) return reply(mess.ban)	 			
