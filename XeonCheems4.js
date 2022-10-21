@@ -6424,7 +6424,7 @@ reply(mess.wait)
 let media = await quoted.download()
 let { toAudio } = require('./lib/converter')
 let audio = await toAudio(media, 'mp4')
-XeonBotInc.sendMessage(m.chat, {document: audio, mimetype: 'audio/mpeg', fileName: `${args.join}`}, { quoted : m })
+XeonBotInc.sendMessage(m.chat, {document: audio, mimetype: 'audio/mpeg', fileName: `${args.join(" ")}`}, { quoted : m })
 }
 break
 case 'tovn': case 'toptt': {
@@ -7077,7 +7077,7 @@ break
 case 'fbdl': case 'fb': case 'facebook': case 'fbmp4': {
 	if (isBan) return reply(mess.ban)	 			
 if (isBanChat) return reply(mess.banChat)
-if (!isUrl(args[0]) && !args[0].includes('youtube.com')) return reply(`The link you provided is invalid`)
+if (!isUrl(args[0]) && !args[0].includes('facebook.com')) return reply(`The link you provided is invalid`)
 reply(mess.wait)
 let jon = await fetchJson(`https://api.akuari.my.id/downloader/fbdl?link=${text}`)
 XeonBotInc.sendMessage(m.chat, { video: {url: jon.url.url }, mimetype: "video/mp4", caption: `*Quality*: HD \n\n_Balas *tovn* untuk mengonversi ke Voice Note_\n_Balas *tomp3 judulfile* untuk mengonversi ke mp3_`}, { quoted: m })
