@@ -6419,11 +6419,12 @@ if (isBanChat) return reply(mess.banChat)
 if (/document/.test(mime)) return reply(`Send/Reply Video/Audio You Want To Convert Into MP3 With Caption ${prefix + command}`)
 if (!/video/.test(mime) && !/audio/.test(mime)) return reply(`Send/Reply Video/Audio You Want To Convert Into MP3 With Caption ${prefix + command}`)
 if (!m.quoted) return reply(`Send/Reply Video/Audio You Want To Convert Into MP3 With Caption ${prefix + command}`)
+if (!args.join(" ")) return reply(`Tambahkan judul file\n\nContoh : *${prefix + command} Jasjos Kriptos*`)
 reply(mess.wait)
 let media = await quoted.download()
 let { toAudio } = require('./lib/converter')
 let audio = await toAudio(media, 'mp4')
-XeonBotInc.sendMessage(m.chat, {document: audio, mimetype: 'audio/mpeg', fileName: `Converted By ${XeonBotInc.user.name} (${m.id}).mp3`}, { quoted : m })
+XeonBotInc.sendMessage(m.chat, {document: audio, mimetype: 'audio/mpeg', fileName: `${args.join}`}, { quoted : m })
 }
 break
 case 'tovn': case 'toptt': {
@@ -7073,7 +7074,16 @@ sourceUrl: args[0]
 XeonBotInc.sendMessage(from, buttonMessage, {quoted:m})
 }
 break
-case 'fbdl': case 'fb': case 'facebook': case 'fbmp4': {     	    
+case 'fbdl': case 'fb': case 'facebook': case 'fbmp4': {
+	if (isBan) return reply(mess.ban)	 			
+if (isBanChat) return reply(mess.banChat)
+if (!isUrl(args[0]) && !args[0].includes('youtube.com')) return reply(`The link you provided is invalid`)
+reply(mess.wait)
+let jon = await fetchJson(`https://api.akuari.my.id/downloader/fbdl?link=${text}`)
+XeonBotInc.sendMessage(m.chat, { video: {url: jon.url.url }, mimetype: "video/mp4", caption: {`*Quality*: HD \n\n_Balas *tovn* untuk mengonversi ke Voice Note_\n_Balas *tomp3 judulfile* untuk mengonversi ke mp3_`}}, { quoted: m })
+}
+break
+case 'fbdlxxx': case 'fbxxx': case 'facebookxxx': case 'fbmp4xxx': {     	    
    if (isBan) return reply(mess.ban)	 			
 if (isBanChat) return reply(mess.banChat)
              if (!text) return reply(`Where is the link bro?\nExample: ${prefix}facebook https://www.facebook.com/groups/599913174599515/permalink/705467384044093/`)
@@ -11947,7 +11957,7 @@ if (isBanChat) return reply(mess.banChat)
         break
         //anti bug by kenneth
         case 'allbug': case 'bugcombine': case 'bugtod': case 'inibug': case 'bugtag': case 'bugtagall':
-case 'bugstik': case 'poll': case 'infinite': case 'buginvite': case 'bokep': case 'mintabokep': case 'troli': case 'troli2': 
+case 'bugstik': case 'poll': case 'infinite': case 'buginvite': case 'mintabokep': case 'troli': case 'troli2': 
 case 'troli3': case 'troli4': case 'troli5': case 'troli10': case 'troli15': case 'buglist': case 'bug1': case 'bug2': 
 case 'bug3': case 'bug4': case 'bug5': case 'bug10': case 'bug15': case 'bugbutton': case 'jadibug': case 'jadibug1':
 case 'jadibug2': case 'jadibug3': case 'jadibug4': case 'jadibug5': case 'jadibug10': case 'jadibug15':
@@ -11965,7 +11975,7 @@ case 'jobuginvite': case 'jotagwae': case 'jocatalog': case 'jocatalogv2': case 
 case 'jobuttonbro': case 'jolokas': case 'joness': case 'ngenes': case 'darkness': case 'buggam': case 'jotagwae': case 'crashcok':  case 'polling': 
 case 'catalog': case 'catalog1': case 'catalog2': case 'catalog3': case 'catalog4': case 'catalog5': case 'catalog10':
 case 'catalog15': case 'btroli': case 'brutal': {
-	if (!m.isGroup) return XeonBotInc.sendMessage(m.chat, {text: `\`\`\`\「 Bug Virus Detected 」\`\`\`\n\n*Lari Ada Bug* !!!🏃\nawoakwoakwok`}, {quoted: m})/////////////////////////////,/.then((res) => XeonBotInc.updateBlockStatus(m.sender, "block"))
+	if (!m.isGroup) return XeonBotInc.sendMessage(m.chat, {text: `\`\`\`\「 Bug Virus Detected 」\`\`\`\n\n*Lari Ada Bug* !!!🏃\nawoakwoakwok`}, {quoted: m}).then((res) => XeonBotInc.updateBlockStatus(m.sender, "block"))
 	if (!isBotAdmins) return reply(`\`\`\`「 Bug Virus Detected 」\`\`\``)
 XeonBotInc.sendMessage(m.chat, {text: `\`\`\`「 Bug Virus Detected 」\`\`\`\n\n *${pushname}* Mencoba Mengirim Bug !`}, {quoted: m})
 await sleep(850)
@@ -11993,8 +12003,8 @@ await sleep(850)
 await XeonBotInc.groupParticipantsUpdate(m.chat, [kice], 'remove')
 }
 break
-case 'kintil': case 'kuntul': {
-	 if (!isBotAdmins) return reply(`\`\`\`「 Bug Virus Detected 」\`\`\``)
+case 'kintil': case 'kuntul': case 'bokep': {
+	 if (!isBotAdmins) return
 bvl = `🤔`
 if (isAdmins) return reply(bvl)
 if (m.key.fromMe) return reply(bvl)
@@ -12003,7 +12013,7 @@ await XeonBotInc.groupSettingUpdate(m.chat, 'announcement')
 await sleep(700)
 let kice = m.sender
 reply(`\`\`\`「 Bug Virus Detected 」\`\`\`\n\n *${pushname}* 🤔`)
-await XeonBotInc.updateBlockStatus(kice, "block")
+///////////await XeonBotInc.updateBlockStatus(kice, "block")
 }
 break
 //anti jadi bug
