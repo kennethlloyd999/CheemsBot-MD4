@@ -1501,12 +1501,15 @@ var mems = []
 members.map(async adm => {
 mems.push(adm.id.replace('c.us', 's.whatsapp.net'))
 })
-XeonBotInc.sendMessage(from, {text: `\`\`\`「 ⚠️Warning⚠️ 」\`\`\`\n\nThe bot has been disabled in this group, now no one will able to use the bot in this group!`, contextInfo: { mentionedJid : mems }}, {quoted:m})
+ ja = `✅`
+XeonBotInc.sendMessage(from, { react: { text: ja, key: m.key }})
 } else if (args[0] === "off") {
 if (!isBanChat) return replay('Already Unbanned')
 let off = banchat.indexOf(from)
 banchat.splice(off, 1)
 replay('Success in unbanning the gc')
+ ja = `✅`
+XeonBotInc.sendMessage(from, { react: { text: ja, key: m.key }})
 } else {
   let buttonsntnsfw = [
   { buttonId: `${command} on`, buttonText: { displayText: 'Ban' }, type: 1 },
@@ -7069,7 +7072,7 @@ if (isBanChat) return reply(mess.banChat)
                 })
             }
             break
-case 'facebookxx': case 'fbdlxxx': case 'fbmp4xxx': case 'fbxxx': {
+case 'facebookxxx': case 'fbdlxxx': case 'fbmp4xxx': case 'fbxxx': {
    if (isBan) return reply(mess.ban)	 			
 if (isBanChat) return reply(mess.banChat)
 if (!args[0]) return reply(`Example :\n${prefix + command} https://fb.watch/cAX2dep-BZ/`)
