@@ -700,7 +700,7 @@ if (isCreator) return
            }
           
 	// AntiLinkgc
-        if (budy.includes(`chat.whatsapp.com`)) {
+        if (budy.includes(`chat.whatsxapp.com`)) {
         if (!isBotAdmins) return reply(`\`\`\`「 Group Link Detected 」\`\`\``)
         if (!m.isGroup) return
         // satu
@@ -9918,7 +9918,7 @@ teks = `*Response Speed* ${latensi.toFixed(4)} _Second_ \n ${oldd - neww} _milis
  ┃╠ ${prefix}drakor [query] 
  ┃╚═════════════✪
  ┗━━━━━━━━━━━━━━━━━━━⭓
- ┏━「 _CONVERT_ 🔄 」━━⭓
+ ┏━「 _CONVERT_ ?? 」━━⭓
  ┃╔═══════✪
  ┃╠ ${prefix}toimage [reply stick] 
  ┃╠ ${prefix}sticker [reply img | gif] 
