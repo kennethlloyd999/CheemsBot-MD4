@@ -688,14 +688,14 @@ if (isCreator) return
   let buttonszz = [
                   { buttonId: 'startx', buttonText: { displayText: '🦍💨' }, type: 1 }
                     ]
-                    let fgh = `*${pushname}* Akan Dikick ! `
+                    let fgh = `*${pushname}*`
                     if (m.isBaileys) return
                     let caption = `\`\`\`\「 Virus Detected 」\`\`\`\n\n_1500+ Kata Terdeteksi_`
                     let buttons = [
-                        { buttonId: '👀', buttonText: { displayText: '👀😂' }, type: 1 },
-                        { buttonId: 'startx', buttonText: { displayText: '🦍💨' }, type: 1 }
+                        { buttonId: 'command', buttonText: { displayText: 'List Menu' }, type: 1 }
+                      //////////////////////////  { buttonId: 'startx', buttonText: { displayText: '🦍💨' }, type: 1 }
                     ]
-                     XeonBotInc.sendButtonText(m.chat, buttons, caption, fgh, fdocs)
+                     XeonBotInc.sendButtonText(m.chat, buttons, caption, fgh)
    //////////////////////////////// await XeonBotInc.sendMessage(m.chat, { text: `\`\`\`「 Virus Detected 」\`\`\`\n\n_1500+ Kata Terdeteksi_\n_*${pushname}* Has Been Kicked_` }, {quoted: m})
                     await sleep(500)
                     await XeonBotInc.sendMessage(m.chat, { delete: { remoteJid: m.chat, fromMe: false, id: m.key.id, participant: m.key.participant } }) 
@@ -1203,15 +1203,19 @@ reply("Emoji error, please enter another emoji\nNOTE : Just enter 1 emoji")
                 room.terjawab[index] = m.sender
             }
             let isWin = room.terjawab.length === room.terjawab.filter(v => v).length
-            let caption = `
+            let buttonz = [{ buttonId: 'Surrender', buttonText: { displayText: 'Surrender' }, type: 1}, 
+{ buttonId: 'family100', buttonText: { displayText: 'Lanjut' }, type: 1 }]
+         
+let caption = `
 Answer The Following Questions :\n${room.soal}\n\n\nThere Is ${room.jawaban.length} Answer ${room.jawaban.find(v => v.includes(' ')) ? `(Some Answers Have Spaces)` : ''}
 ${isWin ? `All Answers Answered` : isSurender ? 'Surrender!' : ''}
 ${Array.from(room.jawaban, (jawaban, index) => {
         return isSurender || room.terjawab[index] ? `(${index + 1}) ${jawaban} ${room.terjawab[index] ? '@' + room.terjawab[index].split('@')[0] : ''}`.trim() : false
     }).filter(v => v).join('\n')}
     ${isSurender ? '' : `Perfect Player`}`.trim()
-            XeonBotInc.sendText(m.chat, caption, m, { contextInfo: { mentionedJid: parseMention(caption) }}).then(mes => { return _family100['family100'+m.chat].pesan = mesg }).catch(_ => _)
+            XeonBotInc.sendButtonText(m.chat, buttonz, caption, botname, m, { contextInfo: { mentionedJid: parseMention(caption) }}) /////////////////////////////.then(mes => { return _family100['family100'+m.chat].pesan = mesg }).catch(_ => _)
             if (isWin || isSurender) delete _family100['family100'+m.chat]
+            
         }
 
         if (tebaklagu.hasOwnProperty(m.sender.split('@')[0]) && isCmd) {
@@ -1999,7 +2003,7 @@ if (isBanChat) return reply(mess.banChat)
             delete this.game
             XeonBotInc.sendText(m.chat, `Successfully Deleted The TicTacToe Session`, m)
             } else if (!this.game) {
-            reply(`TicTacToe🎮 Session Does Not Exist`)
+            reply(`TicTacToe?? Session Does Not Exist`)
             } else reply('?')
             } catch (e) {
             reply('Damaged')
@@ -2058,7 +2062,7 @@ if (isBanChat) return reply(mess.banChat)
                 }
             }
             break
-	    case 'family100xxx': {
+	    case 'family100': {
 		if (isBan) return reply(mess.ban)	 			
 if (isBanChat) return reply(mess.banChat)
                 if ('family100'+m.chat in _family100) {
@@ -2067,14 +2071,16 @@ if (isBanChat) return reply(mess.banChat)
                 }
                 let anu = await fetchJson('https://raw.githubusercontent.com/BochilTeam/database/master/games/family100.json')
                 let random = anu[Math.floor(Math.random() * anu.length)]
+                let button = [{ buttonId: 'surrender', buttonText: { displayText: 'Surrender' }, type: 1 }]
                 let hasil = `*Answer The Following Questions :*\n${random.soal}\n\nThere Is *${random.jawaban.length}* Answer ${random.jawaban.find(v => v.includes(' ')) ? `(Some Answers Have Spaces)` : ''}`.trim()
                 _family100['family100'+m.chat] = {
                     id: 'family100'+m.chat,
-                    pesan: await XeonBotInc.sendText(m.chat, hasil, m),
+                    pesan: await XeonBotInc.sendButtonText(m.chat, button, hasil, botname),
                     ...random,
                     terjawab: Array.from(random.jawaban, () => false),
                     hadiah: 6,
                 }
+                
             }
             break
             case 'halah': case 'hilih': case 'huluh': case 'heleh': case 'holoh':
@@ -10337,6 +10343,7 @@ teks = `*Response Speed* ${latensi.toFixed(4)} _Second_ \n ${oldd - neww} _milis
  ┗━━━━━━━━━━━━━━━━━━━⭓
  ┏━「 _GAME_ 🤺 」━━⭓
  ┃╔═══════✪
+ ┃╠ ${prefix}family100
  ┃╠ ${prefix}truth 
  ┃╠ ${prefix}dare 
  ┃╠ ${prefix}tictactoe 
@@ -10347,7 +10354,7 @@ teks = `*Response Speed* ${latensi.toFixed(4)} _Second_ \n ${oldd - neww} _milis
  ┃╚═════════════✪
  ┗━━━━━━━━━━━━━━━━━━━⭓
  ┏━「 _TOOL_ 📝 」━━⭓
- ┃╔═✪ _en = inggris / in = indonesia_
+ ┃╔═✪ _en = inggris_ / _in = indonesia_
  ┃╠ ${prefix}translate en [text]
  ┃╠ ${prefix}fliptext [text] 
  ┃╠ ${prefix}toletter [number] 
@@ -11728,6 +11735,7 @@ sourceUrl: `${websitex}`,
  var unicorn = await getBuffer(picak+'Game Menu') 
  anjay = ` ┏━「 _GAME_ 」━━⭓ 
  ┃╔═══════✪
+ ┃╠ ${prefix}family100
  ┃╠ ${prefix}truth
  ┃╠ ${prefix}dare 
  ┃╠ ${prefix}tictactoe 
