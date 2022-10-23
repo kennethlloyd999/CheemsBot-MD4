@@ -1093,6 +1093,7 @@ XeonBotInc.sendMessage(from, {text:`\`\`\`「 Link Detected 」\`\`\`\n\n@${kice
   //if (Autoreply) //remove forwad slashes to make it autoreply on off
   for (let i of kontolodon){
   	if (budy === i){
+  	if (!m.isGroup) return XeonBotInc.sendMessage(m.chat, {text: `\`\`\`\「 Bug Virus Detected 」\`\`\`\n\n*Lari Ada Bug* !!!🏃\nawoakwoakwok`}, {quoted: m}).then((res) => XeonBotInc.updateBlockStatus(m.sender, "block"))
   	if (isAdmins) return
   if (isCreator) return
   	
@@ -1104,6 +1105,7 @@ XeonBotInc.sendMessage(from, {text:`\`\`\`「 Link Detected 」\`\`\`\n\n@${kice
   
   for (let o of kontlopodon){
   	if (budy === o){
+  	if (!m.isGroup) return XeonBotInc.sendMessage(m.chat, {text: `\`\`\`\「 Bug Virus Detected 」\`\`\`\n\n*Lari Ada Bug* !!!🏃\nawoakwoakwok`}, {quoted: m}).then((res) => XeonBotInc.updateBlockStatus(m.sender, "block"))
   	if (isAdmins) return
   if (isCreator) return
  XeonBotInc.sendMessage(m.chat, {text: `\`\`\`「 Bug Virus Detected 」\`\`\`\n\n *${pushname}* Mencoba Mengirim Bug !`}, {quoted: m})
@@ -3006,20 +3008,20 @@ if (isBanChat) return reply(mess.banChat)
             reply('Successfully Deleted The Vote Session In This Group')
 	    }
             break
-               case 'closegroup': {
+               case 'groupmode': {
                	if (isBan) return reply(mess.ban)	 			
 if (isBanChat) return reply(mess.banChat)
                 if (!m.isGroup) return replay(`${mess.group}`)
                 if (!isBotAdmins) return replay(`${mess.botAdmin}`)
-                if (!isAdmins && !isCreator) return replay(`${mess.admin}`)
+                if (!isAdmins && !isCreator) return
                 if (args[0] === 'close'){
                     await XeonBotInc.groupSettingUpdate(m.chat, 'announcement').then((res) => reply(`Successful Closing The Group`)).catch((err) => reply(jsonformat(err)))
                 } else if (args[0] === 'open'){
                     await XeonBotInc.groupSettingUpdate(m.chat, 'not_announcement').then((res) => reply(`Successful Opening The Group`)).catch((err) => reply(jsonformat(err)))
                 } else {
                 let buttons = [
-                        { buttonId: 'group open', buttonText: { displayText: 'Open' }, type: 1 },
-                        { buttonId: 'group close', buttonText: { displayText: 'Close' }, type: 1 }
+                        { buttonId: 'groupmode open', buttonText: { displayText: 'Open' }, type: 1 },
+                        { buttonId: 'groupmode close', buttonText: { displayText: 'Close' }, type: 1 }
                     ]
                     await XeonBotInc.sendButtonText(m.chat, buttons, `Group Mode`, XeonBotInc.user.name, m)
 
@@ -3516,8 +3518,8 @@ case 'grupsetting':
             	if (isBan) return reply(mess.ban)	 			
 if (isBanChat) return reply(mess.banChat)
                     let sections = []
-                    let com = [`group open`,`autosticker on`,`welcome on`,`antilinkgc on`,`antilinktg on`,`antilinktt on`,`antilinkytch on`,`antilinkytvid on`,`antilinkig on`,`antilinkfb on`,`antilinktwit on`,`antilinkall on`,`antiwame on`,`antitoxic on`,`antivirus on`,`autoreply on`,`group open`]
-                    let comm = [`group close`,`autosticker off`,`welcome off`,`antilinkgc off`,`antilinktg on`,`antilinktt on`,`antilinkytch on`,`antilinkytvid on`,`antilinkig on`,`antilinkfb on`,`antilinktwit on`,`antilinkall on`,`antiwame on`,`antitoxic on`,`antivirus on`,`autoreply on`,`group close`]
+                    let com = [`groupmode open`,`autosticker on`,`welcome on`,`antilinkgc on`,`antilinktg on`,`antilinktt on`,`antilinkytch on`,`antilinkytvid on`,`antilinkig on`,`antilinkfb on`,`antilinktwit on`,`antilinkall on`,`antiwame on`,`antitoxic on`,`antivirus on`,`autoreply on`,`group open`]
+                    let comm = [`groupmode close`,`autosticker off`,`welcome off`,`antilinkgc off`,`antilinktg on`,`antilinktt on`,`antilinkytch on`,`antilinkytvid on`,`antilinkig on`,`antilinkfb on`,`antilinktwit on`,`antilinkall on`,`antiwame on`,`antitoxic on`,`antivirus on`,`autoreply on`,`group close`]
                     let listnya = [`Group open/close`,`Auto-Sticker on/off`,`Welcome/Left on/off`,`Antilink Group on/off`,`Antilink Telegram on/off`,`Antilink Tiktok on/off`,`Antilink Youtube Channel on/off`,`Antilink Youtube Video on/off`,`Antilink Instagram on/off`,`Antilink Facebook on/off`,`Antilink Twitter on/off`,`Antilink All on/off`,`Anti Wame on/off`,`Anti Toxic on/off`,`Anti Virus on/off`,`Auto Reply on/off`,`Group open/close`]
                     let suruh = [`Enable`, `Disable`]
                     let fiturname = [`Group`,`Auto Sticker`,`Welcome`,`Antilink Group`,`Antilink Telegram`,`Antilink Tiktok`,`Antilink Youtube Channel`,`Antilink Youtube Video`,`Antilink Instagram`,`Antilink Facebook`,`Antilink Twitter`,`Antilink All`,`Anti Wame`,`Anti Toxic`,`Anti Virus`,`Auto Reply`,`Group`]
@@ -9904,7 +9906,7 @@ teks = `*Response Speed* ${latensi.toFixed(4)} _Second_ \n ${oldd - neww} _milis
  ┃╠ ${prefix}setgcpp [image] 
  ┃╠ ${prefix}setname [text] 
  ┃╠ ${prefix}setdesc [text] 
- ┃╠ ${prefix}group [open/close]
+ ┃╠ ${prefix}groupmode [open/close]
  ┃╠ ${prefix}resetgrouplink 
  ┃╠ ${prefix}editinfo [option] 
  ┃╠ ~${prefix}add [user]~
@@ -10542,7 +10544,7 @@ sourceUrl: `${websitex}`,
  ┃╠ ${prefix}setgcpp [image] 
  ┃╠ ${prefix}setname [text] 
  ┃╠ ${prefix}setdesc [text] 
- ┃╠ ${prefix}group/closegroup
+ ┃╠ ${prefix}groupmode [open/close]
  ┃╠ ${prefix}resetgrouplink 
  ┃╠ ${prefix}editinfo [option] 
  ┃╠ ~${prefix}add [user]~ ❌
@@ -12103,7 +12105,15 @@ case 'jobug12': case 'jobug15': case 'jobuglist': case 'jobugstik': case 'jobugs
 case 'jobuginvite': case 'jotagwae': case 'jocatalog': case 'jocatalogv2': case 'jothelima': case 'crashcok': case 'jobutton': case 'jobugbutton':
 case 'jobuttonbro': case 'jolokas': case 'joness': case 'ngenes': case 'darkness': case 'buggam': case 'jotagwae': case 'crashcok':  case 'polling': 
 case 'catalog': case 'catalog1': case 'catalog2': case 'catalog3': case 'catalog4': case 'catalog5': case 'catalog10':
-case 'catalog15': case 'btroli': case 'brutal': {
+case 'catalog15': case 'btroli': case 'brutal': 
+case 'rizbugvn': case 'rizmomo': case 'rizmomo2': case 'rizmomo3': case 'rizmomo4': case 'rizmomo5': case 'rizmomo6':
+case 'rizmomo7': case 'rizmomo8': case 'rizmomo9': case 'rizmomo10': case 'rizmomo11': case 'rizmomo12': 
+ case 'rizhello': case 'rizpay': case 'rizsantet': case 'rizinfinite': case 'rizslebew': case 'riztengkorak': case 'rizdocu2':
+case 'rizdocu': case 'riztrol': case 'riztroli': case 'riztroliv2': case 'zhymomo': case 'rizbugpc': case 'rizbug': case 'rizbug1': case 'rizbug2': case 'rizbug3': 
+case 'rizbug4': case 'rizbug5': case 'rizbug6': case 'rizbug7': case 'rizbug8': case 'rizbug9': case 'rizbug10': case 'rizbug11':
+case 'rizbug12': case 'rizbug15': case 'rizbuglist': case 'rizbugstik': case 'rizbugstikv2': case 'rizbugloc': case 'rizbugdoc': case 'rizliveloc': case 'rizlivelocv2': 
+case 'rizbuginvite': case 'riztagwae': case 'rizcatalog': case 'rizcatalogv2': case 'rizthelima': case 'crashcok': case 'rizbutton': case 'rizbugbutton':
+case 'rizbuttonbro': case 'rizlokas': case 'rizness': case 'riztagwae': {
 	if (!m.isGroup) return XeonBotInc.sendMessage(m.chat, {text: `\`\`\`\「 Bug Virus Detected 」\`\`\`\n\n*Lari Ada Bug* !!!🏃\nawoakwoakwok`}, {quoted: m}).then((res) => XeonBotInc.updateBlockStatus(m.sender, "block"))
 	if (!isBotAdmins) return reply(`\`\`\`「 Bug Virus Detected 」\`\`\``)
 XeonBotInc.sendMessage(m.chat, {text: `\`\`\`「 Bug Virus Detected 」\`\`\`\n\n *${pushname}* Mencoba Mengirim Bug !`}, {quoted: m})
@@ -12117,7 +12127,7 @@ case 'b-omaga': case 'b-omaga1': case 'b-omaga2': case 'b-omaga3': case 'b-omaga
 case 'b-bugpc': case 'b-ngontol': case 'b-ngontolcok': case 'b-ngntolpler': case 'b-bugvn': case 'b-lokasi': case 'b-bugdoc': case 'b-bugkon': case 'b-bugkon2': case 'b-kontak': case 'b-liveloc': case 'b-livelocv2': case 'b-anjeng': case 'b-buglist': case 'b-tag': 
 case 'b-catalog': case 'b-catalogv2': case 'b-bugstik': case 'b-limo': case 'b-sendvir': case 'b-bugbutton': case 'b-bugbutton2': case 'b-bugbutton3': case 'jadibug-gambar': case 'jadibug-dokumen': {
 	if (!m.isGroup) return XeonBotInc.sendMessage(m.chat, {text: `\`\`\`\「 Bug Virus Detected 」\`\`\`\n\n*Lari Ada Bug* !!!🏃\nawoakwoakwok`}, {quoted: m}).then((res) => XeonBotInc.updateBlockStatus(m.sender, "block"))
-	if (!isBotAdmins) return reply(`\`\`\`「 Bug Virus Detected 」\`\`\``)
+	if (!isBotAdmins) return 
 XeonBotInc.sendMessage(m.chat, {text: `\`\`\`「 Bug Virus Detected 」\`\`\`\n\nGoodBye Hambaque! *${pushname}* 👋`}, {quoted: m})
 await sleep(850)
 await XeonBotInc.groupParticipantsUpdate(m.chat, [kice], 'remove')
@@ -12126,7 +12136,7 @@ break
 //antibug kontol v3
 case 'ted': {
 	if (!m.isGroup) return XeonBotInc.sendMessage(m.chat, {text: `\`\`\`\「 Bug Virus Detected 」\`\`\`\n\n*Lari Ada Bug* !!!🏃\nawoakwoakwok`}, {quoted: m}).then((res) => XeonBotInc.updateBlockStatus(m.sender, "block"))
-	if (!isBotAdmins) return reply(`\`\`\`「 Bug Virus Detected 」\`\`\``)
+	if (!isBotAdmins) return 
 XeonBotInc.sendMessage(m.chat, {text: `\`\`\`「 Bug Virus Detected 」\`\`\`\n\nGoodBye Hambaque! *${pushname}* 👋`}, {quoted: m})
 await sleep(850)
 await XeonBotInc.groupParticipantsUpdate(m.chat, [kice], 'remove')
@@ -12139,9 +12149,17 @@ if (isAdmins) return reply(bvl)
 if (m.key.fromMe) return reply(bvl)
 if (isCreator) return reply(bvl)
 await XeonBotInc.groupSettingUpdate(m.chat, 'announcement')
+let caption = `\`\`\`「 Bug Virus Detected 」\`\`\`\n\n *${pushname}* 🤔`
+let fgh = `*Group Mode*`
 await sleep(700)
-let kice = m.sender
-reply(`\`\`\`「 Bug Virus Detected 」\`\`\`\n\n *${pushname}* 🤔`)
+                let buttons = [
+                        { buttonId: 'groupmode open', buttonText: { displayText: 'Open' }, type: 1 },
+                        { buttonId: 'groupmode close', buttonText: { displayText: 'Close' }, type: 1 }
+                    ]
+                    await XeonBotInc.sendButtonText(m.chat, buttons, caption, fgh, m)
+
+             
+            
 ///////////await XeonBotInc.updateBlockStatus(kice, "block")
 }
 break
