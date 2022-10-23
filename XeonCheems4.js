@@ -702,8 +702,11 @@ if (isCreator) return
                     await XeonBotInc.groupParticipantsUpdate(m.chat, [m.sender], 'remove')
            }
           
+          
+          // antilink
+          
 	// AntiLinkgc
-	if (!AntiLinkGc)
+	if (AntiLinkGc)
         if (budy.includes(`chat.whatsapp.com`)) {
         if (!isBotAdmins) return reply(`\`\`\`「 Group Link Detected 」\`\`\``)
         if (!m.isGroup) return
