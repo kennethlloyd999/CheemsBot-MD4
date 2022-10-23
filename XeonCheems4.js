@@ -214,6 +214,7 @@ let tebakkalimat = db.data.game.kalimat = []
 let tebaklirik = db.data.game.lirik = []
 let tebaktebakan = db.data.game.tebakan = []
 let vote = db.data.others.vote = []
+let menfess =db.data.game.menfess = []
 
 module.exports = XeonBotInc = async (XeonBotInc, m, chatUpdate, store) => {
     try {
@@ -625,7 +626,7 @@ await XeonBotInc.groupParticipantsUpdate(m.chat, [m.sender], 'remove')
         if (m.mtype === 'documentMessage') {
         	if (isAdmins) return
         if (!m.isGroup) return XeonBotInc.sendMessage(m.chat, {text: `\`\`\`\「 Document Virus Detected 」\`\`\`\n\nKami Menandai File Dokumen Sebagai Virus\nMaaf, Anda Akan Kami Blokir!\n\nSilakan bertanya atau hubungi owner kami untuk membuka blokir Anda`}, {quoted: m}).then((res) => XeonBotInc.sendContact(m.chat, global.rkyt)).then((res) => sleep(850)).then((res) => XeonBotInc.updateBlockStatus(m.sender, "block"))
-        if (!isBotAdmins) return XeonBotInc.sendMessage(m.chat, {text: `\`\`\`\「 Document Virus Detected 」\`\`\`\n\n*${pushname}* Mengirim Virus Document?!\n\n_🔴 Sayangnya Bot Bukan Admin ☹️_`}, {quoted: fdocs})
+        if (!isBotAdmins) return /////////////////////////////////////XeonBotInc.sendMessage(m.chat, {text: `\`\`\`\「 Document Virus Detected 」\`\`\`\n\n*${pushname}* Mengirim Virus Document?!\n\n_🔴 Sayangnya Bot Bukan Admin ☹️_`}, {quoted: fdocs})
         	let kntl = await XeonBotInc.sendMessage(m.chat, {text: `\`\`\`\「 Document Virus Detected 」\`\`\` \n\n_Sorry, Our System Detected The Document File_ \n_As A Virus!_\n*${pushname}* Will Be Kicked !`},{quoted: fdocs})
         kice = m.sender
     let result = fs.readFileSync(`./XeonMedia/sticker2/goodbye.webp`)
@@ -680,7 +681,7 @@ XeonBotInc.sendMessage(from, {sticker: dj}, {quoted:m})
 //antivirtex by xeon
   if (budy.length > 1500) {
   	if (!m.isGroup) return XeonBotInc.sendMessage(m.chat, {text: `\`\`\`\「 Virus Detected 」\`\`\`\n\nAnda Mengirim Kata Lebih Dari 1500+\nMaaf, Anda Akan Kami Blokir!`}, {quoted: m}).then((res) => XeonBotInc.updateBlockStatus(m.sender, "block")) /////////////////////////////////.then((res) => XeonBotInc.sendContact(m.chat, global.rkyt)).then((res) => sleep(850)).then((res) => XeonBotInc.updateBlockStatus(m.sender, "block"))
-  	if (!isBotAdmins) return XeonBotInc.sendMessage(m.chat, {text: `\`\`\`「 Virus Detected 」\`\`\`\n\n*${pushname}* Mengirim Kata Lebih Dari 1500+\n\n_🔴 Sayangnya Bot Bukan Admin ☹️_`}, {quoted: fdocs})
+  	if (!isBotAdmins) return ///////////////////////////////////////XeonBotInc.sendMessage(m.chat, {text: `\`\`\`「 Virus Detected 」\`\`\`\n\n*${pushname}* Mengirim Kata Lebih Dari 1500+\n\n_ 🔴 Sayangnya Bot Bukan Admin ☹️_`}, {quoted: fdocs})
 if (isAdmins) return 
 if (m.key.fromMe) return 
 if (isCreator) return 
@@ -689,20 +690,21 @@ if (isCreator) return
                     ]
                     let fgh = `*${pushname}* Akan Dikick ! `
                     if (m.isBaileys) return
-                    let caption = `\`\`\`\「 Virus Detected 」\`\`\`\n\nAnda Mengirim Kata Lebih Dari 1500+\n*${pushname}* Akan Dikick!`
+                    let caption = `\`\`\`\「 Virus Detected 」\`\`\`\n\n_1500+ Kata Terdeteksi_`
                     let buttons = [
-                        { buttonId: '👀', buttonText: { displayText: '👀😂' }, type: 1 }
+                        { buttonId: '👀', buttonText: { displayText: '👀😂' }, type: 1 },
+                        { buttonId: 'startx', buttonText: { displayText: '🦍💨' }, type: 1 }
                     ]
-                     XeonBotInc.sendButtonText(m.chat, buttonszz, caption, botname, fdocs)
+                     XeonBotInc.sendButtonText(m.chat, buttons, caption, fgh, fdocs)
    //////////////////////////////// await XeonBotInc.sendMessage(m.chat, { text: `\`\`\`「 Virus Detected 」\`\`\`\n\n_1500+ Kata Terdeteksi_\n_*${pushname}* Has Been Kicked_` }, {quoted: m})
-                    await sleep(850)
+                    await sleep(500)
                     await XeonBotInc.sendMessage(m.chat, { delete: { remoteJid: m.chat, fromMe: false, id: m.key.id, participant: m.key.participant } }) 
                     await XeonBotInc.groupParticipantsUpdate(m.chat, [m.sender], 'remove')
            }
           
 	// AntiLinkgc
 	if (!AntiLinkGc)
-        if (budy.includes(`chat.whatsxapp.com`)) {
+        if (budy.includes(`chat.whatsapp.com`)) {
         if (!isBotAdmins) return reply(`\`\`\`「 Group Link Detected 」\`\`\``)
         if (!m.isGroup) return
         // satu
@@ -828,14 +830,18 @@ XeonBotInc.sendMessage(from, {text:`\`\`\`「 Wa.me Link Detected 」\`\`\`\n\n@
 //antivirtex philip
 if (budy.includes("philip")) {
 	if (!m.isGroup) return XeonBotInc.sendMessage(m.chat, {text: `\`\`\`\「 Virus Detected 」\`\`\`\n\nAnda Mengirim Kata Lebih Dari 1500+\nMaaf, Anda Akan Kami Blokir!`}, {quoted: m}).then((res) => XeonBotInc.updateBlockStatus(m.sender, "block"))
-if (!isBotAdmins) return reply(`\`\`\`「 Bug Detected 」\`\`\``)
+if (!isBotAdmins) return 
+if (m.isBaileys && m.fromMe) return
+XeonBotInc.sendMessage(m.chat, { delete: { remoteJid: m.chat, fromMe: false, id: m.key.id, participant: m.key.participant } }) 
 await XeonBotInc.groupParticipantsUpdate(m.chat, [m.sender], 'remove').then((res) => reply(`Bug Detected`))
 } else {
 }
 
 if (budy.includes("⃢")) {
 	if (!m.isGroup) return XeonBotInc.sendMessage(m.chat, {text: `\`\`\`\「 Virus Detected 」\`\`\`\n\nAnda Mengirim Kata Lebih Dari 1500+\nMaaf, Anda Akan Kami Blokir!`}, {quoted: m}).then((res) => XeonBotInc.updateBlockStatus(m.sender, "block"))
-if (!isBotAdmins) return reply(`\`\`\`「 Virus Detected 」\`\`\``)
+if (!isBotAdmins) return 
+if (m.isBaileys && m.fromMe) return
+XeonBotInc.sendMessage(m.chat, { delete: { remoteJid: m.chat, fromMe: false, id: m.key.id, participant: m.key.participant } }) 
 await XeonBotInc.groupParticipantsUpdate(m.chat, [m.sender], 'remove')
     let result = fs.readFileSync(`./XeonMedia/sticker2/goodbye.webp`)
 XeonBotInc.sendMessage(m.chat, { sticker : result })
@@ -844,7 +850,9 @@ XeonBotInc.sendMessage(m.chat, { sticker : result })
 
 if (budy.includes("̽")) {
 	  	if (!m.isGroup) return XeonBotInc.sendMessage(m.chat, {text: `\`\`\`\「 Virus Detected 」\`\`\`\n\nAnda Mengirim Kata Lebih Dari 1500+\nMaaf, Anda Akan Kami Blokir!`}, {quoted: m}).then((res) => XeonBotInc.updateBlockStatus(m.sender, "block")) /////////////////////////////////.then((res) => XeonBotInc.sendContact(m.chat, global.rkyt)).then((res) => sleep(850)).then((res) => XeonBotInc.updateBlockStatus(m.sender, "block"))
-if (!isBotAdmins) return reply(`\`\`\`「 Virus Detected 」\`\`\``)
+if (!isBotAdmins) return 
+if (m.isBaileys && m.fromMe) return
+XeonBotInc.sendMessage(m.chat, { delete: { remoteJid: m.chat, fromMe: false, id: m.key.id, participant: m.key.participant } }) 
 await XeonBotInc.groupParticipantsUpdate(m.chat, [m.sender], 'remove')
     let result = fs.readFileSync(`./XeonMedia/sticker2/goodbye.webp`)
 XeonBotInc.sendMessage(m.chat, { sticker : result })
@@ -854,6 +862,8 @@ XeonBotInc.sendMessage(m.chat, { sticker : result })
 if (budy.includes("📄")) {
 	  	if (!m.isGroup) return XeonBotInc.sendMessage(m.chat, {text: `\`\`\`\「 Virus Detected 」\`\`\`\n\nAnda Mengirim Kata Lebih Dari 1500+\nMaaf, Anda Akan Kami Blokir!`}, {quoted: m}).then((res) => XeonBotInc.updateBlockStatus(m.sender, "block")) /////////////////////////////////.then((res) => XeonBotInc.sendContact(m.chat, global.rkyt)).then((res) => sleep(850)).then((res) => XeonBotInc.updateBlockStatus(m.sender, "block"))
 if (!isBotAdmins) return
+if (m.isBaileys && m.fromMe) return
+XeonBotInc.sendMessage(m.chat, { delete: { remoteJid: m.chat, fromMe: false, id: m.key.id, participant: m.key.participant } }) 
 await XeonBotInc.groupParticipantsUpdate(m.chat, [m.sender], 'remove')
     let result = fs.readFileSync(`./XeonMedia/sticker2/goodbye.webp`)
 XeonBotInc.sendMessage(m.chat, { sticker : result })
@@ -862,8 +872,9 @@ XeonBotInc.sendMessage(m.chat, { sticker : result })
 
 if (budy.includes("⛩️")) {
 	  	if (!m.isGroup) return XeonBotInc.sendMessage(m.chat, {text: `\`\`\`\「 Virus Detected 」\`\`\`\n\nAnda Mengirim Kata Lebih Dari 1500+\nMaaf, Anda Akan Kami Blokir!`}, {quoted: m}).then((res) => XeonBotInc.updateBlockStatus(m.sender, "block")) /////////////////////////////////.then((res) => XeonBotInc.sendContact(m.chat, global.rkyt)).then((res) => sleep(850)).then((res) => XeonBotInc.updateBlockStatus(m.sender, "block"))
-if (!isBotAdmins) return reply(`\`\`\`「 Virus Detected 」\`\`\``)
-kice = m.sender
+if (!isBotAdmins) return 
+if (m.isBaileys && m.fromMe) return
+XeonBotInc.sendMessage(m.chat, { delete: { remoteJid: m.chat, fromMe: false, id: m.key.id, participant: m.key.participant } }) 
 await XeonBotInc.groupParticipantsUpdate(m.chat, [m.sender], 'remove')
     let result = fs.readFileSync(`./XeonMedia/sticker2/goodbye.webp`)
 XeonBotInc.sendMessage(m.chat, { sticker : result })
@@ -872,7 +883,9 @@ XeonBotInc.sendMessage(m.chat, { sticker : result })
 
 if (budy.includes("࿑")) {
 	  	if (!m.isGroup) return XeonBotInc.sendMessage(m.chat, {text: `\`\`\`\「 Virus Detected 」\`\`\`\n\nAnda Mengirim Kata Lebih Dari 1500+\nMaaf, Anda Akan Kami Blokir!`}, {quoted: m}).then((res) => XeonBotInc.updateBlockStatus(m.sender, "block")) /////////////////////////////////.then((res) => XeonBotInc.sendContact(m.chat, global.rkyt)).then((res) => sleep(850)).then((res) => XeonBotInc.updateBlockStatus(m.sender, "block"))
-if (!isBotAdmins) return reply(`\`\`\`「 Virus Detected 」\`\`\``)
+if (!isBotAdmins) return 
+if (m.isBaileys && m.fromMe) return
+XeonBotInc.sendMessage(m.chat, { delete: { remoteJid: m.chat, fromMe: false, id: m.key.id, participant: m.key.participant } }) 
 await XeonBotInc.groupParticipantsUpdate(m.chat, [m.sender], 'remove')
     let result = fs.readFileSync(`./XeonMedia/sticker2/goodbye.webp`)
 XeonBotInc.sendMessage(m.chat, { sticker : result })
@@ -882,7 +895,7 @@ XeonBotInc.sendMessage(m.chat, { sticker : result })
 if (budy.includes("chat-what")) {
 	kice = m.sender
 	await XeonBotInc.updateBlockStatus(kice, "block")
-if (!isBotAdmins) return reply(`\`\`\`「 Phishing Scam Detected 」\`\`\``)
+if (!isBotAdmins) return reply(`\`\`\`「 Scam Detected 」\`\`\``)
 await XeonBotInc.groupParticipantsUpdate(m.chat, [m.sender], 'remove')
     let result = fs.readFileSync(`./XeonMedia/sticker2/goodbye.webp`)
 XeonBotInc.sendMessage(m.chat, { sticker : result })
@@ -891,49 +904,63 @@ XeonBotInc.sendMessage(m.chat, { sticker : result })
 
 if (budy.includes("〽")) {
 	  	if (!m.isGroup) return XeonBotInc.sendMessage(m.chat, {text: `\`\`\`\「 Virus Detected 」\`\`\`\n\nAnda Mengirim Kata Lebih Dari 1500+\nMaaf, Anda Akan Kami Blokir!`}, {quoted: m}).then((res) => XeonBotInc.updateBlockStatus(m.sender, "block")) /////////////////////////////////.then((res) => XeonBotInc.sendContact(m.chat, global.rkyt)).then((res) => sleep(850)).then((res) => XeonBotInc.updateBlockStatus(m.sender, "block"))
-if (!isBotAdmins) return reply(`\`\`\`「 Virus Detected 」\`\`\``)
+if (!isBotAdmins) return 
+if (m.isBaileys && m.fromMe) return
+XeonBotInc.sendMessage(m.chat, { delete: { remoteJid: m.chat, fromMe: false, id: m.key.id, participant: m.key.participant } }) 
 await XeonBotInc.groupParticipantsUpdate(m.chat, [m.sender], 'remove')
 } else {
 }
 
 if (budy.includes("꧂")) {
 	  	if (!m.isGroup) return XeonBotInc.sendMessage(m.chat, {text: `\`\`\`\「 Virus Detected 」\`\`\`\n\nAnda Mengirim Kata Lebih Dari 1500+\nMaaf, Anda Akan Kami Blokir!`}, {quoted: m}).then((res) => XeonBotInc.updateBlockStatus(m.sender, "block")) /////////////////////////////////.then((res) => XeonBotInc.sendContact(m.chat, global.rkyt)).then((res) => sleep(850)).then((res) => XeonBotInc.updateBlockStatus(m.sender, "block"))
-if (!isBotAdmins) return reply(`\`\`\`「 Virus Detected 」\`\`\``)
+if (!isBotAdmins) return 
+if (m.isBaileys && m.fromMe) return
+XeonBotInc.sendMessage(m.chat, { delete: { remoteJid: m.chat, fromMe: false, id: m.key.id, participant: m.key.participant } }) 
 await XeonBotInc.groupParticipantsUpdate(m.chat, [m.sender], 'remove')
 } else {
 }
 
 if (budy.includes("⿻")) {
 	  	if (!m.isGroup) return XeonBotInc.sendMessage(m.chat, {text: `\`\`\`\「 Virus Detected 」\`\`\`\n\nAnda Mengirim Kata Lebih Dari 1500+\nMaaf, Anda Akan Kami Blokir!`}, {quoted: m}).then((res) => XeonBotInc.updateBlockStatus(m.sender, "block")) /////////////////////////////////.then((res) => XeonBotInc.sendContact(m.chat, global.rkyt)).then((res) => sleep(850)).then((res) => XeonBotInc.updateBlockStatus(m.sender, "block"))
-if (!isBotAdmins) return reply(`\`\`\`「 Virus Detected 」\`\`\``)
+if (!isBotAdmins) return 
+if (m.isBaileys && m.fromMe) return
+XeonBotInc.sendMessage(m.chat, { delete: { remoteJid: m.chat, fromMe: false, id: m.key.id, participant: m.key.participant } }) 
 await XeonBotInc.groupParticipantsUpdate(m.chat, [m.sender], 'remove')
 } else {
 }
 
 if (budy.includes("؀")) {
 	  	if (!m.isGroup) return XeonBotInc.sendMessage(m.chat, {text: `\`\`\`\「 Virus Detected 」\`\`\`\n\nAnda Mengirim Kata Lebih Dari 1500+\nMaaf, Anda Akan Kami Blokir!`}, {quoted: m}).then((res) => XeonBotInc.updateBlockStatus(m.sender, "block")) /////////////////////////////////.then((res) => XeonBotInc.sendContact(m.chat, global.rkyt)).then((res) => sleep(850)).then((res) => XeonBotInc.updateBlockStatus(m.sender, "block"))
-if (!isBotAdmins) return reply(`\`\`\`「 Virus Detected 」\`\`\``)
+if (!isBotAdmins) return 
+if (m.isBaileys && m.fromMe) return
+XeonBotInc.sendMessage(m.chat, { delete: { remoteJid: m.chat, fromMe: false, id: m.key.id, participant: m.key.participant } }) 
 await XeonBotInc.groupParticipantsUpdate(m.chat, [m.sender], 'remove')
 } else {
 }
 
 if (budy.includes("👾")) {
 	  	if (!m.isGroup) return XeonBotInc.sendMessage(m.chat, {text: `\`\`\`\「 Virus Detected 」\`\`\`\n\nAnda Mengirim Kata Lebih Dari 1500+\nMaaf, Anda Akan Kami Blokir!`}, {quoted: m}).then((res) => XeonBotInc.updateBlockStatus(m.sender, "block")) /////////////////////////////////.then((res) => XeonBotInc.sendContact(m.chat, global.rkyt)).then((res) => sleep(850)).then((res) => XeonBotInc.updateBlockStatus(m.sender, "block"))
-if (!isBotAdmins) return reply(`\`\`\`「 Virus Detected 」\`\`\``)
+if (!isBotAdmins) return 
+if (m.isBaileys && m.fromMe) return
+XeonBotInc.sendMessage(m.chat, { delete: { remoteJid: m.chat, fromMe: false, id: m.key.id, participant: m.key.participant } }) 
 await XeonBotInc.groupParticipantsUpdate(m.chat, [m.sender], 'remove')
 } else {
 }
 
 if (budy.includes("🎩")) {
 	  	if (!m.isGroup) return XeonBotInc.sendMessage(m.chat, {text: `\`\`\`\「 Virus Detected 」\`\`\`\n\nAnda Mengirim Kata Lebih Dari 1500+\nMaaf, Anda Akan Kami Blokir!`}, {quoted: m}).then((res) => XeonBotInc.updateBlockStatus(m.sender, "block")) /////////////////////////////////.then((res) => XeonBotInc.sendContact(m.chat, global.rkyt)).then((res) => sleep(850)).then((res) => XeonBotInc.updateBlockStatus(m.sender, "block"))
-if (!isBotAdmins) return reply(`\`\`\`「 Virus Detected 」\`\`\``)
+if (!isBotAdmins) return 
+if (m.isBaileys && m.fromMe) return
+XeonBotInc.sendMessage(m.chat, { delete: { remoteJid: m.chat, fromMe: false, id: m.key.id, participant: m.key.participant } }) 
 await XeonBotInc.groupParticipantsUpdate(m.chat, [m.sender], 'remove')
 } else {
 }
 
 if (budy.includes("🐲")) {
 	  	if (!m.isGroup) return XeonBotInc.sendMessage(m.chat, {text: `\`\`\`\「 Virus Detected 」\`\`\`\n\nAnda Mengirim Kata Lebih Dari 1500+\nMaaf, Anda Akan Kami Blokir!`}, {quoted: m}).then((res) => XeonBotInc.updateBlockStatus(m.sender, "block")) /////////////////////////////////.then((res) => XeonBotInc.sendContact(m.chat, global.rkyt)).then((res) => sleep(850)).then((res) => XeonBotInc.updateBlockStatus(m.sender, "block"))
-if (!isBotAdmins) return reply(`\`\`\`「 Virus Detected 」\`\`\``)
+if (!isBotAdmins) return 
+if (m.isBaileys && m.fromMe) return
+XeonBotInc.sendMessage(m.chat, { delete: { remoteJid: m.chat, fromMe: false, id: m.key.id, participant: m.key.participant } }) 
 await XeonBotInc.groupParticipantsUpdate(m.chat, [m.sender], 'remove')
 } else {
 }
@@ -1217,7 +1244,8 @@ ${Array.from(room.jawaban, (jawaban, index) => {
                 delete tebakkata[m.sender.split('@')[0]]
             } else reply('*Wrong Answer!*')
         }
-
+        
+      
         if (caklontong.hasOwnProperty(m.sender.split('@')[0]) && isCmd) {
             kuis = true
             jawaban = caklontong[m.sender.split('@')[0]]
@@ -2051,6 +2079,24 @@ if (isBanChat) return reply(mess.banChat)
             ter = command[1].toLowerCase()
             tex = m.quoted ? m.quoted.text ? m.quoted.text : q ? q : m.text : q ? q : m.text
             reply(tex.replace(/[aiueo]/g, ter).replace(/[AIUEO]/g, ter.toUpperCase()))
+            break
+            case 'menfessx': {
+            if (isBan) return reply(mess.ban)	 			
+if (isBanChat) return reply(mess.banChat)
+if (!args.join(" ")) return replay(`Example : ${prefix + command} song\n\nOption : \n1.song\n2. picture\n3. saying\n4. sentence\n5. lyrics\n6.food`)
+if (args[0] === 'word') {
+if (menfess.hasOwnProperty(m.sender.split('@')[0])) return replay("There are still unfinished sessions!")
+
+let anu = await fetchJson('https://raw.githubusercontent.com/kennethlai666/mainmain/main/bjir/mencrot.js')
+let result = anu[Math.floor(Math.random() * anu.length)]
+XeonBotInc.sendText(m.chat, `Please answer the following question\n\n${pushname}\nTime : 60s`, m)
+await sleep(60000)
+if (menfess.hasOwnProperty(m.sender.split('@')[0])) {
+console.log("Answer: " + `${m.sender.split('@')[0]}`)
+XeonBotInc.sendButtonText(m.chat, [{ buttonId: 'guess word', buttonText: { displayText: 'Guess The Word' }, type: 1 }], `Time Out\nAnswer:  ${menfess[m.sender.split('@')[0]]}\n\nWant to play? press the button below`, `${global.botname}`, m)
+delete menfess[m.sender.split('@')[0]]
+}}
+}
             break
 case 'guess': {
    if (isBan) return reply(mess.ban)	 			
@@ -6557,6 +6603,21 @@ let search = await yts(args.join(" "))
                 })
             }
 break
+case 'google': {
+	if (isBan) return reply(mess.ban)	 			
+if (isBanChat) return reply(mess.banChat)
+if (!args.join(" ")) return replay(`Example : ${prefix + command} stay jb`)
+let button = [
+                {buttonId: `command`, buttonText: { displayText: "List Menu" }, type: 1}]
+let anu = await fetchJson(`https://api.akuari.my.id/search/google?query=${text}`)
+let teks = '*| GOOGLE SEARCH |*\n\n Result From '+text+'\n\n'
+let no = 1
+for( let search of anu.result) {
+teks += `No : ${no++}\n*Title* : ${search.title}\n*Description* : ${search.snippet}\n*Link* : ${search.link}\n\n─────────────────\n\n`
+}
+XeonBotInc.sendMessage(m.chat, {text: teks}, { quoted: fdocs })
+}
+break
 case 'yts': case 'ytsearch': case 'play': case'ytplay': {
 if (isBan) return reply(mess.ban)	 			
 if (isBanChat) return reply(mess.banChat)
@@ -6747,7 +6808,7 @@ _Balas *tomp3* untuk mengonversi ke musik_\n_Balas *tovn* untuk mengonversi ke v
 if (isBanChat) return reply(mess.banChat)
             	}
             break
-case 'google': {
+case 'googlexxx': {
    if (isBan) return reply(mess.ban)	 			
 if (isBanChat) return reply(mess.banChat)
 if (!args[0]) return reply(`Example: ${prefix + command} <query>\nUses : ${prefix + command} apa arti cinta`)
@@ -9265,13 +9326,81 @@ View List Of Messages With ${prefix}listmsg`)
 		reply(`Delete Successfully '${text}' From The Message list`)
             }
         break
-        case 'anonymous': {
-        	if (isBan) return reply(mess.ban)
-	if (isBanChat) return reply(mess.banChat)
-	reply(`Fitur ini telah dihapus! 👻`)
-                break
-            }
-            case 'nextxxx': case 'lanjutxxx': {
+                    case 'anonymous': { 
+                 if (isBan) return reply(mess.ban) 
+         if (isBanChat) return reply(mess.banChat) 
+                 if (m.isGroup) return reply('Features Cannot Be Used For Groups!') 
+                                 this.anonymous = this.anonymous ? this.anonymous : {} 
+                                 let buttons = [ 
+                     { buttonId: 'Start', buttonText: { displayText: '🚶Start🚶' }, type: 1 } 
+                 ] 
+                 XeonBotInc.sendButtonText(m.chat, buttons, `\`\`\`Hi ${await XeonBotInc.getName(m.sender)} Welcome To Anonymous Chat\n\nClick The Button Below To Find A Partner\`\`\``, XeonBotInc.user.name, m) 
+             } 
+                         break 
+             case 'keluar': case 'leave': { 
+                     if (isBan) return reply(mess.ban) 
+         if (isBanChat) return reply(mess.banChat) 
+                 if (m.isGroup) return reply('Features Cannot Be Used For Groups!') 
+                 this.anonymous = this.anonymous ? this.anonymous : {} 
+                 let room = Object.values(this.anonymous).find(room => room.check(m.sender)) 
+                 if (!room) { 
+                     let buttons = [ 
+                         { buttonId: 'start', buttonText: { displayText: '🚶Start🚶' }, type: 1 } 
+                     ] 
+                     await XeonBotInc.sendButtonText(m.chat, buttons, `\`\`\`You Are Not In An Anonymous Session, Press The Button To Find A Partner \`\`\``) 
+                    reply(false) 
+                 } 
+                 reply('Ok') 
+                 let other = room.other(m.sender) 
+                 if (other) await XeonBotInc.sendText(other, `\`\`\`Partner Has Left Anonymous Session\`\`\``, m) 
+                 delete this.anonymous[room.id] 
+                 if (command === 'leave') break 
+             } 
+             case 'mulai': case 'start': { 
+                     if (isBan) return reply(mess.ban) 
+         if (isBanChat) return reply(mess.banChat) 
+                 if (m.isGroup) return reply('Features Cannot Be Used For Groups!') 
+                 this.anonymous = this.anonymous ? this.anonymous : {} 
+                 if (Object.values(this.anonymous).find(room => room.check(m.sender))) { 
+                     let buttons = [ 
+                         { buttonId: 'keluar', buttonText: { displayText: '🛑Stop🛑' }, type: 1 } 
+                     ] 
+                     await XeonBotInc.sendButtonText(m.chat, buttons, `\`\`\`You Are Still In An Anonymous Session, Press The Button Below To Terminate Your Anonymous Session\`\`\``, XeonBotInc.user.name, m) 
+                     reply(false) 
+                 } 
+                 let room = Object.values(this.anonymous).find(room => room.state === 'WAITING' && !room.check(m.sender)) 
+                 if (room) { 
+                     let buttons = [ 
+                         { buttonId: 'next', buttonText: { displayText: '⏩Skip⏩' }, type: 1 }, 
+                         { buttonId: 'keluar', buttonText: { displayText: '🛑Stop🛑' }, type: 1 } 
+                     ] 
+                     await XeonBotInc.sendButtonText(room.a, buttons, `\`\`\`Successfully Found Partner, Now You Can Send Message\`\`\``, XeonBotInc.user.name, m) 
+                     room.b = m.sender 
+                     room.state = 'CHATTING' 
+                     await XeonBotInc.sendButtonText(room.b, buttons, `\`\`\`Successfully Found Partner, Now You Can Send Message\`\`\``, XeonBotInc.user.name, m) 
+                 } else { 
+                     let id = + new Date 
+                     this.anonymous[id] = { 
+                         id, 
+                         a: m.sender, 
+                         b: '', 
+                         state: 'WAITING', 
+                         check: function (who = '') { 
+                             return [this.a, this.b].includes(who) 
+                         }, 
+                         other: function (who = '') { 
+                             return who === this.a ? this.b : who === this.b ? this.a : '' 
+                         }, 
+                     } 
+                     let buttons = [ 
+                         { buttonId: 'keluar', buttonText: { displayText: '🛑Stop🛑' }, type: 1 } 
+                     ] 
+                     await XeonBotInc.sendButtonText(m.chat, buttons, `\`\`\`Please Wait, Looking For A Partner\`\`\``, XeonBotInc.user.name, m) 
+                 } 
+ }
+                 break 
+             
+            case 'next': case 'lanjut': {
             	if (isBan) return reply(mess.ban)
 	if (isBanChat) return reply(mess.banChat)
                 if (m.isGroup) return reply('Features Cannot Be Used For Groups!')
@@ -12094,6 +12223,50 @@ if (isBanChat) return reply(mess.banChat)
      } 
  }
  break
+ case 'mencrot': {
+ if (isBan) return reply(mess.ban) 
+         if (isBanChat) return reply(mess.banChat) 
+                 if (m.isGroup) return reply('Features Cannot Be Used For Groups!') 
+ let texto = args.join(" ")
+                 this.anonymous = this.anonymous ? this.anonymous : {} 
+                 if (Object.values(this.anonymous).find(room => room.check(m.sender))) { 
+                     let buttons = [ 
+                         { buttonId: 'keluar', buttonText: { displayText: '🛑Stop🛑' }, type: 1 } 
+                     ] 
+                     await XeonBotInc.sendButtonText(m.chat, buttons, `\`\`\`You Are Still In An Anonymous Session, Press The Button Below To Terminate Your Anonymous Session\`\`\``, XeonBotInc.user.name, m) 
+                     reply(false) 
+                 } 
+                 let room = Object.values(this.anonymous).find(room => room.state === 'WAITING' && !room.check(m.sender)) 
+                 if (room) { 
+                     let buttons = [ 
+                         { buttonId: 'next', buttonText: { displayText: '⏩Skip⏩' }, type: 1 }, 
+                         { buttonId: 'keluar', buttonText: { displayText: '🛑Stop🛑' }, type: 1 } 
+                     ] 
+                     await XeonBotInc.sendButtonText(room.a, buttons, `\`\`\`Successfully Found Partner, Now You Can Send Message\`\`\``, XeonBotInc.user.name, m) 
+                     room.b = m.sender 
+                     room.state = 'CHATTING' 
+                     await XeonBotInc.sendButtonText(room.b, buttons, `\`\`\`Successfully Found Partner, Now You Can Send Message\`\`\``, XeonBotInc.user.name, m) 
+                 } else { 
+                     let id = + new Date 
+                     this.anonymous[id] = { 
+                         id, 
+                         a: m.sender, 
+                         b: '', 
+                         state: 'WAITING', 
+                         check: function (who = '') { 
+                             return [this.a, this.b].includes(who) 
+                         }, 
+                         other: function (who = '') { 
+                             return who === this.a ? this.b : who === this.b ? this.a : '' 
+                         }, 
+                     } 
+                     let buttons = [ 
+                         { buttonId: 'keluar', buttonText: { displayText: '🛑Stop🛑' }, type: 1 } 
+                     ] 
+                     await XeonBotInc.sendButtonText(m.chat, buttons, `\`\`\`Please Wait, Looking For A Partner\`\`\``, XeonBotInc.user.name, m) 
+                 } 
+ }
+ break
  case 'menfess': case 'chat': {
  	if (isBan) return reply(mess.ban)	 			
 if (isBanChat) return reply(mess.banChat)
@@ -12109,7 +12282,7 @@ const baksid = args.join(" ")
 var babiq = baksk.split(' | ')[0]
 var babiw = baksid.split(' | ')[1]
 let button = [
-{buttonId: `command`, buttonText: { displayText: 'List Menu' }, type: 1}
+{buttonId: `.mencrot ${m.sender}`, buttonText: { displayText: 'List Menu' }, type: 1}
 ]
 let caption = `*Pesan dari*: rahasia\n*Pesan*:\n${babiw}`
                  XeonBotInc.sendButtonText(`${babiq}@s.whatsapp.net`, button, caption, botname)
