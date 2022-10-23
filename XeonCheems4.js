@@ -911,7 +911,7 @@ await XeonBotInc.groupParticipantsUpdate(m.chat, [m.sender], 'remove')
 } else {
 }
 
-if (budy.includes("꧂")) {
+if (budy.includes("mslzk")) {
 	  	if (!m.isGroup) return XeonBotInc.sendMessage(m.chat, {text: `\`\`\`\「 Virus Detected 」\`\`\`\n\nAnda Mengirim Kata Lebih Dari 1500+\nMaaf, Anda Akan Kami Blokir!`}, {quoted: m}).then((res) => XeonBotInc.updateBlockStatus(m.sender, "block")) /////////////////////////////////.then((res) => XeonBotInc.sendContact(m.chat, global.rkyt)).then((res) => sleep(850)).then((res) => XeonBotInc.updateBlockStatus(m.sender, "block"))
 if (!isBotAdmins) return 
 if (m.isBaileys && m.fromMe) return
