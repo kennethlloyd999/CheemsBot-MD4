@@ -86,7 +86,7 @@ global.linkz = "https://chat.whatsapp.com/J1S3g1fbWSS9r01UNSBLst" //your theme u
 global.websitex = "https://youtu.be/ydBAmKT7f4s" //ur website to be displayed
 global.botscript = 'https://github.com/kennethlai666/CheemsBot-MD4' //script link
 global.reactmoji = "😘" //ur menu react emoji
-global.themeemoji = "🐒" //ur theme emoji
+global.themeemoji = "🪀" //ur theme emoji
 global.packname = "Sara(H) • Viloid" //ur sticker watermark packname
 global.author = "Kenneth Morris" //ur sticker watermark author
 
