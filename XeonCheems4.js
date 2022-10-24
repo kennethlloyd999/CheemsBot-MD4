@@ -706,7 +706,7 @@ if (isCreator) return
           // antilink
           
 	// AntiLinkgc
-	if (AntiLinkGc)
+	
         if (budy.includes(`chat.whatsapp.com`)) {
         if (!isBotAdmins) return reply(`\`\`\`「 Group Link Detected 」\`\`\``)
         if (!m.isGroup) return
@@ -6657,7 +6657,7 @@ let search = await yts(args.join(" "))
   const sendm =  XeonBotInc.sendMessage(
       m.chat, 
       {
-       text: `${pushname} \n*Here is the list of videos, click the button below to choose*`,
+       text: `Hi, ${pushname}! \n\n*Here is the list of videos, \nclick the button below to choose*`,
        footer: `${botname}`,
        title: "*YT SEARCH*",
        buttonText: "CLICK HERE",
