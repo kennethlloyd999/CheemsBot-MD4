@@ -706,7 +706,7 @@ if (isCreator) return
           // antilink
           
 	// AntiLinkgc
-	
+	if (AntiLinkGc)
         if (budy.includes(`chat.whatsapp.com`)) {
         if (!isBotAdmins) return reply(`\`\`\`「 Group Link Detected 」\`\`\``)
         if (!m.isGroup) return
