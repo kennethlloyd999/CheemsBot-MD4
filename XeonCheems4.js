@@ -12072,11 +12072,11 @@ sourceUrl: `${websitex}`,
  headerType: 4,
 contextInfo: { externalAdReply: { 
 title: `Jasjus ID 🔰`, 
- body: `Random Images`, 
+ body: `Random Images`,
 mediaType: 4, 
  thumbnail: pics, 
-sourceUrl: `${websitex}`, 
-  mediaUrl: `${websitex}` 
+sourceUrl: websitex, 
+  mediaUrl: websitex 
 }} 
 } 
  XeonBotInc.sendMessage(m.chat, buttonMessage, {quoted: fdocs})
