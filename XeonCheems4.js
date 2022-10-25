@@ -6689,8 +6689,8 @@ const jetbosok = args.join(" ")
 const jetasu = jettempur.split(" | ")[0]
 const jetkontol = jetbosok.split(" | ")[1]
  anu = await fetchJson(`https://api.akuari.my.id/downloader/youtube3?link=${jetasu}&type=${jetkontol}`)
- empat = await fetchJson(`https://api.akuari.my.id/downloader/youtube3?link=${jetasu}&type=480`)
- tujuh = await fetchJson(`https://api.akuari.my.id/downloader/youtube3?link=${jetasu}&type=720`)
+////////////////////////// empat = await fetchJson(`https://api.akuari.my.id/downloader/youtube3?link=${jetasu}&type=480`)
+////////////////////////// tujuh = await fetchJson(`https://api.akuari.my.id/downloader/youtube3?link=${jetasu}&type=720`)
                  ///////////////////// if (anu.mp4.size >= 999999) return reply('*File Over Limit* '+util.format(anu))
                /////////////////////  if (empat.mp4.size >= 999999) return reply('*File Over Limit* '+util.format(empat))
                /////////////////////  if (tujuh.mp4.size >= 999999) return reply('*File Over Limit* '+util.format(tujuh))
@@ -6705,7 +6705,8 @@ const jetkontol = jetbosok.split(" | ")[1]
                 {buttonId: `ytdonwan ${args.join(" ")} | 720`, buttonText: { displayText: "720p" }, type: 1}
                 //////////////////////{buttonId: `ytdontu ${args.join(" ")}`, buttonText: { displayText: "To MP3" }, type: 1}
                 ]
-                let caption = `*Title*: ${anu.title}\n*Link* : https://youtube.com/watch?v=${anu.id}\n\n\`\`\`360p : ${anu.mp4.size}\`\`\`\n\`\`\`480p : ${empat.mp4.size}\`\`\`\n\`\`\`720p : ${tujuh.mp4.size}\`\`\`\n\n*Note*: \nundefined = not available\n\n_Choose the video quality below_ \n_by clicking the button_`
+            ///////////////////////////    let caption = `*Title*: ${anu.title}\n*Link* : https://youtube.com/watch?v=${anu.id}\n\n\`\`\`360p : ${anu.mp4.size}\`\`\`\n\`\`\`480p : ${empat.mp4.size}\`\`\`\n\`\`\`720p : ${tujuh.mp4.size}\`\`\`\n\n*Note*: \nundefined = not available\n\n_Choose the video quality below_ \n_by clicking the button_`
+                let caption = `*Title*: ${anu.title}\n*Link* : https://youtube.com/watch?v=${anu.id}\n\n_Choose the video quality below_ \n_by clicking the button_`
                 
  let pic = [wan,tu,tri,fo,faif,sik,seven,egh,nen,ten,elepen,welep,terten,foten,faiften,sikten]
  let pics = pic[Math.floor(Math.random() * (pic.length))]
@@ -6960,7 +6961,18 @@ case 'ig2': case 'igdl2': case 'instagram2': {
             }).catch((err) => reply(mess.error))
             }		
 			break
-case 'igdl': case 'instagram': case 'instagramreels': case 'igreels': {
+			case 'igdl': case 'instagram': case 'instagramreels': case 'igreels': case 'ig': try{
+				if (isBan) return reply(mess.ban)	 			
+if (isBanChat) return reply(mess.banChat)
+				if (!args[0]) return reply(`Example :\n${prefix + command} https://www.instagram.com/p/CcvJGuxh9VI/?igshid=YmMyMTA2M2Y=`)
+				if (m.message && msgFilter.addFilter(from)) return
+				igdon = await fetchJson(`https://api.akuari.my.id/downloader/igdl?link=${text}`)
+				caption = `Here you go!`
+				XeonBotInc.sendMessage(m.chat, {video: {url: igdon.respon.link}, caption}, {quoted: m})
+
+				} catch { reply(`Sorry, the server's currently down, try again later`)}
+			break
+case 'igdlxxx': case 'instagramxxx': case 'instagramreelsxxx': case 'igreelsxxx': {
    if (isBan) return reply(mess.ban)	 			
 if (isBanChat) return reply(mess.banChat)
 if (!args[0]) return reply(`Example :\n${prefix + command} https://www.instagram.com/p/CcvJGuxh9VI/?igshid=YmMyMTA2M2Y=`)
@@ -6997,7 +7009,7 @@ reply(String(err))
 }
 }
 break
-case 'ig': {
+case 'igxxx': {
 	   if (isBan) return reply(mess.ban)	 			
 if (isBanChat) return reply(mess.banChat)
 if (args[0] === "mp4") {
@@ -8824,7 +8836,7 @@ let babi = search.videos[Math.floor(Math.random() * search.videos.length)]
                await XeonBotInc.sendMessage(from, {document: audio, mimetype: 'audio/mpeg', fileName: `${anu.title}`}, { quoted : kntl }).catch((err) => reply(mess.error))
             }
 break
-case 'getvideo': case 'ytmp4': case 'ytvideo': case 'yt': case 'youtube': case 'video': {
+case 'getvideo': case 'ytmp4': case 'ytvideo': case 'yt': case 'youtube': case 'video': try{
             if (isBan) return reply(mess.ban) 
 	if (isBanChat) return reply(mess.banChat)
                 if (!text) return reply(mess.linkm)
@@ -8833,8 +8845,8 @@ case 'getvideo': case 'ytmp4': case 'ytvideo': case 'yt': case 'youtube': case '
                 reply(mess.wait)
                 
  anu = await fetchJson(`https://api.akuari.my.id/downloader/youtube3?link=${text}&type=360`)
- empat = await fetchJson(`https://api.akuari.my.id/downloader/youtube3?link=${text}&type=480`)
- tujuh = await fetchJson(`https://api.akuari.my.id/downloader/youtube3?link=${text}&type=720`)
+/////////////////// empat = await fetchJson(`https://api.akuari.my.id/downloader/youtube3?link=${text}&type=480`)
+/////////////////// tujuh = await fetchJson(`https://api.akuari.my.id/downloader/youtube3?link=${text}&type=720`)
                 tummb = await getBuffer(anu.thumbnail)
                 audio = await getBuffer(anu.audio)        
                 
@@ -8848,7 +8860,8 @@ case 'getvideo': case 'ytmp4': case 'ytvideo': case 'yt': case 'youtube': case '
                 {buttonId: `ytdonwan ${args.join(" ")} | 720`, buttonText: { displayText: "720p" }, type: 1}
                 //////////////////////{buttonId: `ytdontu ${args.join(" ")}`, buttonText: { displayText: "To MP3" }, type: 1}
                 ]
-                let caption = `*Title*: ${anu.title}\n*Link* : https://youtube.com/watch?v=${anu.id}\n\n\`\`\`360p : ${anu.mp4.size}\`\`\`\n\`\`\`480p : ${empat.mp4.size}\`\`\`\n\`\`\`720p : ${tujuh.mp4.size}\`\`\`\n\n*Note*: \nundefined = not available\n\n_Choose the video quality below_ \n_by clicking the button_`
+             ////////////////////////////////   let caption = `*Title*: ${anu.title}\n*Link* : https://youtube.com/watch?v=${anu.id}\n\n\`\`\`360p : ${anu.mp4.size}\`\`\`\n\`\`\`480p : ${empat.mp4.size}\`\`\`\n\`\`\`720p : ${tujuh.mp4.size}\`\`\`\n\n*Note*: \nundefined = not available\n\n_Choose the video quality below_ \n_by clicking the button_`
+             let caption = `*Title*: ${anu.title}\n*Link* : https://youtube.com/watch?v=${anu.id}\n\n_Choose the video quality below_ \n_by clicking the button_`
                 
  let pic = [wan,tu,tri,fo,faif,sik,seven,egh,nen,ten,elepen,welep,terten,foten,faiften,sikten]
  let pics = pic[Math.floor(Math.random() * (pic.length))]
@@ -8871,7 +8884,7 @@ sourceUrl: ``,
 }} 
 } 
  XeonBotInc.sendMessage(m.chat, buttonMessage, {quoted: fdocs})
- }
+ } catch { reply(`sorry, the server's currently down, try again later`)
 break
  case 'ytmp4xxx': {
    if (isBan) return reply(mess.ban)	 			
