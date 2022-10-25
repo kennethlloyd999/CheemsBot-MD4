@@ -8884,7 +8884,7 @@ sourceUrl: ``,
 }} 
 } 
  XeonBotInc.sendMessage(m.chat, buttonMessage, {quoted: fdocs})
- } catch { reply(`sorry, the server's currently down, try again later`)
+ } catch { reply(`sorry, the server's currently down, try again later`)}
 break
  case 'ytmp4xxx': {
    if (isBan) return reply(mess.ban)	 			
