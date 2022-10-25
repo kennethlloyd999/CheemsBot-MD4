@@ -604,7 +604,7 @@ XeonBotInc.sendReadReceipt(from, m.sender, [m.key.id])}
         //antispam or auto react
 if (m.message && msgFilter.isFiltered(from)) {
 console.log(`❌ [SPAM]`, color(moment(m.messageTimestamp * 1000).format('DD/MM/YYYY HH:mm:ss'), 'yellow'), color(`${command} [${args.length}]`), 'from', color(m.pushName))
-////////////////return XeonBotInc.sendMessage(from, { react: { text: `❌`, key: m.key }})
+return ///////////////////////XeonBotInc.sendMessage(from, { react: { text: `❌`, key: m.key }})
 }
 
         //monyet
