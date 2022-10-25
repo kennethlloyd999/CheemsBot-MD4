@@ -6741,7 +6741,11 @@ sourceUrl: ``,
                 if (!text) return reply(mess.linkm)
                 if (!isUrl(args[0]) && !args[0].includes('youtube.com')) return reply(`The link you provided is invalid`)
                 reply(mess.wait)
-                anu = await fetchJson(`https://api.akuari.my.id/downloader/youtube3?link=${args.join(" ")}&type=360`)        
+                let anj = args.join(" ")
+                let bab = args.join(" ")
+                let kao = anj.split(" | ")[0]
+                let kakao = bab.split(" | ")[1]
+                anu = await fetchJson(`https://api.akuari.my.id/downloader/youtube3?link=${kao}&type=360`)        
                 if (anu.filesize_video >= 999999) return reply('*File Over Limit* '+util.format(anu))
                 tummb = await getBuffer(anu.thumbnail)
                 audio = await getBuffer(anu.audio)        
@@ -7173,7 +7177,7 @@ break
 case 'fbdl': case 'fb': case 'facebook': case 'fbmp4': case 'fbvideo': try{
 	if (isBan) return reply(mess.ban)	 			
 if (isBanChat) return reply(mess.banChat)
-if (!isUrl(args[0]) && !args[0].includes('facebook.com')) return reply(`The link you provided is invalid`)
+if (!isUrl(args[0]) && !args[0].includes('facebook.com')) return reply(`The link you provided is invalid \n\n*Example*: \n.facebook https://www.facebook.com/groups/599913174599515/permalink/705467384044093/`)`)
 if (m.message && msgFilter.addFilter(from)) return
 reply(mess.wait)
 let jon = await fetchJson(`https://api.akuari.my.id/downloader/fbdl?link=${text}`)
@@ -8840,7 +8844,7 @@ case 'getvideo': case 'ytmp4': case 'ytvideo': case 'yt': case 'youtube': case '
             if (isBan) return reply(mess.ban) 
 	if (isBanChat) return reply(mess.banChat)
                 if (!text) return reply(mess.linkm)
-                if (!isUrl(args[0]) && !args[0].includes('youtube.com')) return reply(`The link you provided is invalid`)
+                if (!isUrl(args[0]) && !args[0].includes('youtube.com')) return reply(`The link you provided is invalid\n\n*Example*: \n.ytmp4 https://youtube.com/watch?v=haKuiJa68ja`)
                 if (m.message && msgFilter.addFilter(from)) return
                 reply(mess.wait)
                 
