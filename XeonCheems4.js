@@ -7177,7 +7177,7 @@ break
 case 'fbdl': case 'fb': case 'facebook': case 'fbmp4': case 'fbvideo': try{
 	if (isBan) return reply(mess.ban)	 			
 if (isBanChat) return reply(mess.banChat)
-if (!isUrl(args[0]) && !args[0].includes('facebook.com')) return reply(`The link you provided is invalid \n\n*Example*: \n.facebook https://www.facebook.com/groups/599913174599515/permalink/705467384044093/`)`)
+if (!isUrl(args[0]) && !args[0].includes('facebook.com')) return reply(`The link you provided is invalid \n\n*Example*: \n.facebook https://www.facebook.com/groups/599913174599515/permalink/705467384044093/`)
 if (m.message && msgFilter.addFilter(from)) return
 reply(mess.wait)
 let jon = await fetchJson(`https://api.akuari.my.id/downloader/fbdl?link=${text}`)
