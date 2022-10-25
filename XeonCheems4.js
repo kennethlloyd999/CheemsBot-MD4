@@ -8833,6 +8833,8 @@ case 'getvideo': case 'ytmp4': case 'ytvideo': case 'yt': case 'youtube': {
                 reply(mess.wait)
                 
  anu = await fetchJson(`https://api.akuari.my.id/downloader/youtube3?link=${text}&type=360`)
+ empat = await fetchJson(`https://api.akuari.my.id/downloader/youtube3?link=${text}&type=480`)
+ tujuh = await fetchJson(`https://api.akuari.my.id/downloader/youtube3?link=${text}&type=720`)
                  if (anu.filesize_video >= 999999) return reply('*File Over Limit* '+util.format(anu))
                 tummb = await getBuffer(anu.thumbnail)
                 audio = await getBuffer(anu.audio)        
