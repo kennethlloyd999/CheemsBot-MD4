@@ -9881,16 +9881,16 @@ XeonBotInc.sendMessage(from, { react: { text: dj, key: m.key }})
 										
 								]
 							},
-							{
-								"title": "War Features 🛐",
-								"rows": [
-									{
-										"title": "Adzan Remix 🎧😎",
-										"description": "Displays The List Of *War Features*",
-										"rowId": `${prefix}adzanmenu`
-									}
-								]
-							},
+							//{
+								/////////"title": "War Features 🛐",
+								///////"rows": [
+									//{
+										/////////"title": "Adzan Remix 🎧😎",
+										//////////"description": "Displays The List Of *War Features*",
+										//////////"rowId": `${prefix}adzanmenu`
+									////}
+								///]
+							/////},
 							{
 								"title": "Credit ©️",
 								"rows": [
@@ -10507,7 +10507,7 @@ teks = `*Response Speed* ${latensi.toFixed(4)} _Second_ \n ${oldd - neww} _milis
  {buttonId: `command`, buttonText: {displayText: 'List Menu'}, type: 1},
  {buttonId: `owner`, buttonText: {displayText: 'Owner'}, type: 1}
  ] 
-let pic = [wan,tu,tri,fo,faif,sik,seven,egh,nen,ten,elepen,welep,terten,foten,faiften,sikten]
+let pic = [tu,tri,fo,faif,seven,egh,nen,ten,elepen,welep,faiften]
 let pics = pic[Math.floor(Math.random() * (pic.length))]
  let buttonMessage = { 
   document: fs.readFileSync('./XeonMedia/theme/cheems.xlsx'), 
@@ -10561,7 +10561,7 @@ let documents = [doc1,doc2,doc3]
  let buttons = [ 
  {buttonId: `command`, buttonText: {displayText: 'List Menu'}, type: 1} 
  ] 
- let pic = [wan,tu,tri,fo,faif,sik,seven,egh,nen,ten,elepen,welep,terten,foten,faiften,sikten]
+ let pic = [tu,tri,fo,faif,seven,egh,nen,ten,elepen,welep,faiften]
  let pics = pic[Math.floor(Math.random() * (pic.length))]
  let buttonMessage = { 
   document: fs.readFileSync('./XeonMedia/theme/cheems.xlsx'), 
@@ -10632,7 +10632,7 @@ let documents = [doc1,doc2,doc3]
  let buttons = [ 
  {buttonId: `command`, buttonText: {displayText: 'List Menu'}}, {buttonId: `menu`, buttonText: {displayText: 'All Menu'}} //////////////////////// {buttonId: `command`, buttonText: {displayText: 'List Menu 🗂'}} 
  ] 
- let pic = [wan,tu,tri,fo,faif,sik,seven,egh,nen,ten,elepen,welep,terten,foten,faiften,sikten]
+ let pic = [tu,tri,fo,faif,seven,egh,nen,ten,elepen,welep,faiften]
  let pics = pic[Math.floor(Math.random() * (pic.length))]
  let buttonMessage = { 
   document: fs.readFileSync('./XeonMedia/theme/cheems.xlsx'), 
@@ -10679,7 +10679,7 @@ let documents = [doc1,doc2,doc3]
  let buttons = [ 
  {buttonId: `command`, buttonText: {displayText: 'List Menu'}}, {buttonId: `menu`, buttonText: {displayText: 'All Menu'}}
  ] 
- let pic = [wan,tu,tri,fo,faif,sik,seven,egh,nen,ten,elepen,welep,terten,foten,faiften,sikten]
+ let pic = [tu,tri,fo,faif,seven,egh,nen,ten,elepen,welep,faiften]
  let pics = pic[Math.floor(Math.random() * (pic.length))]
  let buttonMessage = { 
   document: fs.readFileSync('./XeonMedia/theme/cheems.xlsx'), 
@@ -10818,7 +10818,7 @@ let documents = [doc1,doc2,doc3]
  let buttons = [ 
  {buttonId: `command`, buttonText: {displayText: 'List Menu'}}, {buttonId: `menu`, buttonText: {displayText: 'All Menu'}}
  ] 
- let pic = [wan,tu,tri,fo,faif,sik,seven,egh,nen,ten,elepen,welep,terten,foten,faiften,sikten]
+ let pic = [tu,tri,fo,faif,seven,egh,nen,ten,elepen,welep,faiften]
  let pics = pic[Math.floor(Math.random() * (pic.length))]
  let buttonMessage = { 
   document: fs.readFileSync('./XeonMedia/theme/cheems.xlsx'), 
@@ -10873,7 +10873,7 @@ let documents = [doc1,doc2,doc3]
  let buttons = [ 
  {buttonId: `command`, buttonText: {displayText: 'List Menu'}}, {buttonId: `menu`, buttonText: {displayText: 'All Menu'}}
  ] 
- let pic = [wan,tu,tri,fo,faif,sik,seven,egh,nen,ten,elepen,welep,terten,foten,faiften,sikten]
+ let pic = [tu,tri,fo,faif,seven,egh,nen,ten,elepen,welep,faiften]
  let pics = pic[Math.floor(Math.random() * (pic.length))]
  let buttonMessage = { 
   document: fs.readFileSync('./XeonMedia/theme/cheems.xlsx'), 
@@ -10935,7 +10935,7 @@ let documents = [doc1,doc2,doc3]
  let buttons = [ 
  {buttonId: `command`, buttonText: {displayText: 'List Menu'}}, {buttonId: `menu`, buttonText: {displayText: 'All Menu'}}
  ] 
- let pic = [wan,tu,tri,fo,faif,sik,seven,egh,nen,ten,elepen,welep,terten,foten,faiften,sikten]
+ let pic = [tu,tri,fo,faif,seven,egh,nen,ten,elepen,welep,faiften]
  let pics = pic[Math.floor(Math.random() * (pic.length))]
  let buttonMessage = { 
   document: fs.readFileSync('./XeonMedia/theme/cheems.xlsx'), 
@@ -11000,7 +11000,7 @@ let documents = [doc1,doc2,doc3]
  let buttons = [ 
 {buttonId: `command`, buttonText: {displayText: 'List Menu'}}, {buttonId: `menu`, buttonText: {displayText: 'All Menu'}}
  ] 
- let pic = [wan,tu,tri,fo,faif,sik,seven,egh,nen,ten,elepen,welep,terten,foten,faiften,sikten]
+ let pic = [tu,tri,fo,faif,seven,egh,nen,ten,elepen,welep,faiften]
  let pics = pic[Math.floor(Math.random() * (pic.length))]
  let buttonMessage = { 
   document: fs.readFileSync('./XeonMedia/theme/cheems.xlsx'), 
@@ -11047,7 +11047,7 @@ let documents = [doc1,doc2,doc3]
  let buttons = [ 
  {buttonId: `command`, buttonText: {displayText: 'List Menu'}}, {buttonId: `menu`, buttonText: {displayText: 'All Menu'}}
  ] 
- let pic = [wan,tu,tri,fo,faif,sik,seven,egh,nen,ten,elepen,welep,terten,foten,faiften,sikten]
+ let pic = [tu,tri,fo,faif,seven,egh,nen,ten,elepen,welep,faiften]
  let pics = pic[Math.floor(Math.random() * (pic.length))]
  let buttonMessage = { 
   document: fs.readFileSync('./XeonMedia/theme/cheems.xlsx'), 
@@ -11096,7 +11096,7 @@ let documents = [doc1,doc2,doc3]
  let buttons = [ 
  {buttonId: `command`, buttonText: {displayText: 'List Menu'}}, {buttonId: `menu`, buttonText: {displayText: 'All Menu'}}
  ] 
- let pic = [wan,tu,tri,fo,faif,sik,seven,egh,nen,ten,elepen,welep,terten,foten,faiften,sikten]
+ let pic = [tu,tri,fo,faif,seven,egh,nen,ten,elepen,welep,faiften]
  let pics = pic[Math.floor(Math.random() * (pic.length))]
  let buttonMessage = { 
   document: fs.readFileSync('./XeonMedia/theme/cheems.xlsx'), 
@@ -11146,7 +11146,7 @@ let documents = [doc1,doc2,doc3]
  let buttons = [ 
  {buttonId: `command`, buttonText: {displayText: 'List Menu'}}, {buttonId: `menu`, buttonText: {displayText: 'All Menu'}}
  ] 
- let pic = [wan,tu,tri,fo,faif,sik,seven,egh,nen,ten,elepen,welep,terten,foten,faiften,sikten]
+ let pic = [tu,tri,fo,faif,seven,egh,nen,ten,elepen,welep,faiften]
  let pics = pic[Math.floor(Math.random() * (pic.length))]
  let buttonMessage = { 
   document: fs.readFileSync('./XeonMedia/theme/cheems.xlsx'), 
@@ -11230,7 +11230,7 @@ let documents = [doc1,doc2,doc3]
  let buttons = [ 
  {buttonId: `command`, buttonText: {displayText: 'List Menu'}}, {buttonId: `menu`, buttonText: {displayText: 'All Menu'}}
  ] 
- let pic = [wan,tu,tri,fo,faif,sik,seven,egh,nen,ten,elepen,welep,terten,foten,faiften,sikten]
+ let pic = [tu,tri,fo,faif,seven,egh,nen,ten,elepen,welep,faiften]
  let pics = pic[Math.floor(Math.random() * (pic.length))]
  let buttonMessage = { 
   document: fs.readFileSync('./XeonMedia/theme/cheems.xlsx'), 
@@ -11273,7 +11273,7 @@ let documents = [doc1,doc2,doc3]
  let buttons = [ 
  {buttonId: `command`, buttonText: {displayText: 'List Menu'}}, {buttonId: `menu`, buttonText: {displayText: 'All Menu'}}
  ] 
- let pic = [wan,tu,tri,fo,faif,sik,seven,egh,nen,ten,elepen,welep,terten,foten,faiften,sikten]
+ let pic = [tu,tri,fo,faif,seven,egh,nen,ten,elepen,welep,faiften]
  let pics = pic[Math.floor(Math.random() * (pic.length))]
  let buttonMessage = { 
   document: fs.readFileSync('./XeonMedia/theme/cheems.xlsx'), 
@@ -11338,7 +11338,7 @@ let documents = [doc1,doc2,doc3]
  let buttons = [ 
  {buttonId: `command`, buttonText: {displayText: 'List Menu'}}, {buttonId: `menu`, buttonText: {displayText: 'All Menu'}}
  ] 
- let pic = [wan,tu,tri,fo,faif,sik,seven,egh,nen,ten,elepen,welep,terten,foten,faiften,sikten]
+ let pic = [tu,tri,fo,faif,seven,egh,nen,ten,elepen,welep,faiften]
  let pics = pic[Math.floor(Math.random() * (pic.length))]
  let buttonMessage = { 
   document: fs.readFileSync('./XeonMedia/theme/cheems.xlsx'), 
@@ -11399,7 +11399,7 @@ let documents = [doc1,doc2,doc3]
  let buttons = [ 
  {buttonId: `command`, buttonText: {displayText: 'List Menu'}}, {buttonId: `menu`, buttonText: {displayText: 'All Menu'}}
  ] 
- let pic = [wan,tu,tri,fo,faif,sik,seven,egh,nen,ten,elepen,welep,terten,foten,faiften,sikten]
+ let pic = [tu,tri,fo,faif,seven,egh,nen,ten,elepen,welep,faiften]
  let pics = pic[Math.floor(Math.random() * (pic.length))]
  let buttonMessage = { 
   document: fs.readFileSync('./XeonMedia/theme/cheems.xlsx'), 
@@ -11499,7 +11499,7 @@ let documents = [doc1,doc2,doc3]
  let buttons = [ 
  {buttonId: `command`, buttonText: {displayText: 'List Menu'}}, {buttonId: `menu`, buttonText: {displayText: 'All Menu'}}
  ] 
- let pic = [wan,tu,tri,fo,faif,sik,seven,egh,nen,ten,elepen,welep,terten,foten,faiften,sikten]
+ let pic = [tu,tri,fo,faif,seven,egh,nen,ten,elepen,welep,faiften]
  let pics = pic[Math.floor(Math.random() * (pic.length))]
  let buttonMessage = { 
   document: fs.readFileSync('./XeonMedia/theme/cheems.xlsx'), 
@@ -11696,7 +11696,7 @@ let documents = [doc1,doc2,doc3]
  let buttons = [ 
  {buttonId: `command`, buttonText: {displayText: 'List Menu'}}, {buttonId: `menu`, buttonText: {displayText: 'All Menu'}}
  ] 
- let pic = [wan,tu,tri,fo,faif,sik,seven,egh,nen,ten,elepen,welep,terten,foten,faiften,sikten]
+ let pic = [tu,tri,fo,faif,seven,egh,nen,ten,elepen,welep,faiften]
  let pics = pic[Math.floor(Math.random() * (pic.length))]
  let buttonMessage = { 
   document: fs.readFileSync('./XeonMedia/theme/cheems.xlsx'), 
@@ -11748,7 +11748,7 @@ let documents = [doc1,doc2,doc3]
  let buttons = [ 
  {buttonId: `command`, buttonText: {displayText: 'List Menu'}}, {buttonId: `menu`, buttonText: {displayText: 'All Menu'}}
  ] 
- let pic = [wan,tu,tri,fo,faif,sik,seven,egh,nen,ten,elepen,welep,terten,foten,faiften,sikten]
+ let pic = [tu,tri,fo,faif,seven,egh,nen,ten,elepen,welep,faiften]
  let pics = pic[Math.floor(Math.random() * (pic.length))]
  let buttonMessage = { 
   document: fs.readFileSync('./XeonMedia/theme/cheems.xlsx'), 
@@ -11792,7 +11792,7 @@ let documents = [doc1,doc2,doc3]
  let buttons = [ 
  {buttonId: `command`, buttonText: {displayText: 'List Menu'}}, {buttonId: `menu`, buttonText: {displayText: 'All Menu'}}
  ] 
- let pic = [wan,tu,tri,fo,faif,sik,seven,egh,nen,ten,elepen,welep,terten,foten,faiften,sikten]
+ let pic = [tu,tri,fo,faif,seven,egh,nen,ten,elepen,welep,faiften]
  let pics = pic[Math.floor(Math.random() * (pic.length))]
  let buttonMessage = { 
   document: fs.readFileSync('./XeonMedia/theme/cheems.xlsx'), 
@@ -11832,7 +11832,7 @@ let documents = [doc1,doc2,doc3]
  let buttons = [ 
  {buttonId: `command`, buttonText: {displayText: 'List Menu'}}, {buttonId: `menu`, buttonText: {displayText: 'All Menu'}}
  ] 
- let pic = [wan,tu,tri,fo,faif,sik,seven,egh,nen,ten,elepen,welep,terten,foten,faiften,sikten]
+ let pic = [tu,tri,fo,faif,seven,egh,nen,ten,elepen,welep,faiften]
  let pics = pic[Math.floor(Math.random() * (pic.length))]
  let buttonMessage = { 
   document: fs.readFileSync('./XeonMedia/theme/cheems.xlsx'), 
@@ -11871,7 +11871,7 @@ anjay = ` ┏━「 _TOOL_ 」━━⭓
  let buttons = [ 
  {buttonId: `command`, buttonText: {displayText: 'List Menu'}}, {buttonId: `menu`, buttonText: {displayText: 'All Menu'}}
  ] 
- let pic = [wan,tu,tri,fo,faif,sik,seven,egh,nen,ten,elepen,welep,terten,foten,faiften,sikten]
+ let pic = [tu,tri,fo,faif,seven,egh,nen,ten,elepen,welep,faiften]
  let pics = pic[Math.floor(Math.random() * (pic.length))]
  let buttonMessage = { 
   document: fs.readFileSync('./XeonMedia/theme/cheems.xlsx'), 
@@ -11915,7 +11915,7 @@ let documents = [doc1,doc2,doc3]
  let buttons = [ 
  {buttonId: `command`, buttonText: {displayText: 'List Menu'}}, {buttonId: `menu`, buttonText: {displayText: 'All Menu'}}
  ] 
- let pic = [wan,tu,tri,fo,faif,sik,seven,egh,nen,ten,elepen,welep,terten,foten,faiften,sikten]
+ let pic = [tu,tri,fo,faif,seven,egh,nen,ten,elepen,welep,faiften]
  let pics = pic[Math.floor(Math.random() * (pic.length))]
  let buttonMessage = { 
   document: fs.readFileSync('./XeonMedia/theme/cheems.xlsx'), 
@@ -11975,7 +11975,7 @@ break
  let buttons = [ 
  {buttonId: `command`, buttonText: {displayText: 'List Menu'}}, {buttonId: `menu`, buttonText: {displayText: 'All Menu'}}
  ] 
- let pic = [wan,tu,tri,fo,faif,sik,seven,egh,nen,ten,elepen,welep,terten,foten,faiften,sikten]
+ let pic = [tu,tri,fo,faif,seven,egh,nen,ten,elepen,welep,faiften]
  let pics = pic[Math.floor(Math.random() * (pic.length))]
  let buttonMessage = { 
   document: fs.readFileSync('./XeonMedia/theme/cheems.xlsx'), 
@@ -12042,7 +12042,7 @@ anjay = ` ┏━「 _INDO HOROSCOPE_ 」━━⭓
  let buttons = [ 
  {buttonId: `command`, buttonText: {displayText: 'List Menu'}}, {buttonId: `menu`, buttonText: {displayText: 'All Menu'}}
  ] 
- let pic = [wan,tu,tri,fo,faif,sik,seven,egh,nen,ten,elepen,welep,terten,foten,faiften,sikten]
+ let pic = [tu,tri,fo,faif,seven,egh,nen,ten,elepen,welep,faiften]
  let pics = pic[Math.floor(Math.random() * (pic.length))]
  let buttonMessage = { 
   document: fs.readFileSync('./XeonMedia/theme/cheems.xlsx'), 
@@ -12098,7 +12098,7 @@ sourceUrl: `${websitex}`,
  let buttons = [ 
  {buttonId: `command`, buttonText: {displayText: 'List Menu'}}, {buttonId: `menu`, buttonText: {displayText: 'All Menu'}}
  ] 
- let pic = [wan,tu,tri,fo,faif,sik,seven,egh,nen,ten,elepen,welep,terten,foten,faiften,sikten]
+ let pic = [tu,tri,fo,faif,seven,egh,nen,ten,elepen,welep,faiften]
  let pics = pic[Math.floor(Math.random() * (pic.length))]
  let buttonMessage = { 
   document: fs.readFileSync('./XeonMedia/theme/cheems.xlsx'), 
