@@ -706,7 +706,7 @@ if (isCreator) return
           // antilink
           
 	// AntiLinkgc
-	if (AntiLinkGc)
+	
         if (budy.includes(`chat.whatsapp.com`)) {
         if (!isBotAdmins) return reply(`\`\`\`「 Group Link Detected 」\`\`\``)
         if (!m.isGroup) return
@@ -6614,7 +6614,7 @@ let search = await yts(args.join(" "))
                 })
             }
 break
-case 'google': {
+case 'google': case 'gulugulu': {
 	if (isBan) return reply(mess.ban)	 			
 if (isBanChat) return reply(mess.banChat)
 if (!args.join(" ")) return replay(`Example : ${prefix + command} stay jb`)
