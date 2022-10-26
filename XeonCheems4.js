@@ -6831,11 +6831,6 @@ XeonBotInc.sendMessage(m.chat, buttonMessage, {quoted: m})
 _Balas *tomp3* untuk mengonversi ke musik_\n_Balas *tovn* untuk mengonversi ke voice note_`}, { quoted: m }).catch((err) => reply(mess.error))
             }
             break
-            case 'chamnel': {
-            	if (isBan) return reply(mess.ban)	 			
-if (isBanChat) return reply(mess.banChat)
-            	}
-            break
 case 'googlexxx': {
    if (isBan) return reply(mess.ban)	 			
 if (isBanChat) return reply(mess.banChat)
