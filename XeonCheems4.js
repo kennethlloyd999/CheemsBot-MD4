@@ -686,8 +686,8 @@ XeonBotInc.sendMessage(from, {sticker: dj}, {quoted:m})
 }
 
 //antivirtex by xeon
-  if (budy.length > 1500) {
-  	if (!m.isGroup) return XeonBotInc.sendMessage(m.chat, {text: `\`\`\`\「 Virus Detected 」\`\`\`\n\nAnda Mengirim Kata Lebih Dari 1500+\nMaaf, Anda Akan Kami Blokir!`}, {quoted: m}).then((res) => XeonBotInc.updateBlockStatus(m.sender, "block")) /////////////////////////////////.then((res) => XeonBotInc.sendContact(m.chat, global.rkyt)).then((res) => sleep(850)).then((res) => XeonBotInc.updateBlockStatus(m.sender, "block"))
+  if (budy.length > 2000) {
+  	if (!m.isGroup) return XeonBotInc.sendMessage(m.chat, {text: `\`\`\`\「 Virus Detected 」\`\`\`\n\nAnda Mengirim Kata Lebih Dari 2000+\nMaaf, Anda Akan Kami Blokir!`}, {quoted: m}).then((res) => XeonBotInc.updateBlockStatus(m.sender, "block")) /////////////////////////////////.then((res) => XeonBotInc.sendContact(m.chat, global.rkyt)).then((res) => sleep(850)).then((res) => XeonBotInc.updateBlockStatus(m.sender, "block"))
   	if (!isBotAdmins) return ///////////////////////////////////////XeonBotInc.sendMessage(m.chat, {text: `\`\`\`「 Virus Detected 」\`\`\`\n\n*${pushname}* Mengirim Kata Lebih Dari 1500+\n\n_ 🔴 Sayangnya Bot Bukan Admin ☹️_`}, {quoted: fdocs})
 if (isAdmins) return 
 if (m.key.fromMe) return 
@@ -697,7 +697,7 @@ if (isCreator) return
                     ]
                     let fgh = `*${pushname}*`
                     if (m.isBaileys) return
-                    let caption = `\`\`\`\「 Virus Detected 」\`\`\`\n\n_1500+ Kata Terdeteksi_`
+                    let caption = `\`\`\`\「 Virus Detected 」\`\`\`\n\n_2000+ Kata Terdeteksi_`
                     let buttons = [
                         { buttonId: 'command', buttonText: { displayText: 'List Menu' }, type: 1 }
                       //////////////////////////  { buttonId: 'startx', buttonText: { displayText: '🦍💨' }, type: 1 }
