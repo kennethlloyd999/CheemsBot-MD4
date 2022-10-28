@@ -604,7 +604,7 @@ XeonBotInc.sendReadReceipt(from, m.sender, [m.key.id])}
         //antispam or auto react
 if (m.message && msgFilter.isFiltered(from)) {
 console.log(`❌ [SPAM]`, color(moment(m.messageTimestamp * 1000).format('DD/MM/YYYY HH:mm:ss'), 'yellow'), color(`${command} [${args.length}]`), 'from', color(m.pushName))
-return XeonBotInc.sendMessage(from, { react: { text: `Wait a minute, don't spam!`, key: m.key }})
+return XeonBotInc.sendMessage(m.chat, { text: `Wait a minute, don't spam!`}, {quoted: m})
 }
 
         //monyet
@@ -6483,7 +6483,7 @@ if (isBanChat) return reply(mess.banChat)
 if (/document/.test(mime)) return reply(`Send/Reply Video/Audio You Want To Convert Into MP3 With Caption ${prefix + command}`)
 if (!/video/.test(mime) && !/audio/.test(mime)) return reply(`Send/Reply Video/Audio You Want To Convert Into MP3 With Caption ${prefix + command}`)
 if (!m.quoted) return reply(`Send/Reply Video/Audio You Want To Convert Into MP3 With Caption ${prefix + command}`)
-if (!args.join(" ")) return reply(`Tambahkan judul file\n\nContoh : *${prefix + command} Jasjos Kriptos*`)
+if (!args.join(" ")) return reply(`Tambahkan judul file\n\nExample : *${prefix + command} <your filename>*`)
 reply(mess.wait)
 let media = await quoted.download()
 let { toAudio } = require('./lib/converter')
@@ -6960,7 +6960,7 @@ case 'ig2': case 'igdl2': case 'instagram2': {
             }).catch((err) => reply(mess.error))
             }		
 			break
-			case 'igdl': case 'instagram': case 'instagramreels': case 'igreels': case 'ig': try{
+			case 'igdl': case 'instagram': case 'instagramreels': case 'igreels': case 'ig': case 'insta': try{
 				if (isBan) return reply(mess.ban)	 			
 if (isBanChat) return reply(mess.banChat)
 				if (!args[0]) return reply(`Example :\n${prefix + command} https://www.instagram.com/p/CcvJGuxh9VI/?igshid=YmMyMTA2M2Y=`)
@@ -12416,39 +12416,21 @@ await sleep(1000)
 XeonBotInc.sendButtonText(m.chat, button, caption, botname)
 }
  break
- case 'tes': {
- if (isBan) return reply(mess.ban)	 			
-if (isBanChat) return reply(mess.banChat)
-  if (!text) return reply(`Failed to download media and send audio ${prefix + command} url link`) 
-  if (!isUrl(args[0]) && !args[0].includes('facebook.com')) return reply(`The link you provided is invalid`)
-  let noh = require('@bochilteam/scraper')                
-  noh.savefrom(`${text}`).then(async (data) => {
-  let sections = []   
-  for (let i of data.url) {
-  const list = {title: `${i.type}`,
-  rows: [
-	    {
-	     title: `Quality ${i.subname}`, 
-	     rowId: `${prefix}get ${text}`,
-      description: `${data.hosting}`	     
-	    }, 
-	    ]
-     }
-     sections.push(list)   
-     }
-  const sendm =  XeonBotInc.sendMessage(
-      m.chat, 
-      {
-       text: `${data.meta.title} *Here is the list of videos, click the button below to choose*`,
-       footer: `${botname}`,
-       title: "*SAVE FROM*",
-       buttonText: "CLICK HERE",
-       sections
-      }, { quoted : m })                 
-                }).catch((err) => {
-                    reply(mess.error)
-                })
-            }
+ case 'tes': case 'test': case 'alive': case 'bot': case 'robot': case 'cheems': case 'doge':{ 
+                                    
+  anu = `what` 
+ const template = generateWAMessageFromContent(m.chat, proto.Message.fromObject({ 
+                     templateMessage: { 
+                         hydratedTemplate: { 
+                             hydratedContentText: anu, 
+                             locationMessage: { 
+                             jpegThumbnail: fs.readFileSync('./XeonMedia/theme/cheemspic.jpg')}
+                             
+                         } 
+                     } 
+                 }), { userJid: m.chat }) 
+                 XeonBotInc.relayMessage(m.chat, template.message, { messageId: template.key.id }) 
+                 } 
  break
  case 'zp': 
  if (isBan) return
