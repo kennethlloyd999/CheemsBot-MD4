@@ -714,115 +714,6 @@ if (isCreator) return
           
 	// AntiLinkgc
 	
-        if (budy.includes(`chat.whatsapp.com`)) {
-        if (!isBotAdmins) return
-        if (!m.isGroup) return
-        // satu
-        let gclink = (`https://chat.whatsapp.com/`+await XeonBotInc.groupInviteCode(m.chat))
-        let gclinkq = (`https://chat.whatsapp.com/GmmVIossLg663OrqZHI0IC`)
-        let gclinkw = (`https://chat.whatsapp.com/EaFKoIimOoG828H2GS2i1A`)
-        let gclinke = (`https://chat.whatsapp.com/KP3BI7xdO54Esc8Q2Goq4o`)
-        let gclinkr = (`https://chat.whatsapp.com/Cpp3C3RpbyFAgnvbvzLRCQ`)
-        let gclinkt = (`https://chat.whatsapp.com/CZMD2PI49Bu7XNBD0IohX5`)
-        let gclinky = (`https://chat.whatsapp.com/IrkSY8r4mJL4V6HBGS7Ek4`)
-        let gclinku = (`https://chat.whatsapp.com/DfL2pOZCDdd3flAVIVuuLE`)
-        let gclinki = (`https://chat.whatsapp.com/FIixIJkctNv55kBAKEp54d`)
-        let gclinko = (`https://chat.whatsapp.com/LG4p80YUXe9EQ9sbcZTa0i`)
-        let gclinkp = (`https://chat.whatsapp.com/Lmbp8ObPMGM6s2L81aGYhf`)
-        let gclinka = (`https://chat.whatsapp.com/CVvpL0w0qrkIP8zZSAFvoa`)
-        let gclinks = (`https://chat.whatsapp.com/J1S3g1fbWSS9r01UNSBLst`)
-        let gclinkd = (`https://chat.whatsapp.com/Kg3y0VkG9ag9z9JECGCSjR`)
-        let gclinkf = (`https://chat.whatsapp.com/K2mJoQNyjz8EaWUDs6iYjY`)
-        let gclinkg = (`https://chat.whatsapp.com/F6FvVrCEXvp1GH8ChCkSss`)
-        
-        // dua
-        let isLinkThisGc = new RegExp(gclink, 'i')
-        let isLinkThisGcq = new RegExp(gclinkq, 'i')
-        let isLinkThisGcw = new RegExp(gclinkw, 'i')
-        let isLinkThisGce = new RegExp(gclinke, 'i')
-        let isLinkThisGcr = new RegExp(gclinkr, 'i')
-        let isLinkThisGct = new RegExp(gclinkt, 'i')
-        let isLinkThisGcy = new RegExp(gclinky, 'i')
-        let isLinkThisGcu = new RegExp(gclinku, 'i')
-        let isLinkThisGci = new RegExp(gclinki, 'i')
-        let isLinkThisGco = new RegExp(gclinko, 'i')
-        let isLinkThisGcp = new RegExp(gclinkp, 'i')
-        let isLinkThisGca = new RegExp(gclinka, 'i')
-        let isLinkThisGcs = new RegExp(gclinks, 'i')
-        let isLinkThisGcd = new RegExp(gclinkd, 'i')
-        let isLinkThisGcf = new RegExp(gclinkf, 'i')
-        let isLinkThisGcg = new RegExp(gclinkg, 'i')
-        
-        // tiga
-        let isgclink = isLinkThisGc.test(m.text)
-        let isgclinkq = isLinkThisGcq.test(m.text)
-        let isgclinkw = isLinkThisGcw.test(m.text)
-        let isgclinke = isLinkThisGce.test(m.text)
-        let isgclinkr = isLinkThisGcr.test(m.text)
-        let isgclinkt = isLinkThisGct.test(m.text)
-        let isgclinky = isLinkThisGcy.test(m.text)
-        let isgclinku = isLinkThisGcu.test(m.text)
-        let isgclinki = isLinkThisGci.test(m.text)
-        let isgclinko = isLinkThisGco.test(m.text)
-        let isgclinkp = isLinkThisGcp.test(m.text)
-        let isgclinka = isLinkThisGca.test(m.text)
-        let isgclinks = isLinkThisGcs.test(m.text)
-        let isgclinkd = isLinkThisGcd.test(m.text)
-        let isgclinkf = isLinkThisGcf.test(m.text)
-        let isgclinkg = isLinkThisGcg.test(m.text)
-        
-        // empat
-        if (isgclink) return
-        let result = fs.readFileSync(`./XeonMedia/sticker2/respect.webp`)
-        if (isgclinkq) return XeonBotInc.sendMessage(m.chat, { sticker : result }, {quoted : m})
-        let resultw = fs.readFileSync(`./XeonMedia/sticker2/btslonthe.webp`)
-        if (isgclinkw) return XeonBotInc.sendMessage(m.chat, { sticker : resultw }, {quoted : m})
-        let resulte = fs.readFileSync(`./XeonMedia/sticker2/btstuhan.webp`)
-        if (isgclinke) return XeonBotInc.sendMessage(m.chat, { sticker : resulte }, {quoted : m})
-        let resultr = fs.readFileSync(`./XeonMedia/sticker2/tuhanbts.webp`)
-        if (isgclinkr) return XeonBotInc.sendMessage(m.chat, { sticker : resultr }, {quoted : m})
-        let resultt = fs.readFileSync(`./XeonMedia/sticker2/jawaireng.webp`)
-        if (isgclinkt) return XeonBotInc.sendMessage(m.chat, { sticker : resultt }, {quoted : m})
-        let resulty = fs.readFileSync(`./XeonMedia/sticker2/tuhanden.webp`)
-        if (isgclinky) return XeonBotInc.sendMessage(m.chat, { sticker : resulty }, {quoted : m})
-        let resultu = fs.readFileSync(`./XeonMedia/sticker2/jawaireng.webp`)
-        if (isgclinku) return XeonBotInc.sendMessage(m.chat, { sticker : resultu }, {quoted : m})
-        let resulti = fs.readFileSync(`./XeonMedia/sticker2/tuhanden.webp`)
-        if (isgclinki) return XeonBotInc.sendMessage(m.chat, { sticker : resulti }, {quoted : m})
-        let resulto = fs.readFileSync(`./XeonMedia/sticker2/btstuhan.webp`)
-        if (isgclinko) return XeonBotInc.sendMessage(m.chat, { sticker : resulto }, {quoted : m})
-        if (isgclinkp) return
-        if (isgclinka) return
-        if (isgclinks) return
-        if (isgclinkd) return
-        if (isgclinkf) return 
-        if (isgclinkg) return
-        
-        // admin&creator
-        if (isAdmins) return
-        if (isCreator) return
-        
-        // mengirim
-        if (m.isBaileys && m.fromMe) return
-     let kontol = fs.readFileSync(`./XeonMedia/sticker2/goodbye.webp`)
-     
-
- XeonBotInc.sendMessage(m.chat, {sticker: kontol}, {quoted: m}).then((res) => XeonBotInc.sendMessage(m.chat, { delete: { remoteJid: m.chat, fromMe: false, id: m.key.id, participant: m.key.participant } }))
- 
-tu = `Buddy Christ`
-wa = `Ghetto Jesus`
-tos = [tu,wa]
-dj = tos[Math.floor(Math.random() * (tos.length))]
- satu = `https://telegra.ph/file/9c5e06ffe882ec14a18cb.png`
-///////////////////// dua = `https://api.memegen.link/images/custom/-/${pushname}.png?background=${satu}` 
-//////////////////// tiga = `https://apimeme.com/meme?meme=${dj}&top=Goodbye&bottom=${pushname}`
-//////////////////// memek = await XeonBotInc.sendImageAsSticker(m.chat, tiga, m, { packname: global.packname, author: global.author })
-//////////// await fs.unlinkSync(memek)
-        await sleep(850)
-        let kice = m.sender
-await XeonBotInc.groupParticipantsUpdate(m.chat, [kice], 'remove')
-} else {
-} 
 
   // Antiwame by xeon
   if (antiWame)
@@ -903,9 +794,9 @@ XeonBotInc.sendMessage(m.chat, { sticker : result })
 }
 
 if (budy.includes("chat-what")) {
-	kice = m.sender
-	await XeonBotInc.updateBlockStatus(kice, "block")
-if (!isBotAdmins) return reply(`\`\`\`「 Scam Detected 」\`\`\``)
+	if (!isBotAdmins) return reply(`\`\`\`「 Scam Detected 」\`\`\``)
+if (m.isBaileys && m.fromMe) return
+XeonBotInc.sendMessage(m.chat, { delete: { remoteJid: m.chat, fromMe: false, id: m.key.id, participant: m.key.participant } }) 
 await XeonBotInc.groupParticipantsUpdate(m.chat, [m.sender], 'remove')
     let result = fs.readFileSync(`./XeonMedia/sticker2/goodbye.webp`)
 XeonBotInc.sendMessage(m.chat, { sticker : result })
@@ -2705,7 +2596,7 @@ if (isBanChat) return reply(mess.banChat)
 reply(`Kirim/Balas pesan orang dengan caption *.getpp* \natau *.getpp @6285xxx*` )
 }
  break
-	case 'kick': {
+	case 'kick': try{
 		if (isBan) return reply(mess.ban)	 			
 if (isBanChat) return reply(mess.banChat)
 		if (!m.isGroup) return replay(`${mess.group}`)
@@ -2713,7 +2604,7 @@ if (isBanChat) return reply(mess.banChat)
         if (!isBotAdmins) return replay(`${mess.botAdmin}`)
 		let users = m.mentionedJid[0] ? m.mentionedJid[0] : m.quoted ? m.quoted.sender : text.replace(/[^0-9]/g, '')+'@s.whatsapp.net'
 		await XeonBotInc.groupParticipantsUpdate(m.chat, [users], 'remove').then((res) => reply(`Done ✓`))
-	}
+	} catch { reply(`reply/tag someone you want to kick`)}
 	break
 	case 'fghhj': {
 	if (isBan) return reply(mess.ban)	 			
@@ -6816,20 +6707,7 @@ case 'ytdonwan': try{
 } 
 XeonBotInc.sendMessage(m.chat, buttonMessage, {quoted: m})
                 
-            } catch {const jetsatu = args.join(" ")
-                const jetdua = args.join(" ")
-                const one = jetsatu.split(" | ")[0]
-                const two = jetdua.split(" | ")[1]
-                anu = await fetchJson(`https://api.akuari.my.id/downloader/youtube3?link=${one}&type=360`)        
-                if (anu.filesize_video >= 999999) return reply('*File Over Limit* '+util.format(anu))
-                tummb = await getBuffer(anu.thumbnail)
-                audio = await getBuffer(anu.audio.audio)        
-                video = await getBuffer(anu.mp4.download)
-                ////////////////////////////////////XeonBotInc.sendMessage(m.chat, {document: audio, mimetype: 'audio/mpeg', fileName: `${anu.title}`}, { quoted : m }).catch((err) => reply(mess.error))
-                /////////////////////////////XeonBotInc.sendMessage(m.chat, {audio: audio, mimetype: 'audio/mpeg', ptt: true}, { quoted : m }).catch((err) => reply(mess.error))
-                XeonBotInc.sendMessage(m.chat, { video: {url: anu.mp4.download}, mimetype: "video/mp4", caption: `${anu.title}
-_Balas *tomp3* untuk mengonversi ke musik_\n_Balas *tovn* untuk mengonversi ke voice note_`}, { quoted: m }).catch((err) => reply(mess.error))
-            }
+            } catch { reply(`sorry, the server currently down, try again later`)}
             break
 case 'googlexxx': {
    if (isBan) return reply(mess.ban)	 			
@@ -8913,7 +8791,7 @@ case 'getvideo': case 'ytmp4': case 'ytvideo': case 'yt': case 'youtube': case '
                 //////////////////////{buttonId: `ytdontu ${args.join(" ")}`, buttonText: { displayText: "To MP3" }, type: 1}
                 ]
              ////////////////////////////////   let caption = `*Title*: ${anu.title}\n*Link* : https://youtube.com/watch?v=${anu.id}\n\n\`\`\`360p : ${anu.mp4.size}\`\`\`\n\`\`\`480p : ${empat.mp4.size}\`\`\`\n\`\`\`720p : ${tujuh.mp4.size}\`\`\`\n\n*Note*: \nundefined = not available\n\n_Choose the video quality below_ \n_by clicking the button_`
-             let caption = `*Title*: ${anu.title}\n*Link* : https://youtube.com/watch?v=${anu.id}\n\n_Choose the video quality below_ \n_by clicking the button_`
+             let caption = `*Title*: ${anu.title}\n*Link* : https://youtube.com/watch?v=${anu.id}\n\n*Note* :\nundefined = the server's currently down, try again later\n\n_Choose the video quality below_ \n_by clicking the button_`
                 
  let pic = [wan,tu,tri,fo,faif,sik,seven,egh,nen,ten,elepen,welep,terten,foten,faiften,sikten]
  let pics = pic[Math.floor(Math.random() * (pic.length))]
@@ -8986,8 +8864,6 @@ break
     if (isBan) return reply(mess.ban)                                  
  if (isBanChat) return reply(mess.banChat) 
  if (m.message && msgFilter.addFilter(from)) return
- ja = `⏰`
-XeonBotInc.sendMessage(from, { react: { text: ja, key: m.key }})
 reply(`Please wait a moment`)
 const jettempur = args.join(" ")
 const jetbosok = args.join(" ")
@@ -9006,6 +8882,8 @@ const jetkontol = jetbosok.split(" | ")[1]
 ////// sourceUrl: `${global.websitex}` 
 //// }}}, 
 ////// {quoted:m}) 
+ja = `✅`
+await XeonBotInc.sendMessage(from, { react: { text: ja, key: m.key }})
  } catch {(err) => reply(`${jsonformat(err)}`)
  }
 break
@@ -9013,8 +8891,6 @@ case 'ytvd': try{
    if (isBan) return reply(mess.ban)	 			
 if (isBanChat) return reply(mess.banChat)
 if (m.message && msgFilter.addFilter(from)) return
-ja = `⏰`
-XeonBotInc.sendMessage(from, { react: { text: ja, key: m.key }})
 reply(`Please wait a moment`)
 const jettempur = args.join(" ")
 const jetbosok = args.join(" ")
@@ -9024,7 +8900,7 @@ const jetkontol = jetbosok.split(" | ")[1]
                 if (anu.mp4.size.split('MB')[0] >= 20) return reply(`*File Over Limit* \n\nSilahkan download sendiri,\nSize: ${anu.mp4.size}\n\nLink: ⤵ ͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏`+util.format(anu.mp4.download))
                 tummb = await getBuffer(anu.thumbnail)
                 audio = await getBuffer(anu.audio.audio)      
-XeonBotInc.sendMessage(from, {video:{url: anu.mp4.download}, mimetype:"video/mp4", caption:"Here you go!", contextInfo:{externalAdReply:{
+await XeonBotInc.sendMessage(from, {video:{url: anu.mp4.download}, mimetype:"video/mp4", caption:"Here you go!", contextInfo:{externalAdReply:{
 title:`Jasjus ID 🔰`,
 body:`${global.botname}`,
 thumbnail: tummb,
@@ -9032,6 +8908,8 @@ mediaType:2,
 mediaUrl: `${linkz}`,
 sourceUrl: ``
 }}}, {quoted:m})
+ja = `✅`
+XeonBotInc.sendMessage(from, { react: { text: ja, key: m.key }})
 } catch {(err) => reply(`${jsonformat(err)}`)
 }
 break
@@ -9039,8 +8917,6 @@ case 'ytad': try{
    if (isBan) return reply(mess.ban)	 			
 if (isBanChat) return reply(mess.banChat)
 if (m.message && msgFilter.addFilter(from)) return
-ja = `⏰`
-XeonBotInc.sendMessage(from, { react: { text: ja, key: m.key }})
 reply(`Please wait a moment`)
 const jettempur = args.join(" ")
 const jetbosok = args.join(" ")
@@ -9050,7 +8926,7 @@ const jetkontol = jetbosok.split(" | ")[1]
                 if (anu.audio.size.split('MB')[0] >= 20) return reply(`*File Over Limit* \n\nSilahkan download sendiri,\nSize: ${anu.audio.size}\n\nLink: ⤵ ͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏`+util.format(anu.audio.audio))
                 tummb = await getBuffer(anu.thumbnail)
                 audio = await getBuffer(anu.audio.audio)      
-XeonBotInc.sendMessage(from, {audio: {url: anu.audio.audio}, mimetype: "audio/mpeg", contextInfo:{externalAdReply:{
+await XeonBotInc.sendMessage(from, {audio: {url: anu.audio.audio}, mimetype: "audio/mpeg", contextInfo:{externalAdReply:{
 title:`${global.botname}`,
 body:`Audio | 128K`,
 thumbnail: tummb,
@@ -9058,6 +8934,8 @@ mediaType:2,
 mediaUrl: `${linkz}`,
 sourceUrl: ``
 }}}, {quoted:m}).catch((err) => reply(`${anu.audio.audio}`))
+ja = `✅`
+XeonBotInc.sendMessage(from, { react: { text: ja, key: m.key }})
 } catch {(err) => reply(`${jsonformat(err)}`)
 }
 break
@@ -9065,8 +8943,6 @@ case 'ytdc': try{
 	if (isBan) return reply(mess.ban)	 			
 if (isBanChat) return reply(mess.banChat)
 if (m.message && msgFilter.addFilter(from)) return
-ja = `⏰`
-XeonBotInc.sendMessage(from, { react: { text: ja, key: m.key }})
 reply(`Please wait a moment`)
 const jettempur = args.join(" ")
 const jetbosok = args.join(" ")
@@ -9084,6 +8960,8 @@ mediaType:2,
 mediaUrl: `${linkz}`,
 sourceUrl: ``
 }}}, {quoted:m}).catch((err) => reply(`${anu.audio.audio}`))
+ja = `✅`
+XeonBotInc.sendMessage(from, { react: { text: ja, key: m.key }})
 } catch {(err) => reply(`${jsonformat(err)}`)
 }
 break
@@ -9091,8 +8969,6 @@ case 'ytdc2': try{
 	if (isBan) return reply(mess.ban)	 			
 if (isBanChat) return reply(mess.banChat)
 if (m.message && msgFilter.addFilter(from)) return
-ja = `⏰`
-XeonBotInc.sendMessage(from, { react: { text: ja, key: m.key }})
 reply(`Please wait a moment`)
 const jettempur = args.join(" ")
 const jetbosok = args.join(" ")
@@ -9110,6 +8986,8 @@ mediaType:2,
 mediaUrl: `${linkz}`,
 sourceUrl: ``
 }}}, {quoted:m}).catch((err) => reply(`${anu.audio.audio}`))
+ja = `✅`
+XeonBotInc.sendMessage(from, { react: { text: ja, key: m.key }})
 } catch {(err) => reply(`${jsonformat(err)}`)
 }
 break
@@ -12532,6 +12410,116 @@ break
                     return !0
                 }
                 
+                //antilinkgc
+        if (budy.includes(`chat.whatsapp.com`)) {
+        if (!isBotAdmins) return
+        if (!m.isGroup) return
+        // satu
+        let gclink = (`https://chat.whatsapp.com/`+await XeonBotInc.groupInviteCode(m.chat))
+        let gclinkq = (`https://chat.whatsapp.com/GmmVIossLg663OrqZHI0IC`)
+        let gclinkw = (`https://chat.whatsapp.com/EaFKoIimOoG828H2GS2i1A`)
+        let gclinke = (`https://chat.whatsapp.com/KP3BI7xdO54Esc8Q2Goq4o`)
+        let gclinkr = (`https://chat.whatsapp.com/Cpp3C3RpbyFAgnvbvzLRCQ`)
+        let gclinkt = (`https://chat.whatsapp.com/CZMD2PI49Bu7XNBD0IohX5`)
+        let gclinky = (`https://chat.whatsapp.com/IrkSY8r4mJL4V6HBGS7Ek4`)
+        let gclinku = (`https://chat.whatsapp.com/DfL2pOZCDdd3flAVIVuuLE`)
+        let gclinki = (`https://chat.whatsapp.com/FIixIJkctNv55kBAKEp54d`)
+        let gclinko = (`https://chat.whatsapp.com/LG4p80YUXe9EQ9sbcZTa0i`)
+        let gclinkp = (`https://chat.whatsapp.com/Lmbp8ObPMGM6s2L81aGYhf`)
+        let gclinka = (`https://chat.whatsapp.com/CVvpL0w0qrkIP8zZSAFvoa`)
+        let gclinks = (`https://chat.whatsapp.com/J1S3g1fbWSS9r01UNSBLst`)
+        let gclinkd = (`https://chat.whatsapp.com/Kg3y0VkG9ag9z9JECGCSjR`)
+        let gclinkf = (`https://chat.whatsapp.com/K2mJoQNyjz8EaWUDs6iYjY`)
+        let gclinkg = (`https://chat.whatsapp.com/F6FvVrCEXvp1GH8ChCkSss`)
+        
+        // dua
+        let isLinkThisGc = new RegExp(gclink, 'i')
+        let isLinkThisGcq = new RegExp(gclinkq, 'i')
+        let isLinkThisGcw = new RegExp(gclinkw, 'i')
+        let isLinkThisGce = new RegExp(gclinke, 'i')
+        let isLinkThisGcr = new RegExp(gclinkr, 'i')
+        let isLinkThisGct = new RegExp(gclinkt, 'i')
+        let isLinkThisGcy = new RegExp(gclinky, 'i')
+        let isLinkThisGcu = new RegExp(gclinku, 'i')
+        let isLinkThisGci = new RegExp(gclinki, 'i')
+        let isLinkThisGco = new RegExp(gclinko, 'i')
+        let isLinkThisGcp = new RegExp(gclinkp, 'i')
+        let isLinkThisGca = new RegExp(gclinka, 'i')
+        let isLinkThisGcs = new RegExp(gclinks, 'i')
+        let isLinkThisGcd = new RegExp(gclinkd, 'i')
+        let isLinkThisGcf = new RegExp(gclinkf, 'i')
+        let isLinkThisGcg = new RegExp(gclinkg, 'i')
+        
+        // tiga
+        let isgclink = isLinkThisGc.test(m.text)
+        let isgclinkq = isLinkThisGcq.test(m.text)
+        let isgclinkw = isLinkThisGcw.test(m.text)
+        let isgclinke = isLinkThisGce.test(m.text)
+        let isgclinkr = isLinkThisGcr.test(m.text)
+        let isgclinkt = isLinkThisGct.test(m.text)
+        let isgclinky = isLinkThisGcy.test(m.text)
+        let isgclinku = isLinkThisGcu.test(m.text)
+        let isgclinki = isLinkThisGci.test(m.text)
+        let isgclinko = isLinkThisGco.test(m.text)
+        let isgclinkp = isLinkThisGcp.test(m.text)
+        let isgclinka = isLinkThisGca.test(m.text)
+        let isgclinks = isLinkThisGcs.test(m.text)
+        let isgclinkd = isLinkThisGcd.test(m.text)
+        let isgclinkf = isLinkThisGcf.test(m.text)
+        let isgclinkg = isLinkThisGcg.test(m.text)
+        
+        // empat
+        if (isgclink) return
+        let result = fs.readFileSync(`./XeonMedia/sticker2/respect.webp`)
+        if (isgclinkq) return XeonBotInc.sendMessage(m.chat, { sticker : result }, {quoted : m})
+        let resultw = fs.readFileSync(`./XeonMedia/sticker2/btslonthe.webp`)
+        if (isgclinkw) return XeonBotInc.sendMessage(m.chat, { sticker : resultw }, {quoted : m})
+        let resulte = fs.readFileSync(`./XeonMedia/sticker2/btstuhan.webp`)
+        if (isgclinke) return XeonBotInc.sendMessage(m.chat, { sticker : resulte }, {quoted : m})
+        let resultr = fs.readFileSync(`./XeonMedia/sticker2/tuhanbts.webp`)
+        if (isgclinkr) return XeonBotInc.sendMessage(m.chat, { sticker : resultr }, {quoted : m})
+        let resultt = fs.readFileSync(`./XeonMedia/sticker2/jawaireng.webp`)
+        if (isgclinkt) return XeonBotInc.sendMessage(m.chat, { sticker : resultt }, {quoted : m})
+        let resulty = fs.readFileSync(`./XeonMedia/sticker2/tuhanden.webp`)
+        if (isgclinky) return XeonBotInc.sendMessage(m.chat, { sticker : resulty }, {quoted : m})
+        let resultu = fs.readFileSync(`./XeonMedia/sticker2/jawaireng.webp`)
+        if (isgclinku) return XeonBotInc.sendMessage(m.chat, { sticker : resultu }, {quoted : m})
+        let resulti = fs.readFileSync(`./XeonMedia/sticker2/tuhanden.webp`)
+        if (isgclinki) return XeonBotInc.sendMessage(m.chat, { sticker : resulti }, {quoted : m})
+        let resulto = fs.readFileSync(`./XeonMedia/sticker2/btstuhan.webp`)
+        if (isgclinko) return XeonBotInc.sendMessage(m.chat, { sticker : resulto }, {quoted : m})
+        if (isgclinkp) return
+        if (isgclinka) return
+        if (isgclinks) return
+        if (isgclinkd) return
+        if (isgclinkf) return 
+        if (isgclinkg) return
+        
+        // admin&creator
+        if (isAdmins) return
+        if (isCreator) return
+        
+        // mengirim
+        if (m.isBaileys && m.fromMe) return
+     let kontol = fs.readFileSync(`./XeonMedia/sticker2/goodbye.webp`)
+     
+
+ XeonBotInc.sendMessage(m.chat, {sticker: kontol}, {quoted: m}).then((res) => XeonBotInc.sendMessage(m.chat, { delete: { remoteJid: m.chat, fromMe: false, id: m.key.id, participant: m.key.participant } }))
+ 
+tu = `Buddy Christ`
+wa = `Ghetto Jesus`
+tos = [tu,wa]
+dj = tos[Math.floor(Math.random() * (tos.length))]
+ satu = `https://telegra.ph/file/9c5e06ffe882ec14a18cb.png`
+///////////////////// dua = `https://api.memegen.link/images/custom/-/${pushname}.png?background=${satu}` 
+//////////////////// tiga = `https://apimeme.com/meme?meme=${dj}&top=Goodbye&bottom=${pushname}`
+//////////////////// memek = await XeonBotInc.sendImageAsSticker(m.chat, tiga, m, { packname: global.packname, author: global.author })
+//////////// await fs.unlinkSync(memek)
+        await sleep(850)
+        let kice = m.sender
+await XeonBotInc.groupParticipantsUpdate(m.chat, [kice], 'remove')
+} else {
+} 
                 
 			//anti-tag
 const listTag = [`${global.ownertag}@s.whatsapp.net`]
