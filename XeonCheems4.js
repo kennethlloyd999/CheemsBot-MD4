@@ -6626,7 +6626,7 @@ sourceUrl: ``,
                 /////////////////////////////XeonBotInc.sendMessage(m.chat, {audio: audio, mimetype: 'audio/mpeg', ptt: true}, { quoted : m }).catch((err) => reply(mess.error))
                 
             break
-            case 'ytdontu': {
+            case 'ytdontu': try{
             	if (isBan) return reply(mess.ban) 
 	if (isBanChat) return reply(mess.banChat)
                 if (!text) return reply(mess.linkm)
@@ -6673,7 +6673,7 @@ sourceUrl: ``,
 }} 
 } 
  XeonBotInc.sendMessage(m.chat, buttonMessage, {quoted: fdocs})
- }
+ } catch { reply(`sorry, the server currently down, try again later`)}
             break
 case 'ytdonwan': try{ 
             if (isBan) return reply(mess.ban) 
@@ -12135,7 +12135,7 @@ await sleep(850)
 await XeonBotInc.groupParticipantsUpdate(m.chat, [kice], 'remove')
 }
 break
-case 'kintil': case 'kuntul': case 'bokep': {
+case 'kintil': case 'kuntul': {
 	 if (!isBotAdmins) return
 bvl = `🤔`
 if (isAdmins) return reply(bvl)
@@ -12146,8 +12146,8 @@ let caption = `\`\`\`「 Bug Virus Detected 」\`\`\`\n\n *${pushname}* 🤔`
 let fgh = `*Group Mode*`
 await sleep(700)
                 let buttons = [
-                        { buttonId: 'groupmode open', buttonText: { displayText: 'Open' }, type: 1 },
-                        { buttonId: 'groupmode close', buttonText: { displayText: 'Close' }, type: 1 }
+                        { buttonId: 'groupmode open', buttonText: { displayText: 'Open' }, type: 1 }
+                        
                     ]
                     await XeonBotInc.sendButtonText(m.chat, buttons, caption, fgh, m)
 
