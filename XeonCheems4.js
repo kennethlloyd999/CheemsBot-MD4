@@ -8985,8 +8985,10 @@ break
  case 'ytvn': try{ 
     if (isBan) return reply(mess.ban)                                  
  if (isBanChat) return reply(mess.banChat) 
+ if (m.message && msgFilter.addFilter(from)) return
  ja = `⏰`
 XeonBotInc.sendMessage(from, { react: { text: ja, key: m.key }})
+reply(`Please wait a moment`)
 const jettempur = args.join(" ")
 const jetbosok = args.join(" ")
 const jetasu = jettempur.split(" | ")[0]
@@ -9010,8 +9012,10 @@ break
 case 'ytvd': try{
    if (isBan) return reply(mess.ban)	 			
 if (isBanChat) return reply(mess.banChat)
+if (m.message && msgFilter.addFilter(from)) return
 ja = `⏰`
 XeonBotInc.sendMessage(from, { react: { text: ja, key: m.key }})
+reply(`Please wait a moment`)
 const jettempur = args.join(" ")
 const jetbosok = args.join(" ")
 const jetasu = jettempur.split(" | ")[0]
@@ -9034,8 +9038,10 @@ break
 case 'ytad': try{
    if (isBan) return reply(mess.ban)	 			
 if (isBanChat) return reply(mess.banChat)
+if (m.message && msgFilter.addFilter(from)) return
 ja = `⏰`
 XeonBotInc.sendMessage(from, { react: { text: ja, key: m.key }})
+reply(`Please wait a moment`)
 const jettempur = args.join(" ")
 const jetbosok = args.join(" ")
 const jetasu = jettempur.split(" | ")[0]
@@ -9058,8 +9064,10 @@ break
 case 'ytdc': try{
 	if (isBan) return reply(mess.ban)	 			
 if (isBanChat) return reply(mess.banChat)
+if (m.message && msgFilter.addFilter(from)) return
 ja = `⏰`
 XeonBotInc.sendMessage(from, { react: { text: ja, key: m.key }})
+reply(`Please wait a moment`)
 const jettempur = args.join(" ")
 const jetbosok = args.join(" ")
 const jetasu = jettempur.split(" | ")[0]
@@ -9082,8 +9090,10 @@ break
 case 'ytdc2': try{
 	if (isBan) return reply(mess.ban)	 			
 if (isBanChat) return reply(mess.banChat)
+if (m.message && msgFilter.addFilter(from)) return
 ja = `⏰`
 XeonBotInc.sendMessage(from, { react: { text: ja, key: m.key }})
+reply(`Please wait a moment`)
 const jettempur = args.join(" ")
 const jetbosok = args.join(" ")
 const jetasu = jettempur.split(" | ")[0]
