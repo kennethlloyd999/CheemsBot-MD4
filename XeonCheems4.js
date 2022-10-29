@@ -771,7 +771,7 @@ XeonBotInc.sendMessage(m.chat, { sticker : result })
 } else {
 }
 
-if (budy.includes("⛩️")) {
+if (budy.includes("☣")) {
 	  	if (!m.isGroup) return XeonBotInc.sendMessage(m.chat, {text: `\`\`\`\「 Virus Detected 」\`\`\`\n\nAnda Mengirim Kata Lebih Dari 1500+\nMaaf, Anda Akan Kami Blokir!`}, {quoted: m}).then((res) => XeonBotInc.updateBlockStatus(m.sender, "block")) /////////////////////////////////.then((res) => XeonBotInc.sendContact(m.chat, global.rkyt)).then((res) => sleep(850)).then((res) => XeonBotInc.updateBlockStatus(m.sender, "block"))
 if (!isBotAdmins) return 
 if (m.isBaileys && m.fromMe) return
@@ -8961,7 +8961,7 @@ mediaUrl: `${linkz}`,
 sourceUrl: ``
 }}}, {quoted:m}).catch((err) => reply(`${anu.audio.audio}`))
 ja = `✅`
-XeonBotInc.sendMessage(from, { react: { text: ja, key: m.key }})
+await XeonBotInc.sendMessage(from, { react: { text: ja, key: m.key }})
 } catch {(err) => reply(`${jsonformat(err)}`)
 }
 break
@@ -8987,7 +8987,7 @@ mediaUrl: `${linkz}`,
 sourceUrl: ``
 }}}, {quoted:m}).catch((err) => reply(`${anu.audio.audio}`))
 ja = `✅`
-XeonBotInc.sendMessage(from, { react: { text: ja, key: m.key }})
+await XeonBotInc.sendMessage(from, { react: { text: ja, key: m.key }})
 } catch {(err) => reply(`${jsonformat(err)}`)
 }
 break
