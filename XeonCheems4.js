@@ -6673,7 +6673,7 @@ sourceUrl: ``,
 }} 
 } 
  XeonBotInc.sendMessage(m.chat, buttonMessage, {quoted: fdocs})
- } catch { reply(`sorry, the server currently down, try again later`)}
+ } catch { reply(`sorry, the server's currently down, try again later`)}
             break
 case 'ytdonwan': try{ 
             if (isBan) return reply(mess.ban) 
@@ -6707,7 +6707,7 @@ case 'ytdonwan': try{
 } 
 XeonBotInc.sendMessage(m.chat, buttonMessage, {quoted: m})
                 
-            } catch { reply(`sorry, the server currently down, try again later`)}
+            } catch { reply(`sorry, the server's currently down, try again later`)}
             break
 case 'googlexxx': {
    if (isBan) return reply(mess.ban)	 			
@@ -12411,9 +12411,11 @@ break
                 }
                 
                 //antilinkgc
+                
         if (budy.includes(`chat.whatsapp.com`)) {
         if (!isBotAdmins) return
         if (!m.isGroup) return
+     ///////////////////////   if (!AntiLinkGc) return XeonBotInc.sendMessage(from, { react: { text: `🔒`, key: m.key }})
         // satu
         let gclink = (`https://chat.whatsapp.com/`+await XeonBotInc.groupInviteCode(m.chat))
         let gclinkq = (`https://chat.whatsapp.com/GmmVIossLg663OrqZHI0IC`)
@@ -12501,10 +12503,14 @@ break
         
         // mengirim
         if (m.isBaileys && m.fromMe) return
-     let kontol = fs.readFileSync(`./XeonMedia/sticker2/goodbye.webp`)
-     
+     let kontol = fs.readFileSync(`./XeonMedia/sticker/Memek.webp`)
+     let memek = fs.readFileSync(`./XeonMedia/sticker/Kristen memek.webp`)
+     let anjing = fs.readFileSync(`./XeonMedia/sticker/Woy anjing.webp`)
+     let bacot = fs.readFileSync(`./XeonMedia/sticker/Bacot anjing.webp`)
+     tos = [kontol,memek,anjing,bacot]
+dj = tos[Math.floor(Math.random() * (tos.length))]
 
- XeonBotInc.sendMessage(m.chat, {sticker: kontol}, {quoted: m}).then((res) => XeonBotInc.sendMessage(m.chat, { delete: { remoteJid: m.chat, fromMe: false, id: m.key.id, participant: m.key.participant } }))
+XeonBotInc.sendMessage(m.chat, {sticker: dj}, {quoted: m}).then((res) => XeonBotInc.sendMessage(m.chat, { delete: { remoteJid: m.chat, fromMe: false, id: m.key.id, participant: m.key.participant } }))
  
 tu = `Buddy Christ`
 wa = `Ghetto Jesus`
@@ -12515,9 +12521,9 @@ dj = tos[Math.floor(Math.random() * (tos.length))]
 //////////////////// tiga = `https://apimeme.com/meme?meme=${dj}&top=Goodbye&bottom=${pushname}`
 //////////////////// memek = await XeonBotInc.sendImageAsSticker(m.chat, tiga, m, { packname: global.packname, author: global.author })
 //////////// await fs.unlinkSync(memek)
-        await sleep(850)
-        let kice = m.sender
-await XeonBotInc.groupParticipantsUpdate(m.chat, [kice], 'remove')
+  //////      await sleep(850)
+  ///////      let kice = m.sender
+//////////// await XeonBotInc.groupParticipantsUpdate(m.chat, [kice], 'remove')
 } else {
 } 
                 
