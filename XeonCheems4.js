@@ -3424,6 +3424,7 @@ case 'grupsetting':
             case 'groupsetting':{
             	if (isBan) return reply(mess.ban)	 			
 if (isBanChat) return reply(mess.banChat)
+if (!isAdmins && !isCreator) return (mess.admin)
                     let sections = []
                     let com = [`groupmode open`,`autosticker on`,`welcome on`,`antilinkgc on`,`antilinktg on`,`antilinktt on`,`antilinkytch on`,`antilinkytvid on`,`antilinkig on`,`antilinkfb on`,`antilinktwit on`,`antilinkall on`,`antiwame on`,`antitoxic on`,`antivirus on`,`autoreply on`,`group open`]
                     let comm = [`groupmode close`,`autosticker off`,`welcome off`,`antilinkgc off`,`antilinktg on`,`antilinktt on`,`antilinkytch on`,`antilinkytvid on`,`antilinkig on`,`antilinkfb on`,`antilinktwit on`,`antilinkall on`,`antiwame on`,`antitoxic on`,`antivirus on`,`autoreply on`,`group close`]
@@ -3736,7 +3737,7 @@ break
 		   if (isBan) return reply(mess.ban)	 			
 if (isBanChat) return reply(mess.banChat)
            if (!text) return reply(`Example : ${prefix + command} text`)
-           await XeonBotInc.sendMedia(m.chat, `https://xteam.xyz/${command}?file&text=${text}`, 'hisoka', 'morou', m, {asSticker: true})
+           await XeonBotInc.sendMedia(m.chat, `https://xteam.xyz/${command}?file&text=${text}`, 'hisoka', 'morou', m, {asSticker: true}).catch((err) => reply(mess.error))
 
          }
          break
@@ -3744,16 +3745,21 @@ case 'attp': {
 if (isBan) return reply(mess.ban)	 			
 if (isBanChat) return reply(mess.banChat)
            if (!text) reply(`Use ${prefix}attp hello\n*Example : ${prefix + command} ${ownername}*` )
-           await XeonBotInc.sendMedia(m.chat, `https://cililitan.herokuapp.com/api/attp?teks=${text}`, 'Xeon', 'Op', m, {asSticker: true}).catch((err) => reply(mess.error))
+           await XeonBotInc.sendMedia(m.chat, `https://api.akuari.my.id/other/attp?text=${text}`, 'Xeon', 'Op', m, {asSticker: true}).catch((err) => reply(`sorry, the server's currently down, try again later`))
          }
          break
-case 'ttp': {
+case 'ttp': try{
 if (isBan) return reply(mess.ban)	 			
 if (isBanChat) return reply(mess.banChat)
            if (!text) return reply(`*Example : ${prefix + command} hello*`)
            await XeonBotInc.sendMedia(m.chat, `https://cililitan.herokuapp.com/api/texttopng2?teks=${text}`, 'A L Y A', 'B O T M D', m, {asSticker: true})
          
-                     }
+                     } catch { 
+                     	if (isBan) return reply(mess.ban)	 			
+if (isBanChat) return reply(mess.banChat)
+           if (!text) return reply(`*Example : ${prefix + command} hello*`)
+           await XeonBotInc.sendMedia(m.chat, `https://api.akuari.my.id/other/ttp?text=${text}`, 'A L Y A', 'B O T M D', m, {asSticker: true})
+         }
                      break
             case 'soundcloud': case 'scdl': {               
                 if (!text) return reply(mess.linkm)
@@ -3919,8 +3925,7 @@ reply(mess.wait)
 nyz2 = await fetchJson(`https://myselfff.herokuapp.com/docs/wallpaper/${command}`) 
 nyz3 = await getBuffer(nyz2.list.gambar)
 XeonBotInc.sendMessage(from, {image : nyz3, caption:`By ${global.botname}`}, {quoted:m}) 						
-} catch (e) {
-error("Error!")
+} catch {reply(`Fitur sedang error!`)
 }
 break
 case 'woof':
@@ -3952,32 +3957,30 @@ reply(mess.wait)
 break
 case 'masturbation': case 'jahy': case 'hentai': case 'glasses': case 'gangbang': case 'foot': 
 case 'femdom': case 'cum': case 'ero': case 'cuckold': case 'blowjob': case 'bdsm': 
-case 'ahegao': case 'ass': case 'orgy': case 'panties': case 'pussy': case 'thighs': case 'yuri': case 'tentacles':
+case 'ahegao': case 'ass': case 'orgy': case 'panties': case 'pussy': case 'thighs': case 'yuri': case 'tentacles': {
 if (isBan) return reply(mess.ban)	 			
 if (isBanChat) return reply(mess.banChat)
-if (!m.isGroup) return replay(mess.group)
-///try{
-////reply(mess.wait)
-//////NoHorny = await fetchJson(`https://myselfff.herokuapp.com/docs/nsfw/${command}`)
-///////YesHorny = await getBuffer(NoHorny.result)
-///////////XeonBotInc.sendMessage(from, {image:YesHorny},{quoted:m})
-//////////} catch (e) {error("Error")}	
-XeonBotInc.sendMessage(from, { react: { text: `❌`, key: m.key }})
-                     
+///////////if (!m.isGroup) return replay(mess.group)
+try{
+reply(mess.wait)
+NoHorny = await fetchJson(`https://myselfff.herokuapp.com/docs/nsfw/${command}`)
+YesHorny = await getBuffer(NoHorny.result)
+XeonBotInc.sendMessage(from, {image:YesHorny},{quoted:m})
+} catch {
+XeonBotInc.sendMessage(from, { react: { text: `❌`, key: m.key }})}
+                     }
 break
-   case 'spank':
+   case 'spank': try{
       if (isBan) return reply(mess.ban)	 			
    if (isBanChat) return reply(mess.banChat)
-   if (!m.isGroup) return replay(mess.group)
-///// reply(mess.wait)
-/////////// spankd = await axios.get(`https://nekos.life/api/v2/img/spank`)                                   
- /////// let spbuff = await getBuffer(spankd.data.url)
-/////// let spgif = await GIFBufferToVideoBuffer(spbuff)   
-       //////////////// await XeonBotInc.sendMessage(m.chat,{video: spgif, gifPlayback:true},{ quoted:m }).catch(err => {
-                   ////// return reply('Error!')
-                                   // })
-                                   XeonBotInc.sendMessage(from, { react: { text: `❌`, key: m.key }})
-	                
+  ////////// if (!m.isGroup) return replay(mess.group)
+reply(mess.wait)
+spankd = await axios.get(`https://nekos.life/api/v2/img/spank`)                                   
+ let spbuff = await getBuffer(spankd.data.url)
+let spgif = await GIFBufferToVideoBuffer(spbuff)   
+       await XeonBotInc.sendMessage(m.chat,{video: spgif, gifPlayback:true},{ quoted:m })
+                                  } catch { XeonBotInc.sendMessage(from, { react: { text: `❌`, key: m.key }})
+	                }
                      
 break
 case 'blowjobgif': case 'bj' :
@@ -3996,6 +3999,7 @@ case 'hentaivid': case 'hentaivideo': {
 	                        	            	   if (isBan) return reply(mess.ban)
 	if (isBanChat) return reply(mess.banChat)
 	if (!m.isGroup) return replay(mess.group)
+	if (m.message && msgFilter.addFilter(from)) return
                 reply(mess.wait)
                 anu = await hentai()
                 result912 = anu[Math.floor(Math.random(), anu.length)]
@@ -4860,7 +4864,7 @@ case 'coffee': case 'kopi': {
 	if (isBan) return reply(mess.ban)	 			
 if (isBanChat) return reply(mess.banChat)
             let buttons = [
-                    {buttonId: `coffe`, buttonText: {displayText: 'Next Image'}, type: 1}
+                    {buttonId: `coffee`, buttonText: {displayText: 'Next Image'}, type: 1}
                 ]
                 let buttonMessage = {
                     image: { url: 'https://coffee.alexflipnote.dev/random' },
@@ -4925,7 +4929,7 @@ if (isBanChat) return reply(mess.banChat)
                 let media = await XeonBotInc.downloadAndSaveMediaMessage(quoted)                
                 let anu = await TelegraPh(media)
                 let buf = await getBuffer(`https://cililitan.herokuapp.com/api/${command}?url=${anu}`)
-                XeonBotInc.sendMessage(m.chat, { image: buf, caption: `Made by ${botname}` }, { quoted: m}).catch ((err) => reply(mess.error))
+                XeonBotInc.sendMessage(m.chat, { image: buf, caption: `Made by ${botname}` }, { quoted: m}).catch ((err) => reply(`sorry, the server currently down, try again later`))
                 }
                 break
 case 'gayeffect': {
@@ -5030,17 +5034,18 @@ replay(`Error!`)
 break
 case 'translate': case 'trans': {
 if (isBan) return reply(mess.ban)
-const bakk = args.join(" ")
-const baksd = args.join(" ")
-if (!bakk) return replay(`en = inggris\nin = indonesia\n\nExample:\n${prefix + command} en | *text*`)
-if (!baksd) return replay(`en = inggris\nin = indonesia\n\nExample:\n${prefix + command} en | *text*`)
-const ka = bakk.split(" | ")[0];
-const ko = baksd.split(" | ")[1];
-if (!text.includes(' | ')) return replay(`en = inggris\nin = indonesia\n\nExample:\n${prefix + command} en | *text*`)
-tes = await fetchJson (`https://megayaa.herokuapp.com/api/translate?to=${ka}&kata=${ko}`)
-Infoo = tes.info
-Detek = tes.translate
-replay(`🌐Translate : ${Detek}\n📘Results : ${Infoo}`)
+//////// const bakk = args.join(" ")
+///////const baksd = args.join(" ")
+//////////////////// if (!bakk) return replay(`en = inggris\nin = indonesia\n\nExample:\n${prefix + command} en | text`)
+//////////////////// if (!baksd) return replay(`en = inggris\nin = indonesia\n\nExample:\n${prefix + command} en | text`)
+/////////// const ka = bakk.split(" | ")[0];
+/////////// const ko = baksd.split(" | ")[1];
+///////////////////// if (!text.includes(' | ')) return replay(`en = inggris\nin = indonesia\n\nExample:\n${prefix + command} en | text`)
+///////////////// tes = await fetchJson (`https://megayaa.herokuapp.com/api/translate?to=en&kata=${text}`)
+//////// Infoo = tes.info
+///////Detek = tes.translate
+///////////////// replay(`🌐Translate : ${Detek}\n📘Results : ${Infoo}`)
+reply(`*EXPIRED FEATURE*\n\nmaaf fitur ini sudah kedaluwarsa, akan segera diperbarui`)
 }
 break
 case 'sound1':
@@ -7827,12 +7832,21 @@ teks += `${res.quotes}\n`
 teks += "══════════════════"
 replay(teks)
 break
-case "darkjoke":
+case "darkjoke": {
    if (isBan) return reply(mess.ban)	 			
 if (isBanChat) return reply(mess.banChat)
 var res = await Darkjokes()
-teks = "\nDarkjokes*"
-XeonBotInc.sendMessage(m.chat, { image : { url : res }, caption: teks }, { quoted : m })
+teks = "\n*Darkjokes*"
+let button = [{buttonId: `darkjoke`, buttonText: {displayText: '➡ Next'}, type: 1}]
+let buttonMessage = { 
+  video: {url: res},
+ caption: teks,
+ buttons: button,
+ headerType: 1
+} 
+XeonBotInc.sendMessage(m.chat, buttonMessage, {quoted: m})
+                
+            }
 break
 case 'cnn-news':
    if (isBan) return reply(mess.ban)	 			
@@ -9697,7 +9711,7 @@ XeonBotInc.sendMessage(from, { react: { text: dj, key: m.key }})
 	                
                      }
             break
-                case 'command': case 'listmenu': {
+                case 'command': case 'listmenu': case 'menu': {
                 	   if (isBan) return reply(mess.ban)
 	if (isBanChat) return reply(mess.banChat)
 	let sections = [{
@@ -9853,7 +9867,7 @@ XeonBotInc.sendMessage(from, { react: { text: dj, key: m.key }})
       }, { quoted : m })
       }
             break
-case 'allmenu': case 'menu': case 'allmenus': {
+case 'allmenu': case 'allmenus': {
 	   if (isBan) return reply(mess.ban)
 	if (isBanChat) return reply(mess.banChat)
 	if (m.message && msgFilter.addFilter(from)) return
@@ -9872,8 +9886,7 @@ teks = `*Response Speed* ${latensi.toFixed(4)} _Second_ \n ${oldd - neww} _milis
  ┃╠ ${prefix}rentbot [add/del] 
  ┃╠ ${prefix}rentlist 
  ┃╠ ${prefix}ban [add/del] 
- ┃╠ ${prefix}banchat [on/off] 
- ┃╠ ${prefix}joinxxx [link] 
+ ┃╠ ${prefix}banchat [on/off]  
  ┃╠ ${prefix}leavegc 
  ┃╠ ${prefix}setbio 
  ┃╠ ${prefix}bcgroup [text] 
@@ -10265,28 +10278,28 @@ teks = `*Response Speed* ${latensi.toFixed(4)} _Second_ \n ${oldd - neww} _milis
  ┃╠ ${prefix}gura 
  ┃╚═════════════✪
  ┗━━━━━━━━━━━━━━━━━━━⭓
- ┏━「 _NSFW_ 🫣 」━━⭓
- ┃╔═══════✪ 
+ ┏━「 _NSFW_ 」━━⭓ 
+ ┃╔═══════✪
  ┃╠ ${prefix}hentaivideo 
- ┃╠ ${prefix}yuri 
- ┃╠ ${prefix}masturbation 
- ┃╠ ${prefix}thighs 
- ┃╠ ${prefix}pussy 
- ┃╠ ${prefix}panties 
- ┃╠ ${prefix}orgy 
- ┃╠ ${prefix}ahegao 
- ┃╠ ${prefix}ass 
- ┃╠ ${prefix}bdsm 
- ┃╠ ${prefix}blowjob 
- ┃╠ ${prefix}cuckold 
- ┃╠ ${prefix}ero 
+ ┃╠ ${prefix}yuri (error)
+ ┃╠ ${prefix}masturbation (error)
+ ┃╠ ${prefix}thighs (error)
+ ┃╠ ${prefix}pussy (error)
+ ┃╠ ${prefix}panties (error)
+ ┃╠ ${prefix}orgy (error)
+ ┃╠ ${prefix}ahegao (error)
+ ┃╠ ${prefix}ass (error)
+ ┃╠ ${prefix}bdsm (error)
+ ┃╠ ${prefix}blowjob (error)
+ ┃╠ ${prefix}cuckold (error)
+ ┃╠ ${prefix}ero (error)
  ┃╠ ${prefix}gasm 
- ┃╠ ${prefix}cum 
- ┃╠ ${prefix}femdom 
- ┃╠ ${prefix}foot 
- ┃╠ ${prefix}gangbang 
- ┃╠ ${prefix}glasses 
- ┃╠ ${prefix}jahy 
+ ┃╠ ${prefix}cum (error)
+ ┃╠ ${prefix}femdom (error)
+ ┃╠ ${prefix}foot (error)
+ ┃╠ ${prefix}gangbang (error)
+ ┃╠ ${prefix}glasses (error)
+ ┃╠ ${prefix}jahy (error)
  ┃╠ ${prefix}trap 
  ┃╠ ${prefix}blowjobgif 
  ┃╠ ${prefix}spank 
@@ -10337,21 +10350,21 @@ teks = `*Response Speed* ${latensi.toFixed(4)} _Second_ \n ${oldd - neww} _milis
  ┗━━━━━━━━━━━━━━━━━━━⭓
  ┏━「 _TOOL_ 📝 」━━⭓
  ┃╔═✪ _en = inggris_ / _in = indonesia_
- ┃╠ ${prefix}translate en [text]
+ ┃╠ ~${prefix}translate en [text]~ (kedaluwarsa)
  ┃╠ ${prefix}fliptext [text] 
  ┃╠ ${prefix}toletter [number] 
  ┃╚═════════════✪
  ┗━━━━━━━━━━━━━━━━━━━⭓
  ┏━「 _DATABASE BOT_ 📲 」━━⭓
  ┃╔═══════✪
- ┃╠ ${prefix}setcmd 
+ ┃╠ ${prefix}setcmd
  ┃╠ ${prefix}listcmd 
  ┃╠ ${prefix}delcmd 
  ┃╠ ${prefix}lockcmd 
  ┃╠ ${prefix}addmsg 
  ┃╠ ${prefix}listmsg 
  ┃╠ ${prefix}getmsg 
- ┃╠ ${prefix}delmsg 
+ ┃╠ ${prefix}delmsg
  ┃╚═════════════✪
  ┗━━━━━━━━━━━━━━━━━━━⭓
  ┏━「 _INDO_ 📰 」━━⭓
@@ -10481,7 +10494,6 @@ break
  ┃╠ ${prefix}antitag 
  ┃╠ ${prefix}ban [add/del] 
  ┃╠ ${prefix}banchat [on/off] 
- ┃╠ ${prefix}joinxxx [link] 
  ┃╠ ${prefix}leavegc 
  ┃╠ ${prefix}setbio 
  ┃╠ ${prefix}block [user] 
@@ -10570,7 +10582,7 @@ sourceUrl: `${websitex}`,
 let documents = [doc1,doc2,doc3] 
  let docs = pickRandom(documents)
  let buttons = [ 
- {buttonId: `command`, buttonText: {displayText: 'List Menu'}}, {buttonId: `menu`, buttonText: {displayText: 'All Menu'}} //////////////////////// {buttonId: `command`, buttonText: {displayText: 'List Menu 🗂'}} 
+ {buttonId: `command`, buttonText: {displayText: 'List Menu'}}, {buttonId: `allmenu`, buttonText: {displayText: 'All Menu'}} //////////////////////// {buttonId: `command`, buttonText: {displayText: 'List Menu 🗂'}} 
  ] 
  let pic = [tu,tri,fo,faif,seven,egh,nen,ten,elepen,welep,faiften]
  let pics = pic[Math.floor(Math.random() * (pic.length))]
@@ -10617,7 +10629,7 @@ sourceUrl: `${websitex}`,
 let documents = [doc1,doc2,doc3] 
  let docs = pickRandom(documents)
  let buttons = [ 
- {buttonId: `command`, buttonText: {displayText: 'List Menu'}}, {buttonId: `menu`, buttonText: {displayText: 'All Menu'}}
+ {buttonId: `command`, buttonText: {displayText: 'List Menu'}}, {buttonId: `allmenu`, buttonText: {displayText: 'All Menu'}}
  ] 
  let pic = [tu,tri,fo,faif,seven,egh,nen,ten,elepen,welep,faiften]
  let pics = pic[Math.floor(Math.random() * (pic.length))]
@@ -10646,117 +10658,117 @@ sourceUrl: `${websitex}`,
             if (isBan) return reply(mess.ban) 
          if (isBanChat) return reply(mess.banChat) 
  var unicorn = await getBuffer(picak+'Maker Menu') 
- anjay = ` ┏━「 _MAKER_ 」━━⭓ 
- ┃╔═══════✪
- ┃╠ ${prefix}candy 
- ┃╠ ${prefix}blackpinkneon 
- ┃╠ ${prefix}deepsea 
- ┃╠ ${prefix}scifi 
- ┃╠ ${prefix}fiction 
- ┃╠ ${prefix}berry 
- ┃╠ ${prefix}fruitjuice 
- ┃╠ ${prefix}biscuit 
- ┃╠ ${prefix}wood 
- ┃╠ ${prefix}chocolate 
- ┃╠ ${prefix}matrix 
- ┃╠ ${prefix}blood 
- ┃╠ ${prefix}halloween 
- ┃╠ ${prefix}wicker 
- ┃╠ ${prefix}darkgold 
- ┃╠ ${prefix}firework 
- ┃╠ ${prefix}skeleton 
- ┃╠ ${prefix}sand 
- ┃╠ ${prefix}glue 
- ┃╠ ${prefix}leaves 
- ┃╠ ${prefix}magma 
- ┃╠ ${prefix}lava 
- ┃╠ ${prefix}rock 
- ┃╠ ${prefix}bloodglas 
- ┃╠ ${prefix}underwater 
- ┃╠ ${prefix}textmaker 
- ┃╠ ${prefix}honey 
- ┃╠ ${prefix}ice 
- ┃╠ ${prefix}watercolor 
- ┃╠ ${prefix}multicolor 
- ┃╠ ${prefix}snow 
- ┃╠ ${prefix}harrypot 
- ┃╠ ${prefix}harrypotter 
- ┃╠ ${prefix}brokenglass 
- ┃╠ ${prefix}waterpipe 
- ┃╠ ${prefix}spooky 
- ┃╠ ${prefix}circuit 
- ┃╠ ${prefix}metallic 
- ┃╠ ${prefix}demon 
- ┃╠ ${prefix}sparklechristmas 
- ┃╠ ${prefix}christmas 
- ┃╠ ${prefix}3dchristmas 
- ┃╠ ${prefix}3dbox 
- ┃╠ ${prefix}waterdrop 
- ┃╠ ${prefix}lion2 
- ┃╠ ${prefix}papercut 
- ┃╠ ${prefix}transformer 
- ┃╠ ${prefix}neondevil 
- ┃╠ ${prefix}3davengers 
- ┃╠ ${prefix}3dstone 
- ┃╠ ${prefix}3dstone2 
- ┃╠ ${prefix}summertime 
- ┃╠ ${prefix}thunder 
- ┃╠ ${prefix}window 
- ┃╠ ${prefix}graffiti 
- ┃╠ ${prefix}graffitibike 
- ┃╠ ${prefix}pornhub 
- ┃╠ ${prefix}glitch 
- ┃╠ ${prefix}blackpink 
- ┃╠ ${prefix}glitch2 
- ┃╠ ${prefix}glitch3 
- ┃╠ ${prefix}3dspace 
- ┃╠ ${prefix}lion 
- ┃╠ ${prefix}3dneon 
- ┃╠ ${prefix}greenneon 
- ┃╠ ${prefix}bokeh 
- ┃╠ ${prefix}holographic 
- ┃╠ ${prefix}bear 
- ┃╠ ${prefix}wolf 
- ┃╠ ${prefix}joker 
- ┃╠ ${prefix}dropwater 
- ┃╠ ${prefix}dropwater2 
- ┃╠ ${prefix}thewall 
- ┃╠ ${prefix}neonlight 
- ┃╠ ${prefix}natural 
- ┃╠ ${prefix}carbon 
- ┃╠ ${prefix}pencil 
- ┃╠ ${prefix}blackpink2 
- ┃╠ ${prefix}neon 
- ┃╠ ${prefix}neonlight2 
- ┃╠ ${prefix}toxic 
- ┃╠ ${prefix}strawberry 
- ┃╠ ${prefix}discovery 
- ┃╠ ${prefix}1917 
- ┃╠ ${prefix}sci_fi 
- ┃╠ ${prefix}ancient 
- ┃╠ ${prefix}fabric 
- ┃╠ ${prefix}hoorror 
- ┃╠ ${prefix}whitebear 
- ┃╠ ${prefix}juice 
- ┃╠ ${prefix}batman 
- ┃╠ ${prefix}multicolor 
- ┃╠ ${prefix}collwall 
- ┃╠ ${prefix}wonderful 
- ┃╠ ${prefix}cool 
- ┃╠ ${prefix}sketch 
- ┃╠ ${prefix}marvel 
- ┃╠ ${prefix}foggy 
- ┃╠ ${prefix}writing 
- ┃╠ ${prefix}halloweenfire 
- ┃╠ ${prefix}halloween 
- ┃╠ ${prefix}watercolor 
- ┃╠ ${prefix}classic 
+ anjay = ` ┏━「 _TEXT MAKER_ 🖌 」━━⭓
+ ┃╔═══════✪ 
+ ┃╠ ${prefix}candy [text]
+ ┃╠ ${prefix}blackpinkneon [text]
+ ┃╠ ${prefix}deepsea [text]
+ ┃╠ ${prefix}scifi [text]
+ ┃╠ ${prefix}fiction [text]
+ ┃╠ ${prefix}berry [text]
+ ┃╠ ${prefix}fruitjuice [text]
+ ┃╠ ${prefix}biscuit [text]
+ ┃╠ ${prefix}wood [text]
+ ┃╠ ${prefix}chocolate [text]
+ ┃╠ ${prefix}matrix [text]
+ ┃╠ ${prefix}blood [text]
+ ┃╠ ${prefix}halloween [text]
+ ┃╠ ${prefix}wicker [text]
+ ┃╠ ${prefix}darkgold [text]
+ ┃╠ ${prefix}firework [text]
+ ┃╠ ${prefix}skeleton [text]
+ ┃╠ ${prefix}sand [text]
+ ┃╠ ${prefix}glue [text]
+ ┃╠ ${prefix}leaves [text]
+ ┃╠ ${prefix}magma [text]
+ ┃╠ ${prefix}lava [text]
+ ┃╠ ${prefix}rock [text]
+ ┃╠ ${prefix}bloodglas [text]
+ ┃╠ ${prefix}underwater [text]
+ ┃╠ ${prefix}textmaker [text]
+ ┃╠ ${prefix}honey [text]
+ ┃╠ ${prefix}ice [text]
+ ┃╠ ${prefix}watercolor [text]
+ ┃╠ ${prefix}multicolor [text]
+ ┃╠ ${prefix}snow [text]
+ ┃╠ ${prefix}harrypot [text]
+ ┃╠ ${prefix}harrypotter [text]
+ ┃╠ ${prefix}brokenglass [text]
+ ┃╠ ${prefix}waterpipe [text]
+ ┃╠ ${prefix}spooky [text]
+ ┃╠ ${prefix}circuit [text]
+ ┃╠ ${prefix}metallic [text]
+ ┃╠ ${prefix}demon [text]
+ ┃╠ ${prefix}sparklechristmas [text]
+ ┃╠ ${prefix}christmas [text]
+ ┃╠ ${prefix}3dchristmas [text]
+ ┃╠ ${prefix}3dbox [text]
+ ┃╠ ${prefix}waterdrop [text]
+ ┃╠ ${prefix}lion2 [text]
+ ┃╠ ${prefix}papercut [text]
+ ┃╠ ${prefix}transformer [text]
+ ┃╠ ${prefix}neondevil [text]
+ ┃╠ ${prefix}3davengers [text]
+ ┃╠ ${prefix}3dstone [text]
+ ┃╠ ${prefix}3dstone2 [text]
+ ┃╠ ${prefix}summertime [text]
+ ┃╠ ${prefix}thunder [text]
+ ┃╠ ${prefix}window [text]
+ ┃╠ ${prefix}graffiti [text]
+ ┃╠ ${prefix}graffitibike [text]
+ ┃╠ ${prefix}pornhub [text|text]
+ ┃╠ ${prefix}glitch [text]
+ ┃╠ ${prefix}blackpink [text]
+ ┃╠ ${prefix}glitch2 [text]
+ ┃╠ ${prefix}glitch3 [text]
+ ┃╠ ${prefix}3dspace [text]
+ ┃╠ ${prefix}lion [text]
+ ┃╠ ${prefix}3dneon [text]
+ ┃╠ ${prefix}greenneon [text]
+ ┃╠ ${prefix}bokeh [text]
+ ┃╠ ${prefix}holographic [text]
+ ┃╠ ${prefix}bear [text]
+ ┃╠ ${prefix}wolf [text]
+ ┃╠ ${prefix}joker [text]
+ ┃╠ ${prefix}dropwater [text]
+ ┃╠ ${prefix}dropwater2 [text]
+ ┃╠ ${prefix}thewall [text]
+ ┃╠ ${prefix}neonlight [text]
+ ┃╠ ${prefix}natural [text]
+ ┃╠ ${prefix}carbon [text]
+ ┃╠ ${prefix}pencil [text]
+ ┃╠ ${prefix}blackpink2 [text]
+ ┃╠ ${prefix}neon [text]
+ ┃╠ ${prefix}neonlight2 [text]
+ ┃╠ ${prefix}toxic [text]
+ ┃╠ ${prefix}strawberry [text]
+ ┃╠ ${prefix}discovery [text]
+ ┃╠ ${prefix}1917 [text]
+ ┃╠ ${prefix}sci_fi [text]
+ ┃╠ ${prefix}ancient [text]
+ ┃╠ ${prefix}fabric [text]
+ ┃╠ ${prefix}hoorror [text]
+ ┃╠ ${prefix}whitebear [text]
+ ┃╠ ${prefix}juice [text]
+ ┃╠ ${prefix}batman [text]
+ ┃╠ ${prefix}multicolor [text]
+ ┃╠ ${prefix}collwall [text]
+ ┃╠ ${prefix}wonderful [text]
+ ┃╠ ${prefix}cool [text]
+ ┃╠ ${prefix}sketch [text]
+ ┃╠ ${prefix}marvel [text]
+ ┃╠ ${prefix}foggy [text]
+ ┃╠ ${prefix}writing [text]
+ ┃╠ ${prefix}halloweenfire [text]
+ ┃╠ ${prefix}halloween [text]
+ ┃╠ ${prefix}watercolor [text]
+ ┃╠ ${prefix}classic [text]
  ┃╚═════════════✪
  ┗━「 *Created By Kenneth Morris* 」━⭓` 
 let documents = [doc1,doc2,doc3] 
  let docs = pickRandom(documents)
  let buttons = [ 
- {buttonId: `command`, buttonText: {displayText: 'List Menu'}}, {buttonId: `menu`, buttonText: {displayText: 'All Menu'}}
+ {buttonId: `command`, buttonText: {displayText: 'List Menu'}}, {buttonId: `allmenu`, buttonText: {displayText: 'All Menu'}}
  ] 
  let pic = [tu,tri,fo,faif,seven,egh,nen,ten,elepen,welep,faiften]
  let pics = pic[Math.floor(Math.random() * (pic.length))]
@@ -10811,7 +10823,7 @@ sourceUrl: `${websitex}`,
 let documents = [doc1,doc2,doc3] 
  let docs = pickRandom(documents)
  let buttons = [ 
- {buttonId: `command`, buttonText: {displayText: 'List Menu'}}, {buttonId: `menu`, buttonText: {displayText: 'All Menu'}}
+ {buttonId: `command`, buttonText: {displayText: 'List Menu'}}, {buttonId: `allmenu`, buttonText: {displayText: 'All Menu'}}
  ] 
  let pic = [tu,tri,fo,faif,seven,egh,nen,ten,elepen,welep,faiften]
  let pics = pic[Math.floor(Math.random() * (pic.length))]
@@ -10873,7 +10885,7 @@ sourceUrl: `${websitex}`,
 let documents = [doc1,doc2,doc3] 
  let docs = pickRandom(documents)
  let buttons = [ 
- {buttonId: `command`, buttonText: {displayText: 'List Menu'}}, {buttonId: `menu`, buttonText: {displayText: 'All Menu'}}
+ {buttonId: `command`, buttonText: {displayText: 'List Menu'}}, {buttonId: `allmenu`, buttonText: {displayText: 'All Menu'}}
  ] 
  let pic = [tu,tri,fo,faif,seven,egh,nen,ten,elepen,welep,faiften]
  let pics = pic[Math.floor(Math.random() * (pic.length))]
@@ -10938,7 +10950,7 @@ sourceUrl: `${websitex}`,
 let documents = [doc1,doc2,doc3] 
  let docs = pickRandom(documents)
  let buttons = [ 
-{buttonId: `command`, buttonText: {displayText: 'List Menu'}}, {buttonId: `menu`, buttonText: {displayText: 'All Menu'}}
+{buttonId: `command`, buttonText: {displayText: 'List Menu'}}, {buttonId: `allmenu`, buttonText: {displayText: 'All Menu'}}
  ] 
  let pic = [tu,tri,fo,faif,seven,egh,nen,ten,elepen,welep,faiften]
  let pics = pic[Math.floor(Math.random() * (pic.length))]
@@ -10985,7 +10997,7 @@ sourceUrl: `${websitex}`,
 let documents = [doc1,doc2,doc3] 
  let docs = pickRandom(documents)
  let buttons = [ 
- {buttonId: `command`, buttonText: {displayText: 'List Menu'}}, {buttonId: `menu`, buttonText: {displayText: 'All Menu'}}
+ {buttonId: `command`, buttonText: {displayText: 'List Menu'}}, {buttonId: `allmenu`, buttonText: {displayText: 'All Menu'}}
  ] 
  let pic = [tu,tri,fo,faif,seven,egh,nen,ten,elepen,welep,faiften]
  let pics = pic[Math.floor(Math.random() * (pic.length))]
@@ -11034,7 +11046,7 @@ sourceUrl: `${websitex}`,
 let documents = [doc1,doc2,doc3] 
  let docs = pickRandom(documents)
  let buttons = [ 
- {buttonId: `command`, buttonText: {displayText: 'List Menu'}}, {buttonId: `menu`, buttonText: {displayText: 'All Menu'}}
+ {buttonId: `command`, buttonText: {displayText: 'List Menu'}}, {buttonId: `allmenu`, buttonText: {displayText: 'All Menu'}}
  ] 
  let pic = [tu,tri,fo,faif,seven,egh,nen,ten,elepen,welep,faiften]
  let pics = pic[Math.floor(Math.random() * (pic.length))]
@@ -11084,7 +11096,7 @@ sourceUrl: `${websitex}`,
 let documents = [doc1,doc2,doc3] 
  let docs = pickRandom(documents)
  let buttons = [ 
- {buttonId: `command`, buttonText: {displayText: 'List Menu'}}, {buttonId: `menu`, buttonText: {displayText: 'All Menu'}}
+ {buttonId: `command`, buttonText: {displayText: 'List Menu'}}, {buttonId: `allmenu`, buttonText: {displayText: 'All Menu'}}
  ] 
  let pic = [tu,tri,fo,faif,seven,egh,nen,ten,elepen,welep,faiften]
  let pics = pic[Math.floor(Math.random() * (pic.length))]
@@ -11168,7 +11180,7 @@ sourceUrl: `${websitex}`,
 let documents = [doc1,doc2,doc3] 
  let docs = pickRandom(documents)
  let buttons = [ 
- {buttonId: `command`, buttonText: {displayText: 'List Menu'}}, {buttonId: `menu`, buttonText: {displayText: 'All Menu'}}
+ {buttonId: `command`, buttonText: {displayText: 'List Menu'}}, {buttonId: `allmenu`, buttonText: {displayText: 'All Menu'}}
  ] 
  let pic = [tu,tri,fo,faif,seven,egh,nen,ten,elepen,welep,faiften]
  let pics = pic[Math.floor(Math.random() * (pic.length))]
@@ -11211,7 +11223,7 @@ sourceUrl: `${websitex}`,
 let documents = [doc1,doc2,doc3] 
  let docs = pickRandom(documents)
  let buttons = [ 
- {buttonId: `command`, buttonText: {displayText: 'List Menu'}}, {buttonId: `menu`, buttonText: {displayText: 'All Menu'}}
+ {buttonId: `command`, buttonText: {displayText: 'List Menu'}}, {buttonId: `allmenu`, buttonText: {displayText: 'All Menu'}}
  ] 
  let pic = [tu,tri,fo,faif,seven,egh,nen,ten,elepen,welep,faiften]
  let pics = pic[Math.floor(Math.random() * (pic.length))]
@@ -11276,7 +11288,7 @@ sourceUrl: `${websitex}`,
 let documents = [doc1,doc2,doc3] 
  let docs = pickRandom(documents)
  let buttons = [ 
- {buttonId: `command`, buttonText: {displayText: 'List Menu'}}, {buttonId: `menu`, buttonText: {displayText: 'All Menu'}}
+ {buttonId: `command`, buttonText: {displayText: 'List Menu'}}, {buttonId: `allmenu`, buttonText: {displayText: 'All Menu'}}
  ] 
  let pic = [tu,tri,fo,faif,seven,egh,nen,ten,elepen,welep,faiften]
  let pics = pic[Math.floor(Math.random() * (pic.length))]
@@ -11308,25 +11320,25 @@ sourceUrl: `${websitex}`,
  anjay = ` ┏━「 _NSFW_ 」━━⭓ 
  ┃╔═══════✪
  ┃╠ ${prefix}hentaivideo 
- ┃╠ ${prefix}yuri 
- ┃╠ ${prefix}masturbation 
- ┃╠ ${prefix}thighs 
- ┃╠ ${prefix}pussy 
- ┃╠ ${prefix}panties 
- ┃╠ ${prefix}orgy 
- ┃╠ ${prefix}ahegao 
- ┃╠ ${prefix}ass 
- ┃╠ ${prefix}bdsm 
- ┃╠ ${prefix}blowjob 
- ┃╠ ${prefix}cuckold 
- ┃╠ ${prefix}ero 
+ ┃╠ ${prefix}yuri (error)
+ ┃╠ ${prefix}masturbation (error)
+ ┃╠ ${prefix}thighs (error)
+ ┃╠ ${prefix}pussy (error)
+ ┃╠ ${prefix}panties (error)
+ ┃╠ ${prefix}orgy (error)
+ ┃╠ ${prefix}ahegao (error)
+ ┃╠ ${prefix}ass (error)
+ ┃╠ ${prefix}bdsm (error)
+ ┃╠ ${prefix}blowjob (error)
+ ┃╠ ${prefix}cuckold (error)
+ ┃╠ ${prefix}ero (error)
  ┃╠ ${prefix}gasm 
- ┃╠ ${prefix}cum 
- ┃╠ ${prefix}femdom 
- ┃╠ ${prefix}foot 
- ┃╠ ${prefix}gangbang 
- ┃╠ ${prefix}glasses 
- ┃╠ ${prefix}jahy 
+ ┃╠ ${prefix}cum (error)
+ ┃╠ ${prefix}femdom (error)
+ ┃╠ ${prefix}foot (error)
+ ┃╠ ${prefix}gangbang (error)
+ ┃╠ ${prefix}glasses (error)
+ ┃╠ ${prefix}jahy (error)
  ┃╠ ${prefix}trap 
  ┃╠ ${prefix}blowjobgif 
  ┃╠ ${prefix}spank 
@@ -11337,7 +11349,7 @@ sourceUrl: `${websitex}`,
 let documents = [doc1,doc2,doc3] 
  let docs = pickRandom(documents)
  let buttons = [ 
- {buttonId: `command`, buttonText: {displayText: 'List Menu'}}, {buttonId: `menu`, buttonText: {displayText: 'All Menu'}}
+ {buttonId: `command`, buttonText: {displayText: 'List Menu'}}, {buttonId: `allmenu`, buttonText: {displayText: 'All Menu'}}
  ] 
  let pic = [tu,tri,fo,faif,seven,egh,nen,ten,elepen,welep,faiften]
  let pics = pic[Math.floor(Math.random() * (pic.length))]
@@ -11437,7 +11449,7 @@ sourceUrl: `${websitex}`,
 let documents = [doc1,doc2,doc3] 
  let docs = pickRandom(documents)
  let buttons = [ 
- {buttonId: `command`, buttonText: {displayText: 'List Menu'}}, {buttonId: `menu`, buttonText: {displayText: 'All Menu'}}
+ {buttonId: `command`, buttonText: {displayText: 'List Menu'}}, {buttonId: `allmenu`, buttonText: {displayText: 'All Menu'}}
  ] 
  let pic = [tu,tri,fo,faif,seven,egh,nen,ten,elepen,welep,faiften]
  let pics = pic[Math.floor(Math.random() * (pic.length))]
@@ -11634,7 +11646,7 @@ sourceUrl: `${websitex}`,
 let documents = [doc1,doc2,doc3] 
  let docs = pickRandom(documents)
  let buttons = [ 
- {buttonId: `command`, buttonText: {displayText: 'List Menu'}}, {buttonId: `menu`, buttonText: {displayText: 'All Menu'}}
+ {buttonId: `command`, buttonText: {displayText: 'List Menu'}}, {buttonId: `allmenu`, buttonText: {displayText: 'All Menu'}}
  ] 
  let pic = [tu,tri,fo,faif,seven,egh,nen,ten,elepen,welep,faiften]
  let pics = pic[Math.floor(Math.random() * (pic.length))]
@@ -11686,7 +11698,7 @@ sourceUrl: `${websitex}`,
 let documents = [doc1,doc2,doc3] 
  let docs = pickRandom(documents)
  let buttons = [ 
- {buttonId: `command`, buttonText: {displayText: 'List Menu'}}, {buttonId: `menu`, buttonText: {displayText: 'All Menu'}}
+ {buttonId: `command`, buttonText: {displayText: 'List Menu'}}, {buttonId: `allmenu`, buttonText: {displayText: 'All Menu'}}
  ] 
  let pic = [tu,tri,fo,faif,seven,egh,nen,ten,elepen,welep,faiften]
  let pics = pic[Math.floor(Math.random() * (pic.length))]
@@ -11730,7 +11742,7 @@ sourceUrl: `${websitex}`,
 let documents = [doc1,doc2,doc3] 
  let docs = pickRandom(documents)
  let buttons = [ 
- {buttonId: `command`, buttonText: {displayText: 'List Menu'}}, {buttonId: `menu`, buttonText: {displayText: 'All Menu'}}
+ {buttonId: `command`, buttonText: {displayText: 'List Menu'}}, {buttonId: `allmenu`, buttonText: {displayText: 'All Menu'}}
  ] 
  let pic = [tu,tri,fo,faif,seven,egh,nen,ten,elepen,welep,faiften]
  let pics = pic[Math.floor(Math.random() * (pic.length))]
@@ -11770,7 +11782,7 @@ sourceUrl: `${websitex}`,
 let documents = [doc1,doc2,doc3] 
  let docs = pickRandom(documents)
  let buttons = [ 
- {buttonId: `command`, buttonText: {displayText: 'List Menu'}}, {buttonId: `menu`, buttonText: {displayText: 'All Menu'}}
+ {buttonId: `command`, buttonText: {displayText: 'List Menu'}}, {buttonId: `allmenu`, buttonText: {displayText: 'All Menu'}}
  ] 
  let pic = [tu,tri,fo,faif,seven,egh,nen,ten,elepen,welep,faiften]
  let pics = pic[Math.floor(Math.random() * (pic.length))]
@@ -11801,7 +11813,7 @@ sourceUrl: `${websitex}`,
  var unicorn = await getBuffer(picak+'Tool Menu') 
 anjay = ` ┏━「 _TOOL_ 」━━⭓ 
  ┃╔═══════✪
- ┃╠ ${prefix}translate [text] 
+ ┃╠ ~${prefix}translate [text]~ (kedaluwarsa)
  ┃╠ ${prefix}fliptext [text] 
  ┃╠ ${prefix}toletter [number] 
  ┃╚═════════════✪
@@ -11809,7 +11821,7 @@ anjay = ` ┏━「 _TOOL_ 」━━⭓
  let documents = [doc1,doc2,doc3] 
  let docs = pickRandom(documents)
  let buttons = [ 
- {buttonId: `command`, buttonText: {displayText: 'List Menu'}}, {buttonId: `menu`, buttonText: {displayText: 'All Menu'}}
+ {buttonId: `command`, buttonText: {displayText: 'List Menu'}}, {buttonId: `allmenu`, buttonText: {displayText: 'All Menu'}}
  ] 
  let pic = [tu,tri,fo,faif,seven,egh,nen,ten,elepen,welep,faiften]
  let pics = pic[Math.floor(Math.random() * (pic.length))]
@@ -11853,7 +11865,7 @@ break
 let documents = [doc1,doc2,doc3] 
  let docs = pickRandom(documents)
  let buttons = [ 
- {buttonId: `command`, buttonText: {displayText: 'List Menu'}}, {buttonId: `menu`, buttonText: {displayText: 'All Menu'}}
+ {buttonId: `tutorx`, buttonText: {displayText: 'Apa itu Database Menu?'}},{buttonId: `command`, buttonText: {displayText: 'List Menu'}}, {buttonId: `allmenu`, buttonText: {displayText: 'All Menu'}}
  ] 
  let pic = [tu,tri,fo,faif,seven,egh,nen,ten,elepen,welep,faiften]
  let pics = pic[Math.floor(Math.random() * (pic.length))]
@@ -11878,6 +11890,16 @@ sourceUrl: `${websitex}`,
  XeonBotInc.sendMessage(m.chat, buttonMessage, {quoted: fdocs})
  }
 break 
+case 'tutorx': {
+	if (isBan) return reply(mess.ban) 
+         if (isBanChat) return reply(mess.banChat)
+ caption = `*「 DATABASE MENU 💡 」*\n\n• *setcmd*\nUntuk mengatur media (audio/stiker/video/foto) sebagai command/perintah [tidak permanen]\nContoh: (balas stiker/audio/video/foto dulu) lalu ketik .setcmd hentaivideo\n• *listcmd*\nUntuk melihat daftar command/perintah\n• *delcmd*\nUntuk menghapus command yg ada di media\nContoh: (kirim dan balas stiker/audio/foto/video yg ada commandnya, lalu ketik .delcmd\n• *lockcmd*\nUntuk mengunci/menandai command\nContoh: balas pesan media yg ada commandnya, lalu ketik .lockcmd\n• *addmsg*\nUntuk menyimpan pesan ke database bot [tidak permanen]\nContoh: (balas pesan teks dulu) \nlalu ketik .addmsg <nama file>\n• *listmsg*\nMelihat daftar pesan yang disimpan\n• *getmsg*\nUntuk mengakses/membuka file yang disimpan di database bot\nContoh: misal nama filenya 'jasjus', tinggal ketik .getmsg jasjus\n• *delmsg*\nUntuk menghapus file yang disimpan di database bot\nContoh: .delmsg <nama file>`
+  let buttons = [ 
+ {buttonId: `command`, buttonText: {displayText: 'List Menu'}}, {buttonId: `allmenu`, buttonText: {displayText: 'All Menu'}}
+ ] 
+ XeonBotInc.sendButtonText(m.chat, buttons, caption, `${pushname}`)
+	}
+break
  case 'indomenu': {
             if (isBan) return reply(mess.ban) 
          if (isBanChat) return reply(mess.banChat) 
@@ -11913,7 +11935,7 @@ break
  let documents = [doc1,doc2,doc3] 
  let docs = pickRandom(documents)
  let buttons = [ 
- {buttonId: `command`, buttonText: {displayText: 'List Menu'}}, {buttonId: `menu`, buttonText: {displayText: 'All Menu'}}
+ {buttonId: `command`, buttonText: {displayText: 'List Menu'}}, {buttonId: `allmenu`, buttonText: {displayText: 'All Menu'}}
  ] 
  let pic = [tu,tri,fo,faif,seven,egh,nen,ten,elepen,welep,faiften]
  let pics = pic[Math.floor(Math.random() * (pic.length))]
@@ -11980,7 +12002,7 @@ anjay = ` ┏━「 _INDO HOROSCOPE_ 」━━⭓
  let documents = [doc1,doc2,doc3] 
  let docs = pickRandom(documents)
  let buttons = [ 
- {buttonId: `command`, buttonText: {displayText: 'List Menu'}}, {buttonId: `menu`, buttonText: {displayText: 'All Menu'}}
+ {buttonId: `command`, buttonText: {displayText: 'List Menu'}}, {buttonId: `allmenu`, buttonText: {displayText: 'All Menu'}}
  ] 
  let pic = [tu,tri,fo,faif,seven,egh,nen,ten,elepen,welep,faiften]
  let pics = pic[Math.floor(Math.random() * (pic.length))]
@@ -12036,7 +12058,7 @@ sourceUrl: `${websitex}`,
  let documents = [doc1,doc2,doc3] 
  let docs = pickRandom(documents)
  let buttons = [ 
- {buttonId: `command`, buttonText: {displayText: 'List Menu'}}, {buttonId: `menu`, buttonText: {displayText: 'All Menu'}}
+ {buttonId: `command`, buttonText: {displayText: 'List Menu'}}, {buttonId: `allmenu`, buttonText: {displayText: 'All Menu'}}
  ] 
  let pic = [tu,tri,fo,faif,seven,egh,nen,ten,elepen,welep,faiften]
  let pics = pic[Math.floor(Math.random() * (pic.length))]
