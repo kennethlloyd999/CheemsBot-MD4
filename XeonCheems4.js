@@ -7839,7 +7839,7 @@ var res = await Darkjokes()
 teks = "\n*Darkjokes*"
 let button = [{buttonId: `darkjoke`, buttonText: {displayText: '➡ Next'}, type: 1}]
 let buttonMessage = { 
-  video: {url: res},
+  image: {url: res},
  caption: teks,
  buttons: button,
  headerType: 1
