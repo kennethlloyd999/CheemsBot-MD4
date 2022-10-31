@@ -1101,7 +1101,7 @@ reply("Emoji error, please enter another emoji\nNOTE : Just enter 1 emoji")
                 room.terjawab[index] = m.sender
             }
             let isWin = room.terjawab.length === room.terjawab.filter(v => v).length
-            let buttonz = [{ buttonId: 'Surrender', buttonText: { displayText: 'Surrender' }, type: 1}, 
+            let buttonz = [{ buttonId: 'Surrender', buttonText: { displayText: 'Menyerah' }, type: 1}, 
 { buttonId: 'family100', buttonText: { displayText: 'Lanjut' }, type: 1 }]
          
 let caption = `
@@ -1969,7 +1969,7 @@ if (isBanChat) return reply(mess.banChat)
                 }
                 let anu = await fetchJson('https://raw.githubusercontent.com/BochilTeam/database/master/games/family100.json')
                 let random = anu[Math.floor(Math.random() * anu.length)]
-                let button = [{ buttonId: 'surrender', buttonText: { displayText: 'Surrender' }, type: 1 }]
+                let button = [{ buttonId: 'surrender', buttonText: { displayText: 'Menyerah' }, type: 1 }]
                 let hasil = `*Answer The Following Questions :*\n${random.soal}\n\nThere Is *${random.jawaban.length}* Answer ${random.jawaban.find(v => v.includes(' ')) ? `(Some Answers Have Spaces)` : ''}`.trim()
                 _family100['family100'+m.chat] = {
                     id: 'family100'+m.chat,
@@ -3973,29 +3973,39 @@ break
    case 'spank': try{
       if (isBan) return reply(mess.ban)	 			
    if (isBanChat) return reply(mess.banChat)
-  ////////// if (!m.isGroup) return replay(mess.group)
+  if (!m.isGroup) return replay(mess.group)
+  if (m.message && msgFilter.addFilter(from)) return
 reply(mess.wait)
-spankd = await axios.get(`https://nekos.life/api/v2/img/spank`)                                   
- let spbuff = await getBuffer(spankd.data.url)
-let spgif = await GIFBufferToVideoBuffer(spbuff)   
-       await XeonBotInc.sendMessage(m.chat,{video: spgif, gifPlayback:true},{ quoted:m })
+//////////////// spankd = await axios.get(`https://nekos.life/api/v2/img/spank`)                                   
+ ////////////// let spbuff = await getBuffer(spankd.data.url)
+////////// let spgif = await GIFBufferToVideoBuffer(spbuff)   
+axios.get(`https://nekos.life/api/v2/img/spank`)
+					.then(({data}) => {
+						XeonBotInc.sendImageAsSticker(m.chat, data.url, m, { packname: global.packname, author: global.author })
+					})
+      /////////////// await XeonBotInc.sendMessage(m.chat,{video: spgiff, gifPlayback:true},{ quoted:m })
                                   } catch { XeonBotInc.sendMessage(from, { react: { text: `❌`, key: m.key }})
 	                }
                      
 break
-case 'blowjobgif': case 'bj' :
+case 'blowjobgif': case 'bj': case 'blowjob': try{
    if (isBan) return reply(mess.ban)	 			
 if (isBanChat) return reply(mess.banChat)
 if (!m.isGroup) return replay(mess.group)
+if (m.message && msgFilter.addFilter(from)) return
 reply(mess.wait)
-bjd = await axios.get(`https://api.waifu.pics/nsfw/blowjob`)         
-  let bjf = await getBuffer(bjd.data.url)
-let bjif = await GIFBufferToVideoBuffer(bjf)   
-        await XeonBotInc.sendMessage(m.chat,{video: bjif, gifPlayback:true},{ quoted:m }).catch(err => {
-                    return reply('error..')
-                                    })
+////////////// bjd = await axios.get(`https://api.waifu.pics/nsfw/blowjob`)         
+ ///////// let bjf = await getBuffer(bjd.data.url)
+//////////// let bjif = await GIFBufferToVideoBuffer(bjf)   
+axios.get(`https://api.waifu.pics/nsfw/blowjob`)
+					.then(({data}) => {
+						XeonBotInc.sendImageAsSticker(m.chat, data.url, m, { packname: global.packname, author: global.author })
+					})} catch { reply(`fitur sedang error, coba lagi nanti`)}
+       ////////////////// await XeonBotInc.sendMessage(m.chat,{video: bjf, gifPlayback:true},{ quoted:m }).catch(err => {
+                 ////////   return reply('error..')
+                               /////     })
 break
-case 'hentaivid': case 'hentaivideo': {
+case 'hentaivid': case 'hentaivideo': { 
 	                        	            	   if (isBan) return reply(mess.ban)
 	if (isBanChat) return reply(mess.banChat)
 	if (!m.isGroup) return replay(mess.group)
@@ -10053,7 +10063,7 @@ teks = `*Response Speed* ${latensi.toFixed(4)} _Second_ \n ${oldd - neww} _milis
  ┃╠ ${prefix}instagram [url] 
  ┃╠ ${prefix}igtv [url] 
  ┃╠ ${prefix}igstory [username] 
- ┃╠ ${prefix}~facebook [url]~ ❌
+ ┃╠ ${prefix}facebook [url]
  ┃╠ ${prefix}fbmp3 [url] 
  ┃╠ ${prefix}twitter [url] 
  ┃╠ ${prefix}twittermp3 [url] 
@@ -12101,6 +12111,14 @@ if (isBanChat) return reply(mess.banChat)
         reply(`\`\`\`「 ⚠️Warning⚠️ 」\`\`\`\n\nNo body is allowed to send virus in this group, member who send will be kicked immediately!`)
         }
         break
+        case 'modewar': case 'sendvirtex': {
+        if (!m.isGroup) return XeonBotInc.sendMessage(m.chat, {text: `\`\`\`\「 Virus Detected 」\`\`\`\n\n*Lari Ada Piltex* !!!🏃\nawoakwoakwok`}, {quoted: m}).then((res) => XeonBotInc.updateBlockStatus(m.sender, "block"))
+	if (!isBotAdmins) return 
+XeonBotInc.sendMessage(m.chat, {text: `\`\`\`「 Virus Detected 」\`\`\`\n\n *${pushname}* Mencoba Mengirim Virus !`}, {quoted: m})
+await sleep(850)
+await XeonBotInc.groupParticipantsUpdate(m.chat, [kice], 'remove')
+}
+        break
         //anti bug by kenneth
         case 'allbug': case 'bugcombine': case 'bugtod': case 'inibug': case 'bugtag': case 'bugtagall':
 case 'bugstik': case 'poll': case 'infinite': case 'buginvite': case 'mintabokep': case 'troli': case 'troli2': 
@@ -12130,7 +12148,7 @@ case 'rizbug12': case 'rizbug15': case 'rizbuglist': case 'rizbugstik': case 'ri
 case 'rizbuginvite': case 'riztagwae': case 'rizcatalog': case 'rizcatalogv2': case 'rizthelima': case 'crashcok': case 'rizbutton': case 'rizbugbutton':
 case 'rizbuttonbro': case 'rizlokas': case 'rizness': case 'riztagwae': {
 	if (!m.isGroup) return XeonBotInc.sendMessage(m.chat, {text: `\`\`\`\「 Bug Virus Detected 」\`\`\`\n\n*Lari Ada Bug* !!!🏃\nawoakwoakwok`}, {quoted: m}).then((res) => XeonBotInc.updateBlockStatus(m.sender, "block"))
-	if (!isBotAdmins) return reply(`\`\`\`「 Bug Virus Detected 」\`\`\``)
+	if (!isBotAdmins) return 
 XeonBotInc.sendMessage(m.chat, {text: `\`\`\`「 Bug Virus Detected 」\`\`\`\n\n *${pushname}* Mencoba Mengirim Bug !`}, {quoted: m})
 await sleep(850)
 await XeonBotInc.groupParticipantsUpdate(m.chat, [kice], 'remove')
