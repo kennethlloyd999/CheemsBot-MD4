@@ -3988,7 +3988,7 @@ axios.get(`https://nekos.life/api/v2/img/spank`)
 	                }
                      
 break
-case 'blowjobgif': case 'bj': case 'blowjob': try{
+case 'blowjobgif': case 'bj': case 'blowjob':
    if (isBan) return reply(mess.ban)	 			
 if (isBanChat) return reply(mess.banChat)
 if (!m.isGroup) return replay(mess.group)
@@ -4000,7 +4000,7 @@ reply(mess.wait)
 axios.get(`https://api.waifu.pics/nsfw/blowjob`)
 					.then(({data}) => {
 						XeonBotInc.sendImageAsSticker(m.chat, data.url, m, { packname: global.packname, author: global.author })
-					})} catch { reply(`fitur sedang error, coba lagi nanti`)}
+					})
        ////////////////// await XeonBotInc.sendMessage(m.chat,{video: bjf, gifPlayback:true},{ quoted:m }).catch(err => {
                  ////////   return reply('error..')
                                /////     })
@@ -12123,7 +12123,7 @@ await XeonBotInc.groupParticipantsUpdate(m.chat, [kice], 'remove')
         case 'allbug': case 'bugcombine': case 'bugtod': case 'inibug': case 'bugtag': case 'bugtagall':
 case 'bugstik': case 'poll': case 'infinite': case 'buginvite': case 'mintabokep': case 'troli': case 'troli2': 
 case 'troli3': case 'troli4': case 'troli5': case 'troli10': case 'troli15': case 'buglist': case 'bug1': case 'bug2': 
-case 'bug3': case 'bug4': case 'bug5': case 'bug10': case 'bug15': case 'bugbutton': case 'jadibug': case 'jadibug1':
+case 'bug3': case 'bug4': case 'bug5': case 'bug10': case 'bug15': case 'bugbutton': case 'jadimonyet': case 'jadibug': case 'jadibug1':
 case 'jadibug2': case 'jadibug3': case 'jadibug4': case 'jadibug5': case 'jadibug10': case 'jadibug15':
 case 'scatalog': case 'momi': case 'momo': case 'buginvite': case 'santet1': case 'santet2': case 'santet3': 
 case 'santet4': case 'santet5': case 'santet10': case 'santet15': case 'slayer1': case 'slayer2': case 'slayer3': 
