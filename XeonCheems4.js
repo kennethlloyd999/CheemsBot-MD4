@@ -545,11 +545,7 @@ jumlahharian = `${dataa.value}`
 		setting.status = new Date() * 1
 	    }
 	}
-	//antispam or auto react
-//if (m.message && msgFilter.isFiltered(from)) {
-//console.log(`${global.themeemoji}[SPAM]`, color(moment(m.messageTimestamp * 1000).format('DD/MM/YYYY HH:mm:ss'), 'yellow'), color(`${command} [${args.length}]`), 'from', color(m.pushName))
-//return XeonBotInc.sendMessage(from, { react: { text: `${global.themeemoji}`, key: m.key }})
-//}
+	
 	
 //auto read whatsapp status
 if (autoreadsw) {
@@ -6496,6 +6492,7 @@ if (isBanChat) return reply(mess.banChat)
   ////////////////////////if (!isUrl(args[0]) && !args[0].includes('facebook.com')) return reply(`The link you provided is invalid`)
   if (!args.join(" ")) return replay(`Example : ${prefix + command} stay jb`)
   if (m.message && msgFilter.addFilter(from)) return
+  XeonBotInc.sendMessage(from, { react: { text: `🔎`, key: m.key }})
 let yts = require("yt-search")
 let search = await yts(args.join(" "))
   yts(`${text}`).then(async (data) => {
@@ -6514,7 +6511,7 @@ let search = await yts(args.join(" "))
 // duwaaa
      sections.push(list)   
      }
-  const sendm =  XeonBotInc.sendMessage(
+  let sendm =  await XeonBotInc.sendMessage(
       m.chat, 
       {
        text: `Hi, ${pushname}! \n\n_Here is the list of videos,_ \n_click the button below to choose_`,
@@ -6522,11 +6519,14 @@ let search = await yts(args.join(" "))
        title: "*YT SEARCH*",
        buttonText: "CLICK HERE",
        sections
-      }, { quoted : m })                 
+      }, { quoted : m })
+await sendm
+                XeonBotInc.sendMessage(from, { react: { text: `✅`, key: m.key }})
+                             
                 }).catch((err) => {
                     reply(mess.error)
                 })
-            }
+                }
 break
 case 'google': case 'gulugulu': {
 	if (isBan) return reply(mess.ban)	 			
@@ -6550,7 +6550,7 @@ if (isBanChat) return reply(mess.banChat)
   ////////////////////////if (!isUrl(args[0]) && !args[0].includes('facebook.com')) return reply(`The link you provided is invalid`)
   if (!args.join(" ")) return replay(`Example : ${prefix + command} stay jb`)
   if (m.message && msgFilter.addFilter(from)) return
-  let ahay = `⏰`
+  let ahay = `🔎`
   XeonBotInc.sendMessage(from, { react: { text: ahay, key: m.key }})
 let yts = require("yt-search")
 let search = await yts(args.join(" "))
@@ -6579,6 +6579,9 @@ let search = await yts(args.join(" "))
        buttonText: "CLICK HERE",
        sections
       }, { quoted : m })                 
+      await sendm
+      XeonBotInc.sendMessage(from, { react: { text: `✅`, key: m.key }})
+      
                 }).catch((err) => {
                     reply(mess.error)
                 })
@@ -6694,7 +6697,7 @@ case 'ytdonwan': try{
             if (isBan) return reply(mess.ban) 
 	if (isBanChat) return reply(mess.banChat)
                 if (!text) return reply(mess.linkm)
-                reply(mess.wait)
+                reply(`Please wait a moment`)
                 if (!isUrl(args[0]) && !args[0].includes('youtube.com')) return reply(`The link you provided is invalid`)
                 const jetsatu = args.join(" ")
                 const jetdua = args.join(" ")
@@ -6720,8 +6723,9 @@ case 'ytdonwan': try{
  buttons: button,
  headerType: 1
 } 
-XeonBotInc.sendMessage(m.chat, buttonMessage, {quoted: m})
-                
+let bjir = await XeonBotInc.sendMessage(m.chat, buttonMessage, {quoted: m})
+                await bjir
+                XeonBotInc.sendMessage(from, { react: { text: `✅`, key: m.key }})
             } catch { reply(`sorry, the server's currently down, try again later`)}
             break
 case 'googlexxx': {
@@ -8888,7 +8892,7 @@ break
     if (isBan) return reply(mess.ban)                                  
  if (isBanChat) return reply(mess.banChat) 
  if (m.message && msgFilter.addFilter(from)) return
-reply(`Please wait a moment`)
+let anjas = await XeonBotInc.sendMessage(m.chat, {text: `Please wait a moment`}, {quoted: m})
 const jettempur = args.join(" ")
 const jetbosok = args.join(" ")
 const jetasu = jettempur.split(" | ")[0]
@@ -8897,7 +8901,7 @@ const jetkontol = jetbosok.split(" | ")[1]
                 if (anu.audio.size.split('MB')[0] >= 10) return reply(`*File Over Limit*`)
                 tummb = await getBuffer(anu.thumbnail)
                 audio = await getBuffer(anu.audio.audio)      
- XeonBotInc.sendMessage(m.chat, {audio:{url: anu.audio.audio}, mimetype: "audio/mpeg", ptt:true}, {quoted: m}) ////////contextInfo:{externalAdReply:{ 
+ let kon = XeonBotInc.sendMessage(m.chat, {audio:{url: anu.audio.audio}, mimetype: "audio/mpeg", ptt:true}, {quoted: m}) ////////contextInfo:{externalAdReply:{ 
 ///////////////// title:`Reply this Audio to convert \ninto mp3 with caption tomp3`, 
 //////// body:`${global.botname}`, 
 /////// thumbnail: log0, 
@@ -8906,9 +8910,11 @@ const jetkontol = jetbosok.split(" | ")[1]
 ////// sourceUrl: `${global.websitex}` 
 //// }}}, 
 ////// {quoted:m}) 
+await XeonBotInc.sendMessage(m.chat, {text: `Uploading...`}, {quoted: m})
+await kon
 ja = `✅`
 await XeonBotInc.sendMessage(from, { react: { text: ja, key: m.key }})
- } catch {(err) => reply(`${jsonformat(err)}`)
+ } catch {(err) => reply(`sorry, the server's currently down, try again later`)
  }
 break
 case 'ytvd': try{
@@ -8941,7 +8947,7 @@ case 'ytad': try{
    if (isBan) return reply(mess.ban)	 			
 if (isBanChat) return reply(mess.banChat)
 if (m.message && msgFilter.addFilter(from)) return
-reply(`Please wait a moment`)
+let anjas = await XeonBotInc.sendMessage(m.chat, {text: `Please wait a moment`}, {quoted: m})
 const jettempur = args.join(" ")
 const jetbosok = args.join(" ")
 const jetasu = jettempur.split(" | ")[0]
@@ -8957,17 +8963,17 @@ thumbnail: tummb,
 mediaType:2,
 mediaUrl: `${linkz}`,
 sourceUrl: ``
-}}}, {quoted:m}).catch((err) => reply(`${anu.audio.audio}`))
-ja = `✅`
-XeonBotInc.sendMessage(from, { react: { text: ja, key: m.key }})
-} catch {(err) => reply(`${jsonformat(err)}`)
+}}}, {quoted:m}).then( anjos = await XeonBotInc.sendMessage(m.chat, {text: `Uploading...`}, {quoted: anjas})).then( XeonBotInc.sendMessage(from, { react: { text: ja, key: anjas.key }})).catch((err) => reply(`${anu.audio.audio}`))
+ await kon
+ XeonBotInc.sendMessage(from, { react: { text: ja, key: anjos.key }})
+} catch {(err) => reply(`sorry, the server's currently down, try again later`)
 }
 break
 case 'ytdc': try{
 	if (isBan) return reply(mess.ban)	 			
 if (isBanChat) return reply(mess.banChat)
 if (m.message && msgFilter.addFilter(from)) return
-reply(`Please wait a moment`)
+let anjas = await XeonBotInc.sendMessage(m.chat, {text: `Please wait a moment`}, {quoted: m})
 const jettempur = args.join(" ")
 const jetbosok = args.join(" ")
 const jetasu = jettempur.split(" | ")[0]
@@ -8976,16 +8982,16 @@ const jetkontol = jetbosok.split(" | ")[1]
                 if (anu.audio.size.split('MB')[0] >= 20) return reply(`*File Over Limit* \n\nSilahkan download sendiri,\nSize: ${anu.audio.size}\n\nLink: ⤵ ͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏`+util.format(anu.audio.audio))
                 tummb = await getBuffer(anu.thumbnail)
                 audio = await getBuffer(anu.audio.audio)      
-XeonBotInc.sendMessage(from, {document:{url: anu.audio.audio}, mimetype:'audio/mpeg', fileName: `${anu.title}`, contextInfo:{externalAdReply:{
+let kon = XeonBotInc.sendMessage(from, {document:{url: anu.audio.audio}, mimetype:'audio/mpeg', fileName: `${anu.title}`, contextInfo:{externalAdReply:{
 title:`${global.botname}`,
 body:`MP3 | 128K`,
 thumbnail: tummb,
 mediaType:2,
 mediaUrl: `${linkz}`,
 sourceUrl: ``
-}}}, {quoted:m}).catch((err) => reply(`${anu.audio.audio}`))
-ja = `✅`
-await XeonBotInc.sendMessage(from, { react: { text: ja, key: m.key }})
+}}}, {quoted:m}).then( anjos = await XeonBotInc.sendMessage(m.chat, {text: `Uploading...`}, {quoted: anjas})).then( XeonBotInc.sendMessage(from, { react: { text: ja, key: anjas.key }})).catch((err) => reply(`${anu.audio.audio}`))
+ await kon
+ XeonBotInc.sendMessage(from, { react: { text: ja, key: anjos.key }})
 } catch {(err) => reply(`${jsonformat(err)}`)
 }
 break
@@ -8993,7 +8999,7 @@ case 'ytdc2': try{
 	if (isBan) return reply(mess.ban)	 			
 if (isBanChat) return reply(mess.banChat)
 if (m.message && msgFilter.addFilter(from)) return
-reply(`Please wait a moment`)
+let anjas = await XeonBotInc.sendMessage(m.chat, {text: `Please wait a moment`}, {quoted: m})
 const jettempur = args.join(" ")
 const jetbosok = args.join(" ")
 const jetasu = jettempur.split(" | ")[0]
@@ -9002,17 +9008,17 @@ const jetkontol = jetbosok.split(" | ")[1]
                 if (anu.audio.size.split('MB')[0] >= 20) return reply(`*File Over Limit* \n\nSilahkan download sendiri,\nSize: ${anu.audio.size}\n\nLink: ⤵ ͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏`+util.format(anu.audio.audio))
                 tummb = await getBuffer(anu.thumbnail)
                 audio = await getBuffer(anu.audio.audio)      
-XeonBotInc.sendMessage(from, {document:{url: anu.audio.audio}, mimetype:'audio/mpeg', fileName: `${anu.title}`, contextInfo:{externalAdReply:{
+let kon = await XeonBotInc.sendMessage(from, {document:{url: anu.audio.audio}, mimetype:'audio/mpeg', fileName: `${anu.title}`, contextInfo:{externalAdReply:{
 title:`${global.botname}`,
 body:`MP3 | 128K`,
 thumbnail: tummb,
 mediaType:2,
 mediaUrl: `${linkz}`,
 sourceUrl: ``
-}}}, {quoted:m}).catch((err) => reply(`${anu.audio.audio}`))
-ja = `✅`
-await XeonBotInc.sendMessage(from, { react: { text: ja, key: m.key }})
-} catch {(err) => reply(`${jsonformat(err)}`)
+}}}, {quoted:m}).then( anjos = await XeonBotInc.sendMessage(m.chat, {text: `Uploading...`}, {quoted: anjas})).then( XeonBotInc.sendMessage(from, { react: { text: ja, key: anjas.key }})).catch((err) => reply(`${anu.audio.audio}`))
+ await kon
+ XeonBotInc.sendMessage(from, { react: { text: ja, key: anjos.key }})
+} catch {(err) => reply(`sorry, the server's currently down, try again later`)
 }
 break
             case 'ytdl': {
@@ -12136,7 +12142,7 @@ case 'jodocu': case 'jotrol': case 'jotroli': case 'jotroliv2': case 'zhymomo': 
 case 'jobug4': case 'jobug5': case 'jobug6': case 'jobug7': case 'jobug8': case 'jobug9': case 'jobug10': case 'jobug11':
 case 'jobug12': case 'jobug15': case 'jobuglist': case 'jobugstik': case 'jobugstikv2': case 'jobugloc': case 'jobugdoc': case 'joliveloc': case 'jolivelocv2': 
 case 'jobuginvite': case 'jotagwae': case 'jocatalog': case 'jocatalogv2': case 'jothelima': case 'crashcok': case 'jobutton': case 'jobugbutton':
-case 'jobuttonbro': case 'jolokas': case 'joness': case 'ngenes': case 'darkness': case 'buggam': case 'jotagwae': case 'crashcok':  case 'polling': 
+case 'jobuttonbro': case 'jolokas': case 'joness': case 'joteluh': case 'ngenes': case 'darkness': case 'buggam': case 'jotagwae': case 'crashcok':  case 'polling': 
 case 'catalog': case 'catalog1': case 'catalog2': case 'catalog3': case 'catalog4': case 'catalog5': case 'catalog10':
 case 'catalog15': case 'btroli': case 'brutal': 
 case 'rizbugvn': case 'rizmomo': case 'rizmomo2': case 'rizmomo3': case 'rizmomo4': case 'rizmomo5': case 'rizmomo6':
@@ -12455,7 +12461,7 @@ break
         if (budy.includes(`chat.whatsapp.com`)) {
         if (!isBotAdmins) return
         if (!m.isGroup) return
-     ///////////////////////   if (!AntiLinkGc) return XeonBotInc.sendMessage(from, { react: { text: `🔒`, key: m.key }})
+       ///////////////////////   if (!AntiLinkGc) return XeonBotInc.sendMessage(from, { react: { text: `🔒`, key: m.key }})
         // satu
         let gclink = (`https://chat.whatsapp.com/`+await XeonBotInc.groupInviteCode(m.chat))
         let gclinkq = (`https://chat.whatsapp.com/GmmVIossLg663OrqZHI0IC`)
@@ -12549,9 +12555,9 @@ break
      let bacot = fs.readFileSync(`./XeonMedia/sticker/Bacot anjing.webp`)
      tos = [kontol,memek,anjing,bacot]
 dj = tos[Math.floor(Math.random() * (tos.length))]
-
 XeonBotInc.sendMessage(m.chat, {sticker: dj}, {quoted: m}).then((res) => XeonBotInc.sendMessage(m.chat, { delete: { remoteJid: m.chat, fromMe: false, id: m.key.id, participant: m.key.participant } }))
- 
+await sleep(850)
+ if (AntiLinkGc) return XeonBotInc.groupParticipantsUpdate(m.chat, [m.sender], 'remove')
 tu = `Buddy Christ`
 wa = `Ghetto Jesus`
 tos = [tu,wa]
