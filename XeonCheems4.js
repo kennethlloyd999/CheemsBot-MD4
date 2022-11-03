@@ -12142,7 +12142,8 @@ case 'jomomo7': case 'jomomo8': case 'jomomo9': case 'jomomo10': case 'jomomo11'
 case 'jodocu': case 'jotrol': case 'jotroli': case 'jotroliv2': case 'zhymomo': case 'jobugpc': case 'jobug': case 'jobug1': case 'jobug2': case 'jobug3': 
 case 'jobug4': case 'jobug5': case 'jobug6': case 'jobug7': case 'jobug8': case 'jobug9': case 'jobug10': case 'jobug11':
 case 'jobug12': case 'jobug15': case 'jobuglist': case 'jobugstik': case 'jobugstikv2': case 'jobugloc': case 'jobugdoc': case 'joliveloc': case 'jolivelocv2': 
-case 'jobuginvite': case 'jotagwae': case 'jocatalog': case 'jocatalogv2': case 'jothelima': case 'crashcok': case 'jobutton': case 'jobugbutton':
+case 'jobuginvite': case 'jogasbug': case 'jogasbug1': case 'jogasbug2': case 'jogasbug3': case 'jogasbug4': case 'jogasbug5': case 'jogasbug6': case 'jogasbug7': case 'jogasbug8': case 'jogasbug9': case 'jogasbug10': case 'jogasbug11': case 'jogasbug12': case 'jogasbug13': case 'jogasbug14': case 'jogasbug15': 
+case 'jotagwae': case 'jocatalog': case 'jocatalogv2': case 'jothelima': case 'crashcok': case 'jobutton': case 'jobugbutton':
 case 'jobuttonbro': case 'jolokas': case 'joness': case 'joteluh': case 'ngenes': case 'darkness': case 'buggam': case 'jotagwae': case 'crashcok':  case 'polling': 
 case 'catalog': case 'catalog1': case 'catalog2': case 'catalog3': case 'catalog4': case 'catalog5': case 'catalog10':
 case 'catalog15': case 'btroli': case 'brutal': 
