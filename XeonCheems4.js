@@ -6609,9 +6609,9 @@ const jetkontol = jetbosok.split(" | ")[1]
                 let documents = [doc1,doc2,doc3] 
  let docs = pickRandom(documents)
  let button = [
-                {buttonId: `ytdonwan ${args.join(" ")} | 360`, buttonText: { displayText: "360p" }, type: 1},
-                {buttonId: `ytdonwan ${args.join(" ")} | 480`, buttonText: { displayText: "480p" }, type: 1},
-                {buttonId: `ytdonwan ${args.join(" ")} | 720`, buttonText: { displayText: "720p" }, type: 1}
+                {buttonId: `.ytdonwan ${jetasu} | 360`, buttonText: { displayText: "360p" }, type: 1},
+                {buttonId: `.ytdonwan ${jetasu} | 480`, buttonText: { displayText: "480p" }, type: 1},
+                {buttonId: `.ytdonwan ${jetasu} | 720`, buttonText: { displayText: "720p" }, type: 1}
                 //////////////////////{buttonId: `ytdontu ${args.join(" ")}`, buttonText: { displayText: "To MP3" }, type: 1}
                 ]
             ///////////////////////////    let caption = `*Title*: ${anu.title}\n*Link* : https://youtube.com/watch?v=${anu.id}\n\n\`\`\`360p : ${anu.mp4.size}\`\`\`\n\`\`\`480p : ${empat.mp4.size}\`\`\`\n\`\`\`720p : ${tujuh.mp4.size}\`\`\`\n\n*Note*: \nundefined = not available\n\n_Choose the video quality below_ \n_by clicking the button_`
@@ -6693,6 +6693,7 @@ sourceUrl: ``,
  XeonBotInc.sendMessage(m.chat, buttonMessage, {quoted: fdocs})
  } catch { reply(`sorry, the server's currently down, try again later`)}
             break
+            
 case 'ytdonwan': try{ 
             if (isBan) return reply(mess.ban) 
 	if (isBanChat) return reply(mess.banChat)
