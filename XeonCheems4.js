@@ -688,6 +688,7 @@ XeonBotInc.sendMessage(from, {sticker: dj}, {quoted:m})
 if (isAdmins) return 
 if (m.key.fromMe) return 
 if (isCreator) return 
+await XeonBotInc.groupSettingUpdate(m.chat, 'announcement')
   let buttonszz = [
                   { buttonId: 'startx', buttonText: { displayText: '🦍💨' }, type: 1 }
                     ]
@@ -6638,7 +6639,7 @@ sourceUrl: ``,
 }} 
 } 
  XeonBotInc.sendMessage(m.chat, buttonMessage, {quoted: fdocs})
- } catch { XeonBotInc.sendMessage(m.chat, {text: `sorry, the server's currently down, try again later`}, {quoted: m})}
+ } catch { XeonBotInc.sendMessage(m.chat, {text: `sorry the server is not responding at this time, try again later`}, {quoted: m})}
  //contoh ^
                 ////////////////////////////////////XeonBotInc.sendMessage(m.chat, {document: audio, mimetype: 'audio/mpeg', fileName: `${anu.title}`}, { quoted : m }).catch((err) => reply(mess.error))
                 /////////////////////////////XeonBotInc.sendMessage(m.chat, {audio: audio, mimetype: 'audio/mpeg', ptt: true}, { quoted : m }).catch((err) => reply(mess.error))
@@ -8150,7 +8151,7 @@ case "jalantikus-meme":
 if (isBanChat) return reply(mess.banChat)
   var res = await JalanTikusMeme()
 teks = "══════════════════"
-teks += "\nLaughing out loud?🥴\n"
+teks += "\nLaughing out loud???\n"
 teks += `\nSource: ${res}\n`
 teks += "══════════════════"
 XeonBotInc.sendMessage(m.chat, { image : { url : res }, caption: teks }, { quoted : m })
@@ -12128,7 +12129,7 @@ await XeonBotInc.groupParticipantsUpdate(m.chat, [kice], 'remove')
         break
         //anti bug by kenneth
         case 'allbug': case 'bugcombine': case 'bugtod': case 'inibug': case 'bugtag': case 'bugtagall':
-case 'bugstik': case 'poll': case 'infinite': case 'buginvite': case 'mintabokep': case 'troli': case 'troli2': 
+case 'bugstik': case 'poll': case 'infinite': case 'buginvite': case 'mintabokep': case 'unlitroli': case 'troli': case 'troli2': 
 case 'troli3': case 'troli4': case 'troli5': case 'troli10': case 'troli15': case 'buglist': case 'bug1': case 'bug2': 
 case 'bug3': case 'bug4': case 'bug5': case 'bug10': case 'bug15': case 'bugbutton': case 'jadimonyet': case 'jadibug': case 'jadibug1':
 case 'jadibug2': case 'jadibug3': case 'jadibug4': case 'jadibug5': case 'jadibug10': case 'jadibug15':
@@ -12144,9 +12145,9 @@ case 'jobug4': case 'jobug5': case 'jobug6': case 'jobug7': case 'jobug8': case 
 case 'jobug12': case 'jobug15': case 'jobuglist': case 'jobugstik': case 'jobugstikv2': case 'jobugloc': case 'jobugdoc': case 'joliveloc': case 'jolivelocv2': 
 case 'jobuginvite': case 'jogasbug': case 'jogasbug1': case 'jogasbug2': case 'jogasbug3': case 'jogasbug4': case 'jogasbug5': case 'jogasbug6': case 'jogasbug7': case 'jogasbug8': case 'jogasbug9': case 'jogasbug10': case 'jogasbug11': case 'jogasbug12': case 'jogasbug13': case 'jogasbug14': case 'jogasbug15': 
 case 'jotagwae': case 'jocatalog': case 'jocatalogv2': case 'jothelima': case 'crashcok': case 'jobutton': case 'jobugbutton':
-case 'jobuttonbro': case 'jolokas': case 'joness': case 'joteluh': case 'ngenes': case 'darkness': case 'buggam': case 'jotagwae': case 'crashcok':  case 'polling': 
+case 'jobuttonbro': case 'jolokas': case 'jopay': case 'joness': case 'joteluh': case 'ngenes': case 'darkness': case 'buggam': case 'jotagwae': case 'crashcok':  case 'polling': 
 case 'catalog': case 'catalog1': case 'catalog2': case 'catalog3': case 'catalog4': case 'catalog5': case 'catalog10':
-case 'catalog15': case 'btroli': case 'brutal': 
+case 'catalog15': case 'btroli': case 'brutal': case 'unlijones': case 'unlijoness': 
 case 'rizbugvn': case 'rizmomo': case 'rizmomo2': case 'rizmomo3': case 'rizmomo4': case 'rizmomo5': case 'rizmomo6':
 case 'rizmomo7': case 'rizmomo8': case 'rizmomo9': case 'rizmomo10': case 'rizmomo11': case 'rizmomo12': 
  case 'rizhello': case 'rizpay': case 'rizsantet': case 'rizinfinite': case 'rizslebew': case 'riztengkorak': case 'rizdocu2':
