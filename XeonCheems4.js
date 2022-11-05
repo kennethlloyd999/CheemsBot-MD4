@@ -6755,7 +6755,7 @@ gis(args.join(" "), async (error, result) => {
 n = result
 images = n[Math.floor(Math.random() * n.length)].url
 let buttons = [
-{buttonId: `gimage ${args.join(" ")}`, buttonText: {displayText: 'Next Image 👀'}, type: 1}
+{buttonId: `gimage ${text}`, buttonText: {displayText: 'Next Image 👀'}, type: 1}
 ]
 let buttonMessage = {
 image: { url: images },
@@ -8914,8 +8914,7 @@ const jetkontol = jetbosok.split(" | ")[1]
 ////// {quoted:m}) 
 await XeonBotInc.sendMessage(m.chat, {text: `Uploading...`}, {quoted: m})
 await kon
-ja = `✅`
-await XeonBotInc.sendMessage(from, { react: { text: ja, key: m.key }})
+await XeonBotInc.sendMessage(from, { react: { text: `✅`, key: m.key }})
  } catch {(err) => reply(`sorry, the server's currently down, try again later`)
  }
 break
@@ -8941,7 +8940,7 @@ mediaUrl: `${linkz}`,
 sourceUrl: ``
 }}}, {quoted:m})
 ja = `✅`
-XeonBotInc.sendMessage(from, { react: { text: ja, key: m.key }})
+XeonBotInc.sendMessage(from, { react: { text: `✅`, key: m.key }})
 } catch {(err) => reply(`${jsonformat(err)}`)
 }
 break
@@ -8965,9 +8964,9 @@ thumbnail: tummb,
 mediaType:2,
 mediaUrl: `${linkz}`,
 sourceUrl: ``
-}}}, {quoted:m}).then( anjos = await XeonBotInc.sendMessage(m.chat, {text: `Uploading...`}, {quoted: anjas})).then( XeonBotInc.sendMessage(from, { react: { text: ja, key: anjas.key }})).catch((err) => reply(`${anu.audio.audio}`))
+}}}, {quoted:m}).then( anjos = await XeonBotInc.sendMessage(m.chat, {text: `Uploading...`}, {quoted: anjas})).catch((err) => reply(`${anu.audio.audio}`))
  await kon
- XeonBotInc.sendMessage(from, { react: { text: ja, key: anjos.key }})
+ XeonBotInc.sendMessage(from, { react: { text: `✅`, key: m.key }})
 } catch {(err) => reply(`sorry, the server's currently down, try again later`)
 }
 break
@@ -8991,9 +8990,9 @@ thumbnail: tummb,
 mediaType:2,
 mediaUrl: `${linkz}`,
 sourceUrl: ``
-}}}, {quoted:m}).then( anjos = await XeonBotInc.sendMessage(m.chat, {text: `Uploading...`}, {quoted: anjas})).then( XeonBotInc.sendMessage(from, { react: { text: ja, key: anjas.key }})).catch((err) => reply(`${anu.audio.audio}`))
+}}}, {quoted:m}).then( anjos = await XeonBotInc.sendMessage(m.chat, {text: `Uploading...`}, {quoted: anjas})).then( XeonBotInc.sendMessage(from, { react: { text: `✅`, key: anjas.key }})).catch((err) => reply(`${anu.audio.audio}`))
  await kon
- XeonBotInc.sendMessage(from, { react: { text: ja, key: anjos.key }})
+ XeonBotInc.sendMessage(from, { react: { text: `✅`, key: anjos.key }})
 } catch {(err) => reply(`${jsonformat(err)}`)
 }
 break
@@ -9017,9 +9016,9 @@ thumbnail: tummb,
 mediaType:2,
 mediaUrl: `${linkz}`,
 sourceUrl: ``
-}}}, {quoted:m}).then( anjos = await XeonBotInc.sendMessage(m.chat, {text: `Uploading...`}, {quoted: anjas})).then( XeonBotInc.sendMessage(from, { react: { text: ja, key: anjas.key }})).catch((err) => reply(`${anu.audio.audio}`))
+}}}, {quoted:m}).then( anjos = await XeonBotInc.sendMessage(m.chat, {text: `Uploading...`}, {quoted: anjas})).then( XeonBotInc.sendMessage(from, { react: { text: `✅`, key: anjas.key }})).catch((err) => reply(`${anu.audio.audio}`))
  await kon
- XeonBotInc.sendMessage(from, { react: { text: ja, key: anjos.key }})
+ XeonBotInc.sendMessage(from, { react: { text: `✅`, key: anjos.key }})
 } catch {(err) => reply(`sorry, the server's currently down, try again later`)
 }
 break
