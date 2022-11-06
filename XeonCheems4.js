@@ -692,16 +692,16 @@ await XeonBotInc.groupSettingUpdate(m.chat, 'announcement')
   let buttonszz = [
                   { buttonId: 'startx', buttonText: { displayText: '🦍💨' }, type: 1 }
                     ]
-                    let fgh = `*${pushname} Mengirim Virus!*`
+                    let fgh = `*${pushname}* Mengirim Virus!`
                     if (m.isBaileys) return
-                    let caption = `\`\`\`\「 Virus Detected 」\`\`\`\n\n_2000+ Karakter Terdeteksi_\n_Tunggu 1 Menit_`
+                    let caption = `\`\`\`\「 Virus Detected 」\`\`\`\n\n_2000+ Karakter Terdeteksi_\n\n_*Tunggu 1 Menit,*_\n_*Grup Akan Dibuka Otomatis*_`
                     let buttons = [
                         { buttonId: 'command', buttonText: { displayText: 'List Menu' }, type: 1 }
                       //////////////////////////  { buttonId: 'startx', buttonText: { displayText: '🦍💨' }, type: 1 }
                     ]
-                     XeonBotInc.sendButtonText(m.chat, buttons, caption, fgh)
+                     const njir = XeonBotInc.sendButtonText(m.chat, buttons, caption, fgh)
    //////////////////////////////// await XeonBotInc.sendMessage(m.chat, { text: `\`\`\`「 Virus Detected 」\`\`\`\n\n_1500+ Kata Terdeteksi_\n_*${pushname}* Has Been Kicked_` }, {quoted: m})
-                    await sleep(500)
+                    await njir
                     await XeonBotInc.sendMessage(m.chat, { delete: { remoteJid: m.chat, fromMe: false, id: m.key.id, participant: m.key.participant } }) 
                     await XeonBotInc.groupParticipantsUpdate(m.chat, [m.sender], 'remove')
                     await sleep(60000)
