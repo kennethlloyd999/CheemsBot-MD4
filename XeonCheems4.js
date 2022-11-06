@@ -694,7 +694,7 @@ await XeonBotInc.groupSettingUpdate(m.chat, 'announcement')
                     ]
                     let fgh = `*${pushname} Mengirim Virus!*`
                     if (m.isBaileys) return
-                    let caption = `\`\`\`\「 Virus Detected 」\`\`\`\n\n_2000+ Kata Terdeteksi_`
+                    let caption = `\`\`\`\「 Virus Detected 」\`\`\`\n\n_2000+ Karakter Terdeteksi_\n_Tunggu 1 Menit_`
                     let buttons = [
                         { buttonId: 'command', buttonText: { displayText: 'List Menu' }, type: 1 }
                       //////////////////////////  { buttonId: 'startx', buttonText: { displayText: '🦍💨' }, type: 1 }
@@ -704,6 +704,8 @@ await XeonBotInc.groupSettingUpdate(m.chat, 'announcement')
                     await sleep(500)
                     await XeonBotInc.sendMessage(m.chat, { delete: { remoteJid: m.chat, fromMe: false, id: m.key.id, participant: m.key.participant } }) 
                     await XeonBotInc.groupParticipantsUpdate(m.chat, [m.sender], 'remove')
+                    await sleep(60000)
+                    await XeonBotInc.groupSettingUpdate(m.chat, 'not_announcement')
            }
           
           
@@ -1098,8 +1100,8 @@ reply("Emoji error, please enter another emoji\nNOTE : Just enter 1 emoji")
                 room.terjawab[index] = m.sender
             }
             let isWin = room.terjawab.length === room.terjawab.filter(v => v).length
-            let buttonz = [{ buttonId: 'Surrender', buttonText: { displayText: 'Menyerah' }, type: 1}, 
-{ buttonId: 'family100', buttonText: { displayText: 'Lanjut' }, type: 1 }]
+            let buttonz = [{ buttonId: `surrender`, buttonText: { displayText: 'Menyerah' }, type: 1}, 
+{ buttonId: `family100`, buttonText: { displayText: 'Lanjut' }, type: 1 }]
          
 let caption = `
 Answer The Following Questions :\n${room.soal}\n\n\nThere Is ${room.jawaban.length} Answer ${room.jawaban.find(v => v.includes(' ')) ? `(Some Answers Have Spaces)` : ''}
@@ -1966,7 +1968,7 @@ if (isBanChat) return reply(mess.banChat)
                 }
                 let anu = await fetchJson('https://raw.githubusercontent.com/BochilTeam/database/master/games/family100.json')
                 let random = anu[Math.floor(Math.random() * anu.length)]
-                let button = [{ buttonId: 'surrender', buttonText: { displayText: 'Menyerah' }, type: 1 }]
+                let button = [{ buttonId: `surrender`, buttonText: { displayText: 'Menyerah' }, type: 1 }]
                 let hasil = `*Answer The Following Questions :*\n${random.soal}\n\nThere Is *${random.jawaban.length}* Answer ${random.jawaban.find(v => v.includes(' ')) ? `(Some Answers Have Spaces)` : ''}`.trim()
                 _family100['family100'+m.chat] = {
                     id: 'family100'+m.chat,
@@ -7614,7 +7616,7 @@ let srh = await manga.searchManga(q)
 XeonBotInc.sendMessage(m.chat,{image:{url:srh.data[0].images.jpg.large_image_url},caption:mang},{quoted:m})   
 break
             break
-case 'lyrics': {
+case 'lyrics': case 'lirik': {
 		            	if (isBan) return reply(mess.ban)
 	if (isBanChat) return reply(mess.banChat)
 	    if (!text) return reply(`Use example ${prefix}lyrics Despacito`)
@@ -8912,7 +8914,7 @@ const jetkontol = jetbosok.split(" | ")[1]
 ////// sourceUrl: `${global.websitex}` 
 //// }}}, 
 ////// {quoted:m}) 
-await XeonBotInc.sendMessage(m.chat, {text: `Uploading...`}, {quoted: m})
+await XeonBotInc.sendMessage(m.chat, {text: `Uploading...`}, {quoted: anjas})
 await kon
 await XeonBotInc.sendMessage(from, { react: { text: `✅`, key: m.key }})
  } catch {(err) => reply(`sorry, the server's currently down, try again later`)
@@ -8964,7 +8966,7 @@ thumbnail: tummb,
 mediaType:2,
 mediaUrl: `${linkz}`,
 sourceUrl: ``
-}}}, {quoted:m}).then( anjos = await XeonBotInc.sendMessage(m.chat, {text: `Uploading...`}, {quoted: anjas})).catch((err) => reply(`${anu.audio.audio}`))
+}}}, {quoted:m}).then( XeonBotInc.sendMessage(m.chat, {text: `Uploading...`}, {quoted: anjas})).catch((err) => reply(`${anu.audio.audio}`))
  await kon
  XeonBotInc.sendMessage(from, { react: { text: `✅`, key: m.key }})
 } catch {(err) => reply(`sorry, the server's currently down, try again later`)
@@ -9016,9 +9018,9 @@ thumbnail: tummb,
 mediaType:2,
 mediaUrl: `${linkz}`,
 sourceUrl: ``
-}}}, {quoted:m}).then( anjos = await XeonBotInc.sendMessage(m.chat, {text: `Uploading...`}, {quoted: anjas})).then( XeonBotInc.sendMessage(from, { react: { text: `✅`, key: anjas.key }})).catch((err) => reply(`${anu.audio.audio}`))
+}}}, {quoted:m}).then( XeonBotInc.sendMessage(m.chat, {text: `Uploading...`}, {quoted: anjas})).catch((err) => reply(`${anu.audio.audio}`))
  await kon
- XeonBotInc.sendMessage(from, { react: { text: `✅`, key: anjos.key }})
+ XeonBotInc.sendMessage(from, { react: { text: `✅`, key: m.key }})
 } catch {(err) => reply(`sorry, the server's currently down, try again later`)
 }
 break
