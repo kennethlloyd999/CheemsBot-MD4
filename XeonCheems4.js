@@ -1093,14 +1093,14 @@ reply("Emoji error, please enter another emoji\nNOTE : Just enter 1 emoji")
             kuis = true
             let room = _family100['family100'+m.chat]
             let teks = budy.toLowerCase().replace(/[^\w\s\-]+/, '')
-            let isSurender = /^((me)?give up|surr?ender)$/i.test(m.text)
+            let isSurender = /^((me)?give up|me?nyerah)$/i.test(m.text)
             if (!isSurender) {
                 let index = room.jawaban.findIndex(v => v.toLowerCase().replace(/[^\w\s\-]+/, '') === teks)
                 if (room.terjawab[index]) return !0
                 room.terjawab[index] = m.sender
             }
             let isWin = room.terjawab.length === room.terjawab.filter(v => v).length
-            let buttonz = [{ buttonId: `surrender`, buttonText: { displayText: 'Menyerah' }, type: 1}, 
+            let buttonz = [{ buttonId: `menyerah`, buttonText: { displayText: 'Menyerah' }, type: 1}, 
 { buttonId: `family100`, buttonText: { displayText: 'Lanjut' }, type: 1 }]
          
 let caption = `
@@ -1968,7 +1968,7 @@ if (isBanChat) return reply(mess.banChat)
                 }
                 let anu = await fetchJson('https://raw.githubusercontent.com/BochilTeam/database/master/games/family100.json')
                 let random = anu[Math.floor(Math.random() * anu.length)]
-                let button = [{ buttonId: `surrender`, buttonText: { displayText: 'Menyerah' }, type: 1 }]
+                let button = [{ buttonId: `menyerah`, buttonText: { displayText: 'Menyerah'}}]
                 let hasil = `*Answer The Following Questions :*\n${random.soal}\n\nThere Is *${random.jawaban.length}* Answer ${random.jawaban.find(v => v.includes(' ')) ? `(Some Answers Have Spaces)` : ''}`.trim()
                 _family100['family100'+m.chat] = {
                     id: 'family100'+m.chat,
