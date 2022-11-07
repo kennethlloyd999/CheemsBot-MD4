@@ -1117,10 +1117,10 @@ ${Array.from(room.jawaban, (jawaban, index) => {
             if (isSurender) XeonBotInc.sendButtonText(m.chat, buttonz, caption, botname, m, { contextInfo: { mentionedJid: parseMention(caption) }}) /////////////////////////////.then(mes => { return _family100['family100'+m.chat].pesan = mesg }).catch(_ => _)
             if (isWin) XeonBotInc.sendButtonText(m.chat, buttonz, caption, botname, m, { contextInfo: { mentionedJid: parseMention(caption) }})
             if (isWin || isSurender) return delete _family100['family100'+m.chat]
-           const alay = await XeonBotInc.sendButtonText(m.chat, buttonb, caption, jam, m, { contextInfo: { mentionedJid: parseMention(caption) }})
-          //////////////////  if (isWin || isSurender) delete _family100['family100'+m.chat]
+            
+           XeonBotInc.sendButtonText(m.chat, buttonb, caption, jam, m, { contextInfo: { mentionedJid: parseMention(caption) }})
           await sleep(120000)
-          delete _family100['family100'+m.chat]
+          await delete _family100['family100'+m.chat]
             
             
         }
@@ -1988,8 +1988,6 @@ if (isBanChat) return reply(mess.banChat)
                     terjawab: Array.from(random.jawaban, () => false),
                     hadiah: 6,
                 }
-                let user = global.db.data.users[m.sender]
-                user.babi = + new Date
                 
             }
             break
