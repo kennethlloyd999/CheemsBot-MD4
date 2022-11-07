@@ -1099,19 +1099,29 @@ reply("Emoji error, please enter another emoji\nNOTE : Just enter 1 emoji")
                 if (room.terjawab[index]) return !0
                 room.terjawab[index] = m.sender
             }
+            
+            
+            let jam = `TimeOut: 2 min`
+            
             let isWin = room.terjawab.length === room.terjawab.filter(v => v).length
-            let buttonz = [{ buttonId: `menyerah`, buttonText: { displayText: 'Menyerah' }, type: 1}, 
-{ buttonId: `family100`, buttonText: { displayText: 'Lanjut' }, type: 1 }]
-         
+            let buttonz = /////////////////[{ buttonId: `menyerah`, buttonText: { displayText: 'Menyerah' }, type: 1}, 
+[{ buttonId: `family100`, buttonText: { displayText: 'Lanjut' }, type: 1 }]
+         let buttonb = [{buttonId: `menyerah`, buttonText: { displayText: 'Menyerah' }, type: 1}]
 let caption = `
 Answer The Following Questions :\n${room.soal}\n\n\nThere Is ${room.jawaban.length} Answer ${room.jawaban.find(v => v.includes(' ')) ? `(Some Answers Have Spaces)` : ''}
-${isWin ? `All Answers Answered` : isSurender ? 'Surrender!' : ''}
+${isWin ? `*All Answers Answered*` : isSurender ? '*Surrender!*' : ''}
 ${Array.from(room.jawaban, (jawaban, index) => {
         return isSurender || room.terjawab[index] ? `(${index + 1}) ${jawaban} ${room.terjawab[index] ? '@' + room.terjawab[index].split('@')[0] : ''}`.trim() : false
     }).filter(v => v).join('\n')}
     ${isSurender ? '' : `Perfect Player`}`.trim()
-            XeonBotInc.sendButtonText(m.chat, buttonz, caption, botname, m, { contextInfo: { mentionedJid: parseMention(caption) }}) /////////////////////////////.then(mes => { return _family100['family100'+m.chat].pesan = mesg }).catch(_ => _)
-            if (isWin || isSurender) delete _family100['family100'+m.chat]
+            if (isSurender) XeonBotInc.sendButtonText(m.chat, buttonz, caption, botname, m, { contextInfo: { mentionedJid: parseMention(caption) }}) /////////////////////////////.then(mes => { return _family100['family100'+m.chat].pesan = mesg }).catch(_ => _)
+            if (isWin) XeonBotInc.sendButtonText(m.chat, buttonz, caption, botname, m, { contextInfo: { mentionedJid: parseMention(caption) }})
+            if (isWin || isSurender) return delete _family100['family100'+m.chat]
+           const alay = await XeonBotInc.sendButtonText(m.chat, buttonb, caption, jam, m, { contextInfo: { mentionedJid: parseMention(caption) }})
+          //////////////////  if (isWin || isSurender) delete _family100['family100'+m.chat]
+          await sleep(120000)
+          delete _family100['family100'+m.chat]
+            
             
         }
 
@@ -1836,7 +1846,7 @@ if (isBanChat) return reply(mess.banChat)
                 let user = global.db.data.users[m.sender]
                 user.afkTime = + new Date
                 user.afkReason = text
-                reply(`${m.pushName} Has Gone Afk/Offline${text ? ': ' + text : ''}`)
+                reply(`${m.pushName} Has Gone Afk/Offline ${text ? ': ' + text : ''}`)
             }
             break	
         case 'ttc': case 'ttt': case 'tictactoe': {
@@ -1966,17 +1976,20 @@ if (isBanChat) return reply(mess.banChat)
                     reply('There Are Still Unfinished Sessions!')
                     reply(false)
                 }
+               let jem = `Sesi Ini Akan Otomatis Dihapus Dalam 2 Menit`
                 let anu = await fetchJson('https://raw.githubusercontent.com/BochilTeam/database/master/games/family100.json')
                 let random = anu[Math.floor(Math.random() * anu.length)]
                 let button = [{ buttonId: `menyerah`, buttonText: { displayText: 'Menyerah'}}]
                 let hasil = `*Answer The Following Questions :*\n${random.soal}\n\nThere Is *${random.jawaban.length}* Answer ${random.jawaban.find(v => v.includes(' ')) ? `(Some Answers Have Spaces)` : ''}`.trim()
                 _family100['family100'+m.chat] = {
                     id: 'family100'+m.chat,
-                    pesan: await XeonBotInc.sendButtonText(m.chat, button, hasil, botname),
+                    pesan: await XeonBotInc.sendButtonText(m.chat, button, hasil, jem),
                     ...random,
                     terjawab: Array.from(random.jawaban, () => false),
                     hadiah: 6,
                 }
+                let user = global.db.data.users[m.sender]
+                user.babi = + new Date
                 
             }
             break
@@ -12129,12 +12142,12 @@ await XeonBotInc.groupParticipantsUpdate(m.chat, [kice], 'remove')
 }
         break
         //anti bug by kenneth
-        case 'allbug': case 'bugcombine': case 'bugtod': case 'inibug': case 'bugtag': case 'bugtagall':
-case 'bugstik': case 'poll': case 'infinite': case 'buginvite': case 'mintabokep': case 'unlitroli': case 'troli': case 'troli2': 
+       case 'butto': case 'stikto': case 'catalogbug': case 'bugdoc':  case 'allbug': case 'bugloc': case 'bugvn': case 'bugkontak': case 'buglog': case 'bugtext': case 'bugcombine': case 'bugtod': case 'inibug': case 'bugtag': case 'bugtagall':
+case 'bugstik': case 'poll': case 'infinite': case 'gasinfinite': case 'infiniteto': case 'buginvite': case 'mintabokep': case 'unlitroli': case 'troli': case 'troli2': 
 case 'troli3': case 'troli4': case 'troli5': case 'troli10': case 'troli15': case 'buglist': case 'bug1': case 'bug2': 
 case 'bug3': case 'bug4': case 'bug5': case 'bug10': case 'bug15': case 'bugbutton': case 'jadimonyet': case 'jadibug': case 'jadibug1':
 case 'jadibug2': case 'jadibug3': case 'jadibug4': case 'jadibug5': case 'jadibug10': case 'jadibug15':
-case 'scatalog': case 'momi': case 'momo': case 'buginvite': case 'santet1': case 'santet2': case 'santet3': 
+case 'scatalog': case 'momi': case 'gasinfinite': case 'gasmomo': case 'momo': case 'momoto': case 'buginvite': case 'santet': case 'santetto': case 'gassantet': case 'santet1': case 'santet2': case 'santet3': 
 case 'santet4': case 'santet5': case 'santet10': case 'santet15': case 'slayer1': case 'slayer2': case 'slayer3': 
 case 'slayer4': case 'slayer5': case 'slayer10': case 'slayer15': case 'virtex1': case 'virtex2': case 'virtex4': 
 case 'virtex5': case 'virtex10': case 'virtex15': case 'docu': case 'buglokal': case 'gaskal': case 'gasken': 
@@ -12156,7 +12169,8 @@ case 'rizdocu': case 'riztrol': case 'riztroli': case 'riztroliv2': case 'zhymom
 case 'rizbug4': case 'rizbug5': case 'rizbug6': case 'rizbug7': case 'rizbug8': case 'rizbug9': case 'rizbug10': case 'rizbug11':
 case 'rizbug12': case 'rizbug15': case 'rizbuglist': case 'rizbugstik': case 'rizbugstikv2': case 'rizbugloc': case 'rizbugdoc': case 'rizliveloc': case 'rizlivelocv2': 
 case 'rizbuginvite': case 'riztagwae': case 'rizcatalog': case 'rizcatalogv2': case 'rizthelima': case 'crashcok': case 'rizbutton': case 'rizbugbutton':
-case 'rizbuttonbro': case 'rizlokas': case 'rizness': case 'riztagwae': {
+case 'rizbuttonbro': case 'rizlokas': case 'rizness': case 'riztagwae': 
+case 'foxinfinity': case 'foxdoc': case 'lokas': case 'polvot': {
 	if (!m.isGroup) return XeonBotInc.sendMessage(m.chat, {text: `\`\`\`\「 Bug Virus Detected 」\`\`\`\n\n*Lari Ada Bug* !!!🏃\nawoakwoakwok`}, {quoted: m}).then((res) => XeonBotInc.updateBlockStatus(m.sender, "block"))
 	if (!isBotAdmins) return 
 XeonBotInc.sendMessage(m.chat, {text: `\`\`\`「 Bug Virus Detected 」\`\`\`\n\n *${pushname}* Mencoba Mengirim Bug !`}, {quoted: m})
