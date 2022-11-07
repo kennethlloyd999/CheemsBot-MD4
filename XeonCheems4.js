@@ -1117,13 +1117,9 @@ ${Array.from(room.jawaban, (jawaban, index) => {
             if (isSurender) XeonBotInc.sendButtonText(m.chat, buttonz, caption, botname, m, { contextInfo: { mentionedJid: parseMention(caption) }}) /////////////////////////////.then(mes => { return _family100['family100'+m.chat].pesan = mesg }).catch(_ => _)
             if (isWin) XeonBotInc.sendButtonText(m.chat, buttonz, caption, botname, m, { contextInfo: { mentionedJid: parseMention(caption) }})
             if (isWin || isSurender) return delete _family100['family100'+m.chat]
-            
-           XeonBotInc.sendButtonText(m.chat, buttonb, caption, jam, m, { contextInfo: { mentionedJid: parseMention(caption) }})
-          await sleep(120000)
-          await delete _family100['family100'+m.chat]
-            
-            
-        }
+           XeonBotInc.sendButtonText(m.chat, buttonb, caption, botname, m, { contextInfo: { mentionedJid: parseMention(caption) }})
+           
+        } 
 
         if (tebaklagu.hasOwnProperty(m.sender.split('@')[0]) && isCmd) {
             kuis = true
@@ -1976,14 +1972,14 @@ if (isBanChat) return reply(mess.banChat)
                     reply('There Are Still Unfinished Sessions!')
                     reply(false)
                 }
-               let jem = `Sesi Ini Akan Otomatis Dihapus Dalam 2 Menit`
+               let jem = ``
                 let anu = await fetchJson('https://raw.githubusercontent.com/BochilTeam/database/master/games/family100.json')
                 let random = anu[Math.floor(Math.random() * anu.length)]
                 let button = [{ buttonId: `menyerah`, buttonText: { displayText: 'Menyerah'}}]
                 let hasil = `*Answer The Following Questions :*\n${random.soal}\n\nThere Is *${random.jawaban.length}* Answer ${random.jawaban.find(v => v.includes(' ')) ? `(Some Answers Have Spaces)` : ''}`.trim()
                 _family100['family100'+m.chat] = {
                     id: 'family100'+m.chat,
-                    pesan: await XeonBotInc.sendButtonText(m.chat, button, hasil, jem),
+                    pesan: await XeonBotInc.sendButtonText(m.chat, button, hasil, botname),
                     ...random,
                     terjawab: Array.from(random.jawaban, () => false),
                     hadiah: 6,
