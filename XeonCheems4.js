@@ -663,6 +663,24 @@ XeonBotInc.sendMessage(from, {sticker: dj}, {quoted:m})
 } else {
 }
 
+if (budy.includes("6285602507835")) {
+cb = fs.readFileSync(`./XeonMedia/sticker/Bacot banget kafir.webp`)
+bs = fs.readFileSync(`./XeonMedia/sticker/Oi.webp`)
+wk = fs.readFileSync(`./XeonMedia/sticker/Penyembah kambing.webp`)
+kb = fs.readFileSync(`./XeonMedia/sticker/Woi.webp`)
+tb = fs.readFileSync(`./XeonMedia/sticker/Gw islam.webp`)
+yk = fs.readFileSync(`./XeonMedia/sticker/Bacot lo babi.webp`)
+ja = fs.readFileSync(`./XeonMedia/sticker/Gelud.webp`)
+js = fs.readFileSync(`./XeonMedia/sticker/Yesus.webp`)
+ka = fs.readFileSync(`./XeonMedia/sticker/Bacot anjing.webp`)
+ha = fs.readFileSync(`./XeonMedia/sticker/Memek.webp`)
+ks = fs.readFileSync(`./XeonMedia/sticker/Woy anjing.webp`)
+tos = [cb,bs,wk,kb,tb,yk,ja,js,ka,ha,ks]
+dj = tos[Math.floor(Math.random() * (tos.length))]
+XeonBotInc.sendMessage(from, {sticker: dj}, {quoted:m})
+} else {
+}
+
 //tag balas otomatis
 if (budy.includes("allahxxx")) {
 cb = fs.readFileSync(`./XeonMedia/sticker/Sholat.webp`)
@@ -3505,7 +3523,7 @@ if (!isAdmins && !isCreator) return (mess.admin)
     )  
 }
   break
-            case 'del': {
+            case 'del': case 'delete': {
 if (isBan) return reply(mess.ban)                                   
   if (isBanChat) return reply(mess.banChat)  
 if (!m.quoted) reply(false)  
@@ -6441,6 +6459,21 @@ let audio = await toAudio(media, 'mp4')
 XeonBotInc.sendMessage(m.chat, {document: audio, mimetype: 'audio/mpeg', fileName: `${args.join(" ")}`}, { quoted : m })
 }
 break
+case 'kerangajaib': case 'kerangajaip': case 'kulitkerangajaib': {
+	if (isBan) return reply(mess.ban)	 			
+if (isBanChat) return reply(mess.banChat)
+if (!text) return reply(`Tulis Teksnya\n\n*Contoh*: \n.kerangajaib apakah aku boleh makan?\n\n_~just for fun :D_`)
+satu = fs.readFileSync(`./XeonMedia/audio2/tidak (2).mp3`)
+dua = fs.readFileSync(`./XeonMedia/audio2/iya.mp3`)
+tiga = fs.readFileSync(`./XeonMedia/audio2/kurasa tidak.mp3`)
+empat = fs.readFileSync(`./XeonMedia/audio2/coba tanya lagi.mp3`)
+lima = fs.readFileSync(`./XeonMedia/audio2/tidak ada.mp3`)
+enam = fs.readFileSync(`./XeonMedia/audio/YNTKTS.mp3`)
+let randomnie = [satu,dua,tiga,empat,lima,enam]
+	    let randomea = randomnie[Math.floor(Math.random() * randomnie.length)]
+XeonBotInc.sendMessage(m.chat, {audio: randomea, mimetype:'audio/mpeg', ptt: true }, {quoted:m})
+}
+break
 case 'tovn': case 'toptt': {
    if (isBan) return reply(mess.ban)	 			
 if (isBanChat) return reply(mess.banChat)
@@ -9056,7 +9089,7 @@ const jetkontol = jetbosok.split(" | ")[1]
                 if (anu.audio.size.split('MB')[0] >= 20) return reply(`*File Over Limit* \n\nSilahkan download sendiri,\nSize: ${anu.audio.size}\n\nLink: ⤵ ͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏`+util.format(anu.audio.audio))
                 tummb = await getBuffer(anu.thumbnail)
                 audio = await getBuffer(anu.audio.audio)      
-let kon = await XeonBotInc.sendMessage(from, {document:{url: anu.audio.audio}, mimetype:'audio/mpeg', fileName: `${anu.title}`, contextInfo:{externalAdReply:{
+let kon = await XeonBotInc.sendMessage(from, {document:{url: anu.audio.audio}, mimetype:'audio/mpeg', fileName: `${anu.title}.mp3`, contextInfo:{externalAdReply:{
 title:`${global.botname}`,
 body:`MP3 | 128K`,
 thumbnail: tummb,
@@ -10373,6 +10406,7 @@ teks = `*Response Speed* ${latensi.toFixed(4)} _Second_ \n ${oldd - neww} _milis
  ┗━━━━━━━━━━━━━━━━━━━⭓
  ┏━「 _FUN_ 🤪 」━━⭓
  ┃╔═══════✪
+ ┃╠ ${prefix}kerangajaib [text]
  ┃╠ ${prefix}how [text] 
  ┃╠ ${prefix}when [text] 
  ┃╠ ${prefix}where [text] 
@@ -11444,7 +11478,8 @@ sourceUrl: `${websitex}`,
  var unicorn = await getBuffer(picak+'Fun Menu') 
  anjay = ` ┏━「 _FUN_ 」━━⭓ 
  ┃╔═══════✪
- ┃╠ ${prefix}how [text 
+ ┃╠ ${prefix}kerangajaib [text]
+ ┃╠ ${prefix}how [text]
  ┃╠ ${prefix}when [text] 
  ┃╠ ${prefix}where [text] 
  ┃╠ ${prefix}is [text] 
