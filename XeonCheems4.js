@@ -8,9 +8,9 @@
 //════════════════════════════//
 //recode kar ke youtube pe upload kar rhe hai ya
 //codes copy kar ke apne script me dal rhe
-//hai to, description me xeon ka yt channel
+// thai to, description me xeon ka yt channel
 // ka link paste kr dena as a cradit or github 
-//repo me bhi tag kardena baki jo
+// repo me bhi tag kardena baki jo
 //bhi karna hai apki marzi, thank you!🦄
 //════════════════════════════//
 //If you recode and uploading on your channel
