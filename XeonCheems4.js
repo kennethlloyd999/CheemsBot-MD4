@@ -3894,7 +3894,7 @@ reply(`Send Image/Video With Caption ${prefix + command}\nVideo Duration 1-9 Sec
 }
 break
 case 'swm': case 'take': case 'stickerwm': {
-   if (isBan) return reply(mess.ban)	 			
+   if (isBan) return reply(mess.ban)	 			 
 if (isBanChat) return reply(mess.banChat)
 if (!args.join(" ")) return reply(`Example :\nswm kontol|yesus`)
 const swn = args.join(" ")
@@ -3925,7 +3925,7 @@ case 'smeme': case 'stickermeme': case 'stickmeme': try{
  if (!text) return reply(`Send/Reply Photo With Caption ${prefix + command} *text*\n\nSimilar Features: smeme2 *text | text*`) 
  if (text.includes('|')) return reply(`Send/Reply Photo With Caption ${prefix + command} *text*`) 
  if (!/image/.test(mime)) return reply(`Send/Reply Photo With Caption ${prefix + command} *text*`) 
- if (/webp/.test(mime)) return reply(`perlu mengonversi ke gambar terlebih dahulu\ndengan cara balas sticker dengan caption *toimg*`)
+ if (/webp/.test(mime)) return reply(`perlu mengonversi ke gambar terlebih dahulu\nbalas sticker dengan caption *toimg*`)
  reply(mess.wait) 
  mee = await XeonBotInc.downloadAndSaveMediaMessage(quoted) 
  mem = await TelegraPh(mee) 
@@ -6948,7 +6948,7 @@ if (isBanChat) return reply(mess.banChat)
 				caption = `Here you go!`
 				XeonBotInc.sendMessage(m.chat, {video: {url: igdon.respon.link}, caption}, {quoted: m})
 
-				} catch { reply(`Sorry, the server's currently down, try again later`)}
+				} catch { reply(`Sorry, the server's currently down, try again later\n\n*Instagram Downloader Alternative Link:* \nhttps://igram.io/id/`)}
 			break
 case 'igdlxxx': case 'instagramxxx': case 'instagramreelsxxx': case 'igreelsxxx': {
    if (isBan) return reply(mess.ban)	 			
@@ -7209,7 +7209,7 @@ if (m.message && msgFilter.addFilter(from)) return
 reply(mess.wait)
 let jon = await fetchJson(`https://api.akuari.my.id/downloader/fbdl?link=${text}`)
 XeonBotInc.sendMessage(m.chat, { video: {url: jon.url.url }, mimetype: "video/mp4", caption: `*Quality*: HD \n\n_Balas *tovn* untuk mengonversi ke Voice Note_\n_Balas *tomp3 judulfile* untuk mengonversi ke mp3_`}, { quoted: m })
-} catch { reply(`sorry, the server's currently down, try again later`)}
+} catch { reply(`Sorry, the server's currently down, try again later\n\n*Facebook Downloader Alternative Link:* \nhttps://snapsave.app/?utm_source=pwa`)}
 break
 case 'fbdlxxx': case 'fbxxx': case 'facebookxxx': case 'fbmp4xxx': {     	    
    if (isBan) return reply(mess.ban)	 			
@@ -8768,6 +8768,7 @@ break
   case 'ttmp3': case 'tiktokmp3': {
   	if (isBan) return reply(mess.ban)	 			
 if (isBanChat) return reply(mess.banChat)
+if (!q) return reply('Where is the link?')
  ja = `⏰`
 XeonBotInc.sendMessage(from, { react: { text: ja, key: m.key }})
 let pic = [wan,tu,tri,fo,faif,sik,seven,egh,nen,ten,elepen,welep,terten,foten,faiften,sikten]
@@ -8924,7 +8925,7 @@ sourceUrl: ``,
 }} 
 } 
  XeonBotInc.sendMessage(m.chat, buttonMessage, {quoted: fdocs})
- } catch { reply(`sorry, the server's currently down, try again later`)}
+ } catch { reply(`sorry, the server's currently down, try again later\n\n*Youtube Downloader Alternative Link:* \nhttps://id.savefrom.net/210/`)}
 break
  case 'ytmp4xxx': {
    if (isBan) return reply(mess.ban)	 			
@@ -9870,7 +9871,7 @@ XeonBotInc.sendMessage(from, { react: { text: dj, key: m.key }})
 										"rowId": `${prefix}toolmenu`
 									},
 									{
-										"title": "Random Image Menu 🌆",
+										"title": "Random Image Menu ??",
 										"description": "Displays The List Of Random Image Features",
 										"rowId": `${prefix}randomimagemenu`
 									},
