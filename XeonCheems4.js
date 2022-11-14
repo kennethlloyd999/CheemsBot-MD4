@@ -6944,10 +6944,13 @@ case 'ig2': case 'igdl2': case 'instagram2': {
 if (isBanChat) return reply(mess.banChat)
 				if (!args[0]) return reply(`Example :\n${prefix + command} https://www.instagram.com/p/CcvJGuxh9VI/?igshid=YmMyMTA2M2Y=`)
 				if (m.message && msgFilter.addFilter(from)) return
+				XeonBotInc.sendMessage(from, { react: { text: `📥`, key: m.key }})
 				igdon = await fetchJson(`https://api.akuari.my.id/downloader/igdl?link=${text}`)
 				caption = `Here you go!`
-				XeonBotInc.sendMessage(m.chat, {video: {url: igdon.respon.link}, caption}, {quoted: m})
-
+				let bwa = await XeonBotInc.sendMessage(m.chat, {video: {url: igdon.respon.link}, caption}, {quoted: m})
+await bwa
+      XeonBotInc.sendMessage(from, { react: { text: `✅`, key: m.key }})
+      
 				} catch { reply(`Sorry, the server's currently down, try again later\n\n*Instagram Downloader Alternative Link:* \nhttps://igram.io/id/`)}
 			break
 case 'igdlxxx': case 'instagramxxx': case 'instagramreelsxxx': case 'igreelsxxx': {
