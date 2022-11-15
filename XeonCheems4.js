@@ -8751,7 +8751,9 @@ mediaUrl: `${bab}`,
 sourceUrl: ``
 }}
 }
-XeonBotInc.sendMessage(from, buttonMessage, {quoted:m})
+let wan = await XeonBotInc.sendMessage(from, buttonMessage, {quoted:m})
+await wan
+      XeonBotInc.sendMessage(from, { react: { text: `✅`, key: m.key }})
 } catch { reply(`Maaf saat ini server sedang bermasalah, coba lagi nanti`)}
 break
   case 'tiktoknowmxxx': case 'ttnowmxxx':{
